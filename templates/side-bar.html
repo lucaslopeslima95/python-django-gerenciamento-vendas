@@ -1,0 +1,26 @@
+
+{% if user.is_authenticated %}
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+  <i class="fa-solid fa-bars"></i>
+</button>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Todas Funções</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="dropdown mt-3">
+      <ul class="d-flex flex-column list-group" style="list-style: none;">
+      
+          {% if user.is_superuser %}
+          <li><a href="{% url 'main_menu_user' %}" class="btn btn-fill btn-primary list-group-item ">Usuarios</a></li> 
+          {% endif %}
+          <li><a href="{% url 'logout_system' %}" class="btn btn-fill btn-primary list-group-item">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+

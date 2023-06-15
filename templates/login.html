@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block title %} Login {% endblock %}
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
+{% load static %}
+<div class="container-fluid ">
+    <div class="row justify-content-center rounded-3">
+        <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                    <div class="d-flex  flex-row">
+                        <div class="vw-50">
+                            <img src="{% static 'img/sci-logo.jpg' %}" alt="Logo Sci">
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Convêniencia SCI 2.0</h1>
+                                </div>
+                                <form action="{% url 'login_system' %}" method="post">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <hr>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-primary btn-lg">
+                                            Login
+                                        </button>
+                                    </div>
+                                </form>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %} {% block javascripts %}{% endblock javascripts %}
