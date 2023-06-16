@@ -64,7 +64,7 @@ def save_user(request):
     except Exception as e:
         print(e)
         messages.warning(request, "Ocorreu um erro ao registrar o usuário")
-    return render(request, 'usuario/save_user.html', {'form': form})
+    return render(request, 'user/save_user.html', {'form': form})
 
 
 def logout_system(request):
@@ -105,7 +105,7 @@ def update_user(request,id):
        print(f"Exceção no update user informations {e}")
        return redirect('main_menu_user')
 
-    return render(request,'usuario/update_user.html',{'form':form})
+    return render(request,'user/update_user.html',{'form':form})
 
 
 
@@ -121,13 +121,13 @@ def update_user_password(request,id):
             messages.success(request, "Atualizado com sucesso")
             print('3')
             return redirect('main_menu_user')
-    return render(request,'usuario/update_user.html',{'form':form})
+    return render(request,'user/update_user.html',{'form':form})
 
  
 @user_passes_test(lambda user: user.is_superuser,login_url='page_not_found')   
 @login_required(login_url="login_system")
 def main_menu_user(request):
-     return render(request,'usuario/main_menu_users.html',{'users':User.objects.all()})
+     return render(request,'user/main_menu_users.html',{'users':User.objects.all()})
  
  
 def page_not_found(request):
