@@ -20,7 +20,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Usuarios',
+    'User',
+    'Collaborator',
 ]
 
 MIDDLEWARE = [
@@ -96,3 +97,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 PROJECT_ROOT = os.path.dirname(__file__)
 
 sys.path.insert(0, os.path.join(PROJECT_ROOT, '../apps'))
+
+AUTH_USER_MODEL = 'User.User'

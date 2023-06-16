@@ -11,11 +11,10 @@
   <div class="offcanvas-body">
     <div class="dropdown mt-3">
       <ul class="d-flex flex-column list-group" style="list-style: none;">
-      
-          {% if user.is_superuser %}
-          <li><a href="{% url 'main_menu_user' %}" class="btn btn-fill btn-primary list-group-item ">Usuarios</a></li> 
-          {% endif %}
-          <li><a href="{% url 'logout_system' %}" class="btn btn-fill btn-primary list-group-item">Logout</a></li>
+        {% if user.is_superuser %}
+        <li><a href="{% url 'main_menu_user' %}" class="btn btn-fill btn-primary list-group-item ">Usuarios</a></li> 
+        {% endif %}
+        <li><a href="{% url 'logout_system' %}" class="btn btn-fill btn-primary list-group-item">Logout</a></li>
       </ul>
     </div>
   </div>

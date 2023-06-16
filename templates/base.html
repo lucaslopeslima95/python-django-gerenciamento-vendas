@@ -14,12 +14,12 @@
   <meta charset="UTF-8" />
   <title>Log In</title>
   <body>
-    {% include 'side-bar.html' %}
     <div class="container-fluid bg-light vw-75" >
+      {% include 'side-bar.html' %}
       {% block content %}{% endblock content %} 
-      {% include 'modal_confirmacao.html' %}
       {% include 'footer.html' %}
     </div>
+      <script src="{% static 'Usuarios/js/validate_same_password.js' %}"></script>
       <script src="https://kit.fontawesome.com/9958a2dab0.js" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
       <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
