@@ -12,6 +12,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DJANGO_SETTINGS_MODULE = 'core.settings'
 
 INSTALLED_APPS = [
     'django.contrib.admin',

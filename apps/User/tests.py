@@ -1,4 +1,3 @@
-import pytest
 from .views import soma
 
 def test_soma():
