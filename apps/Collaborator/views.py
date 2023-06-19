@@ -7,59 +7,65 @@ from django.contrib import messages
 from django.contrib.admin.views.decorators import user_passes_test
 from django.db.models import Q
 
-def initial_page(request):
-    return render(request,'dashboard.html')
+@user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
+@login_required(login_url="login_system")
+def main_menu_collaborator(request):
+     return render(request,'collaborator/main_menu_collaborator.html',{'collaborators':Collaborator.objects.all()})
 
 @user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')    
 @login_required(login_url="login_system")
 def save_collaborator(request):
     try:
-        form=None
         if request.method == "POST":
             form = registerCollaboratorForm(request.POST)
             if form.is_valid():
-                form.save()      
+                form.save()
                 messages.success(request, "Salvo com sucesso")
         else:
          form = registerCollaboratorForm()
     except Exception as e:
-        print(e)
+        print(f"Exceção ao salvar um colaborador {e}")
         messages.warning(request, "Ocorreu um erro ao registrar o Colaborador")
     return render(request, 'collaborator/save_collaborator.html', {'form': form})
 
 @user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
 @login_required(login_url="login_system")
-def erase_user(request, id):
+def erase_collaborator(request, id):
     try:
-        obj_collaborator = Collaborator.objects.get(id=id)
-        obj_collaborator.delete()
+        Collaborator.objects.get(id=id).delete()
     except Exception as e:
-        print(e)
-    return redirect('main_menu_collaborator')
+        print(f"Exceção no deletar usuario {e}")
+    return redirect('collaborator:main_menu_collaborator')
 
 @user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
 @login_required(login_url="login_system")
-def update_user(request,id):
+def update_collaborator(request,id):
     try:
-        obj_collaborator = Collaborator.objects.get(id=id)
-        form = updateWithoutPasswordForm(request.POST or None, instance=obj_user)
+        collaborator_selected = Collaborator.objects.get(id=id)
+        form = updateWithoutPasswordForm(request.POST or None, instance=collaborator_selected)
         if request.method == "POST":
-                obj_user = None
                 if form.is_valid():
                         username = form.cleaned_data['username']
                         email = form.cleaned_data['email']
+                        cpf = form.cleaned_data['cpf']
                         if not Collaborator.objects.filter(Q(username=username) & ~Q(id=id)).exists():
                             if not Collaborator.objects.filter(Q(email=email) & ~Q(id=id)).exists():
-                                form.save()
-                                messages.success(request, "Atualizado com sucesso")
-                                return redirect('main_menu_user')
+                                if not Collaborator.objects.filter(Q(cpf=cpf) & ~Q(id=id)).exists():
+                                    form.save()
+                                    messages.success(request, "Atualizado com sucesso")
+                                    return redirect('collaborator:main_menu_collaborator')
+                                else:
+                                    messages.warning(request, "Cpf ja existe")    
                             else:
-                                messages.warning(request, "Email ja existe")    
+                                messages.warning(request, "Email ja existe")
                         else:
-                            messages.warning(request, "Username ja existe")
+                            messages.warning(request, "Cpf ja existe")
+                else:
+                    messages.warning(request, "Dados Invalido")
+            
     except Collaborator.DoesNotExist and Exception as e:
        print(f"Exceção no update do colaborador {e}")
-       return redirect('main_menu_user')
+       return redirect('collaborator:main_menu_collaborator')
 
     return render(request,'collaborator/update_collaborator.html',{'form':form})
 
@@ -67,23 +73,22 @@ def update_user(request,id):
 
 @user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
 @login_required(login_url="login_system")
-def update_user_password(request,id):
-    form = updateUserPasswordForm(request.POST)
+def update_collaborator_password(request,id):
     if request.method == "POST":
+        form = updateUserPasswordForm(request.POST)
         if form.is_valid():
             new_password = form.cleaned_data['password']
             Collaborator.objects.get(id=id).set_password(new_password)
-            print('2')
             messages.success(request, "Atualizado com sucesso")
-            print('3')
-            return redirect('main_menu_user')
-    return render(request,'user/update_user.html',{'form':form})
+            return redirect('collaborator:main_menu_user')
+        else:
+            messages.warning(request, "Dados Invalido")
+    else:
+        form = updateUserPasswordForm()  
+    return render(request,'collaborator/update_collaborator.html',{'form':form})
 
  
-@user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
-@login_required(login_url="login_system")
-def main_menu_user(request):
-     return render(request,'user/main_menu_users.html',{'users':Collaborator.objects.all()})
+
  
 
      

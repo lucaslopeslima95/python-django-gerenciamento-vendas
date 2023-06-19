@@ -9,15 +9,12 @@ from django.contrib import messages
 from django.contrib.admin.views.decorators import user_passes_test
 from django.db.models import Q
 
-
-def soma(n1,n2):
-    return n1+n2
-
 def initial_page(request):
     return render(request,'dashboard.html')
 
 
 def login_system(request):
+    form = authForm()    
     try:
         if request.user.is_authenticated:
             return initial_page(request)
@@ -35,8 +32,8 @@ def login_system(request):
                     messages.warning(request, "Usuario ou Senha Errados.")
             else:
                 messages.warning(request, "Credenciais inválidas.")
-        else:
-            form = authForm()    
+        #else:
+         #   form = authForm()    
     except Exception as e :
         print(" Exceção ao tentar fazer o login{e}")
         
@@ -69,7 +66,7 @@ def save_user(request):
 
 def logout_system(request):
     logout(request)
-    return redirect('login_system')
+    return redirect('user:initial_page')
 
 @user_passes_test(lambda user: user.is_superuser,login_url='page_not_found')   
 @login_required(login_url="login_system")
@@ -79,7 +76,7 @@ def erase_user(request, id):
         user.delete()
     except Exception as e:
         print(e)
-    return redirect('main_menu_user')
+    return redirect('user:main_menu_user')
 
 @user_passes_test(lambda user: user.is_superuser,login_url='page_not_found')   
 @login_required(login_url="login_system")
@@ -96,14 +93,14 @@ def update_user(request,id):
                             if not User.objects.filter(Q(email=email) & ~Q(id=id)).exists():
                                 form.save()
                                 messages.success(request, "Atualizado com sucesso")
-                                return redirect('main_menu_user')
+                                return redirect('user:main_menu_user')
                             else:
                                 messages.warning(request, "Email ja existe")    
                         else:
                             messages.warning(request, "Username ja existe")
     except User.DoesNotExist and Exception as e:
        print(f"Exceção no update user informations {e}")
-       return redirect('main_menu_user')
+       return redirect('user:main_menu_user')
 
     return render(request,'user/update_user.html',{'form':form})
 
@@ -117,10 +114,8 @@ def update_user_password(request,id):
         if form.is_valid():
             new_password = form.cleaned_data['password']
             User.objects.get(id=id).set_password(new_password)
-            print('2')
             messages.success(request, "Atualizado com sucesso")
-            print('3')
-            return redirect('main_menu_user')
+            return redirect('user:main_menu_user')
     return render(request,'user/update_user.html',{'form':form})
 
  
