@@ -6,6 +6,7 @@ class Purchase(models.Model):
     fk_colaborattor = models.ManyToManyField(Collaborator, related_name="purchases", through="PurchaseItems")
     date_purchase = models.DateTimeField(auto_now_add=True)
     
+    
 class PurchaseItems(models.Model):
     fk_purchase = models.ForeignKey(Purchase,on_delete=models.CASCADE)
     fk_product = models.ForeignKey(Product,on_delete=models.CASCADE)
@@ -14,5 +15,5 @@ class PurchaseItems(models.Model):
     quantity = models.IntegerField()
     
     
-class deadLine(models.Model):
+class DeadLine(models.Model):
     DAY = models.IntegerField()

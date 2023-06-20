@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import render,redirect
-from .forms import *
+from .forms import searchProductForm, registerProductForm
 from .models import Product
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -9,8 +9,15 @@ from django.db.models import Q
 
 @user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
 @login_required(login_url="login_system")
-def main_menu_product(request):
-     return render(request,'product/main_menu_product.html',{'products':Product.objects.all()})
+def main_menu_product(request,code_bar="without_specific_product"):
+    form = searchProductForm()
+    if code_bar == "without_specific_product":
+        products = Product.objects.all()
+    else:
+        form = searchProductForm(request.POST)
+        products = Product.objects.filter(code_bar=code_bar)
+    
+    return render(request,'product/main_menu_product.html',{'products':products,'form':form})
 
 @user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')    
 @login_required(login_url="login_system")
@@ -53,7 +60,19 @@ def update_product(request,id):
         
     return render(request,'product/update_product.html',{'form':form})
 
- 
+@user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
+@login_required(login_url="login_system")
+def main_menu_product_with_filter(request):
+    code_bar = None
+    try:
+        if request.method == "POST":
+            form = searchProductForm(request.POST)
+            if form.is_valid():
+                code_bar = form.cleaned_data['code_bar']
+    except Exception as e:
+        print(f"Exceção no filtar produco por codigo de barras - {e}")
+    return main_menu_product(request,code_bar)
+        
 
  
 
