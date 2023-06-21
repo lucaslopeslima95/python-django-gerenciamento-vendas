@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='PurchaseItems',
+            name='PurchaseItem',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('price', models.DecimalField(decimal_places=2, max_digits=8)),
@@ -42,6 +42,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='purchase',
             name='fk_colaborattor',
-            field=models.ManyToManyField(related_name='purchases', through='Purchase.PurchaseItems', to='Collaborator.collaborator'),
+            field=models.ManyToManyField(related_name='purchases', through='Purchase.PurchaseItem', to='Collaborator.collaborator'),
         ),
     ]

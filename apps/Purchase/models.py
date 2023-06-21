@@ -3,11 +3,11 @@ from Product.models import Product
 from Collaborator.models import Collaborator
 
 class Purchase(models.Model):
-    fk_colaborattor = models.ManyToManyField(Collaborator, related_name="purchases", through="PurchaseItems")
+    fk_colaborattor = models.ManyToManyField(Collaborator, related_name="purchases", through="PurchaseItem")
     date_purchase = models.DateTimeField(auto_now_add=True)
     
     
-class PurchaseItems(models.Model):
+class PurchaseItem(models.Model):
     fk_purchase = models.ForeignKey(Purchase,on_delete=models.CASCADE)
     fk_product = models.ForeignKey(Product,on_delete=models.CASCADE)
     fk_collaborator = models.ForeignKey(Collaborator,on_delete=models.CASCADE)

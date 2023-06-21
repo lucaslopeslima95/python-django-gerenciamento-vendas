@@ -1,6 +1,5 @@
 from django import forms
 from .models import Product
-from django import forms
 from django.forms import ModelForm
 
 class registerProductForm(ModelForm):
@@ -17,7 +16,7 @@ class registerProductForm(ModelForm):
                    'stock_quantity': forms.TextInput(attrs={"placeholder": "Quantidade em Estoque","class": "form-control"})}
         
 class searchProductForm(forms.Form):
-       code_bar = forms.CharField(label="Cod.Barras",widget=forms.TextInput(attrs={"placeholder": "Cod.Barras","class": "form-control"}))
+       code_bar = forms.CharField(label="Cod.Barras",widget=forms.TextInput(attrs={"placeholder": "Cod.Barras","class": "form-control"}),required=False)
         
 #  name = forms.CharField(widget=
 #  code_bar = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Codigo de Barras","class": "form-control"}))

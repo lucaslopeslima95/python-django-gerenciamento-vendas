@@ -3,7 +3,7 @@
 {% load static %}
 <div class="card vw-50">
     <div class="card-header">
-        Cadastro de Usuarios
+        Cadastro de Colaborador
     </div>
     <div>
         {% for message in messages %}
@@ -16,7 +16,7 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 <div class="d-flex justify-content-center p-5">
-                    <button type="submit" onclick="validate_same_password()"  class="btn btn-primary">Salvar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
             </form>
         </div>
