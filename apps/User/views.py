@@ -8,10 +8,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.admin.views.decorators import user_passes_test
 from django.db.models import Q
+from django.urls import reverse
 
 def initial_page(request):
     return render(request,'dashboard.html')
-
 
 def login_system(request):
     form = authForm()    
@@ -32,14 +32,12 @@ def login_system(request):
                     messages.warning(request, "Usuario ou Senha Errados.")
             else:
                 messages.warning(request, "Credenciais inválidas.")
-        #else:
-         #   form = authForm()    
     except Exception as e :
         print(" Exceção ao tentar fazer o login{e}")
         
     return render(request, 'login.html', {'form': form})
 
-@user_passes_test(lambda user: user.is_superuser,login_url='page_not_found')   
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')   
 @login_required(login_url="login_system")
 def save_user(request):
     try:
@@ -68,7 +66,7 @@ def logout_system(request):
     logout(request)
     return redirect('user:initial_page')
 
-@user_passes_test(lambda user: user.is_superuser,login_url='page_not_found')   
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')   
 @login_required(login_url="login_system")
 def erase_user(request, id):
     try:
@@ -78,7 +76,7 @@ def erase_user(request, id):
         print(e)
     return redirect('user:main_menu_user')
 
-@user_passes_test(lambda user: user.is_superuser,login_url='page_not_found')   
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')     
 @login_required(login_url="login_system")
 def update_user(request,id):
     try:
@@ -106,7 +104,7 @@ def update_user(request,id):
 
 
 
-@user_passes_test(lambda user: user.is_superuser,login_url='page_not_found')   
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
 def update_user_password(request,id):
     form = updateUserPasswordForm(request.POST)
@@ -119,7 +117,7 @@ def update_user_password(request,id):
     return render(request,'user/update_user.html',{'form':form})
 
  
-@user_passes_test(lambda user: user.is_superuser,login_url='page_not_found')   
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
 def main_menu_user(request):
      return render(request,'user/main_menu_users.html',{'users':User.objects.all()})

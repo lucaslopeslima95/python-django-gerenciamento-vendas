@@ -3,6 +3,8 @@ from .models import Purchase
 from .models import PurchaseItems
 from django.forms import ModelForm
 
+
+
 class PurchaseForm(ModelForm):
     class Meta:
         model = Purchase
@@ -15,5 +17,7 @@ class PurchaseItemsForm(ModelForm):
         model = PurchaseItems
         fields = ['fk_purchase','fk_product','fk_collaborator', 'quantity', 'price']
         labels = {'quantity':'Quantidade','price':'Preço'}
-    
+
+class PurchaseRegisterForm(forms.Form):
+    total_cost = forms.IntegerField(widget=forms.NumberInput(attrs={"class": "form-control"}),label="Valor Total")
     

@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.admin.views.decorators import user_passes_test
 from django.db.models import Q
 
-@user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')     
 @login_required(login_url="login_system")
 def main_menu_product(request,code_bar="without_specific_product"):
     form = searchProductForm()
@@ -19,7 +19,7 @@ def main_menu_product(request,code_bar="without_specific_product"):
     
     return render(request,'product/main_menu_product.html',{'products':products,'form':form})
 
-@user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')    
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
 def save_product(request):
     try:
@@ -35,7 +35,7 @@ def save_product(request):
         messages.warning(request, "Ocorreu um erro ao registrar o Produto")
     return render(request, 'product/save_product.html', {'form': form})
 
-@user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')        
 @login_required(login_url="login_system")
 def erase_product(request, id):
     print(request.method)
@@ -45,7 +45,7 @@ def erase_product(request, id):
         print(f"Exceção no deletar produto {e}")
     return redirect('product:main_menu_product')
 
-@user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')      
 @login_required(login_url="login_system")
 def update_product(request,id):
     product_selected = Product.objects.get(id=id)
@@ -60,7 +60,7 @@ def update_product(request,id):
         
     return render(request,'product/update_product.html',{'form':form})
 
-@user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
 def main_menu_product_with_filter(request):
     code_bar = None

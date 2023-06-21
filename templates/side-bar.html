@@ -12,12 +12,13 @@
     <div class="dropdown mt-3">
       <ul class="d-flex flex-column list-group" style="list-style: none;">
         {% if user.is_superuser %}
-        <li><a href="{% url 'main_menu_user' %}" class="btn btn-fill btn-primary list-group-item ">Usuarios</a></li> 
+        <li><a href="{% url 'user:main_menu_user' %}" class="btn btn-fill btn-primary list-group-item ">Usuarios</a></li> 
         {% endif %}
         {% if user.is_staff or user.is_superuser %}
-        <li><a href="{% url 'main_menu_collaborator' %}" class="btn btn-fill btn-primary list-group-item ">Colaboradores</a></li> 
+        <li><a href="{% url 'collaborator:main_menu_collaborator' %}" class="btn btn-fill btn-primary list-group-item ">Colaboradores</a></li>
+        <li><a href="{% url 'product:main_menu_product' %}" class="btn btn-fill btn-primary list-group-item ">Produtos</a></li> 
         {% endif %}
-        <li><a href="{% url 'logout_system' %}" class="btn btn-fill btn-primary list-group-item">Logout</a></li>
+        <li><a href="{% url 'user:logout_system' %}" class="btn btn-fill btn-primary list-group-item">Logout</a></li>
       </ul>
     </div>
   </div>

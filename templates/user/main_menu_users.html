@@ -10,7 +10,7 @@
   {% endfor %}
   <div class="card-header">
     <h4 class="card-title">Usuarios</h4>
-    <td class="px-1"><a href="{% url 'save_user' %}" class="btn btn-primary btn-sm">Registrar Novo Usuario</a></td>
+    <td class="px-1"><a href="{% url 'user:save_user' %}" class="btn btn-primary btn-sm">Registrar Novo Usuario</a></td>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -28,9 +28,9 @@
             <th>{{ user.username }}</th>
             <th>{{ user.email }}</th>
             <th><a type="submit" class="btn btn-primary" onclick="return confirm('Deseja realmente Deletar?')"
-                href="{% url 'erase_user' user.id %}">Delete</a></th>
-            <th><a type="submit" class="btn btn-primary" href="{% url 'update_user' user.id %}">Atualizar Dados</a></th>
-            <th><a type="submit" class="btn btn-primary" href="{% url 'update_user_password' user.id %}">Atualizar
+                href="{% url 'user:erase_user' user.id %}">Delete</a></th>
+            <th><a type="submit" class="btn btn-primary" href="{% url 'user:update_user' user.id %}">Atualizar Dados</a></th>
+            <th><a type="submit" class="btn btn-primary" href="{% url 'user:update_user_password' user.id %}">Atualizar
                 Senha</a></th>
           </tr>
           {% endfor %}

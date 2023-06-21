@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block title %} Registro de Compras {% endblock %}
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
+{% load static %}
+<form action="{% url 'purchase:find_product'%}" method="post">
+  <div class="d-flex flex-row align-items-center">
+  {% csrf_token %}
+  {{ form_code_bar.as_p }}
+  <button type="submit" value="Adicionar" class="btn btn-primary btn-sm">
+    <i class="fa-solid fa-plus fa-beat"></i>
+  </button>
+</div>
+</form>
+
+{{ form.as_p}}
+
+<div class="table-responsive"></div>
+<table class="table table-hover table-dark table-striped-columns">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Valor Un.</th>
+      <th scope="col">Quantidade</th>
+      <th scope="col">Val. Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in purchaseItems %}
+    <tr>
+      <th scope="row">{{item.product.id}}</th>
+      <th scope="row">{{ item.product.name }}</th>
+      <th scope="row">{{ item.product.price}}</th>
+      <th scope="row">{{ item.quantity}}</th>
+      <th scope="row">{{ item.price }}</th>
+      
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock content %} {% block javascripts %}{% endblock javascripts %}

@@ -1,5 +1,6 @@
 asgiref==3.7.2
 Django==4.2.2
+django-tables2==2.5.3
 exceptiongroup==1.1.1
 iniconfig==2.0.0
 packaging==23.1

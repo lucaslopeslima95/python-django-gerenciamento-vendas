@@ -7,12 +7,12 @@ from django.contrib import messages
 from django.contrib.admin.views.decorators import user_passes_test
 from django.db.models import Q
 
-@user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')         
 @login_required(login_url="login_system")
 def main_menu_collaborator(request):
      return render(request,'collaborator/main_menu_collaborator.html',{'collaborators':Collaborator.objects.all()})
 
-@user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')    
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')       
 @login_required(login_url="login_system")
 def save_collaborator(request):
     try:
@@ -28,7 +28,7 @@ def save_collaborator(request):
         messages.warning(request, "Ocorreu um erro ao registrar o Colaborador")
     return render(request, 'collaborator/save_collaborator.html', {'form': form})
 
-@user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')         
 @login_required(login_url="login_system")
 def erase_collaborator(request, id):
     try:
@@ -37,7 +37,7 @@ def erase_collaborator(request, id):
         print(f"Exceção no deletar usuario {e}")
     return redirect('collaborator:main_menu_collaborator')
 
-@user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')         
 @login_required(login_url="login_system")
 def update_collaborator(request,id):
     try:
@@ -71,7 +71,7 @@ def update_collaborator(request,id):
 
 
 
-@user_passes_test(lambda user: user.is_staff or user.is_superuser ,login_url='page_not_found')      
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')         
 @login_required(login_url="login_system")
 def update_collaborator_password(request,id):
     if request.method == "POST":

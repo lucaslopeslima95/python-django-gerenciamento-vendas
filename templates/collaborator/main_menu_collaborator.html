@@ -10,28 +10,35 @@
   {% endfor %}
   <div class="card-header">
     <h4 class="card-title">Usuarios</h4>
-    <td class="px-1"><a href="{% url 'save_user' %}" class="btn btn-primary btn-sm">Registrar Novo Usuario</a></td>
+    <td class="px-1"><a href="{% url 'collaborator:save_collaborator' %}" class="btn btn-primary btn-sm">Registrar Novo Colaborador</a></td>
   </div>
   <div class="card-body">
     <div class="table-responsive">
       <table class="table table-dark table-striped-columns" id="">
         <thead class="text-primary">
           <tr>
-            <th>Username</th>
+            <th>Nome</th>
             <th>Email</th>
+            <th>Cpf</th>
+            <th>Status</th>
             <th colspan="3" style="text-align: center;">Ações</th>
           </tr>
         </thead>
         <tbody>
-          {% for user in users %}
+          {% for collaborator in collaborators %}
           <tr>
-            <th>{{ user.username }}</th>
-            <th>{{ user.email }}</th>
+            <th>{{ collaborator.first_name }}</th>
+            <th>{{ collaborator.email }}</th>
+            <th>{{ collaborator.cpf }}</th>
+            {% if collaborator %}
+            <th> Ativo </th>
+            {% else %}
+            <th> Inativo </th>
+            {% endif %}
             <th><a type="submit" class="btn btn-primary" onclick="return confirm('Deseja realmente Deletar?')"
-                href="{% url 'erase_user' user.id %}">Delete</a></th>
-            <th><a type="submit" class="btn btn-primary" href="{% url 'update_user' user.id %}">Atualizar Dados</a></th>
-            <th><a type="submit" class="btn btn-primary" href="{% url 'update_user_password' user.id %}">Atualizar
-                Senha</a></th>
+                href="{% url 'collaborator:erase_collaborator' collaborator.id %}">Delete</a></th>
+            <th><a type="submit" class="btn btn-primary" href="{% url 'collaborator:update_collaborator' collaborator.id %}">Atualizar Dados</a></th>
+            <th><a type="submit" class="btn btn-primary" href="{% url 'collaborator:update_collaborator_password' collaborator.id %}">Atualizar Senha</a></th>
           </tr>
           {% endfor %}
         </tbody>
