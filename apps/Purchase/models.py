@@ -14,6 +14,5 @@ class PurchaseItem(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
     quantity = models.IntegerField()
     
-    
 class DeadLine(models.Model):
     DAY = models.IntegerField()
