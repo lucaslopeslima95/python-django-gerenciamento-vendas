@@ -8,10 +8,10 @@ from django.contrib.auth import authenticate
 from .DTO.PurchaseItemDTO import PurchaseItemDTO
 from Collaborator.models import Collaborator
 from Purchase.models import Purchase,PurchaseItem
+from User.models import User
 
 listPurchaseItemsDTO = []
 
-  
 def initial_page_purchase(request,listPurchaseItemsDTO = [],login_failed=False):
     try:
         form_code_bar = searchProductToPurchaseForm()
@@ -28,26 +28,30 @@ def finish_purchase(request):
     if len(listPurchaseItemsDTO) == 0:
         messages.warning(request, "Não é possivel Finalizar Sem Adicionar Produtos")
         return initial_page_purchase(request)
-    
-    if request.method == "POST":
-            form = authForm(request.POST)
-            if form.is_valid():
-                username = form.cleaned_data['username']
-                password = form.cleaned_data['password']
-                collaborator = authenticate(request, username=username, password=password)
-                
-                if collaborator is not None:
-                    if save_purchase(username):
-                        messages.success(request, "Salvo com Sucesso.")
-                        return initial_page_purchase(request)
-                        
-                        #implementar Logica para mostrar o consumo da referencia atual
+    else:
+        if request.method == "POST":
+                form = authForm(request.POST)
+                if form.is_valid():
+                    username = form.cleaned_data['username']
+                    password = form.cleaned_data['password']
+                    print('--------------------------------------------------')
+                    print(username)
+                    print(password)
+                    collaborator = authenticate(request, username=username, password=password)
+                    print(collaborator)
+                    
+                    if collaborator is not None:
+                        if save_purchase(username):
+                            messages.success(request, "Salvo com Sucesso.")
+                            return initial_page_purchase(request)
+                            
+                            #implementar Logica para mostrar o consumo da referencia atual
+                    else:
+                        login_failed = True
+                        messages.warning(request, "Usuario ou Senha Errados.")
+                        return initial_page_purchase(request,login_failed=login_failed,listPurchaseItemsDTO=listPurchaseItemsDTO)
                 else:
-                    login_failed = True
-                    messages.warning(request, "Usuario ou Senha Errados.")
-                    return initial_page_purchase(request,login_failed=login_failed,listPurchaseItemsDTO=listPurchaseItemsDTO)
-            else:
-                messages.warning(request, "Credenciais inválidas.")
+                    messages.warning(request, "Credenciais inválidas.")
     return initial_page_purchase(request)
     
 
@@ -99,8 +103,8 @@ def clean_all_products_purchase(request):
 
 def save_purchase(username):
     try:
-        print(Collaborator.objects.filter(username=username))
-        collaborator = Collaborator.objects.get(username=username)
+        print(User.objects.filter(username=username))
+        collaborator = User.objects.filter(username=username)
         purchase_obj = Purchase()
         purchase_obj.save()
         purchase_obj.fk_colaborattor.add(collaborator)
