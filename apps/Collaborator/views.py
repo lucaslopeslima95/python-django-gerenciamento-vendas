@@ -19,12 +19,22 @@ def save_collaborator(request):
         if request.method == "POST":
             form = registerCollaboratorForm(request.POST)
             if form.is_valid():
-                form.save()
-                messages.success(request, "Salvo com sucesso")
+                first_name = form.cleaned_data['first_name']
+                cpf = form.cleaned_data['cpf']
+                username = form.cleaned_data['username']
+                email = form.cleaned_data['email']
+                password = form.cleaned_data['password']
+                password_check = form.cleaned_data['password_check']
+                if password != password_check:
+                    messages.success(request, "As senha não coincidem")
+                else:
+                    Collaborator.objects.create(username=username,first_name=first_name, password=password,
+                                                email=email,cpf=cpf,active=True)
+                    messages.success(request, "Salvo com sucesso")
         else:
          form = registerCollaboratorForm()
     except Exception as e:
-        print(f"Exceção ao salvar um colaborador {e}")
+        print(f"Exceção ao salvar um colaborador - {e}")
         messages.warning(request, "Ocorreu um erro ao registrar o Colaborador")
     return render(request, 'collaborator/save_collaborator.html', {'form': form})
 
