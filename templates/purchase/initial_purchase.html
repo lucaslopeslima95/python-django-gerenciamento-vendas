@@ -1,12 +1,6 @@
 {% extends 'base.html' %} {% block title %} Registro de Compras {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %} {% block content %}
 {% load static %}
-
-{% for message in messages %}
-<div class="alert alert-{{ message.tags }}">
-  {{ message }}
-</div>
-{% endfor %}
 <div class="d-flex flex-row justify-content-between align-items-center me-3">
   <form action="{% url 'purchase:find_product'%}" method="POST">
     <div class="d-flex flex-row align-items-center">
@@ -61,7 +55,7 @@
     </div>
   </div>
 </div>
-<div class="modal fade modal-dialog modal-dialog-centered" id="staticBackdrop" data-bs-backdrop="static"
+<div class="modal fade modal-dialog modal-dialog-centered modal {% if login_failed %} show shake{% endif %}" id="staticBackdrop" data-bs-backdrop="static"
   data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -69,6 +63,11 @@
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirme Suas Credenciais</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+      {{ message }}
+      </div>
+      {% endfor %}
       <div class="modal-body ">
         <form action="{% url 'purchase:finish_purchase' %}" method="post">
           {% csrf_token %}

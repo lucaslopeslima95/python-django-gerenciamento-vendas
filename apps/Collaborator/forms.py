@@ -9,6 +9,7 @@ class registerCollaboratorForm(ModelForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={"placeholder": "Email","class": "form-control"}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "Senha","class": "form-control"}))
     password_check = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "Confirme a Senha","class": "form-control"}))
+    is_staff = forms.BooleanField(required=False,widget=forms.CheckboxInput(attrs={}),initial=True)
     class Meta:
         model = Collaborator
         fields = ['first_name','cpf','username','email','password','password_check']
