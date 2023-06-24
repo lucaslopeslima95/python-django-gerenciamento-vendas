@@ -9,7 +9,7 @@
   </div>
   {% endfor %}
   <div class="card-header">
-    <h4 class="card-title">Usuarios</h4>
+    <h4 class="card-title">Colaboradores</h4>
     <td class="px-1"><a href="{% url 'collaborator:save_collaborator' %}" class="btn btn-primary btn-sm">Registrar Novo Colaborador</a></td>
   </div>
   <div class="card-body">
@@ -27,7 +27,7 @@
         <tbody>
           {% for collaborator in collaborators %}
           <tr>
-            <th>{{ collaborator.first_name }}</th>
+            <th>{{ collaborator.name }}</th>
             <th>{{ collaborator.email }}</th>
             <th>{{ collaborator.cpf }}</th>
             {% if collaborator %}

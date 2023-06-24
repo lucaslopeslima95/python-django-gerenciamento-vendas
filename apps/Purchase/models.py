@@ -17,4 +17,4 @@ class PurchaseItem(models.Model):
 class DeadLine(models.Model):
     DAY = models.IntegerField()
     def __str__(self):
-        return self.DAY
+        return str(self.DAY)

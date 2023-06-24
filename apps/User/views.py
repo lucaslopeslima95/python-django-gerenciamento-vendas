@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.contrib.admin.views.decorators import user_passes_test
 from django.db.models import Q
 from Collaborator.forms import registerCollaboratorForm
-from Collaborator.models import Collaborator
+
 def initial_page(request):
     return render(request,'dashboard.html')
 
@@ -43,7 +43,7 @@ def save_user(request):
     try:
         form=None
         if request.method == "POST":
-            form = registerCollaboratorForm(request.POST)
+            form = registerUserForm(request.POST)
             if form.is_valid():
                     username = form.cleaned_data['username']
                     if User.objects.filter(username=username).exists():
@@ -53,14 +53,15 @@ def save_user(request):
                         is_staff = form.cleaned_data['is_staff']
                         email = form.cleaned_data['email']
                         cpf = form.cleaned_data['cpf']
-                        active = form.cleaned_data['active']
-                        user = User.objects.create_user(username=username, password=password, email=email,is_staff=is_staff)
-                        Collaborator.objects.create(user=user,cpf=cpf,active=active)
+                        name = form.cleaned_data['name']
+                        User.objects.create_user(username=username, password=password, email=email,is_staff=is_staff)
+                        #Collaborator.objects.create(username=username,cpf=cpf,active=active,name=name)
+                        
                         messages.success(request, "Salvo com sucesso")
         else:
-         form = registerCollaboratorForm()
+         form = registerUserForm()
     except Exception as e:
-        print(f"Exceção ao salvar um colaborador - {e}")
+        print(f"Exceção ao salvar um Usuario - {e}")
         messages.warning(request, "Ocorreu um erro ao registrar o usuário")
     return render(request, 'user/save_user.html', {'form': form})
 

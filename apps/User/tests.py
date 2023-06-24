@@ -1,7 +1,7 @@
-from .views import soma
+import unittest
 
-def test_soma():
-    a = 5
-    b = 10
-    resultado = soma(a, b)
-    assert resultado == 15
+
+
+
+        
+   

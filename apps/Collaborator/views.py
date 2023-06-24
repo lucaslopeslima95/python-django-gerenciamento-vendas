@@ -19,7 +19,7 @@ def save_collaborator(request):
         if request.method == "POST":
             form = registerCollaboratorForm(request.POST)
             if form.is_valid():
-                first_name = form.cleaned_data['first_name']
+                name = form.cleaned_data['name']
                 cpf = form.cleaned_data['cpf']
                 username = form.cleaned_data['username']
                 email = form.cleaned_data['email']
@@ -28,8 +28,7 @@ def save_collaborator(request):
                 if password != password_check:
                     messages.success(request, "As senha não coincidem")
                 else:
-                    Collaborator.objects.create(username=username,first_name=first_name, password=password,
-                                                email=email,cpf=cpf,active=True)
+                    Collaborator.objects.create(username=username,name=name, password=password,email=email,cpf=cpf,active=True)
                     messages.success(request, "Salvo com sucesso")
         else:
          form = registerCollaboratorForm()

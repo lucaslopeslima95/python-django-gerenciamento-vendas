@@ -12,11 +12,12 @@
         </div>
         {% endfor %}
         <div class="card-body d-flex justify-content-center align-items-center">  
-            <form action="" method="post">
+            <form action="" method="post" class="vw-100">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <div class="d-flex justify-content-center p-5">
-                    <button type="submit" class="btn btn-primary">Salvar</button>
+                <p id="aviso-validade-form">So será possivel salvar apos todos campos validos</p>
+                <div class="d-flex justify-content-center p-5 ">
+                    <button type="submit" class="btn btn-primary" id="btn-save-collaborator" disabled="true">Salvar</button>
                 </div>
             </form>
         </div>

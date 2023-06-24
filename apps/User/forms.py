@@ -11,6 +11,8 @@ class registerUserForm(forms.Form):
     email = forms.EmailField(widget=forms.EmailInput(attrs={"placeholder": "Email","class": "form-control"}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "Password","class": "form-control"}))
     password_check = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "Password check","class": "form-control"}))
+    cpf = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome","class": "form-control"}))
+    name = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome","class": "form-control"}))
     is_staff = forms.BooleanField(required=False,widget=forms.CheckboxInput(attrs={}),initial=True)
     class Meta:
         model = User
@@ -29,3 +31,4 @@ class updateUserPasswordForm(ModelForm):
     class Meta:
         model = User
         fields = ['password','password_check']
+        

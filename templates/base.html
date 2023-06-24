@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"rel="stylesheet"/>
     <link rel="stylesheet" href="{% static 'css/shake.css'%}">
+    <link rel="stylesheet" href="{% static 'css/validations_colors.css'%}">
     {% block stylesheets %}{% endblock stylesheets %}
   </head>
   <meta charset="UTF-8" />
@@ -20,7 +21,11 @@
       {% block content %}{% endblock content %} 
       
     </div>
-      <script src="{% static 'Usuarios/js/validate_same_password.js' %}"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+      <script src="{% static 'js/cpfValidation.js'%}"></script>
+      <script src="{% static 'js/inputMask.js'%}"></script>
+      <script src="{% static 'Usuarios/js/validate_password.js' %}"></script>
       <script src="https://kit.fontawesome.com/9958a2dab0.js" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
       <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
