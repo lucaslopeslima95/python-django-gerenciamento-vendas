@@ -17,11 +17,12 @@ class registerCollaboratorForm(ModelForm):
 class updateWithoutPasswordForm(ModelForm):
     name = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome","class": "form-control"}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={"placeholder": "Email","class": "form-control"}))
-    cpf = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome","class": "form-control"}))
+    cpf = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "CPF","class": "form-control","oninput":"validateCPF(this)","onchange":"validateCPF(this)"}),label="CPF")
     username = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Username","class": "form-control"}))
     class Meta:
         model = Collaborator
         fields = ['name','email','cpf','username']
+    
 
 class updateUserPasswordForm(ModelForm):
     password = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "Password","class": "form-control"}))

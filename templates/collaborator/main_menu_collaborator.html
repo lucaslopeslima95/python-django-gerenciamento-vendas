@@ -14,7 +14,7 @@
   </div>
   <div class="card-body">
     <div class="table-responsive">
-      <table class="table table-dark table-striped-columns" id="">
+      <table class="table" id="">
         <thead class="text-primary">
           <tr>
             <th>Nome</th>
@@ -29,13 +29,17 @@
           <tr>
             <th>{{ collaborator.name }}</th>
             <th>{{ collaborator.email }}</th>
-            <th>{{ collaborator.cpf }}</th>
-            {% if collaborator %}
-            <th> Ativo </th>
-            {% else %}
-            <th> Inativo </th>
-            {% endif %}
-            <th><a type="submit" class="btn btn-primary" onclick="return confirm('Deseja realmente Deletar?')"
+            <th id="id_cpf">{{ collaborator.cpf }}</th>
+            
+            <th>
+              <div class="form-check form-switch">
+                <input class="form-check-input" {% if collaborator.active %}checked{% endif %} type="checkbox" 
+                
+                 role="switch" id="flexSwitchCheckDefault">
+              </div>
+            </th>
+            
+            <th><a type="submit" class="btn btn-danger" 
                 href="{% url 'collaborator:erase_collaborator' collaborator.id %}">Delete</a></th>
             <th><a type="submit" class="btn btn-primary" href="{% url 'collaborator:update_collaborator' collaborator.id %}">Atualizar Dados</a></th>
             <th><a type="submit" class="btn btn-primary" href="{% url 'collaborator:update_collaborator_password' collaborator.id %}">Atualizar Senha</a></th>

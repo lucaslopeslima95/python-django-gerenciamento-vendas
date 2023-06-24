@@ -54,9 +54,12 @@ def update_collaborator(request,id):
         form = updateWithoutPasswordForm(request.POST or None, instance=collaborator_selected)
         if request.method == "POST":
                 if form.is_valid():
+                        cpf = form.cleaned_data['cpf']
+                        cpf.replace(".","").replace(".","").replace("-","")
                         username = form.cleaned_data['username']
                         email = form.cleaned_data['email']
-                        cpf = form.cleaned_data['cpf']
+                        #cpf = form.cleaned_data['cpf']
+                         
                         if not Collaborator.objects.filter(Q(username=username) & ~Q(id=id)).exists():
                             if not Collaborator.objects.filter(Q(email=email) & ~Q(id=id)).exists():
                                 if not Collaborator.objects.filter(Q(cpf=cpf) & ~Q(id=id)).exists():
