@@ -9,5 +9,5 @@ urlpatterns = [
     path('update_collaborator/<int:id>',views.update_collaborator, name='update_collaborator'),
     path('update_collaborator_password/<int:id>',views.update_collaborator_password, name='update_collaborator_password'),
     path("main_menu_collaborator",views.main_menu_collaborator,name="main_menu_collaborator"),
-    path("update_active_collaborator/<int:id>",views.update_active_collaborator,name="update_active_collaborator")
+    path("123/<int:id>",views.update_active_collaborator,name="update_active_collaborator")
 ]

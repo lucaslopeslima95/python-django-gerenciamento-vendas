@@ -1,25 +1,19 @@
-{% extends 'base.html' %} {% block title %} Login {% endblock %}
+{% extends 'base.html' %} {% block title %} Atualizar Usuarios {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %} {% block content %}
-
 <div class="card p-5">
     {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
+        <div class="alert alert-{{ message.tags }} timeout fade-out">
         {{ message }}
         </div>
      {% endfor %}
-  <h1 class="mb-3">Atualizar Usuário</h1>
-  <form action="{% url 'user:update_user' %}" method="post">
+  <h1 class="mb-3">Atualizar Senha de Usuário</h1>
+  <form method="post">
     {% csrf_token %} {{ form.as_p }}
-    <br />
+    <br/>
     <div class="d-flex justify-content-center">
-      <input
-        type="submit"
-        onclick="return validate_same_password()"
-        value="Atualizar"
-        class="btn btn-primary btn-sm"
-      />
+      <input type="submit" value="Atualizar" class="btn btn-primary btn-sm"/>
     </div>
   </form>
 </div>
-
-{% endblock content %} {% block javascripts %}{% endblock javascripts %}
+{% endblock content %} 
+{% block javascripts %}{% endblock javascripts %}

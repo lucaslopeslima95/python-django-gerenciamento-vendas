@@ -90,7 +90,7 @@ def update_collaborator_password(request,id):
         form = updateUserPasswordForm(request.POST)
         if form.is_valid():
             new_password = form.cleaned_data['password']
-            Collaborator.objects.get(id=id).set_password(new_password)
+            Collaborator.objects.filter(id=id).update(password = new_password)
             messages.success(request, "Atualizado com sucesso")
             return redirect('collaborator:main_menu_collaborator')
         else:
@@ -99,6 +99,8 @@ def update_collaborator_password(request,id):
         form = updateUserPasswordForm()  
     return render(request,'collaborator/update_collaborator.html',{'form':form})
 
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
+@login_required(login_url="login_system")
 def update_active_collaborator(request,id):
     print(id)
     Collaborator.objects.filter(id=id).update(active = not Collaborator.objects.get(id=id).active)

@@ -2,5 +2,9 @@
     "python.analysis.extraPaths": [
         "./apps"
     ],
-    "editor.fontSize": 16
+    "editor.fontSize": 16,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none"
 }

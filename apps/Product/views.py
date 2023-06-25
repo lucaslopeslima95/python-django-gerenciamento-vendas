@@ -9,13 +9,13 @@ from django.db.models import Q
 
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')     
 @login_required(login_url="login_system")
-def main_menu_product(request,code_bar="without_specific_product"):
+def main_menu_product(request,name="without_specific_product"):
     form = searchProductForm()
-    if code_bar == "without_specific_product":
+    if name == "without_specific_product":
         products = Product.objects.all()
     else:
         form = searchProductForm(request.POST)
-        products = Product.objects.filter(code_bar=code_bar)
+        products = Product.objects.filter(name__startswith=name)
     
     return render(request,'product/main_menu_product.html',{'products':products,'form':form})
 
@@ -68,10 +68,12 @@ def main_menu_product_with_filter(request):
         if request.method == "POST":
             form = searchProductForm(request.POST)
             if form.is_valid():
-                code_bar = form.cleaned_data['code_bar']
+                name = None
+                name = form.cleaned_data['name']
+                
     except Exception as e:
         print(f"Exceção no filtar produco por codigo de barras - {e}")
-    return main_menu_product(request,code_bar)
+    return main_menu_product(request,name)
         
 
  

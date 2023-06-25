@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import render,redirect
-from .forms import *
+from .forms import registerUserForm,authForm,updateWithoutPasswordForm,updateUserPasswordForm
 from .models import User
 from django.contrib.auth import logout,login
 from django.contrib.auth import authenticate
@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.admin.views.decorators import user_passes_test
 from django.db.models import Q
-from Collaborator.forms import registerCollaboratorForm
+
 
 def initial_page(request):
     return render(request,'dashboard.html')
@@ -101,8 +101,8 @@ def update_user(request,id):
                         else:
                             messages.warning(request, "Username ja existe")
     except User.DoesNotExist and Exception as e:
-       print(f"Exceção no update user informations {e}")
-       return redirect('user:main_menu_user')
+       print(f"Exceção no update de user  - {e}")
+       
 
     return render(request,'user/update_user.html',{'form':form})
 
@@ -111,8 +111,9 @@ def update_user(request,id):
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
 def update_user_password(request,id):
-    form = updateUserPasswordForm(request.POST)
+    form = updateUserPasswordForm()
     if request.method == "POST":
+        form = updateUserPasswordForm(request.POST)
         if form.is_valid():
             new_password = form.cleaned_data['password']
             User.objects.get(id=id).set_password(new_password)
@@ -128,7 +129,7 @@ def main_menu_user(request):
  
  
 def page_not_found(request):
-   return render(request,'page_not_found.html')
+   return redirect('page_not_found.html')
      
      
      

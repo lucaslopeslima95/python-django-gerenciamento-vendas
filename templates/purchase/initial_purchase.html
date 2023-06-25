@@ -18,15 +18,18 @@
   </div>
 </div>
 {{ form.as_p}}
+{% for message in messages %}
+  <div class="alert alert-{{ message.tags }}">
+  {{ message }}
+  </div>
+{% endfor %}
 <div class="table-responsive">
-  <table class="table table-hover table-dark table-striped-columns">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Nome</th>
         <th scope="col">Valor Un.</th>
-        <th scope="col">Quantidade</th>
-        <th scope="col">Val. Total Produto</th>
         <th scope="col">Ação</th>
       </tr>
     </thead>
@@ -36,8 +39,6 @@
         <th scope="row">{{ item.product.id }}</th>
         <th scope="row">{{ item.product.name }}</th>
         <th scope="row">{{ item.price }}</th>
-        <th scope="row">{{ item.quantity }}</th>
-        <th scope="row">{% widthratio item.price 1 item.quantity %}</th>
         <th><a href="{% url 'purchase:remove_product_purchase' item.product.id %}" class="btn btn-primary">Remover</a>
         </th>
       </tr>

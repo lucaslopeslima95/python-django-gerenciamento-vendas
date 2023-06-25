@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.urls import reverse
 from .forms import searchProductToPurchaseForm
 from django.contrib import messages
 from Product.models import Product
@@ -9,6 +9,7 @@ from .DTO.PurchaseItemDTO import PurchaseItemDTO
 from Collaborator.models import Collaborator
 from Purchase.models import Purchase,PurchaseItem
 from User.models import User
+
 
 listPurchaseItemsDTO = []
 
@@ -34,11 +35,7 @@ def finish_purchase(request):
                 if form.is_valid():
                     username = form.cleaned_data['username']
                     password = form.cleaned_data['password']
-                    print('--------------------------------------------------')
-                    print(username)
-                    print(password)
                     collaborator = authenticate(request, username=username, password=password)
-                    print(collaborator)
                     
                     if collaborator is not None:
                         if save_purchase(username):
@@ -56,38 +53,28 @@ def finish_purchase(request):
     
 
 def find_product(request):
+    product = None
     try:
         form = searchProductToPurchaseForm(request.POST)
         if request.method == "POST":
             if form.is_valid():
                 code_bar = form.cleaned_data['code_bar']
-                quantity = form.cleaned_data['quantity']
-                for item in listPurchaseItemsDTO:
-                    if item.product.code_bar == code_bar:
-                        quantity_current = int(item.quantity)
-                        quantity_current += int(quantity)
-                        item.quantity = quantity_current
-                        item.total_cost = (quantity_current*item.price)
-                        return initial_page_purchase(request,listPurchaseItemsDTO)
-                                
+                              
                 if code_bar != None:
-                    try:
-                        product = Product.objects.get(code_bar=code_bar)
-                    except Exception as e:
-                        print(f"Produto Nao Existe - {e}")
-                        messages.warning(request, "Produto não encontrado")
-                        
+                    product = Product.objects.get(code_bar=code_bar)    
                     purchaseItem = PurchaseItemDTO()  
                     purchaseItem.product = product
                     purchaseItem.price = product.price
-                    purchaseItem.quantity = quantity
-                    purchaseItem.total_cost = (quantity*product.price)
+                    purchaseItem.total_cost = product.price
                     listPurchaseItemsDTO.append(purchaseItem)
-    except Exception as e:
-        print(f" Exceção no procurar produto - {e}")
+                    
+    except (Product.DoesNotExist,Exception) as e:
+        print(f"Exceção ao procurar produto {e}")
+        messages.warning(request, "Produto não encontrado")
+        return initial_page_purchase(request, listPurchaseItemsDTO)
+    
     request.method = "GET"   
-    return initial_page_purchase(request,listPurchaseItemsDTO)
-
+    return initial_page_purchase(request, listPurchaseItemsDTO)
      
 def remove_product_purchase(request,id):
     for produto in listPurchaseItemsDTO:
@@ -113,7 +100,7 @@ def save_purchase(username):
             purchaseItem = PurchaseItem()
             purchaseItem.fk_product = itemPurchaseDTO.product
             purchaseItem.price = itemPurchaseDTO.price
-            purchaseItem.quantity =  itemPurchaseDTO.quantitty
+            #purchaseItem.quantity =  itemPurchaseDTO.quantitty
             purchaseItem.fk_purchase = purchase_obj
             purchaseItem.fk_collaborator = collaborator
             purchaseItem.save()

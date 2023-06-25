@@ -20,7 +20,7 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Convêniencia SCI 2.0</h1>
                                 </div>
-                                <form action="{% url 'user:initial_page' %}" method="post">
+                                <form method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
                                     <hr>
