@@ -99,7 +99,10 @@ def update_collaborator_password(request,id):
         form = updateUserPasswordForm()  
     return render(request,'collaborator/update_collaborator.html',{'form':form})
 
- 
+def update_active_collaborator(request,id):
+    print(id)
+    Collaborator.objects.filter(id=id).update(active = not Collaborator.objects.get(id=id).active)
+    return redirect('collaborator:main_menu_collaborator')
 
  
 

@@ -30,11 +30,10 @@
             <th>{{ collaborator.name }}</th>
             <th>{{ collaborator.email }}</th>
             <th id="id_cpf">{{ collaborator.cpf }}</th>
-            
+            <input type="hidden" id="id_colab" value="{{collaborator.id}}">
             <th>
               <div class="form-check form-switch">
                 <input class="form-check-input" {% if collaborator.active %}checked{% endif %} type="checkbox" 
-                
                  role="switch" id="flexSwitchCheckDefault">
               </div>
             </th>
