@@ -28,7 +28,7 @@
           {% for collaborator in collaborators %}
           <tr>
             <th>{{ collaborator.name }}</th>
-            <th>{{ collaborator.email }}</th>
+            <th>{{ collaborator.user.email }}</th>
             <th id="id_cpf">{{ collaborator.cpf }}</th>
             <input type="hidden" id="id_colab" value="{{collaborator.id}}">
             <th>

@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.admin.views.decorators import user_passes_test
 from django.db.models import Q
+from User.models import User
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')         
 @login_required(login_url="login_system")
@@ -28,7 +29,11 @@ def save_collaborator(request):
                 if password != password_check:
                     messages.success(request, "As senha não coincidem")
                 else:
-                    Collaborator.objects.create(username=username,name=name, password=password,email=email,cpf=cpf,active=True)
+                    print(password)
+                    user = User.objects.create(username=username, password=password, email=email)
+                    Collaborator.objects.create(name=name,cpf=cpf, user=user)
+                    user.set_password(password)
+                    user.save()
                     messages.success(request, "Salvo com sucesso")
         else:
          form = registerCollaboratorForm()

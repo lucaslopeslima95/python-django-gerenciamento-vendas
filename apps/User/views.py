@@ -8,6 +8,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.admin.views.decorators import user_passes_test
 from django.db.models import Q
+from  django.dispatch import receiver
+from Collaborator.models import Collaborator
+from  django.db.models.signals import post_save
 
 
 def initial_page(request):
@@ -37,6 +40,8 @@ def login_system(request):
         
     return render(request, 'login.html', {'form': form})
 
+
+
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')   
 @login_required(login_url="login_system")
 def save_user(request):
@@ -46,24 +51,35 @@ def save_user(request):
             form = registerUserForm(request.POST)
             if form.is_valid():
                     username = form.cleaned_data['username']
+                    password = form.cleaned_data['password']
+                    password_check = form.cleaned_data['password_check']
+                    
                     if User.objects.filter(username=username).exists():
                         messages.warning(request, "Usuario já existe")
+                    elif password != password_check:
+                        messages.success(request, "As senha não coincidem")
+                        
                     else:
-                        password = form.cleaned_data['password']
                         is_staff = form.cleaned_data['is_staff']
                         email = form.cleaned_data['email']
                         cpf = form.cleaned_data['cpf']
                         name = form.cleaned_data['name']
-                        User.objects.create_user(username=username, password=password, email=email,is_staff=is_staff)
-                        #Collaborator.objects.create(username=username,cpf=cpf,active=active,name=name)
-                        
+                        user =  User.objects.create(username=username, password=password, email=email,is_staff=is_staff)
+                        Collaborator.objects.create(name=name,cpf=cpf, user=user)
+                        user.set_password(password)
+                        user.save()
                         messages.success(request, "Salvo com sucesso")
+                        
+                        return redirect('user:main_menu_user')
         else:
          form = registerUserForm()
     except Exception as e:
         print(f"Exceção ao salvar um Usuario - {e}")
         messages.warning(request, "Ocorreu um erro ao registrar o usuário")
     return render(request, 'user/save_user.html', {'form': form})
+
+
+
 
 
 def logout_system(request):
