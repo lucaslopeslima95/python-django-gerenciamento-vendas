@@ -4,5 +4,5 @@ function remove_messages() {
         if (messages) {
             messages.remove();
         }
-    }, 2000);
+    }, 4000);
 }

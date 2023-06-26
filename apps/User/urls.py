@@ -11,5 +11,6 @@ urlpatterns = [
     path('update_user/<int:id>',views.update_user, name='update_user'),
     path('update_user_password/<int:id>',views.update_user_password, name='update_user_password'),
     path("",views.login_system,name="initial_page"),
-    path("page_not_found",views.page_not_found,name="page_not_found")
+    path("page_not_found",views.page_not_found,name="page_not_found"),
+    path('generate_reports',views.generate_reports,name='generate_reports')
 ]

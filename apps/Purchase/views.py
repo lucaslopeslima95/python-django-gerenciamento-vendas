@@ -1,3 +1,4 @@
+from time import timezone
 from django.shortcuts import render,redirect
 from .forms import searchProductToPurchaseForm
 from django.contrib import messages
@@ -7,15 +8,23 @@ from django.contrib.auth import authenticate
 from .DTO.PurchaseItemDTO import PurchaseItemDTO
 from Collaborator.models import Collaborator
 from Purchase.models import Purchase,PurchaseItem
-from User.views import next_month_range, current_month_range
 from Purchase.models import DeadLine
 from datetime import datetime
 from datetime import date
 from django.db.models import Sum
 
+
 listPurchaseItemsDTO = []
 
 def calculates_and_returns_current_referral_spending(employee_who_made_the_purchase:Collaborator):
+    """Calcula e retorna o gasto atual com referências de um determinado colaborador.
+
+    Args:
+        employee_who_made_the_purchase (Collaborator): O colaborador que fez a compra.
+
+    Returns:
+        Decimal: O valor total gasto pelo colaborador em referências durante o período.
+    """
     deadLine = DeadLine.objects.get(id=1).DAY
     today = datetime.now().day
     
@@ -25,31 +34,65 @@ def calculates_and_returns_current_referral_spending(employee_who_made_the_purch
         if datetime.now().month+1 == 13:
             end_date = date((datetime.now().year+1),1 ,today)
         else: 
-            end_date = date(datetime.now().year,(datetime.now().month+1) ,today)
+            end_date = date(datetime.now().year,(datetime.now().month+1),today)
             
     else:
         start_date = date(datetime.now().year,(datetime.now().month-1) ,(deadLine+1))
         end_date = date(datetime.now().year,datetime.now().month,today)
-    print(1)
-    for purchase in Purchase.objects.filter(date_purchase__range=(start_date, end_date)):
-        items = purchase.purchaseitem_get.all()
-        print(1)
-        for item in items:
-            print(f"Colaborador: {employee_who_made_the_purchase.name}")
-            print(f"Produto: {item.product.name}")
-            print(f"Preço: {item.price}")
- 
         
-def calculates_and_returns_past_reference_spend():
+    listPurchases = Purchase.objects.filter(date_purchase__range=(
+        start_date, end_date),
+        collaborator__name=employee_who_made_the_purchase,
+        )
+    total_spended = listPurchases.aggregate(total=Sum('purchaseitem__price'))['total']
+    return total_spended
+    
+    
+def calculates_and_returns_past_reference_spend(employee_who_made_the_purchase:Collaborator):
+    """Calcula o preço total das compras de um determinado colaborador em um período específico.
+
+    Args:
+        employee_who_made_the_purchase (str): Nome do colaborador que fez a compra.
+
+    Returns:
+        Decimal: O valor total gasto pelo colaborador em referências durante o período.
+    """
     deadLine = DeadLine.objects.get(id=1).DAY
     today = datetime.now().day
-    start_date = date(datetime.now().year, (datetime.now().month-1) ,(deadLine+1))
-    end_date = date(datetime.now().year,datetime.now().month,deadLine)
-    print(Purchase.objects.filter(date_purchase__range=(start_date, end_date)))
+    
+    if today > deadLine:
+        start_date = date(datetime.now().year, (datetime.now().month-2) ,(deadLine+1))
+        end_date = date(datetime.now().year,(datetime.now().month-1) ,deadLine)
+    else:
+        start_date = date(datetime.now().year, (datetime.now().month-1) ,(deadLine+1))
+        end_date = date(datetime.now().year,datetime.now().month,deadLine)
+        
+   
+    try:
+        listPurchases = Purchase.objects.filter(date_purchase__range=(
+            start_date, end_date),
+            collaborator__name=employee_who_made_the_purchase,
+            )
+    except Exception as e:
+        print(f"Exceção ao buscar valores na referencia passada - {e}")
+    if not listPurchases:
+        return 0.0
+    
+    try:
+        total_spended = listPurchases.aggregate(total=Sum('purchaseitem__price'))['total']
+        if total_spended == None:
+            total_spended = 0.0
+            
+    except Exception as e:
+        print(f"Exceção ao somar os valores da referencia passada {e}")
+    
+    
+    return total_spended
+    
 
 
 
-def initial_page_purchase(request,listPurchaseItemsDTO = [],login_failed=False):
+def initial_page_purchase(request,listPurchaseItemsDTO = [],login_failed=False,total_spends_current=0.0,total_spends_last_referred=0.0):
     """Página inicial de compra.
 
     Renderiza a página inicial de compra, exibindo o formulário para adicionar
@@ -68,16 +111,22 @@ def initial_page_purchase(request,listPurchaseItemsDTO = [],login_failed=False):
         HttpResponse: Objeto HttpResponse que representa a resposta HTTP renderizada
         com a página inicial de compra.
     """
-    try:
-        form_code_bar = searchProductToPurchaseForm()
-        puchase_list_total_value = 0
-        for i in listPurchaseItemsDTO:
-            puchase_list_total_value += i.total_cost
-    except Exception as e:
-        print(f"Exceção ao salvar um colaborador {e}")
-        messages.warning(request, "Ocorreu um erro ao registrar o Produto")
-    return render(request, 'purchase/initial_purchase.html',
-                  {'form_code_bar':form_code_bar,"purchaseItems":listPurchaseItemsDTO,"total":puchase_list_total_value,"authForm":authForm,"login_failed":login_failed })
+    if request.method == "POST":
+        try:
+            form_code_bar = searchProductToPurchaseForm()
+            puchase_list_total_value = 0
+            for i in listPurchaseItemsDTO:
+                puchase_list_total_value += i.total_cost
+                
+        except Exception as e:
+            print(f"Exceção ao salvar um colaborador {e}")
+            messages.warning(request, "Ocorreu um erro ao adicionar o Produto")
+            
+        return render(request, 'purchase/initial_purchase.html',
+                    {'form_code_bar':form_code_bar,"purchaseItems":listPurchaseItemsDTO,
+                    "total":puchase_list_total_value,"authForm":authForm,"login_failed":login_failed,
+                        'total_spends_current':total_spends_current,'total_spends_last_referred':total_spends_last_referred
+                    })
 
 def finish_purchase(request):
     """
@@ -103,15 +152,20 @@ def finish_purchase(request):
                         user = authenticate(request, username=username, password=password)
                         if user is not None:
                             employee_who_made_the_purchase = Collaborator.objects.get(user=user.id)
-                            if save_purchase(employee_who_made_the_purchase,listPurchaseItemsDTO):
-                                messages.success(request, "Salvo com Sucesso.")
+                            if employee_who_made_the_purchase.active:
+                                if save_purchase(employee_who_made_the_purchase,listPurchaseItemsDTO):
+                                    messages.success(request, "Salvo com Sucesso.")
+                                    listPurchaseItemsDTO.clear()
+                                    current = calculates_and_returns_current_referral_spending(employee_who_made_the_purchase)
+                                    last = calculates_and_returns_past_reference_spend(employee_who_made_the_purchase)
+                                    messages.warning(request, f"Gastos na Refrencia Atual {current}")
+                                    messages.warning(request, f"Gastos na Ultima Refrencia  {last}")
+                                    return initial_page_purchase(request,total_spends_current=current,total_spends_last_referred=last)
+                            else:
                                 listPurchaseItemsDTO.clear()
-                                
-                                calculates_and_returns_current_referral_spending(employee_who_made_the_purchase)
-                                
-                                return redirect('puchase:initial_page_purchase')
-                                
-                                #implementar Logica para mostrar o consumo da referencia atual
+                                messages.warning(request, "Colaborador Inativo, por favor entre em contato com o RH")
+                                return redirect('purchase:initial_purchase')
+                              
                         else:
                             login_failed = True
                             messages.warning(request, "Usuario ou Senha Errados.")

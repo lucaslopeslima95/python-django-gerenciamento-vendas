@@ -14,7 +14,45 @@ from django.db.models.signals import post_save
 from Purchase.models import DeadLine
 from datetime import datetime
 import calendar
+from datetime import datetime
+from datetime import date
+from Purchase.models import Purchase,PurchaseItem
+from django.db.models import Sum
+from Product.models import Product
+from fpdf import FPDF
 
+
+def generate_reports(request):
+    deadLine = DeadLine.objects.get(id=1).DAY
+    today = datetime.now().day
+    
+    if today > deadLine:
+        start_date = date(datetime.now().year,datetime.now().month ,(deadLine+1))
+        
+        if datetime.now().month+1 == 13:
+            end_date = date((datetime.now().year+1),1 ,today)
+        else: 
+            end_date = date(datetime.now().year,(datetime.now().month+1),today)
+            
+    else:
+        start_date = date(datetime.now().year,(datetime.now().month-1) ,(deadLine+1))
+        end_date = date(datetime.now().year,datetime.now().month,today)
+        
+    listPurchases = Purchase.objects.filter(date_purchase__range=(start_date, end_date))
+
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font('Arial', 'B',10)
+    pdf.set_fill_color(240,240,240)
+    pdf.cell(0,10,'Vendas Referência Atual',1,0,'C',1)
+    for purchase in listPurchases:
+        pdf.cell(0,10,f" Colaborador: {purchase.collaborator}, {purchase.date_purchase}, {purchase.product}",1,1,'L',1)
+    
+    pdf.cell(0,10,f'Total: { current_billing()}',1,0,'C',1)
+   
+    pdf.output('test.pdf')
+    
+    return redirect('user:initial_page')
 
 def current_month_range():
     """Obtém a quantidade de dias do mês atual.
@@ -50,6 +88,28 @@ def next_month_range():
     return number_of_days
 
 
+def current_billing():
+    deadLine = DeadLine.objects.get(id=1).DAY
+    today = datetime.now().day
+    
+    if today > deadLine:
+        start_date = date(datetime.now().year,datetime.now().month ,(deadLine+1))
+        
+        if datetime.now().month+1 == 13:
+            end_date = date((datetime.now().year+1),1 ,today)
+        else: 
+            end_date = date(datetime.now().year,(datetime.now().month+1),today)
+            
+    else:
+        start_date = date(datetime.now().year,(datetime.now().month-1) ,(deadLine+1))
+        end_date = date(datetime.now().year,datetime.now().month,today)
+        
+    listPurchases = Purchase.objects.filter(date_purchase__range=(start_date, end_date))
+    total_spended = listPurchases.aggregate(total=Sum('purchaseitem__price'))['total']
+    
+    return total_spended
+
+
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')   
 def initial_page(request):
     """_summary_
@@ -71,7 +131,7 @@ def initial_page(request):
     else:
         dias = current_month_range()-today
         
-    return render(request,'dashboard.html',{'dias':dias})
+    return render(request,'dashboard.html',{'dias':dias,'current_billing':current_billing()})
 
 def login_system(request):
     form = authForm()    

@@ -19,9 +19,9 @@
 </div>
 {{ form.as_p}}
 {% for message in messages %}
-  <div class="alert alert-{{ message.tags }}">
+<div class="alert alert-{{ message.tags }}">
   {{ message }}
-  </div>
+</div>
 {% endfor %}
 <div class="table-responsive">
   <table class="table table-hover">
@@ -51,13 +51,14 @@
     <div class="d-flex flex-row align-items-center">
       Total:
       <input readonly placeholder="Total:" type="text" class="form-control" value="{{ total }}">
-      <a href="{% url 'purchase:finish_purchase'%}" class="btn btn-primary btn-sm" type="button" class="btn btn-primary"
+      <a class="btn btn-primary btn-sm" type="button" class="btn btn-primary"
         data-bs-toggle="modal" data-bs-target="#staticBackdrop">Finalizar Compra</a>
     </div>
   </div>
 </div>
-<div class="modal fade modal-dialog modal-dialog-centered modal {% if login_failed %} show shake{% endif %}" id="staticBackdrop" data-bs-backdrop="static"
-  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade modal-dialog modal-dialog-centered modal {% if login_failed %} show shake{% endif %}"
+  id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -66,14 +67,14 @@
       </div>
       {% for message in messages %}
       <div class="alert alert-{{ message.tags }}">
-      {{ message }}
+        {{ message }}
       </div>
       {% endfor %}
       <div class="modal-body ">
         <form action="{% url 'purchase:finish_purchase' %}" method="post">
-          {% csrf_token %}
-          {{ authForm }}
-          <div class="d-flex flex-row mx-auto justify-content-between align-items-center me-3 mt-3">
+            {% csrf_token %}
+            {{ authForm }}
+            <div class="d-flex flex-row mx-auto justify-content-between align-items-center me-3 mt-3">
             <button type="submit" class="btn btn-primary">Registrar Compra</button>
             <th><a href="{% url 'purchase:clean_all_products_purchase' %}" class="btn btn-danger">Fechar</a></th>
           </div>

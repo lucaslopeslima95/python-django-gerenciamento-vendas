@@ -11,6 +11,7 @@
   <div class="offcanvas-body">
     <div class="dropdown mt-3">
       <ul class="d-flex flex-column list-group" style="list-style: none;">
+        <li><a href="{% url 'user:initial_page' %}" class="btn btn-fill btn-primary list-group-item ">Inicio</a></li> 
         {% if user.is_superuser %}
         <li><a href="{% url 'user:main_menu_user' %}" class="btn btn-fill btn-primary list-group-item ">Usuarios</a></li> 
         {% endif %}
