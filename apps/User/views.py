@@ -13,16 +13,63 @@ from Collaborator.models import Collaborator
 from django.db.models.signals import post_save
 from Purchase.models import DeadLine
 from datetime import datetime
+import calendar
+
+
+def current_month_range():
+    """Obtém a quantidade de dias do mês atual.
+
+    Retorna o número de dias do mês atual com base na data atual.
+
+    Returns:
+        int: Número de dias do mês atual.
+    """
+    current_month = datetime.now().month
+    current_year = datetime.now().year
+    number_of_days = calendar.monthrange(current_year, current_month)[1]
+    
+    return number_of_days
+
+
+def next_month_range():
+    """Obtém a quantidade de dias do próximo mês.
+
+    Retorna o número de dias do próximo mês com base na data atual.
+
+    Returns:
+        int: Número de dias do próximo mês.
+    """
+    next_month = datetime.now().month
+    next_year = datetime.now().year
+    
+    if next_month > 12:
+        next_month = 1
+        next_year += 1
+        
+    number_of_days = calendar.monthrange(next_year, (next_month+1))[1]
+    return number_of_days
+
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')   
 def initial_page(request):
+    """_summary_
+
+    Args:
+        request (_request_): Essa def recebe apenas a requisição 
+        como parametro e apresenta a pagina inicial com 
+        retorno, aqui tambem é contruido os dados que constituem
+        o dashboar
+    Returns:
+        _Render_: O retorno sempre será do tipo html render
+    """
     deadLine = DeadLine.objects.get(id=1).DAY
     today = datetime.now().day
-    print(deadLine)
     if today > deadLine:
-        dias = 30-today
+        days_left_next_month = (next_month_range()-(next_month_range()-deadLine))
+        days_left_current_month = (current_month_range()-today)
+        dias = days_left_next_month + days_left_current_month
     else:
-        dias = deadLine-today
+        dias = current_month_range()-today
         
     return render(request,'dashboard.html',{'dias':dias})
 
