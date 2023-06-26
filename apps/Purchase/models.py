@@ -3,16 +3,19 @@ from Product.models import Product
 from Collaborator.models import Collaborator
 
 class Purchase(models.Model):
-    fk_colaborattor = models.ManyToManyField(Collaborator, related_name="purchases", through="PurchaseItem")
+    collaborator = models.ForeignKey(Collaborator,on_delete=models.CASCADE)
+    product = models.ManyToManyField(Product, related_name="purchases", through="PurchaseItem")
     date_purchase = models.DateTimeField(auto_now_add=True)
-    
+    def __str__(self):
+        return str(self.date_purchase)
     
 class PurchaseItem(models.Model):
-    fk_purchase = models.ForeignKey(Purchase,on_delete=models.CASCADE)
-    fk_product = models.ForeignKey(Product,on_delete=models.CASCADE)
-    fk_collaborator = models.ForeignKey(Collaborator,on_delete=models.CASCADE)
+    purchase = models.ForeignKey(Purchase,on_delete=models.CASCADE)
+    product = models.ForeignKey(Product,on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=8, decimal_places=2)
-    quantity = models.IntegerField()
+    def __str__(self):
+        return str(self.purchase)
+    
     
 class DeadLine(models.Model):
     DAY = models.IntegerField()

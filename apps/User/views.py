@@ -8,13 +8,23 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.admin.views.decorators import user_passes_test
 from django.db.models import Q
-from  django.dispatch import receiver
+from django.dispatch import receiver
 from Collaborator.models import Collaborator
-from  django.db.models.signals import post_save
+from django.db.models.signals import post_save
+from Purchase.models import DeadLine
+from datetime import datetime
 
-
+@user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')   
 def initial_page(request):
-    return render(request,'dashboard.html')
+    deadLine = DeadLine.objects.get(id=1).DAY
+    today = datetime.now().day
+    print(deadLine)
+    if today > deadLine:
+        dias = 30-today
+    else:
+        dias = deadLine-today
+        
+    return render(request,'dashboard.html',{'dias':dias})
 
 def login_system(request):
     form = authForm()    
@@ -36,7 +46,7 @@ def login_system(request):
             else:
                 messages.warning(request, "Credenciais inválidas.")
     except Exception as e :
-        print(" Exceção ao tentar fazer o login{e}")
+        print(f"Exceção ao tentar fazer o login - {e}")
         
     return render(request, 'login.html', {'form': form})
 
@@ -145,7 +155,7 @@ def main_menu_user(request):
  
  
 def page_not_found(request):
-   return redirect('page_not_found.html')
+   return render(request,'page_not_found.html')
      
      
      

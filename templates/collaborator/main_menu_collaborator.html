@@ -38,7 +38,7 @@
               </div>
             </th>
             
-            <th><a type="submit" class="btn btn-danger" 
+            <th><a type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar o Colaborador {{ collaborator.name }}')"
                 href="{% url 'collaborator:erase_collaborator' collaborator.id %}">Delete</a></th>
             <th><a type="submit" class="btn btn-primary" href="{% url 'collaborator:update_collaborator' collaborator.id %}">Atualizar Dados</a></th>
             <th><a type="submit" class="btn btn-primary" href="{% url 'collaborator:update_collaborator_password' collaborator.id %}">Atualizar Senha</a></th>

@@ -11,7 +11,7 @@ from Purchase.models import Purchase,PurchaseItem
 from User.models import User
 
 
-listPurchaseItemsDTO = []
+listPurchaseItemsDTO:PurchaseItemDTO = []
 
 def initial_page_purchase(request,listPurchaseItemsDTO = [],login_failed=False):
     try:
@@ -35,10 +35,10 @@ def finish_purchase(request):
                 if form.is_valid():
                     username = form.cleaned_data['username']
                     password = form.cleaned_data['password']
-                    collaborator = authenticate(request, username=username, password=password)
+                    user = authenticate(request, username=username, password=password)
                     
-                    if collaborator is not None:
-                        if save_purchase(username):
+                    if user is not None:
+                        if save_purchase(user,listPurchaseItemsDTO):
                             messages.success(request, "Salvo com Sucesso.")
                             return initial_page_purchase(request)
                             
@@ -88,24 +88,25 @@ def clean_all_products_purchase(request):
     return initial_page_purchase(request,listPurchaseItemsDTO)
 
 
-def save_purchase(username):
+def save_purchase(user,listPurchaseItemsDTO):
     try:
-        print(User.objects.filter(username=username))
-        collaborator = User.objects.filter(username=username)
+      
+        collaborator = Collaborator.objects.get(user=user.id)
         purchase_obj = Purchase()
+        purchase_obj.collaborator = collaborator
         purchase_obj.save()
-        purchase_obj.fk_colaborattor.add(collaborator)
-        
         for itemPurchaseDTO in listPurchaseItemsDTO:
             purchaseItem = PurchaseItem()
-            purchaseItem.fk_product = itemPurchaseDTO.product
+            Product.objects.filter(id = itemPurchaseDTO.product.id )\
+            .update(stock_quantity=(Product.objects.get(id = itemPurchaseDTO.product.id)\
+                                    .stock_quantity-1))
+            purchaseItem.product = itemPurchaseDTO.product
             purchaseItem.price = itemPurchaseDTO.price
-            #purchaseItem.quantity =  itemPurchaseDTO.quantitty
-            purchaseItem.fk_purchase = purchase_obj
-            purchaseItem.fk_collaborator = collaborator
+            purchaseItem.purchase = purchase_obj
             purchaseItem.save()
+
+            
     except Exception as e:
         print(f" Exceção ao salva os itens da compra - {e}")
     return True  
 
-    

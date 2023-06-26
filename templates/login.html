@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block title %} Login {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %} {% block content %}
 {% load static %}
-<div class="container-fluid ">
+<div class="container-fluid align-self-center">
     <div class="row justify-content-center rounded-3">
         <div class="col-xl-10 col-lg-12 col-md-9">
             <div class="card o-hidden border-0 shadow-lg my-5">
@@ -12,10 +12,10 @@
                     </div>
                     {% endfor %}
                     <div class="d-flex flex-row">
-                        <div class="col-6">
-                            <img src="{% static 'imgs/logo-sci.png' %}" alt="Logo Sci">
+                        <div class="col-5">
+                            <img src="{% static 'imgs/logo-sci.png' %}" alt="Logo Sci" class="col-12">
                         </div>
-                        <div class="col-6">
+                        <div class="col-7">
                             <div class="p-5">
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Convêniencia SCI 2.0</h1>
@@ -25,12 +25,11 @@
                                     {{ form.as_p }}
                                     <hr>
                                     <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn btn-primary btn-lg">
+                                        <button type="submit" class="btn btn-primary btn-lg mt-4">
                                             Login
                                         </button>
                                     </div>
-                                </form>
-                                <hr>
+                                </form>      
                             </div>
                         </div>
                     </div>
