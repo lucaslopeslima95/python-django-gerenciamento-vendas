@@ -111,22 +111,22 @@ def initial_page_purchase(request,listPurchaseItemsDTO = [],login_failed=False,t
         HttpResponse: Objeto HttpResponse que representa a resposta HTTP renderizada
         com a página inicial de compra.
     """
-    if request.method == "POST":
-        try:
-            form_code_bar = searchProductToPurchaseForm()
-            puchase_list_total_value = 0
-            for i in listPurchaseItemsDTO:
-                puchase_list_total_value += i.total_cost
-                
-        except Exception as e:
-            print(f"Exceção ao salvar um colaborador {e}")
-            messages.warning(request, "Ocorreu um erro ao adicionar o Produto")
+    
+    try:
+        form_code_bar = searchProductToPurchaseForm()
+        puchase_list_total_value = 0
+        for i in listPurchaseItemsDTO:
+            puchase_list_total_value += i.total_cost
             
-        return render(request, 'purchase/initial_purchase.html',
-                    {'form_code_bar':form_code_bar,"purchaseItems":listPurchaseItemsDTO,
-                    "total":puchase_list_total_value,"authForm":authForm,"login_failed":login_failed,
-                        'total_spends_current':total_spends_current,'total_spends_last_referred':total_spends_last_referred
-                    })
+    except Exception as e:
+        print(f"Exceção ao salvar um colaborador {e}")
+        messages.warning(request, "Ocorreu um erro ao adicionar o Produto")
+        
+    return render(request, 'purchase/initial_purchase.html',
+                {'form_code_bar':form_code_bar,"purchaseItems":listPurchaseItemsDTO,
+                "total":puchase_list_total_value,"authForm":authForm,"login_failed":login_failed,
+                    'total_spends_current':total_spends_current,'total_spends_last_referred':total_spends_last_referred
+                })
 
 def finish_purchase(request):
     """

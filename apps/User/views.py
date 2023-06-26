@@ -147,7 +147,7 @@ def login_system(request):
                 user = authenticate(request, username=username, password=password)
                 if user is not None:
                     login(request, user)
-                    return initial_page(request)
+                    return redirect('user:initial_page')
                 else:
                     messages.warning(request, "Usuario ou Senha Errados.")
             else:
@@ -194,9 +194,6 @@ def save_user(request):
         print(f"Exceção ao salvar um Usuario - {e}")
         messages.warning(request, "Ocorreu um erro ao registrar o usuário")
     return render(request, 'user/save_user.html', {'form': form})
-
-
-
 
 
 def logout_system(request):
