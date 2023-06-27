@@ -3,10 +3,10 @@ from .models import Collaborator
 from django.forms import ModelForm
 
 class registerCollaboratorForm(ModelForm):
-    name = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome","class": "form-control"}))
+    name = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome","class": "form-control","onchange":"generateUsername(this)"}))
     cpf = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "CPF","class": "form-control","oninput":"validateCPF(this)","onchange":"validateCPF(this)"}),label="CPF")
-    username = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome Usuario","class": "form-control"}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={"placeholder": "Email","class": "form-control"}))
+    username = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome Usuario","class": "form-control"}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "Senha","class": "form-control"}))
     password_check = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "Confirme a Senha","class": "form-control"}))
     class Meta:

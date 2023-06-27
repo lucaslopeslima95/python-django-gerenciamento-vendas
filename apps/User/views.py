@@ -246,7 +246,9 @@ def update_user_password(request,id):
         form = updateUserPasswordForm(request.POST)
         if form.is_valid():
             new_password = form.cleaned_data['password']
-            User.objects.get(id=id).set_password(new_password)
+            user = User.objects.get(id=id)
+            user.set_password(new_password)
+            user.save()
             messages.success(request, "Atualizado com sucesso")
             return redirect('user:main_menu_user')
     return render(request,'user/update_user.html',{'form':form})
