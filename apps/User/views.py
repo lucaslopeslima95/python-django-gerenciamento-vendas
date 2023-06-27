@@ -1,27 +1,23 @@
 from sqlite3 import IntegrityError
 from django.shortcuts import render,redirect
 from .forms import registerUserForm,authForm,updateWithoutPasswordForm,updateUserPasswordForm,findByUsernameForm
-from .models import User
+from django.contrib.admin.views.decorators import user_passes_test
+from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth import logout,login
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
+from Purchase.models import Purchase
 from django.contrib import messages
-from django.contrib.admin.views.decorators import user_passes_test
 from django.db.models import Q
 from Collaborator.models import Collaborator
 from Purchase.models import DeadLine
 from datetime import datetime
-import calendar
+from .models import User
 from datetime import datetime
 from datetime import date
-from Purchase.models import Purchase,PurchaseItem
 from django.db.models import Sum
 from fpdf import FPDF
-
-from io import BytesIO
-from django.http import HttpResponse
-from django.template.loader import get_template
-from xhtml2pdf import pisa
+import calendar
 
 def generate_reports(request):
     deadLine = DeadLine.objects.get(id=1).DAY
@@ -48,7 +44,7 @@ def generate_reports(request):
     pdf.cell(0, 10, 'Vendas Referência Atual', 1, 1, 'C', 1)
     for purchase in listPurchases:
         purchase_date = purchase.date_purchase.strftime('%d/%m/%Y')
-        pdf.cell(0, 10, f"Colaborador: {purchase.collaborator},Data:{purchase_date}", 1, 1, 'L', 1)
+        pdf.cell(0, 10, f"Colaborador: {purchase.collaborator},Data:{purchase_date},Preço: {purchase.product}", 1, 1, 'L', 1)
 
     pdf.cell(0, 10, f'Total: {current_billing()}', 1, 0, 'C', 1)
 
@@ -178,7 +174,7 @@ def login_system(request):
     return render(request, 'login.html', {'form': form})
 
 
-
+@csrf_protect
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')   
 @login_required(login_url="login_system")
 def save_user(request):

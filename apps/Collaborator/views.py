@@ -36,12 +36,16 @@ def save_collaborator(request):
                 if password != password_check:
                     messages.success(request, "As senha não coincidem")
                 else:
-                    user = User.objects.create(username=username, password=password, email=email)
-                    Collaborator.objects.create(name=name,cpf=cpf, user=user)
-                    user.set_password(password)
-                    user.save()
-                    messages.success(request, "Salvo com sucesso")
-                    return redirect('collaborator:main_menu_collaborator')
+                    if not Collaborator.objects.filter(cpf=cpf).exists():
+                        user = User.objects.create(username=username, password=password, email=email)
+                        Collaborator.objects.create(name=name,cpf=cpf, user=user)
+                        user.set_password(password)
+                        user.save()
+                        messages.success(request, "Salvo com sucesso")
+                        return redirect('collaborator:main_menu_collaborator')
+                    else :
+                        messages.warning(request, "Cpf ja existe")
+                        return redirect('collaborator:main_menu_collaborator')
 
         else:
          form = registerCollaboratorForm()

@@ -26,6 +26,9 @@ def save_product(request):
         if request.method == "POST":
             form = registerProductForm(request.POST)
             if form.is_valid():
+                code_bar_with_mask = form.cleaned_data['code_bar']
+                code_bar = code_bar_with_mask.replace("-","").replace("-","").replace("-","")
+                form.initial['code_bar'] = code_bar
                 form.save()
                 messages.success(request, "Salvo com sucesso")
                 return redirect ('product:main_menu_product')

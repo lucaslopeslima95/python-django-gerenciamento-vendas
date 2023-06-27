@@ -8,5 +8,5 @@ urlpatterns = [
     path('find_product',views.find_product,name="find_product"),
     path('remove_product_purchase/<int:id>',views.remove_product_purchase,name="remove_product_purchase"),
     path('clean_all_products_purchase',views.clean_all_products_purchase,name="clean_all_products_purchase"),
-    path('finish_purchase',views.finish_purchase,name="finish_purchase")
+    path('finish_purchase',views.finish_purchase,name="finish_purchase"),
     ]

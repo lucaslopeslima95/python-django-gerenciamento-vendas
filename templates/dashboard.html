@@ -33,5 +33,12 @@
             <h3>R$: {{ current_billing|floatformat:2 }}</h3>
         </div>
     </div>
+    <div class="card col-4 me-auto" style="width: 18rem;">
+        <img src="{% static 'imgs/faturamento.png'%}" class="card-img-top vh-75" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Faturamento Total Da Referencia Atual</h5>
+            <h3>R$: {{ current_billing|floatformat:2 }}</h3>
+        </div>
+    </div>
 </div>
 {% endblock content %} {% block javascripts %}{% endblock javascripts %}

@@ -49,29 +49,31 @@
         </thead>
         <tbody>
           {% for collaborator in collaborators %}
-          <tr>
-            <th>{{ collaborator.name }}</th>
-            <th>{{ collaborator.user.email }}</th>
-            <th id="id_cpf">{{ collaborator.cpf }}</th>
-            <input type="hidden" id="id_colab" value="{{collaborator.id}}">
-            <th>
-              <div class="form-check form-switch">
-                <input class="form-check-input" {% if collaborator.active %}checked{% endif %} type="checkbox" 
-                 role="switch" id="flexSwitchCheckDefault">
-              </div>
-            </th>
-            
-            <th><a type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar o Colaborador {{ collaborator.name }}')"
-                href="{% url 'collaborator:erase_collaborator' collaborator.id %}">Delete
-                <i class="fa-sharp fa-solid fa-trash"></i>
-              </a></th>
-            <th><a type="submit" class="btn btn-primary" href="{% url 'collaborator:update_collaborator' collaborator.id %}">Editar Dados
-              <i class="fa-solid fa-pen-to-square"></i>
-            </a></th>
-            <th><a type="submit" class="btn btn-primary" href="{% url 'collaborator:update_collaborator_password' collaborator.id %}">Editar Senha
-              <i class="fa-solid fa-lock"></i>
-            </a></th>
-          </tr>
+              {% if not user.username == collaborator.user.username %}
+              <tr>
+                <th>{{ collaborator.name }}</th>
+                <th>{{ collaborator.user.email }}</th>
+                <th id="id_cpf">{{ collaborator.cpf }}</th>
+                <input type="hidden" id="id_colab" value="{{collaborator.id}}">
+                <th>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" {% if collaborator.active %}checked{% endif %} type="checkbox" 
+                    role="switch" id="flexSwitchCheckDefault">
+                  </div>
+                </th>
+                
+                <th><a type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar o Colaborador {{ collaborator.name }}')"
+                    href="{% url 'collaborator:erase_collaborator' collaborator.id %}">Delete
+                    <i class="fa-sharp fa-solid fa-trash"></i>
+                  </a></th>
+                <th><a type="submit" class="btn btn-primary" href="{% url 'collaborator:update_collaborator' collaborator.id %}">Editar Dados
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </a></th>
+                <th><a type="submit" class="btn btn-primary" href="{% url 'collaborator:update_collaborator_password' collaborator.id %}">Editar Senha
+                  <i class="fa-solid fa-lock"></i>
+                </a></th>
+              </tr>
+              {% endif %}
           {% endfor %}
         </tbody>
       </table>

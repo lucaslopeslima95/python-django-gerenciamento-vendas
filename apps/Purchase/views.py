@@ -1,4 +1,3 @@
-from time import timezone
 from django.shortcuts import render,redirect
 from .forms import searchProductToPurchaseForm
 from django.contrib import messages
@@ -89,10 +88,10 @@ def calculates_and_returns_past_reference_spend(employee_who_made_the_purchase:C
     
     return total_spended
     
+                        
 
-
-
-def initial_page_purchase(request,listPurchaseItemsDTO = [],login_failed=False,total_spends_current=0.0,total_spends_last_referred=0.0):
+def initial_page_purchase(request,listPurchaseItemsDTO = [],login_failed=False,total_spends_current=0.0,total_spends_last_referred=0.0,show_spends = False):
+    
     """Página inicial de compra.
 
     Renderiza a página inicial de compra, exibindo o formulário para adicionar
@@ -125,7 +124,8 @@ def initial_page_purchase(request,listPurchaseItemsDTO = [],login_failed=False,t
     return render(request, 'purchase/initial_purchase.html',
                 {'form_code_bar':form_code_bar,"purchaseItems":listPurchaseItemsDTO,
                 "total":puchase_list_total_value,"authForm":authForm,"login_failed":login_failed,
-                    'total_spends_current':total_spends_current,'total_spends_last_referred':total_spends_last_referred
+                    'total_spends_current':total_spends_current,'total_spends_last_referred':total_spends_last_referred,
+                    'show_spends':show_spends
                 })
 
 def finish_purchase(request):
@@ -140,36 +140,35 @@ def finish_purchase(request):
 
     """
     try:
-        if len(listPurchaseItemsDTO) == 0:
-            messages.warning(request, "Não é possivel Finalizar Sem Adicionar Produtos")
-            return initial_page_purchase(request)
-        else:
-            if request.method == "POST":
-                    form = authForm(request.POST)
-                    if form.is_valid():
-                        username = form.cleaned_data['username']
-                        password = form.cleaned_data['password']
-                        user = authenticate(request, username=username, password=password)
-                        if user is not None:
-                            employee_who_made_the_purchase = Collaborator.objects.get(user=user.id)
-                            if employee_who_made_the_purchase.active:
-                                if save_purchase(employee_who_made_the_purchase,listPurchaseItemsDTO):
-                                    messages.success(request, "Salvo com Sucesso.")
-                                    listPurchaseItemsDTO.clear()
-                                    current = calculates_and_returns_current_referral_spending(employee_who_made_the_purchase)
-                                    last = calculates_and_returns_past_reference_spend(employee_who_made_the_purchase)
-                                    return initial_page_purchase(request,total_spends_current=current,total_spends_last_referred=last)
-                            else:
+        if request.method == "POST":
+                form = authForm(request.POST)
+                if form.is_valid():
+                    username = form.cleaned_data['username']
+                    password = form.cleaned_data['password']
+                    user = authenticate(request, username=username, password=password)
+                    if user is not None:
+                        employee_who_made_the_purchase = Collaborator.objects.get(user=user.id)
+                        if employee_who_made_the_purchase.active:
+                            if save_purchase(employee_who_made_the_purchase,listPurchaseItemsDTO):
+                                current = calculates_and_returns_current_referral_spending(employee_who_made_the_purchase)
+                                last = calculates_and_returns_past_reference_spend(employee_who_made_the_purchase)
+                                if len(listPurchaseItemsDTO) == 0:
+                                    return initial_page_purchase(request,total_spends_current=current,total_spends_last_referred=last,show_spends=True)
                                 listPurchaseItemsDTO.clear()
-                                messages.warning(request, "Colaborador Inativo, por favor entre em contato com o RH")
-                                return redirect('purchase:initial_purchase')
-                              
+                                messages.success(request, "Salvo com Sucesso.")
+                                show_spends = True
+                                return initial_page_purchase(request,total_spends_current=current,total_spends_last_referred=last,show_spends=show_spends)
                         else:
-                            login_failed = True
-                            messages.warning(request, "Usuario ou Senha Errados.")
-                            return initial_page_purchase(request,login_failed=login_failed,listPurchaseItemsDTO=listPurchaseItemsDTO)
+                            listPurchaseItemsDTO.clear()
+                            messages.warning(request, "Colaborador Inativo, por favor entre em contato com o RH")
+                            return redirect('purchase:initial_purchase')
+                            
                     else:
-                        messages.warning(request, "Credenciais inválidas.")
+                        login_failed = True
+                        messages.warning(request, "Usuario ou Senha Errados.")
+                        return initial_page_purchase(request,login_failed=login_failed,listPurchaseItemsDTO=listPurchaseItemsDTO)
+                else:
+                    messages.warning(request, "Credenciais inválidas.")
     except (Exception,Product.DoesNotExist) as e:
         print(f" Exceção ao finalizar a compra - {e}")
         
