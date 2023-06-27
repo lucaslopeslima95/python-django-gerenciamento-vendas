@@ -2,7 +2,22 @@
 {% block title %} Usuarios {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
+<div class="d-flex flex-row col-2 vw-100 justify-content-center">
 <div class="card">
+  <div class="card-header p-2">
+    Filtre Por Nome de Usuario
+  </div>
+  <div class="card-body">
+    {{ findByUsernameForm }}
+  </div>
+  <div class="card-footer d-flex justify-content-center">
+      <a href="http://" class="btn btn-primary btn-sm">
+        Buscar
+        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+      </a>
+  </div>
+</div>
+<div class="card col-10">
   {% for message in messages %}
   <div class="alert alert-{{ message.tags }}">
     {{ message }}
@@ -10,7 +25,10 @@
   {% endfor %}
   <div class="card-header">
     <h4 class="card-title">Usuarios</h4>
-    <td class="px-1"><a href="{% url 'user:save_user' %}" class="btn btn-primary btn-sm">Registrar Novo Usuario</a></td>
+    <td class="px-1"><a href="{% url 'user:save_user' %}" class="btn btn-primary btn-sm">Registrar Novo Usuario
+      <i class="fa-regular fa-plus"></i>
+    </a>
+    </td>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -24,18 +42,27 @@
         </thead>
         <tbody>
           {% for user in users %}
-          <tr>
-            <th>{{ user.username }}</th>
-            <th>{{ user.email }}</th>
-            <th><a type="submit" class="btn btn-danger" onclick="return confirm('Deseja realmente Deletar?')" href="{% url 'user:erase_user' user.id %}">Delete</a></th>
-            <th><a type="submit" class="btn btn-primary" href="{% url 'user:update_user' user.id %}">Atualizar Dados</a></th>
-            <th><a type="submit" class="btn btn-primary" href="{% url 'user:update_user_password' user.id %}">Atualizar Senha</a></th>
-          </tr>
+            {% if user.is_staff %}
+              <tr>
+                <th>{{ user.username }}</th>
+                <th>{{ user.email }}</th>
+                <th><a type="submit" class="btn btn-danger" onclick="return confirm('Deseja realmente Deletar?')" href="{% url 'user:erase_user' user.id %}">Delete
+                  <i class="fa-sharp fa-solid fa-trash"></i>
+                </a></th>
+                <th><a type="submit" class="btn btn-primary" href="{% url 'user:update_user' user.id %}">Atualizar Dados
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </a></th>
+                <th><a type="submit" class="btn btn-primary" href="{% url 'user:update_user_password' user.id %}">Atualizar Senha
+                  <i class="fa-solid fa-lock"></i>
+                </a></th>
+              </tr>
+              {% endif %}
           {% endfor %}
         </tbody>
       </table>
     </div>
   </div>
+</div>
 </div>
 {% endblock content %}
 {% block javascripts %}{% endblock javascripts %}

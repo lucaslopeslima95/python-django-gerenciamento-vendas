@@ -7,10 +7,10 @@
     {{ message }}
   </div>
   {% endfor %}
-  <h1 class="mb-3">Atualizar Colaborador</h1>
+  <h1 class="mb-3">Atualização Cadastral</h1>
   <form method="post">
     {% csrf_token %} {{ form.as_p }}
-    <br />
+    <br/>
     <div class="d-flex justify-content-center">
       <input type="submit" onclick="return confirm('Deseja Realmente Atualizar')" value="Atualizar" class="btn btn-primary btn-sm"
         id="btn_update_collaborator" />

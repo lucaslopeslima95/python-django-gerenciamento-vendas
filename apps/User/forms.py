@@ -31,4 +31,6 @@ class updateUserPasswordForm(ModelForm):
     class Meta:
         model = User
         fields = ['password','password_check']
-    
+
+class findByUsernameForm(forms.Form):
+    username = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome Usuario","class": "form-control","title":"Nome de Usuario"}),label="Nome de Usuario")

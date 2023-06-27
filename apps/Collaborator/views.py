@@ -59,27 +59,17 @@ def update_collaborator(request,id):
         collaborator_selected = Collaborator.objects.get(id=id)
         form = updateWithoutPasswordForm(request.POST or None, instance=collaborator_selected)
         if request.method == "POST":
-                if form.is_valid():
-                        cpf = form.cleaned_data['cpf']
-                        cpf.replace(".","").replace(".","").replace("-","")
-                        username = form.cleaned_data['username']
-                        email = form.cleaned_data['email']
-                        #cpf = form.cleaned_data['cpf']
-                         
-                        if not Collaborator.objects.filter(Q(username=username) & ~Q(id=id)).exists():
-                            if not Collaborator.objects.filter(Q(email=email) & ~Q(id=id)).exists():
-                                if not Collaborator.objects.filter(Q(cpf=cpf) & ~Q(id=id)).exists():
-                                    form.save()
-                                    messages.success(request, "Atualizado com sucesso")
-                                    return redirect('collaborator:main_menu_collaborator')
-                                else:
-                                    messages.warning(request, "Cpf ja existe")    
-                            else:
-                                messages.warning(request, "Email ja existe")
-                        else:
-                            messages.warning(request, "Cpf ja existe")
-                else:
-                    messages.warning(request, "Dados Invalido")
+            if form.is_valid():
+                cpf = form.cleaned_data['cpf']
+                cpf.replace(".","").replace(".","").replace("-","")
+                username = form.cleaned_data['username']
+                email = form.cleaned_data['email']
+                #cpf = form.cleaned_data['cpf']
+                form.save()
+                messages.success(request, "Atualizado com sucesso")
+                return redirect('collaborator:main_menu_collaborator')
+            else:
+                messages.warning(request, "Dados Invalido")
             
     except Collaborator.DoesNotExist and Exception as e:
        print(f"Exceção no update do colaborador {e}")
@@ -96,9 +86,14 @@ def update_collaborator_password(request,id):
         form = updateUserPasswordForm(request.POST)
         if form.is_valid():
             new_password = form.cleaned_data['password']
-            Collaborator.objects.filter(id=id).update(password = new_password)
-            messages.success(request, "Atualizado com sucesso")
-            return redirect('collaborator:main_menu_collaborator')
+            new_password_check = form.cleaned_data['password_check']
+            if new_password == new_password_check:
+                collaborator = Collaborator.objects.get(id=id)
+                user = User.objects.get(id = collaborator.user)
+                user.set_password(new_password)
+                user.save()
+                messages.success(request, "Atualizado com sucesso")
+                return redirect('collaborator:main_menu_collaborator')
         else:
             messages.warning(request, "Dados Invalido")
     else:

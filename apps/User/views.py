@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import render,redirect
-from .forms import registerUserForm,authForm,updateWithoutPasswordForm,updateUserPasswordForm
+from .forms import registerUserForm,authForm,updateWithoutPasswordForm,updateUserPasswordForm,findByUsernameForm
 from .models import User
 from django.contrib.auth import logout,login
 from django.contrib.auth import authenticate
@@ -246,18 +246,24 @@ def update_user_password(request,id):
         form = updateUserPasswordForm(request.POST)
         if form.is_valid():
             new_password = form.cleaned_data['password']
-            user = User.objects.get(id=id)
-            user.set_password(new_password)
-            user.save()
-            messages.success(request, "Atualizado com sucesso")
-            return redirect('user:main_menu_user')
+            new_password_check = form.cleaned_data['password_check']
+            if new_password == new_password_check:
+                user = User.objects.get(id=id)
+                user.set_password(new_password)
+                user.save()
+                messages.success(request, "Atualizado com sucesso")
+                return redirect('user:main_menu_user')
+            else:
+                messages.error(request,"A senhas devem se iguais")
+                redirect('update_user_password')
+                
     return render(request,'user/update_user.html',{'form':form})
 
  
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
 def main_menu_user(request):
-     return render(request,'user/main_menu_users.html',{'users':User.objects.all()})
+     return render(request,'user/main_menu_users.html',{'users':User.objects.all(),'findByUsernameForm':findByUsernameForm})
  
  
 def page_not_found(request):
