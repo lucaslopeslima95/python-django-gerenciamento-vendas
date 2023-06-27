@@ -51,8 +51,8 @@
     <div class="d-flex flex-row align-items-center">
       Total:
       <input readonly placeholder="Total:" type="text" class="form-control" value="{{ total }}">
-      <a class="btn btn-primary btn-sm" type="button" class="btn btn-primary"
-        data-bs-toggle="modal" data-bs-target="#staticBackdrop">Finalizar Compra</a>
+      <a class="btn btn-primary btn-sm" type="button" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">Finalizar Compra</a>
     </div>
   </div>
 </div>
@@ -72,9 +72,9 @@
       {% endfor %}
       <div class="modal-body ">
         <form action="{% url 'purchase:finish_purchase' %}" method="post">
-            {% csrf_token %}
-            {{ authForm }}
-            <div class="d-flex flex-row mx-auto justify-content-between align-items-center me-3 mt-3">
+          {% csrf_token %}
+          {{ authForm }}
+          <div class="d-flex flex-row mx-auto justify-content-between align-items-center me-3 mt-3">
             <button type="submit" class="btn btn-primary">Registrar Compra</button>
             <th><a href="{% url 'purchase:clean_all_products_purchase' %}" class="btn btn-danger">Fechar</a></th>
           </div>
@@ -85,4 +85,5 @@
     </div>
   </div>
 </div>
+
 {% endblock content %} {% block javascripts %}{% endblock javascripts %}

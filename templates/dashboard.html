@@ -1,10 +1,20 @@
 {% extends 'base.html' %}
 {% block title %} Dashboard {% endblock %}
-{% block stylesheets %}{% endblock stylesheets %} 
+{% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
 {% load static %}
-<div class="container-fluid d-flex flex-row align-itens-center">
-    <th><a href="{% url 'user:generate_reports' %}" class="btn btn-primary">Gerar Relatorio Da Referencia Atual</a></th>
+<div class="container-fluid d-flex flex-row justify-content-center">
+    <div class="card col-4">
+        <div class="card-header">
+            <li style="list-style: none;">
+                <h6>Relatorios</h6>
+            </li>
+        </div>
+        <ul class="d-flex align-items-center">
+            <li><a href="{% url 'user:generate_reports' %}" class="btn btn-primary">Gerar Relatorio Da Referencia
+                    Atual</a></li>
+        </ul>
+    </div>
     <div class="card col-4 ms-auto" style="width: 18rem;">
         <img src="{% static 'imgs/calendar.jpg'%}" class="card-img-top" alt="...">
         <div class="card-body">
@@ -16,11 +26,11 @@
             {% endif %}
         </div>
     </div>
-    <div class="card w-25 col-8 me-auto space-between" style="width: 18rem;">
+    <div class="card col-4 me-auto" style="width: 18rem;">
         <img src="{% static 'imgs/faturamento.png'%}" class="card-img-top vh-75" alt="...">
         <div class="card-body">
             <h5 class="card-title">Faturamento Total Da Referencia Atual</h5>
-            <h3>R$: {{ current_billing }}.00</h3>
+            <h3>R$: {{ current_billing|floatformat:2 }}</h3>
         </div>
     </div>
 </div>

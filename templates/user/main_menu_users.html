@@ -2,20 +2,23 @@
 {% block title %} Usuarios {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
-<div class="d-flex flex-row col-2 vw-100 justify-content-center">
+<div class="d-flex flex-row">
 <div class="card">
   <div class="card-header p-2">
     Filtre Por Nome de Usuario
   </div>
   <div class="card-body">
-    {{ findByUsernameForm }}
-  </div>
-  <div class="card-footer d-flex justify-content-center">
-      <a href="http://" class="btn btn-primary btn-sm">
+    <form action="{% url 'user:main_menu_user_with_filter' %}" method="post">
+      {% csrf_token %}
+      {{ findByUsernameForm }}
+       <div class="d-flex justify-content-center mt-3">
+        <button type="submit" class="btn btn-fill btn-primary btn-sm">
         Buscar
         <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-      </a>
-  </div>
+      </button>
+      </div>
+    </form>
+    </div>
 </div>
 <div class="card col-10">
   {% for message in messages %}
@@ -27,6 +30,7 @@
     <h4 class="card-title">Usuarios</h4>
     <td class="px-1"><a href="{% url 'user:save_user' %}" class="btn btn-primary btn-sm">Registrar Novo Usuario
       <i class="fa-regular fa-plus"></i>
+      <td class="px-1"><a href="{% url 'user:main_menu_user' %}" class="btn btn-primary btn-sm ms-1">Listar Todos</a></td>
     </a>
     </td>
   </div>
@@ -49,10 +53,10 @@
                 <th><a type="submit" class="btn btn-danger" onclick="return confirm('Deseja realmente Deletar?')" href="{% url 'user:erase_user' user.id %}">Delete
                   <i class="fa-sharp fa-solid fa-trash"></i>
                 </a></th>
-                <th><a type="submit" class="btn btn-primary" href="{% url 'user:update_user' user.id %}">Atualizar Dados
+                <th><a type="submit" class="btn btn-primary" href="{% url 'user:update_user' user.id %}">Editar Dados
                   <i class="fa-solid fa-pen-to-square"></i>
                 </a></th>
-                <th><a type="submit" class="btn btn-primary" href="{% url 'user:update_user_password' user.id %}">Atualizar Senha
+                <th><a type="submit" class="btn btn-primary" href="{% url 'user:update_user_password' user.id %}">Editar Senha
                   <i class="fa-solid fa-lock"></i>
                 </a></th>
               </tr>

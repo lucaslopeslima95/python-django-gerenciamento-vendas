@@ -2,7 +2,27 @@
 {% block title %} Colaboradores {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
-<div class="card">
+<div class="d-flex flex-row">
+  <div class="card col-2">
+    <div class="card-header p-3">
+      Filtre Por Nome
+      <br>
+      <br>
+    </div>
+    <div class="card-body">
+      <form action="{% url 'collaborator:main_menu_collaborator_with_filter'  %}" method="post">
+        {% csrf_token %}
+        {{ findByNameForm }}
+         <div class="card-footer d-flex justify-content-center">
+          <button type="submit" class="btn btn-fill btn-primary btn-sm">
+          Buscar
+          <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+        </button>
+        </div>
+      </form>
+      </div>
+  </div>
+<div class="card col-10">
   {% for message in messages %}
   <div class="alert alert-{{ message.tags }}">
     {{ message }}
@@ -10,7 +30,10 @@
   {% endfor %}
   <div class="card-header">
     <h4 class="card-title">Colaboradores</h4>
-    <td class="px-1"><a href="{% url 'collaborator:save_collaborator' %}" class="btn btn-primary btn-sm">Registrar Novo Colaborador</a></td>
+    <td class="px-1"><a href="{% url 'collaborator:save_collaborator' %}" class="btn btn-primary btn-sm">Registrar Novo Colaborador
+      <i class="fa-regular fa-plus"></i>
+    </a></td>
+    <td class="px-1"><a href="{% url 'collaborator:main_menu_collaborator' %}" class="btn btn-primary btn-sm">Listar Todos</a></td>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -39,15 +62,22 @@
             </th>
             
             <th><a type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar o Colaborador {{ collaborator.name }}')"
-                href="{% url 'collaborator:erase_collaborator' collaborator.id %}">Delete</a></th>
-            <th><a type="submit" class="btn btn-primary" href="{% url 'collaborator:update_collaborator' collaborator.id %}">Atualizar Dados</a></th>
-            <th><a type="submit" class="btn btn-primary" href="{% url 'collaborator:update_collaborator_password' collaborator.id %}">Atualizar Senha</a></th>
+                href="{% url 'collaborator:erase_collaborator' collaborator.id %}">Delete
+                <i class="fa-sharp fa-solid fa-trash"></i>
+              </a></th>
+            <th><a type="submit" class="btn btn-primary" href="{% url 'collaborator:update_collaborator' collaborator.id %}">Editar Dados
+              <i class="fa-solid fa-pen-to-square"></i>
+            </a></th>
+            <th><a type="submit" class="btn btn-primary" href="{% url 'collaborator:update_collaborator_password' collaborator.id %}">Editar Senha
+              <i class="fa-solid fa-lock"></i>
+            </a></th>
           </tr>
           {% endfor %}
         </tbody>
       </table>
     </div>
   </div>
+</div>
 </div>
 {% endblock content %}
 {% block javascripts %}{% endblock javascripts %}

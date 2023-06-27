@@ -1,15 +1,20 @@
 {% extends 'base.html' %} {% block title %} Atualização de Colaboradores {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %} {% block content %}
-
 <div class="card p-5">
   {% for message in messages %}
   <div class="alert alert-{{ message.tags }}">
     {{ message }}
   </div>
   {% endfor %}
-  <h1 class="mb-3">Atualização Cadastral</h1>
+  <div class="card-header rounded">
+    <a href="{% url 'collaborator:main_menu_collaborator'%}">
+        <i class="fa-sharp fa-solid fa-arrow-left fa-2xl"></i>
+    </a>
+    Voltar ao menu principal
+  </div>
   <form method="post">
-    {% csrf_token %} {{ form.as_p }}
+    {% csrf_token %} 
+    {{ form.as_p }}
     <br/>
     <div class="d-flex justify-content-center">
       <input type="submit" onclick="return confirm('Deseja Realmente Atualizar')" value="Atualizar" class="btn btn-primary btn-sm"
@@ -17,5 +22,4 @@
     </div>
   </form>
 </div>
-
 {% endblock content %} {% block javascripts %}{% endblock javascripts %}

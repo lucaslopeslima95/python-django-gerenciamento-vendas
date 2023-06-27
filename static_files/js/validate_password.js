@@ -1,27 +1,35 @@
-function validarSenha() {
+function validatePassword() {
+    var password = document.getElementById("id_password").value;
+    var confirmPassword = document.getElementById("id_password_check").value;
     
+    var meuModal = new bootstrap.Modal(document.getElementById('meuModalUnico'));
+    var text_to_alerts = document.getElementById('p_alerts');
+
+    if (password !== confirmPassword) {
+      alert("As senhas devem ser iguais.")
+      return false;
+    }
     
-    if (senha.length < 8) {
-        return false; 
+    if (password.length < 8) {
+      alert("A senha deve ter pelo menos 8 caracteres.");
+      return false;
     }
-
-    if (!/[a-z]/.test(senha) || !/[A-Z]/.test(senha) || !/[0-9]/.test(senha) || !/[!@#$%^&*]/.test(senha)) {
-        return false; // A senha não contém a combinação de caracteres necessária
+    
+    if (!/[A-Z]/.test(password)) {
+      alert("A senha deve conter pelo menos uma letra maiúscula.");
+      return false;
     }
-
-    if (senha.includes("seu_nome") || senha.includes("data_de_nascimento")) {
-        return false; // A senha contém informações pessoais óbvias
+    
+    if (!/\d/.test(password)) {
+      alert("A senha deve conter pelo menos um número.");
+      return false;
     }
-
-    if (/([a-zA-Z])\1{2,}/.test(senha)) {
-        return false; // A senha contém sequências repetitivas de caracteres
+    
+    if (!/[a-zA-Z]/.test(password)) {
+      alert("A senha deve conter pelo menos uma letra.");
+      return false;
     }
-
-    // Verificar com lista de senhas comuns
-    var senhasComuns = ["password", "12345678", "qwertyui",];
-    if (senhasComuns.includes(senha)) {
-        return false; // A senha está na lista de senhas comuns
-    }
-
-    return true; // A senha é segura
-}
+    
+    // Senha válida
+    return true;
+  }

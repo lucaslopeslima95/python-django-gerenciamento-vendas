@@ -10,8 +10,14 @@ from User.models import User
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')         
 @login_required(login_url="login_system")
-def main_menu_collaborator(request):
-     return render(request,'collaborator/main_menu_collaborator.html',{'collaborators':Collaborator.objects.all()})
+def main_menu_collaborator(request,name_to_filter=None):
+    collaborators = None
+    if not name_to_filter:
+        collaborators = Collaborator.objects.all()
+    else:
+       collaborators =  Collaborator.objects.filter(name__startswith=name_to_filter)
+    
+    return render(request,'collaborator/main_menu_collaborator.html',{'collaborators':collaborators,'findByNameForm': findByNameForm})
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')        
 @login_required(login_url="login_system")
@@ -26,6 +32,7 @@ def save_collaborator(request):
                 email = form.cleaned_data['email']
                 password = form.cleaned_data['password']
                 password_check = form.cleaned_data['password_check']
+                cpf = cpf.replace(".", "").replace(".", "").replace("-", "")
                 if password != password_check:
                     messages.success(request, "As senha não coincidem")
                 else:
@@ -47,7 +54,9 @@ def save_collaborator(request):
 @login_required(login_url="login_system")
 def erase_collaborator(request, id):
     try:
-        Collaborator.objects.get(id=id).delete()
+        collaborator = Collaborator.objects.get(id=id)
+        User.objects.get(id = collaborator.user.id).delete()
+        collaborator.delete() 
     except Exception as e:
         print(f"Exceção no deletar usuario {e}")
     return redirect('collaborator:main_menu_collaborator')
@@ -60,19 +69,26 @@ def update_collaborator(request,id):
         form = updateWithoutPasswordForm(request.POST or None, instance=collaborator_selected)
         if request.method == "POST":
             if form.is_valid():
+                
                 cpf = form.cleaned_data['cpf']
-                cpf.replace(".","").replace(".","").replace("-","")
-                username = form.cleaned_data['username']
-                email = form.cleaned_data['email']
-                #cpf = form.cleaned_data['cpf']
-                form.save()
+                cpf = cpf.replace(".", "").replace(".", "").replace("-", "")
+                collaborator_selected.cpf = cpf
+                collaborator_selected.user.email = form.cleaned_data['email']
+                collaborator_selected.user.username = form.cleaned_data['username']
+                collaborator_selected.user.save()
+                collaborator_selected.save()
+
                 messages.success(request, "Atualizado com sucesso")
                 return redirect('collaborator:main_menu_collaborator')
             else:
                 messages.warning(request, "Dados Invalido")
+        else:
+            form.initial['email'] = collaborator_selected.user.email
+            form.initial['username'] = collaborator_selected.user.username
             
     except Collaborator.DoesNotExist and Exception as e:
        print(f"Exceção no update do colaborador {e}")
+       messages.success(request, "Erro ao atualizar o colaborador")
        return redirect('collaborator:main_menu_collaborator')
 
     return render(request,'collaborator/update_collaborator.html',{'form':form})
@@ -107,8 +123,19 @@ def update_active_collaborator(request,id):
     Collaborator.objects.filter(id=id).update(active = not Collaborator.objects.get(id=id).active)
     return redirect('collaborator:main_menu_collaborator')
 
- 
-
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
+@login_required(login_url="login_system")
+def main_menu_collaborator_with_filter(request):
+    try:
+        name = None
+        if request.method == "POST":
+            form = findByNameForm(request.POST)
+            if form.is_valid():
+                name = form.cleaned_data['name']
+    except Exception as e:
+        print(f"Exceção ao pegar o valor para filtrar o Colaborador pelo Nome")
+    return main_menu_collaborator(request,name)
+    
      
      
      

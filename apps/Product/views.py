@@ -9,9 +9,9 @@ from django.db.models import Q
 
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')     
 @login_required(login_url="login_system")
-def main_menu_product(request,name="without_specific_product"):
+def main_menu_product(request,name=None):
     form = searchProductForm()
-    if name == "without_specific_product":
+    if not name:
         products = Product.objects.all()
     else:
         form = searchProductForm(request.POST)
@@ -28,6 +28,7 @@ def save_product(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, "Salvo com sucesso")
+                return redirect ('product:main_menu_product')
         else:
          form = registerProductForm()
     except Exception as e:
@@ -63,7 +64,6 @@ def update_product(request,id):
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
 def main_menu_product_with_filter(request):
-    code_bar = None
     try:
         if request.method == "POST":
             form = searchProductForm(request.POST)

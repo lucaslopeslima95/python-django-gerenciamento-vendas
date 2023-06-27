@@ -158,8 +158,6 @@ def finish_purchase(request):
                                     listPurchaseItemsDTO.clear()
                                     current = calculates_and_returns_current_referral_spending(employee_who_made_the_purchase)
                                     last = calculates_and_returns_past_reference_spend(employee_who_made_the_purchase)
-                                    messages.warning(request, f"Gastos na Refrencia Atual {current}")
-                                    messages.warning(request, f"Gastos na Ultima Refrencia  {last}")
                                     return initial_page_purchase(request,total_spends_current=current,total_spends_last_referred=last)
                             else:
                                 listPurchaseItemsDTO.clear()
