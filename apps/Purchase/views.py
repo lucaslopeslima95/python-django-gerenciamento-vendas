@@ -123,10 +123,9 @@ def initial_page_purchase(request,listPurchaseItemsDTO = [],login_failed=False,t
         
     return render(request, 'purchase/initial_purchase.html',
                 {'form_code_bar':form_code_bar,"purchaseItems":listPurchaseItemsDTO,
-                "total":puchase_list_total_value,"authForm":authForm,"login_failed":login_failed,
+                 "total":puchase_list_total_value,"authForm":authForm,"login_failed":login_failed,
                     'total_spends_current':total_spends_current,'total_spends_last_referred':total_spends_last_referred,
-                    'show_spends':show_spends
-                })
+                    'show_spends':show_spends})
 
 def finish_purchase(request):
     """
@@ -208,7 +207,7 @@ def find_product(request):
     except (Product.DoesNotExist,Exception) as e:
         print(f"Exceção ao procurar produto {e}")
         messages.warning(request, "Produto não encontrado")
-        return initial_page_purchase(request, listPurchaseItemsDTO)
+        return redirect('purchase:initial_purchase')
     
     request.method = "GET"   
     return initial_page_purchase(request, listPurchaseItemsDTO)
@@ -229,7 +228,7 @@ def remove_product_purchase(request,id):
     for produto in listPurchaseItemsDTO:
         if id == produto.product.id:
             listPurchaseItemsDTO.remove(produto)
-    return initial_page_purchase(request,listPurchaseItemsDTO)
+    return redirect('purchase:initial_page_purchase')
     
     
 def clean_all_products_purchase(request):
@@ -242,7 +241,7 @@ def clean_all_products_purchase(request):
         _request_: Retorna a pagina inicial de compras
     """
     listPurchaseItemsDTO.clear()
-    return initial_page_purchase(request,listPurchaseItemsDTO)
+    return redirect('purchase:clean_all_products_purchase')
 
 
 def save_purchase(collaborator,listPurchaseItemsDTO):
@@ -272,7 +271,7 @@ def save_purchase(collaborator,listPurchaseItemsDTO):
             purchaseItem.purchase = purchase_obj
             purchaseItem.save()
 
-        listPurchaseItemsDTO.clear()
+            listPurchaseItemsDTO.clear()
     except Exception as e:
         print(f"Exceção ao salva os itens da compra - {e}")
     return True  

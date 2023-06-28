@@ -1,13 +1,16 @@
-{% extends 'base.html' %} {% block title %} Registro de Compras {% endblock %}
-{% block stylesheets %}{% endblock stylesheets %} {% block content %}
 {% load static %}
-<div class="d-flex flex-row justify-content-between align-items-center me-3">
+<link href="{% static 'vendor/fontawesome-free/css/all.min.css'}" rel="stylesheet" type="text/css">
+<link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+<link href="{% static 'css/sb-admin-2.min.css'%}" rel="stylesheet">
+<div class="d-flex flex-row justify-content-between align-items-center">
   <form action="{% url 'purchase:find_product'%}" method="POST">
     <div class="d-flex flex-row align-items-center">
       {% csrf_token %}
       {{ form_code_bar.as_p }}
-      <button type="submit" value="Adicionar" class="btn btn-primary btn-sm ms-2 mt-1">
-        <i class="fa-solid fa-plus fa-beat"></i>
+      <button type="submit" value="Adicionar" class="btn btn-primary">
+        <i class="fa-solid fa-plus fa-lg"></i>
       </button>
     </div>
   </form>
@@ -105,6 +108,7 @@
     </div>
   </div>
 </div>
+<script src="https://kit.fontawesome.com/9958a2dab0.js" crossorigin="anonymous"></script>
 {% if show_spends %}
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -118,4 +122,4 @@
     });
 </script>
 {% endif %}
-{% endblock content %} {% block javascripts %}{% endblock javascripts %}
+{% block javascripts %}{% endblock javascripts %}

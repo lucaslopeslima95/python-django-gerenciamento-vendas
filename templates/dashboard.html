@@ -1,44 +1,95 @@
 {% extends 'base.html' %}
-{% block title %} Dashboard {% endblock %}
+{% block title %} Usuarios {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
-{% load static %}
-<div class="container-fluid d-flex flex-row justify-content-center">
-    <div class="card col-4">
-        <div class="card-header">
-            <li style="list-style: none;">
-                <h6>Relatorios</h6>
-            </li>
+    <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 mt-2 text-gray-800">Dashboard</h1>
+            <a href="{% url 'user:generate_reports' %}"
+                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                    class="fas mt-2 fa-download fa-sm text-white-50"></i>Relatorio Rf.Atual</a>
         </div>
-        <ul class="d-flex align-items-center">
-            <li><a href="{% url 'user:generate_reports' %}" class="btn btn-primary">Gerar Relatorio Da Referencia
-                    Atual</a></li>
-        </ul>
-    </div>
-    <div class="card col-4 ms-auto" style="width: 18rem;">
-        <img src="{% static 'imgs/calendar.jpg'%}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Fechamento</h5>
-            {% if dias == 0 %}
-            <p class="card-text">O fechamento da referencia da conveniencia Sci é Hoje</p>
-            {% else %}
-            <p class="card-text">Faltam {{dias}} dias para o fechamento</p>
-            {% endif %}
+        <div class="row">
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    Faturamento Total Da Referencia Atual</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">R$ {{current_billing|floatformat:2 }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                    Dias para o fechamento </div>
+                                    <div class="col-auto">
+                                        {% if dias == 0 %}
+                                        <h3 class="card-text">É Hoje</h3>
+                                        {% else %}
+                                        <h3 class="card-text">{{dias}}</h3>
+                                        {% endif %}
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-info shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                    Produtos Baixo Estoque
+                                </div>
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col-auto">
+                                        {% for products in products_low_stock %}
+                                        <h6>{{ products }}</h6>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="card col-4 me-auto" style="width: 18rem;">
-        <img src="{% static 'imgs/faturamento.png'%}" class="card-img-top vh-75" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Faturamento Total Da Referencia Atual</h5>
-            <h3>R$: {{ current_billing|floatformat:2 }}</h3>
-        </div>
-    </div>
-    <div class="card col-4 me-auto" style="width: 18rem;">
-        <img src="{% static 'imgs/faturamento.png'%}" class="card-img-top vh-75" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Faturamento Total Da Referencia Atual</h5>
-            <h3>R$: {{ current_billing|floatformat:2 }}</h3>
+        <!-- Area Chart -->
+        <div class="col-xl-12 col-lg-7">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Vendas</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="chart-area">
+                        <canvas id="myAreaChart"></canvas>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-{% endblock content %} {% block javascripts %}{% endblock javascripts %}
+
+
+
+{% endblock content %}
+{% block javascripts %}{% endblock javascripts %}

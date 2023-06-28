@@ -7,6 +7,7 @@ from django.contrib.auth import logout,login
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
 from Purchase.models import Purchase
+from Product.models import Product
 from django.contrib import messages
 from django.db.models import Q
 from Collaborator.models import Collaborator
@@ -18,6 +19,8 @@ from datetime import date
 from django.db.models import Sum
 from fpdf import FPDF
 import calendar
+from django.http import FileResponse
+from io import BytesIO
 
 def generate_reports(request):
     deadLine = DeadLine.objects.get(id=1).DAY
@@ -44,13 +47,16 @@ def generate_reports(request):
     pdf.cell(0, 10, 'Vendas Referência Atual', 1, 1, 'C', 1)
     for purchase in listPurchases:
         purchase_date = purchase.date_purchase.strftime('%d/%m/%Y')
-        pdf.cell(0, 10, f"Colaborador: {purchase.collaborator},Data:{purchase_date},Preço: {purchase.product}", 1, 1, 'L', 1)
+        products = purchase.product.all()
+        for product in products:
+            pdf.cell(0, 10, f"Colaborador: {purchase.collaborator}, Data: {purchase_date},Prod: {product.name}, Preço: {product.price}", 1, 1, 'L', 1)
+    total = current_billing()
+    formatted_total = "{:.2f}".format(total)
+    pdf.cell(0, 10, f'Total: {formatted_total}', 1, 0, 'C', 1)
 
-    pdf.cell(0, 10, f'Total: {current_billing()}', 1, 0, 'C', 1)
-
-    pdf.output('test.pdf')
-
-    return redirect('user:initial_page')
+    pdf_content = pdf.output(dest='S').encode('latin1')
+    pdf_bytes = BytesIO(pdf_content)
+    return FileResponse(pdf_bytes,filename="Relatorio.pdf")
 
 def current_month_range():
     """Obtém a quantidade de dias do mês atual.
@@ -115,6 +121,9 @@ def current_billing():
     
     return total_spended
 
+def products_low_stock():
+    print(Product.objects.filter(stock_quantity__lte=5))
+    return Product.objects.filter(stock_quantity__lte=10)
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')   
 def initial_page(request):
@@ -135,7 +144,7 @@ def initial_page(request):
     else:
         dias = current_month_range()-today
         
-    return render(request,'dashboard.html',{'dias':dias,'current_billing':current_billing()})
+    return render(request,'dashboard.html',{'dias':dias,'current_billing':current_billing(),'products_low_stock':products_low_stock()})
 
 def login_system(request):
     """Gerencia o sistema de login do usuário.
@@ -291,12 +300,15 @@ def update_user(request,id):
                                 messages.success(request, "Atualizado com sucesso")
                                 return redirect('user:main_menu_user')
                             else:
-                                messages.warning(request, "Email ja existe")    
+                                messages.warning(request, "Email ja existe")
+                                return redirect('user:main_menu_user')    
                         else:
                             messages.warning(request, "Username ja existe")
+                            return redirect('user:main_menu_user')
     except User.DoesNotExist and Exception as e:
        print(f"Exceção no update de user  - {e}")
        messages.error(request,"Erro ao atualizar o usuario, por favor contate o suporte")
+    
        return redirect('user:main_menu_user')
 
     return render(request,'user/update_user.html',{'form':form})
@@ -380,7 +392,7 @@ def page_not_found(request):
        redirecionado para a paginad e não encontrado que possui um botão 
        para o voltar a pagina de login
     """
-    return redirect('page_not_found')
+    return render(request,'page_not_found.html')
      
      
      

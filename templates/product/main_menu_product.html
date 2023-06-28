@@ -2,10 +2,10 @@
 {% block title %} Produtos {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
-<div class="d-flex flex-row">
+<div class="d-flex flex-row vh-100">
 <div class="card">
   <div class="card-header p-2">
-    Filtre Por Nome do Produto
+    Filtro
   </div>
   <div class="card-body">
 <form method="POST" action="{% url 'product:main_menu_product_with_filter' %}" >

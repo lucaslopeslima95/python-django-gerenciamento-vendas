@@ -1,30 +1,54 @@
-
 {% if user.is_authenticated %}
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-  <i class="fa-solid fa-bars"></i>
-</button>
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Todas Funções</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  <div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle">
+    </button>
   </div>
-  <div class="offcanvas-body">
-    <div class="dropdown mt-3">
-      <ul class="d-flex flex-column list-group" style="list-style: none;">
-        <li><a href="{% url 'user:initial_page' %}" class="btn btn-fill btn-primary list-group-item ">Inicio</a></li> 
-        {% if user.is_superuser %}
-        <li><a href="{% url 'user:main_menu_user' %}" class="btn btn-fill btn-primary list-group-item ">Usuarios</a></li> 
-        {% endif %}
-        {% if user.is_staff or user.is_superuser %}
-        <li><a href="{% url 'collaborator:main_menu_collaborator' %}" class="btn btn-fill btn-primary list-group-item ">Colaboradores</a></li>
-        <li><a href="{% url 'product:main_menu_product' %}" class="btn btn-fill btn-primary list-group-item ">Produtos</a></li> 
-        {% endif %}
-        <li><a href="{% url 'user:logout_system' %}" class="btn btn-fill btn-primary list-group-item">Logout</a></li>
-      </ul>
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <div class="sidebar-brand-icon rotate-n-15">
+      <i class="fas fa-laugh-wink"></i>
     </div>
+    <div class="sidebar-brand-text mx-3">Conveniência <sup></sup></div>
+  </a>
+  <hr class="sidebar-divider my-0">
+  <li class="nav-item active">
+    <a class="nav-link" href="{% url 'user:initial_page' %}">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Inicio</span></a>
+  </li>
+  <hr class="sidebar-divider">
+  <div class="sidebar-heading">
+    Menus
   </div>
-</div>
+
+  {% if user.is_superuser %}
+  {% endif %}
+  <li class="nav-item">
+    <a href="{% url 'user:main_menu_user' %}" class="nav-link">
+      <i class="fa-solid fa-user"></i>
+      <span>Usuarios</span>
+    </a>
+  </li>
+  {% if user.is_staff or user.is_superuser %}
+  {% endif %}
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'collaborator:main_menu_collaborator' %}">
+      <i class="fa-solid fa-person"></i>
+      <span>Colaboradores</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'product:main_menu_product' %}">
+      <i class="fa-solid fa-boxes-stacked"></i>
+      <span>Produtos</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'user:logout_system' %}">
+      <i class="fa-solid fa-boxes-stacked"></i>
+      <span>Logout</span>
+    </a>
+  </li>
+  <hr>
+</ul>
 {% endif %}
-
-
-

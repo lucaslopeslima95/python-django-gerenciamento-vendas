@@ -2,10 +2,10 @@
 {% block title %} Usuarios {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
-<div class="d-flex flex-row">
+<div class="d-flex flex-row vh-100">
 <div class="card">
   <div class="card-header p-2">
-    Filtre Por Nome de Usuario
+    Filtro
   </div>
   <div class="card-body">
     <form action="{% url 'user:main_menu_user_with_filter' %}" method="post">

@@ -11,7 +11,7 @@ class registerProductForm(ModelForm):
                   'code_bar':'Codigo De Barras',
                   'price':'Preço',
                   'stock_quantity':'Quantidade em Estoque'}
-        widgets = {'name': forms.TextInput(attrs={"placeholder": "Nome do Produto","class": "form-control"}),
+        widgets = {'name': forms.TextInput(attrs={"placeholder": "Nome do Produto","class": "form-control","maxlength": "30"}),
                    'price': forms.TextInput(attrs={"placeholder": "Preço","class": "form-control"}),
                    'stock_quantity': forms.TextInput(attrs={"placeholder": "Quantidade em Estoque","class": "form-control"})}
         
