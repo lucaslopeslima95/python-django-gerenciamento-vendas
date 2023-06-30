@@ -32,7 +32,7 @@
     <td class="px-1"><a href="{% url 'product:save_product' %}" class="btn btn-primary btn-sm">Registrar Novo Produto
       <i class="fa-regular fa-plus"></i>
     </a></td>
-    <td class="px-1"><a href="{% url 'product:main_menu_product' %}" class="btn btn-primary btn-sm">Listar Todos</a></td>
+    <td class="px-1"><a href="{% url 'product:main_menu_product' %}" class="btn btn-primary btn-sm">Limpar Filtro</a></td>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -54,8 +54,8 @@
             <th style="text-align:center;">{{ product.code_bar }}</th>
             <th style="text-align:center;">{{ product.price }}</th>
             <th style="text-align:center;">{{ product.stock_quantity }}</th>
-            <th><a type="submit" class="btn btn-danger" onclick="return confirm('Deseja realmente Deletar?')"
-                href="{% url 'product:erase_product' product.id %}">Deletar
+            <th><a type="submit" class="btn btn-danger" onclick="return confirm('Deseja realmente Excluir?')"
+                href="{% url 'product:erase_product' product.id %}">Excluir
                 <i class="fa-sharp fa-solid fa-trash"></i>
             </a></th>
             <th><a type="submit" class="btn btn-primary" href="{% url 'product:update_product' product.id %}">

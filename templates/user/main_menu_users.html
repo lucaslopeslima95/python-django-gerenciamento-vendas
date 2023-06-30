@@ -13,7 +13,7 @@
       {{ findByUsernameForm }}
        <div class="d-flex justify-content-center mt-3">
         <button type="submit" class="btn btn-fill btn-primary btn-sm">
-        Buscar
+        Filtrar
         <i class="fa-solid fa-magnifying-glass fa-xl"></i>
       </button>
       </div>
@@ -30,7 +30,7 @@
     <h4 class="card-title">Usuarios</h4>
     <td class="px-1"><a href="{% url 'user:save_user' %}" class="btn btn-primary btn-sm">Registrar Novo Usuario
       <i class="fa-regular fa-plus"></i>
-      <td class="px-1"><a href="{% url 'user:main_menu_user' %}" class="btn btn-primary btn-sm ms-1">Listar Todos</a></td>
+      <td class="px-1"><a href="{% url 'user:main_menu_user' %}" class="btn btn-primary btn-sm ms-1">Limpar Filtro</a></td>
     </a>
     </td>
   </div>
@@ -50,7 +50,7 @@
               <tr>
                 <th>{{ user.username }}</th>
                 <th>{{ user.email }}</th>
-                <th><a type="submit" class="btn btn-danger" onclick="return confirm('Deseja realmente Deletar?')" href="{% url 'user:erase_user' user.id %}">Delete
+                <th><a type="submit" class="btn btn-danger" onclick="return confirm('Deseja realmente Excluir?')" href="{% url 'user:erase_user' user.id %}">Excluir
                   <i class="fa-sharp fa-solid fa-trash"></i>
                 </a></th>
                 <th><a type="submit" class="btn btn-primary" href="{% url 'user:update_user' user.id %}">Editar Dados

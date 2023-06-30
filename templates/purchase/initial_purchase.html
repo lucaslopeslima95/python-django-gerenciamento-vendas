@@ -1,22 +1,33 @@
-{% load static %}
-<link href="{% static 'vendor/fontawesome-free/css/all.min.css'}" rel="stylesheet" type="text/css">
-<link
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet">
-<link href="{% static 'css/sb-admin-2.min.css'%}" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/css_reset.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'css/shake.css'%}">
+    <link rel="stylesheet" href="{% static 'css/validations_colors.css'%}">
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css'%}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="{% static 'css/sb-admin-2.min.css'%}" rel="stylesheet">
+  <title>Compras</title>
+</head>
+<body onload="remove_messages()">
+<div class="container-fluid ">
 <div class="d-flex flex-row justify-content-between align-items-center">
   <form action="{% url 'purchase:find_product'%}" method="POST">
     <div class="d-flex flex-row align-items-center">
       {% csrf_token %}
       {{ form_code_bar.as_p }}
-      <button type="submit" value="Adicionar" class="btn btn-primary">
+      <button type="submit" class="btn btn-primary mt-3">
         <i class="fa-solid fa-plus fa-lg"></i>
       </button>
     </div>
   </form>
   <div>
-    <th><a href="{% url 'purchase:clean_all_products_purchase' %}" class="btn btn-primary">Limpar Todos Produtos
-        Adicionados</a>
+    <th><a href="{% url 'purchase:clean_all_products_purchase' %}" class="btn btn-primary btn-sm">Limpar Todos Produtos Adicionados</a>
     </th>
   </div>
 </div>
@@ -26,7 +37,7 @@
   {{ message }}
 </div>
 {% endfor %}
-<div class="table-responsive">
+<div class="table-responsive table-lg" style="height: 700px; overflow-x: auto;" >
   <table class="table table-hover">
     <thead>
       <tr>
@@ -49,28 +60,30 @@
     </tbody>
   </table>
 </div>
-<div class=" fixed-bottom mb-5 ms-5 input-group-sm">
+<div class="input-group-sm">
   <div class="input-group mb-3">
     <div class="d-flex flex-row align-items-center">
       Total:
       <input readonly placeholder="Total:" type="text" class="form-control" value="{{ total }}">
       <a class="btn btn-primary btn-sm" type="button" class="btn btn-primary" data-bs-toggle="modal"
-        data-bs-target="#finish_purchase">Finalizar Compra</a>
+      data-bs-target="#finish_purchase">Finalizar Compra</a>
+      <a class="btn btn-primary btn-sm" type="button" class="btn btn-primary" data-bs-toggle="modal"
+      data-bs-target="#finish_purchase">Consultar Saldo</a>
     </div>
   </div>
 </div>
 <div class="modal fade"
-  id="finish_purchase" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirme Suas Credenciais</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      {% for message in messages %}
-      <div class="alert alert-{{ message.tags }}">
-        {{ message }}
+id="finish_purchase" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirme Suas Credenciais</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+      {{ message }}
       </div>
       {% endfor %}
       <div class="modal-body ">
@@ -88,12 +101,11 @@
     </div>
   </div>
 </div>
-<!--------------------------------->
 <div class="modal fade"
-  id="show_spends" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
+id="show_spends" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Extrato</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -108,18 +120,35 @@
     </div>
   </div>
 </div>
-<script src="https://kit.fontawesome.com/9958a2dab0.js" crossorigin="anonymous"></script>
 {% if show_spends %}
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const myModal = new bootstrap.Modal(document.getElementById('show_spends'));
-        myModal.show();
-
-        setTimeout(function() {
+    myModal.show();
+    
+    setTimeout(function() {
         myModal.hide();
         window.location.href = "{% url 'purchase:clean_all_products_purchase' %}";
-        }, 3500);
+      }, 3500);
     });
 </script>
 {% endif %}
-{% block javascripts %}{% endblock javascripts %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+<script src="https://kit.fontawesome.com/9958a2dab0.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="{% static 'js/messages_remove_on_page.js'%}"></script>
+<script src="{% static 'js/cpfValidation.js'%}"></script>
+<script src="{% static 'js/generateUsername.js'%}"></script>
+<script src="{% static 'js/inputStandardPassword.js'%}"></script>
+<script src="{% static 'js/inputMask.js'%}"></script>
+<script src="{% static 'js/validate_password.js'%}"></script>
+<script src="{% static 'js/confirmChoiceOnSwitch.js'%}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'js/sb-admin-2.min.js'%}"></script>
+<script src="{% static 'vendor/chart.js/Chart.min.js'%}"></script>
+<script src="{% static 'js/demo/chart-area-demo.js'%}"></script>
+<script src="{% static 'js/demo/chart-pie-demo.js'%}"></script>
+</div>
+</body>
+</html>

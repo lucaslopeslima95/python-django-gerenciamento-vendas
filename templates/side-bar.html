@@ -10,27 +10,25 @@
     </div>
     <div class="sidebar-brand-text mx-3">Conveniência <sup></sup></div>
   </a>
-  <hr class="sidebar-divider my-0">
+  <div class="sidebar-heading">
+    Menus
+  </div>
   <li class="nav-item active">
     <a class="nav-link" href="{% url 'user:initial_page' %}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Inicio</span></a>
   </li>
-  <hr class="sidebar-divider">
-  <div class="sidebar-heading">
-    Menus
-  </div>
+
 
   {% if user.is_superuser %}
-  {% endif %}
   <li class="nav-item">
     <a href="{% url 'user:main_menu_user' %}" class="nav-link">
       <i class="fa-solid fa-user"></i>
       <span>Usuarios</span>
     </a>
   </li>
-  {% if user.is_staff or user.is_superuser %}
   {% endif %}
+  {% if user.is_staff or user.is_superuser %}
   <li class="nav-item">
     <a class="nav-link" href="{% url 'collaborator:main_menu_collaborator' %}">
       <i class="fa-solid fa-person"></i>
@@ -43,6 +41,7 @@
       <span>Produtos</span>
     </a>
   </li>
+  {% endif %}
   <li class="nav-item">
     <a class="nav-link" href="{% url 'user:logout_system' %}">
       <i class="fa-solid fa-boxes-stacked"></i>

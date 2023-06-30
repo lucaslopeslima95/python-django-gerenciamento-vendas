@@ -122,7 +122,6 @@ def current_billing():
     return total_spended
 
 def products_low_stock():
-    print(Product.objects.filter(stock_quantity__lte=5))
     return Product.objects.filter(stock_quantity__lte=10)
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')   
@@ -135,15 +134,16 @@ def initial_page(request):
     Returns:
         HttpResponse: A resposta HTTP renderizada como HTML.
     """
-    deadLine = DeadLine.objects.get(id=1).DAY
-    today = datetime.now().day
-    if today > deadLine:
-        days_left_next_month = (next_month_range()-(next_month_range()-deadLine))
-        days_left_current_month = (current_month_range()-today)
-        dias = days_left_next_month + days_left_current_month
-    else:
-        dias = current_month_range()-today
-        
+    if request.method == "GET":
+        deadLine = DeadLine.objects.get(id=1).DAY
+        today = datetime.now().day
+        if today > deadLine:
+            days_left_next_month = (next_month_range()-(next_month_range()-deadLine))
+            days_left_current_month = (current_month_range()-today)
+            dias = days_left_next_month + days_left_current_month
+        else:
+            dias = current_month_range()-today
+            
     return render(request,'dashboard.html',{'dias':dias,'current_billing':current_billing(),'products_low_stock':products_low_stock()})
 
 def login_system(request):
@@ -263,8 +263,8 @@ def erase_user(request, id):
         user = User.objects.get(id=id)
         user.delete()
     except (Exception,User.DoesNotExist) as e:
-        print(f"Exceção ao deletar Usuario - {e}")
-        messages.error(request,"Erro ao deletar o usuario, por favor contate o suporte")
+        print(f"Exceção ao excluir Usuario - {e}")
+        messages.error(request,"Erro ao excluir o usuario, por favor contate o suporte")
     messages.success(request, "Deletado com sucesso")
     return redirect('user:main_menu_user')
 
@@ -392,7 +392,7 @@ def page_not_found(request):
        redirecionado para a paginad e não encontrado que possui um botão 
        para o voltar a pagina de login
     """
-    return render(request,'page_not_found.html')
+    return render(request,'4page_not_found.html')
      
      
      

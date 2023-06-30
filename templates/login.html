@@ -18,9 +18,12 @@
     <title>Conveniencia - Login</title>
 </head>
 <body onload="remove_messages()">
-<div class="container">
-    <div class="card shadow-lg">
-        <div class="card-body p-0">
+<div class="d-flex vh-100 vw-100 justify-content-center align-items-center">
+    <div class="card shadow-lg d-flex flex-row">
+        <div class="col-6 d-flex w-100">
+            <img src="{% static 'imgs/logo-sci.png' %}" class="w-100">
+        </div>
+        <div class="card-body p-0 col-6">
             {% for message in messages %}
             <div class="alert alert-{{ message.tags }}">
                 {{ message }}

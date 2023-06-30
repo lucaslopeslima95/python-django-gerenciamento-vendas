@@ -35,8 +35,8 @@ def save_product(request):
         else:
          form = registerProductForm()
     except Exception as e:
-        print(f"Exceção ao salvar um colaborador {e}")
-        messages.warning(request, "Ocorreu um erro ao registrar o Produto")
+        print(f"Codigo de Barras ja existe {e}")
+        messages.warning(request, "Codigo de Barras ja existe")
     return render(request, 'product/save_product.html', {'form': form})
 
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')        
@@ -46,7 +46,7 @@ def erase_product(request, id):
     try:
         Product.objects.filter(id=id).update(is_deleted=True)
     except Exception as e:
-        print(f"Exceção no deletar produto {e}")
+        print(f"Exceção no excluir produto {e}")
     return redirect('product:main_menu_product')
 
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')      

@@ -62,7 +62,7 @@ def erase_collaborator(request, id):
         User.objects.get(id = collaborator.user.id).delete()
         collaborator.delete() 
     except Exception as e:
-        print(f"Exceção no deletar usuario {e}")
+        print(f"Exceção no excluir usuario {e}")
     return redirect('collaborator:main_menu_collaborator')
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')          

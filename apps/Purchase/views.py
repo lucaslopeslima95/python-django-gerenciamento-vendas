@@ -110,22 +110,28 @@ def initial_page_purchase(request,listPurchaseItemsDTO = [],login_failed=False,t
         HttpResponse: Objeto HttpResponse que representa a resposta HTTP renderizada
         com a página inicial de compra.
     """
-    
-    try:
+   
+    form_code_bar = None
+    puchase_list_total_value = None
+    if request.method == "POST":
         form_code_bar = searchProductToPurchaseForm()
-        puchase_list_total_value = 0
-        for i in listPurchaseItemsDTO:
-            puchase_list_total_value += i.total_cost
+        try:
+            puchase_list_total_value = 0
+            for i in listPurchaseItemsDTO:
+                puchase_list_total_value += i.total_cost
             
-    except Exception as e:
-        print(f"Exceção ao salvar um colaborador {e}")
-        messages.warning(request, "Ocorreu um erro ao adicionar o Produto")
+        except Exception as e:
+            print(f"Exceção ao salvar um colaborador {e}")
+            messages.warning(request, "Ocorreu um erro ao adicionar o Produto")
         
     return render(request, 'purchase/initial_purchase.html',
-                {'form_code_bar':form_code_bar,"purchaseItems":listPurchaseItemsDTO,
-                 "total":puchase_list_total_value,"authForm":authForm,"login_failed":login_failed,
-                    'total_spends_current':total_spends_current,'total_spends_last_referred':total_spends_last_referred,
-                    'show_spends':show_spends})
+               {'form_code_bar':form_code_bar,
+                'purchaseItems':listPurchaseItemsDTO,
+                'total':puchase_list_total_value,
+                'authForm':authForm,"login_failed":login_failed,
+                'total_spends_current':total_spends_current,
+                'total_spends_last_referred':total_spends_last_referred,
+                'show_spends':show_spends})
 
 def finish_purchase(request):
     """
@@ -151,8 +157,6 @@ def finish_purchase(request):
                             if save_purchase(employee_who_made_the_purchase,listPurchaseItemsDTO):
                                 current = calculates_and_returns_current_referral_spending(employee_who_made_the_purchase)
                                 last = calculates_and_returns_past_reference_spend(employee_who_made_the_purchase)
-                                if len(listPurchaseItemsDTO) == 0:
-                                    return initial_page_purchase(request,total_spends_current=current,total_spends_last_referred=last,show_spends=True)
                                 listPurchaseItemsDTO.clear()
                                 messages.success(request, "Salvo com Sucesso.")
                                 show_spends = True
@@ -189,13 +193,12 @@ def find_product(request):
         Exception: Caso ocorra uma exceção durante a busca do produto.
 
     """
-    product = None
-    try:
-        form = searchProductToPurchaseForm(request.POST)
-        if request.method == "POST":
+    if request.method == "POST":
+        product = None
+        try:
+            form = searchProductToPurchaseForm(request.POST)
             if form.is_valid():
                 code_bar = form.cleaned_data['code_bar']
-                              
                 if code_bar != None:
                     product = Product.objects.get(code_bar=code_bar)    
                     purchaseItem = PurchaseItemDTO()  
@@ -203,13 +206,12 @@ def find_product(request):
                     purchaseItem.price = product.price
                     purchaseItem.total_cost = product.price
                     listPurchaseItemsDTO.append(purchaseItem)
-                    
-    except (Product.DoesNotExist,Exception) as e:
-        print(f"Exceção ao procurar produto {e}")
-        messages.warning(request, "Produto não encontrado")
-        return redirect('purchase:initial_purchase')
-    
-    request.method = "GET"   
+                        
+        except (Product.DoesNotExist,Exception) as e:
+            print(f"Exceção ao procurar produto {e}")
+            messages.warning(request, "Produto não encontrado")
+        
+
     return initial_page_purchase(request, listPurchaseItemsDTO)
      
 def remove_product_purchase(request,id):
@@ -241,7 +243,7 @@ def clean_all_products_purchase(request):
         _request_: Retorna a pagina inicial de compras
     """
     listPurchaseItemsDTO.clear()
-    return redirect('purchase:clean_all_products_purchase')
+    return redirect('purchase:initial_page_purchase')
 
 
 def save_purchase(collaborator,listPurchaseItemsDTO):
