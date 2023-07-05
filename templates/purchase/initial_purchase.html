@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"rel="stylesheet"/>
     <link rel="stylesheet" href="{% static 'css/shake.css'%}">
     <link rel="stylesheet" href="{% static 'css/validations_colors.css'%}">
-    <link href="{% static 'vendor/fontawesome-free/css/all.min.css'%}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="{% static 'css/sb-admin-2.min.css'%}" rel="stylesheet">
   <title>Compras</title>
@@ -48,12 +47,12 @@
       </tr>
     </thead>
     <tbody>
-      {% for item in purchaseItems %}
+      {% for item in cart.products %}
       <tr>
-        <th scope="row">{{ item.product.id }}</th>
+        <th scope="row">{{ forloop.counter }}</th>
         <th scope="row">{{ item.product.name }}</th>
         <th scope="row">{{ item.price }}</th>
-        <th><a href="{% url 'purchase:remove_product_purchase' item.product.id %}" class="btn btn-primary">Remover</a>
+        <th><a href="{% url 'purchase:remove_product_purchase' forloop.counter %}" class="btn btn-primary">Remover</a>
         </th>
       </tr>
       {% endfor %}
@@ -111,16 +110,16 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="mx-auto">
-        <p>Gastos da Referencia Passada: {{ total_spends_last_referred|floatformat:2 }}</p>
+        <p>Gastos da Referencia Passada: {{ purchaseItems.total_spends_last_referred|floatformat:2 }}</p>
         <br>
-        <p>Gastos da Referencia Atual: {{total_spends_current |floatformat:2 }}</p>
+        <p>Gastos da Referencia Atual: {{ purchaseItems.total_spends_current |floatformat:2 }}</p>
       </div>
       <div class="modal-footer">
       </div>
     </div>
   </div>
 </div>
-{% if show_spends %}
+{% if cart.show_spends %}
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const myModal = new bootstrap.Modal(document.getElementById('show_spends'));
@@ -142,7 +141,6 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 <script src="{% static 'js/generateUsername.js'%}"></script>
 <script src="{% static 'js/inputStandardPassword.js'%}"></script>
 <script src="{% static 'js/inputMask.js'%}"></script>
-<script src="{% static 'js/validate_password.js'%}"></script>
 <script src="{% static 'js/confirmChoiceOnSwitch.js'%}"></script>
 <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
 <script src="{% static 'js/sb-admin-2.min.js'%}"></script>

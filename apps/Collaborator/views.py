@@ -48,7 +48,7 @@ def save_collaborator(request):
                         return redirect('collaborator:main_menu_collaborator')
 
         else:
-         form = registerCollaboratorForm()
+            form = registerCollaboratorForm()
     except Exception as e:
         print(f"Exceção ao salvar um colaborador - {e}")
         messages.warning(request, "Ocorreu um erro ao registrar o Colaborador")

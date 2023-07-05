@@ -1,5 +1,6 @@
 from django import forms
 from .models import User
+from Collaborator.models import Collaborator
 from django.forms import ModelForm
 
 class authForm(forms.Form):
@@ -34,3 +35,8 @@ class updateUserPasswordForm(ModelForm):
 
 class findByUsernameForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome Usuario","class": "form-control","title":"Nome de Usuario"}),label="Nome de Usuario")
+
+class reportsForm(forms.Form):
+    collaborator = forms.ModelChoiceField(queryset=Collaborator.objects.filter(active = True),widget=forms.Select(attrs={'class': 'form-control'}),label="Escolha o colaborador")
+    start_date = forms.DateField(widget=forms.DateInput(attrs={'class': 'form-control', 'type': 'date', 'placeholder': 'Selecione uma data', 'autocomplete': 'off','value':''}),label="Começa em")
+    end_date = forms.DateField(widget=forms.DateInput(attrs={'class': 'form-control', 'type': 'date', 'placeholder': 'Selecione uma data', 'autocomplete': 'off','value':''}),label="Até")

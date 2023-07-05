@@ -1,129 +1,30 @@
 from sqlite3 import IntegrityError
-from django.shortcuts import render,redirect
-from .forms import registerUserForm,authForm,updateWithoutPasswordForm,updateUserPasswordForm,findByUsernameForm
+from django.shortcuts import (render,
+                              redirect)
+from Purchase.PurchaseService.calculateExpends import get_data_to_generate_reports
+from Purchase.PurchaseService.current_billing import current_billing
+from Purchase.PurchaseService.months_range import current_month_range, next_month_range
+from Purchase.PurchaseService.products_low_stock import products_low_stock
+from User.emails.emails import confirm_register
+from .forms import (registerUserForm,
+                    updateWithoutPasswordForm,
+                    updateUserPasswordForm,
+                    findByUsernameForm,
+                    reportsForm
+                    )
 from django.contrib.admin.views.decorators import user_passes_test
 from django.views.decorators.csrf import csrf_protect
-from django.contrib.auth import logout,login
-from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
-from Purchase.models import Purchase
-from Product.models import Product
 from django.contrib import messages
 from django.db.models import Q
 from Collaborator.models import Collaborator
 from Purchase.models import DeadLine
 from datetime import datetime
 from .models import User
-from datetime import datetime
-from datetime import date
-from django.db.models import Sum
-from fpdf import FPDF
-import calendar
-from django.http import FileResponse
-from io import BytesIO
+from django.db.models.signals import post_save
+from django.dispatch import receiver 
 
-def generate_reports(request):
-    deadLine = DeadLine.objects.get(id=1).DAY
-    today = datetime.now().day
-    
-    if today > deadLine:
-        start_date = date(datetime.now().year,datetime.now().month ,(deadLine+1))
-        
-        if datetime.now().month+1 == 13:
-            end_date = date((datetime.now().year+1),1 ,today)
-        else: 
-            end_date = date(datetime.now().year,(datetime.now().month+1),today)
-            
-    else:
-        start_date = date(datetime.now().year,(datetime.now().month-1) ,(deadLine+1))
-        end_date = date(datetime.now().year,datetime.now().month,today)
-        
-    listPurchases = Purchase.objects.filter(date_purchase__range=(start_date, end_date))
-
-    pdf = FPDF()
-    pdf.add_page()
-    pdf.set_font('Arial', 'B', 10)
-    pdf.set_fill_color(240, 240, 240)
-    pdf.cell(0, 10, 'Vendas Referência Atual', 1, 1, 'C', 1)
-    for purchase in listPurchases:
-        purchase_date = purchase.date_purchase.strftime('%d/%m/%Y')
-        products = purchase.product.all()
-        for product in products:
-            pdf.cell(0, 10, f"Colaborador: {purchase.collaborator}, Data: {purchase_date},Prod: {product.name}, Preço: {product.price}", 1, 1, 'L', 1)
-    total = current_billing()
-    formatted_total = "{:.2f}".format(total)
-    pdf.cell(0, 10, f'Total: {formatted_total}', 1, 0, 'C', 1)
-
-    pdf_content = pdf.output(dest='S').encode('latin1')
-    pdf_bytes = BytesIO(pdf_content)
-    return FileResponse(pdf_bytes,filename="Relatorio.pdf")
-
-def current_month_range():
-    """Obtém a quantidade de dias do mês atual.
-
-    Retorna o número de dias do mês atual com base na data atual.
-
-    Returns:
-        int: Número de dias do mês atual.
-    """
-    current_month = datetime.now().month
-    current_year = datetime.now().year
-    number_of_days = calendar.monthrange(current_year, current_month)[1]
-    
-    return number_of_days
-
-
-def next_month_range():
-    """Obtém a quantidade de dias do próximo mês.
-
-    Retorna o número de dias do próximo mês com base na data atual.
-
-    Returns:
-        int: Número de dias do próximo mês.
-    """
-    next_month = datetime.now().month
-    next_year = datetime.now().year
-    
-    if next_month > 12:
-        next_month = 1
-        next_year += 1
-        
-    number_of_days = calendar.monthrange(next_year, (next_month+1))[1]
-    return number_of_days
-
-
-def current_billing():
-    """Calcula o total gasto no período de faturamento atual.
-
-    A função determina o período de faturamento com base na data atual e recupera as compras feitas nesse período.
-    Em seguida, calcula o total gasto somando os preços dos itens comprados.
-
-    Returns:
-        Decimal: O total gasto no período de faturamento atual.
-    """
-    deadLine = DeadLine.objects.get(id=1).DAY
-    today = datetime.now().day
-    
-    if today > deadLine:
-        start_date = date(datetime.now().year,datetime.now().month ,(deadLine+1))
-        
-        if datetime.now().month+1 == 13:
-            end_date = date((datetime.now().year+1),1 ,today)
-        else: 
-            end_date = date(datetime.now().year,(datetime.now().month+1),today)
-            
-    else:
-        start_date = date(datetime.now().year,(datetime.now().month-1) ,(deadLine+1))
-        end_date = date(datetime.now().year,datetime.now().month,today)
-        
-    listPurchases = Purchase.objects.filter(date_purchase__range=(start_date, end_date))
-    total_spended = listPurchases.aggregate(total=Sum('purchaseitem__price'))['total']
-    
-    return total_spended
-
-def products_low_stock():
-    return Product.objects.filter(stock_quantity__lte=10)
-
+@csrf_protect
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')   
 def initial_page(request):
     """Exibe a página inicial e constrói os dados do dashboard.
@@ -146,43 +47,13 @@ def initial_page(request):
             
     return render(request,'dashboard.html',{'dias':dias,'current_billing':current_billing(),'products_low_stock':products_low_stock()})
 
-def login_system(request):
-    """Gerencia o sistema de login do usuário.
 
-    Esta função lida com a lógica de autenticação do usuário. Se o usuário já estiver autenticado,
-    redireciona para a página inicial. Caso contrário, trata a requisição de login, verifica as credenciais
-    do usuário e realiza o login se as credenciais forem válidas.
-
-    Args:
-        request (HttpRequest): A requisição HTTP recebida.
-
-    Returns:
-        HttpResponse: A resposta HTTP renderizada como HTML.
-    """
-    form = authForm()    
-    try:
-        if request.user.is_authenticated:
-            return initial_page(request)
-        
-        if request.method == "POST":
-            form = authForm(request.POST)
-            if form.is_valid():
-                username = form.cleaned_data['username']
-                password = form.cleaned_data['password']
-                user = authenticate(request, username=username, password=password)
-                if user is not None:
-                    login(request, user)
-                    return redirect('user:initial_page')
-                else:
-                    messages.warning(request, "Usuario ou Senha Errados.")
-            else:
-                messages.warning(request, "Credenciais inválidas.")
-    except Exception as e :
-        print(f"Exceção ao tentar fazer o login - {e}")
-        
-    return render(request, 'login.html', {'form': form})
-
-
+@receiver(post_save,sender=Collaborator)
+def alert_create_user(sender,instance:Collaborator,created,*args,**kwargs):
+    if created: 
+        user = User.objects.get(id=instance.user.pk)
+        confirm_register(email=user.email,nameUser=instance.name)
+    
 @csrf_protect
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')   
 @login_required(login_url="login_system")
@@ -229,17 +100,6 @@ def save_user(request):
     return render(request, 'user/save_user.html', {'form': form})
 
 
-def logout_system(request):
-    """_summary_
-
-    Args:
-        request (_type_): Requisição do Usuario
-        para realizar o logout do user logado
-    Returns:
-        Redirect: Vai para a pagina inicial, login da aplicação
-    """
-    logout(request)
-    return redirect('user:initial_page')
 
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')   
 @login_required(login_url="login_system")
@@ -392,7 +252,32 @@ def page_not_found(request):
        redirecionado para a paginad e não encontrado que possui um botão 
        para o voltar a pagina de login
     """
-    return render(request,'4page_not_found.html')
+    return render(request,'page_not_found.html')
      
-     
-     
+def page_initial_reports(request):
+    return render(request,'reports/individual_report.html',{'form':reportsForm()})
+
+@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
+@login_required(login_url="login_system")
+def make_reports(request):
+    try:
+        form = reportsForm()
+        if request.method == "POST":
+            form = reportsForm(request.POST)
+            if form.is_valid():
+                start_date = form.cleaned_data["start_date"]
+                end_date = form.cleaned_data["end_date"]
+                if start_date > end_date:
+                    messages.error(request,"A data de inicio deve ser maior que a data de fim")
+                    return redirect('user:page_initial_reports')
+                collaborator = form.cleaned_data["collaborator"]
+                
+            else:
+                 messages.error(request,"Formulario Inválido")
+                 return redirect('user:page_initial_reports')
+             
+    except Exception as e:
+        if e is not None:
+            print(f"Exceção ao gerar relatório no make reports - {e}")
+    return get_data_to_generate_reports(collaborator=collaborator,start_date=start_date,end_date=end_date)
+        

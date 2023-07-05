@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-bar {
+      background-color: #123456;
+      height: 25vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .logo {
+      width: 30%;
+      max-height: 15vh;
+      object-fit: contain;
+    }
+
+    .spacer {
+      height: 30px;
+    }
+
+    .table-container {
+      margin: 0 auto;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #123456;
+      color: #fff;
+    }
+
+    .bottom-bar {
+      background: linear-gradient(to right, #123456, #234567);
+      height: 10px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+    <div class="top-bar">
+        
+    </div>
+    
+    <div class="spacer"></div>
+  <div class="table-container">
+  <h2>Comprovante de compra na Conveniência Sci</h2> 
+  <label for="name">Nome: {{nome}}</label>
+    <table>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Preço</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Produto 1</td>
+          <td>1</td>
+          <td>R$ 10,00</td>
+        </tr>
+        <tr>
+          <td>Produto 2</td>
+          <td>2</td>
+          <td>R$ 20,00</td>
+        </tr>
+        <tr>
+          <td>Produto 3</td>
+          <td>3</td>
+          <td>R$ 30,00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
