@@ -1,0 +1,203 @@
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2939
+Not Found: /{% static 'vendor/fontawesome-free/css/all.min.css'}
+"GET /%7B%%20static%20'vendor/fontawesome-free/css/all.min.css'%7D HTTP/1.1" 404 5048
+"GET /static/imgs/logo-sci.png HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"POST / HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 7351
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 304 0
+"GET /static/js/validatePassword.js HTTP/1.1" 304 0
+"GET /static/js/cpfValidation.js HTTP/1.1" 304 0
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 8352
+"GET /collaborator/save_collaborator HTTP/1.1" 200 6074
+"POST /collaborator/save_collaborator HTTP/1.1" 200 6286
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 8352
+"GET /collaborator/save_collaborator HTTP/1.1" 200 6074
+"POST /collaborator/save_collaborator HTTP/1.1" 200 6294
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 9632
+"GET /collaborator/erase_collaborator/45 HTTP/1.1" 302 0
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 8352
+"GET /collaborator/save_collaborator HTTP/1.1" 200 6074
+"POST /collaborator/save_collaborator HTTP/1.1" 302 0
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 9702
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /collaborator/erase_collaborator/46 HTTP/1.1" 302 0
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 8352
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6306
+"GET / HTTP/1.1" 200 7351
+"GET /product/main_menu_product HTTP/1.1" 200 8678
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6567
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6567
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6567
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6567
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6306
+"GET /product/main_menu_product HTTP/1.1" 200 8678
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6566
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6306
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 304 0
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 304 0
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 304 0
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 304 0
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 304 0
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6566
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/templatetags/custom_tags.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/templatetags/custom_tags.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/templatetags/custom_tags.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/templatetags/custom_tags.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6306
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6566
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6306
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6567
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6825
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/templatetags/custom_tags.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/templatetags/custom_tags.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/templatetags/custom_tags.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/templatetags/custom_tags.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/templatetags/custom_tags.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/templatetags/custom_tags.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6306
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6306
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6567
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6825
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 7098
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6566
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6822
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 7084
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+"GET /product/main_menu_product HTTP/1.1" 200 8678
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 304 0
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 304 0
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6571
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6833
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/main_menu_product HTTP/1.1" 200 8679
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6566
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6822
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452

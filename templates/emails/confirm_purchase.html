@@ -1,8 +1,9 @@
+{% load static %}
+{% load custom_tags %}
 <!DOCTYPE html>
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% load static %}
   <style>
     body {
       margin: 0;
@@ -61,9 +62,8 @@
 </head>
 <body>
     <div class="top-bar">
-        
+        <img src="{% static 'imgs/logo-sci.png' %}">
     </div>
-    
     <div class="spacer"></div>
   <div class="table-container">
   <h2>Comprovante de compra na Conveniência Sci</h2> 
@@ -73,27 +73,29 @@
         <tr>
           <th>Produto</th>
           <th>Quantidade</th>
-          <th>Preço</th>
+          <th>Preço Unitário</th>
+          <th>Preço Total</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Produto 1</td>
-          <td>1</td>
-          <td>R$ 10,00</td>
-        </tr>
-        <tr>
-          <td>Produto 2</td>
-          <td>2</td>
-          <td>R$ 20,00</td>
-        </tr>
-        <tr>
-          <td>Produto 3</td>
-          <td>3</td>
-          <td>R$ 30,00</td>
-        </tr>
+        {% for item in purchaseItems %}
+          <tr>
+            <td>{{ item.product }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>R$ {{ item.price }}</td>
+            <td>R$ {% calculate_value item.quantity item.price 2 %}</td>
+          </tr>
+          {% endfor %}
+          <tr>
+          <td>Total: </td>
+          <td></td>
+          <td></td>
+          <td>R$ {{ total }}</td>
+          </tr>
+          
       </tbody>
     </table>
   </div>
+ 
 </body>
 </html>

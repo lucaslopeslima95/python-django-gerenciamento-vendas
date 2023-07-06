@@ -4,7 +4,7 @@ from Collaborator.models import Collaborator
 from django.forms import ModelForm
 
 class authForm(forms.Form):
-    username = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome Usuario","class": "form-control form-control-user","title":"Nome de Usuario de Acesso ao Sistema"}),label="Nome de Usuario")
+    username = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome Usuario","class": "form-control form-control-user","title":"Nome de Usuario de Acesso ao Sistema"}),label="Nome de Usuario",initial="manoel.henry")
     password = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "Senha","class": "form-control form-control-user","title":"Senha de Acesso ao Sistema"}),label="Senha")
 
 class registerUserForm(forms.Form):

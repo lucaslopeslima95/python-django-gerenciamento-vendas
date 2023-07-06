@@ -110,17 +110,21 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="mx-auto">
-        <p>Gastos da Referencia Passada: {{ purchaseItems.total_spends_last_referred|floatformat:2 }}</p>
+        <p>Gastos da Referencia Passada: {{ cart.total_spends_last_referred|floatformat:2 }}</p>
         <br>
-        <p>Gastos da Referencia Atual: {{ purchaseItems.total_spends_current |floatformat:2 }}</p>
+        <p>Gastos da Referencia Atual: {{ cart.total_spends_current |floatformat:2 }}</p>
       </div>
       <div class="modal-footer">
       </div>
     </div>
   </div>
 </div>
+<h1>{{cart.total_spends_last_referred}}</h1>
+<h1>{{cart.total_spends_current}}</h1>
+<h1>{{cart.show_spends}}</h1>
 {% if cart.show_spends %}
 <script>
+  alert()
   document.addEventListener('DOMContentLoaded', function() {
     const myModal = new bootstrap.Modal(document.getElementById('show_spends'));
     myModal.show();

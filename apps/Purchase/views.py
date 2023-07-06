@@ -1,5 +1,7 @@
+from django.dispatch import receiver
 from django.shortcuts import render,redirect
 from Purchase.PurchaseService.calculateExpends import calculates_and_returns_current_referral_spending, calculates_and_returns_last_reference_spend
+from User.models import User
 from .forms import searchProductToPurchaseForm
 from django.contrib import messages
 from Product.models import Product
@@ -8,6 +10,9 @@ from django.contrib.auth import authenticate
 from .DTO.PurchaseItemDTO import PurchaseItemDTO
 from Collaborator.models import Collaborator
 from Purchase.models import Purchase,PurchaseItem
+from django.db.models.signals import post_save
+from User.emails.emails import confirm_purchase
+
 
 
 def initial_page_purchase(request):
@@ -42,11 +47,11 @@ def finish_purchase(request):
                     password = form.cleaned_data['password']
                     user = authenticate(request, username=username, password=password)
                     if user is not None:
-                        employee_who_made_the_purchase = Collaborator.objects.get(user=user.id)
-                        if employee_who_made_the_purchase.active:
-                            if save_purchase(employee_who_made_the_purchase):
-                                cart.total_spends_current = calculates_and_returns_current_referral_spending(employee_who_made_the_purchase)
-                                cart.total_spends_last_referred = calculates_and_returns_last_reference_spend(employee_who_made_the_purchase)
+                        collaborator = Collaborator.objects.get(user=user.id)
+                        if collaborator.active:
+                            if save_purchase(collaborator):
+                                cart.total_spends_current = calculates_and_returns_current_referral_spending(collaborator)
+                                cart.total_spends_last_referred = calculates_and_returns_last_reference_spend(collaborator)
                                 cart.products.clear()
                                 messages.success(request, "Salvo com Sucesso.")
                                 cart.show_spends = True
@@ -102,32 +107,45 @@ def clean_all_products_purchase(request):
     return redirect('purchase:initial_page_purchase')
 
 
-def save_purchase(collaborator) -> bool:
-    try:   
-        set_products = {}
+def save_purchase(collaborator:Collaborator) -> bool:
+    try:
+        listPuchaseItems = []   
+        cart = PurchaseItemDTO()
+        set_products = set()
+        for item in cart.products:
+            set_products.add(item.product)
         purchase = Purchase()
         purchase.collaborator = collaborator
         purchase.save()
-        cart = PurchaseItemDTO()
-        set_products = cart.products
         for item in set_products:
             count =  0
-         
             for product in cart.products:
-                if item.id == product.id:
-                    count += 1
-         
-            purchaseItem = PurchaseItem.objects.create(product=item.product,
-                                        price=item.product.price,
+                if item.id == product.product.pk:
+                    count += 1  
+            update_quantity(item.id,count)
+            purchaseItem = PurchaseItem.objects.create(
+                                        product=item,
+                                        price=item.price,
                                         purchase=purchase,
-                                        quantity=count)
-            
+                                        quantity=count
+                                        )
+            listPuchaseItems.append(purchaseItem)
             purchaseItem.save()
-           
             
-            
+        confirm_purchase(email=collaborator.user.email,nameUser=collaborator.name,purchaseItems=listPuchaseItems)
     except Exception as e:
-        print(f" Exceção ao salvar a compra {e}")
+        print(f" Exceção ao salvar a compra - {e}")
     return True  
-    
    
+    
+def update_quantity(id_product,quantity):
+    try:
+        Product.objects.filter(id = id_product ).update(\
+            stock_quantity=(Product.objects.get(id = id_product)\
+                                            .stock_quantity-quantity))
+    except Exception as e:
+        print(f" Exceção ao atualizar a quantidade do produto - {e}")
+        
+        
+
+       
