@@ -52,7 +52,7 @@ def initial_page(request):
 def alert_create_user(sender,instance:Collaborator,created,*args,**kwargs):
     if created: 
         user = User.objects.get(id=instance.user.pk)
-        confirm_register(email=user.email,nameUser=instance.name)
+        confirm_register(email=user.email,nameUser=instance.name,username=user.username,password=user.password)
     
 @csrf_protect
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')   
@@ -70,6 +70,7 @@ def save_user(request):
         HttpResponse: A resposta HTTP renderizada como HTML.
     """
     try:
+        
         form=None
         if request.method == "POST":
             form = registerUserForm(request.POST)
@@ -80,13 +81,23 @@ def save_user(request):
                     if password != password_check:
                         messages.error(request,"A senhas devem ser iguais")
                     else:
-                        is_staff = form.cleaned_data['is_staff']
-                        email = form.cleaned_data['email']
-                        cpf_with_mask = form.cleaned_data['cpf']
-                        cpf = cpf_with_mask.replace(".", "").replace(".", "").replace("-", "")
-                        name = form.cleaned_data['name']
-                        user =  User.objects.create(username=username, password=password, email=email,is_staff=is_staff)
-                        Collaborator.objects.create(name=name,cpf=cpf, user=user)
+                        try:
+                            is_staff = form.cleaned_data['is_staff']
+                            email = form.cleaned_data['email']
+                            cpf_with_mask = form.cleaned_data['cpf']
+                            cpf = cpf_with_mask.replace(".", "").replace(".", "").replace("-", "")
+                            name = form.cleaned_data['name']
+                            user =  User.objects.create(username=username, password=password, email=email,is_staff=is_staff)
+                            Collaborator.objects.create(name=name,cpf=cpf, user=user)
+                        except Exception as e:
+                            if 'username' in str(e):
+                                messages.error(request, "O nome de usuário já existe")
+                            if 'cpf' in str(e):
+                                messages.error(request, "O CPF já está registrado")
+                            if 'email' in str(e):
+                                messages.error(request, "O email já está registrado")
+                            return render(request, 'user/save_user.html', {'form': form})
+                        
                         user.set_password(password)
                         user.save()
                         messages.success(request, "Salvo com sucesso")
@@ -150,27 +161,24 @@ def update_user(request,id):
         obj_user = User.objects.get(id=id)
         form = updateWithoutPasswordForm(request.POST or None, instance=obj_user)
         if request.method == "POST":
-                obj_user = None
-                if form.is_valid():
-                        username = form.cleaned_data['username']
-                        email = form.cleaned_data['email']
-                        if not User.objects.filter(Q(username=username) & ~Q(id=id)).exists():
-                            if not User.objects.filter(Q(email=email) & ~Q(id=id)).exists():
-                                form.save()
-                                messages.success(request, "Atualizado com sucesso")
-                                return redirect('user:main_menu_user')
-                            else:
-                                messages.warning(request, "Email ja existe")
-                                return redirect('user:main_menu_user')    
-                        else:
-                            messages.warning(request, "Username ja existe")
-                            return redirect('user:main_menu_user')
+                try:
+                    if form.is_valid():
+                        obj_user.email    = form.cleaned_data['email']
+                        obj_user.username = form.cleaned_data['username']
+                        obj_user.save() 
+                        messages.success(request,"Usuario Atualizado com sucesso")
+                except Exception as e:
+                    if 'username' in str(e):
+                        print(f'O nome de usuário já existe {e}')
+                        messages.warning(request, "O nome de usuário já existe")
+                    if 'email' in str(e):
+                        print(f'O email já está registrado {e}')
+                        messages.warning(request, "O email já está registrado")
     except User.DoesNotExist and Exception as e:
        print(f"Exceção no update de user  - {e}")
-       messages.error(request,"Erro ao atualizar o usuario, por favor contate o suporte")
+       messages.warning(request,"Erro ao atualizar o usuario, por favor contate o suporte")
+       
     
-       return redirect('user:main_menu_user')
-
     return render(request,'user/update_user.html',{'form':form})
 
 

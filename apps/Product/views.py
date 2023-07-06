@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.admin.views.decorators import user_passes_test
 from django.db.models import Q
 
-@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')     
+@user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')     
 @login_required(login_url="login_system")
 def main_menu_product(request,name=None):
     form = searchProductForm()
@@ -19,7 +19,7 @@ def main_menu_product(request,name=None):
     
     return render(request,'product/main_menu_product.html',{'products':products,'form':form})
 
-@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
+@user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
 def save_product(request):
     try:
@@ -39,7 +39,7 @@ def save_product(request):
         messages.warning(request, "Codigo de Barras ja existe")
     return render(request, 'product/save_product.html', {'form': form})
 
-@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')        
+@user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')        
 @login_required(login_url="login_system")
 def erase_product(request, id):
     print(request.method)
@@ -49,7 +49,7 @@ def erase_product(request, id):
         print(f"Exceção no excluir produto {e}")
     return redirect('product:main_menu_product')
 
-@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')      
+@user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')      
 @login_required(login_url="login_system")
 def update_product(request,id):
     product_selected = Product.objects.get(id=id)
@@ -64,7 +64,7 @@ def update_product(request,id):
         
     return render(request,'product/update_product.html',{'form':form})
 
-@user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
+@user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
 def main_menu_product_with_filter(request):
     try:

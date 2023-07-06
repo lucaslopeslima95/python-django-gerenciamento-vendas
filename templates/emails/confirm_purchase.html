@@ -11,11 +11,22 @@
     }
 
     .top-bar {
-      background-color: #123456;
+      background-color: #2d3560;
       height: 25vh;
       width: 100%;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .footer-bar {
+      background-color: #2d3560;
+      height: 10vh;
+      width: 100%;
+      display: flex;
+      color: white;
+      flex-direction: row;
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -49,7 +60,7 @@
     }
 
     th {
-      background-color: #123456;
+      background-color: #2d3560;
       color: #fff;
     }
 
@@ -58,16 +69,25 @@
       height: 10px;
       width: 100%;
     }
+    img{
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
     <div class="top-bar">
-        <img src="{% static 'imgs/logo-sci.png' %}">
+        <img src="https://thumbs2.imgbox.com/1a/a4/bLjeVyFH_t.png">
     </div>
     <div class="spacer"></div>
   <div class="table-container">
-  <h2>Comprovante de compra na Conveniência Sci</h2> 
-  <label for="name">Nome: {{nome}}</label>
+  <h2>Comprovante de compra na Conveniência SCI</h2> 
+  <p>Nome: {{ nome }}</p>
+  <p>Data: {{ date }}</p>
+  <p>Hora: {{ hour }}</p>
     <table>
       <thead>
         <tr>
@@ -96,6 +116,10 @@
       </tbody>
     </table>
   </div>
- 
+  <div class="spacer"></div>
+  <div class="footer-bar">
+    <p>Agradecemos Atenciosamente: Setor RH</p>
+    <img src="https://thumbs2.imgbox.com/1a/a4/bLjeVyFH_t.png">
+  </div>
 </body>
 </html>

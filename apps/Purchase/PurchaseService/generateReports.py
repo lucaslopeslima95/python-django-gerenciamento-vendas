@@ -18,14 +18,15 @@ def generate_reports_individual(listPurchases,collaborator):
         pdf = FPDF()
         pdf.add_page()
         pdf.set_font('Arial', 'B', 10)
-        pdf.set_fill_color(240, 240, 240)
+        pdf.set_fill_color(255, 255, 255)
         pdf.cell(0, 10, f'Relatorio de compras {collaborator.name} ', 1, 1, 'C', 1)
       
         for purchase in listPurchases:
             purchase_date = purchase.date_purchase.strftime('%d/%m/%Y')
             products = purchase.product.all()
             for product in products:
-                pdf.cell(0, 10, f"Colaborador: {purchase.collaborator}, Data: {purchase_date}, Prod: {product.name}, Preço: {product.price}", 1, 1, 'L', 1)
+                pdf.cell(0, 10, f"Colaborador: {purchase.collaborator}, Data: {purchase_date},\
+                         Produto: {product.name}, Preço: {product.price}", 1, 1, 'L', 1)
        
         try:
             total = listPurchases.aggregate(total=Sum('purchaseitem__price'))['total']
