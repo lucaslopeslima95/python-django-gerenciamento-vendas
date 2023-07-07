@@ -17,7 +17,13 @@
                 {{ form.as_p }}
                 <p>A senha gerada automaticamente é: @SejaBemVindo3</p>
                 <div class="d-flex justify-content-center p-5 ">
-                    <button type="submit" class="btn btn-primary" id="btn-save-collaborator" disabled="true">Salvar</button>
+                    <button type="submit" class="btn btn-primary" id="btn-save-collaborator" disabled="true">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Salvar</button>
+                    <a href="{% url 'collaborator:main_menu_collaborator'%}" class="btn btn-danger ms-5">
+                        Cancelar
+                    <i class="fa-solid fa-rectangle-xmark"></i>
+                    </a>
                 </div>
             </form>
         </div>

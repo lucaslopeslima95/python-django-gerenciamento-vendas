@@ -12,10 +12,10 @@ from django.db.models import Q
 def main_menu_product(request,name=None):
     form = searchProductForm()
     if not name:
-        products = Product.objects.all()
+        products = Product.objects.all().order_by('is_deleted')
     else:
         form = searchProductForm(request.POST)
-        products = Product.objects.filter(name__startswith=name)
+        products = Product.objects.filter(name__startswith=name).order_by('is_deleted')
     
     return render(request,'product/main_menu_product.html',{'products':products,'form':form})
 
@@ -42,9 +42,8 @@ def save_product(request):
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')        
 @login_required(login_url="login_system")
 def erase_product(request, id):
-    print(request.method)
     try:
-        Product.objects.filter(id=id).update(is_deleted=True)
+        Product.objects.filter(id=id).update(is_deleted= not Product.objects.get(id=id).is_deleted)
     except Exception as e:
         print(f"Exceção no excluir produto {e}")
     return redirect('product:main_menu_product')
@@ -79,7 +78,14 @@ def main_menu_product_with_filter(request):
     return main_menu_product(request,name)
         
 
- 
+@user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')    
+@login_required(login_url="login_system")
+def update_status_product(request,id):
+    try:
+        Product.objects.filter(id=id).update(active = not Product.objects.get(id=id).is_deleted)
+    except Exception as e:
+        print(f"Exceção ao atualizar a situação do produto - {e}")
+    return redirect('product:main_menu_product')
 
      
      
