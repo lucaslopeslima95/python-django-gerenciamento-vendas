@@ -1660,3 +1660,1257 @@ Watching for file changes with StatReloader
 "GET /product/main_menu_product HTTP/1.1" 200 9835
 "GET /product/update_product/4 HTTP/1.1" 200 5439
 "GET /product/update_product/4 HTTP/1.1" 200 5439
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 7456
+"GET /static/css/css_reset.css HTTP/1.1" 304 0
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 304 0
+"GET /static/js/generateUsername.js HTTP/1.1" 304 0
+"GET /static/js/inputMask.js HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /main_menu_user HTTP/1.1" 200 7369
+"GET /page_initial_reports HTTP/1.1" 200 5751
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 12179
+"GET /product/main_menu_product HTTP/1.1" 200 9835
+"POST /product/erase_product/7 HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 9788
+"POST /product/erase_product/7 HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 9835
+"POST /product/erase_product/4 HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 9788
+"POST /product/erase_product/4 HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 9835
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 7456
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6306
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 304 0
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 7456
+"GET /product/main_menu_product HTTP/1.1" 200 9835
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6571
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6571
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6598
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6306
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6571
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6571
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6571
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6571
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6571
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6571
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6571
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/User/emails/emails.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6567
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6567
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6567
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6306
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6567
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6567
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6452
+"GET /page_initial_reports HTTP/1.1" 200 5751
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/DTO/PurchaseItemDTO.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/DTO/PurchaseItemDTO.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/DTO/PurchaseItemDTO.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /purchase/initial_page_purchase
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Purchase/views.py", line 24, in initial_page_purchase
+    print(cart.total_spends_current)
+AttributeError: 'PurchaseItemDTO' object has no attribute 'total_spends_current'
+"GET /purchase/initial_page_purchase HTTP/1.1" 500 70261
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6287
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6552
+Internal Server Error: /purchase/finish_purchase
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/sessions/middleware.py", line 59, in process_response
+    request.session.save()
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/sessions/backends/db.py", line 82, in save
+    obj = self.create_model_instance(data)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/sessions/backends/db.py", line 69, in create_model_instance
+    session_data=self.encode(data),
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/sessions/backends/base.py", line 94, in encode
+    return signing.dumps(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/signing.py", line 152, in dumps
+    return TimestampSigner(key=key, salt=salt).sign_object(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/signing.py", line 250, in sign_object
+    data = serializer().dumps(obj)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/signing.py", line 127, in dumps
+    return json.dumps(obj, separators=(",", ":")).encode("latin-1")
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.10/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Decimal is not JSON serializable
+"POST /purchase/finish_purchase HTTP/1.1" 500 118348
+Internal Server Error: /purchase/finish_purchase
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/sessions/middleware.py", line 59, in process_response
+    request.session.save()
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/sessions/backends/db.py", line 82, in save
+    obj = self.create_model_instance(data)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/sessions/backends/db.py", line 69, in create_model_instance
+    session_data=self.encode(data),
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/sessions/backends/base.py", line 94, in encode
+    return signing.dumps(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/signing.py", line 152, in dumps
+    return TimestampSigner(key=key, salt=salt).sign_object(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/signing.py", line 250, in sign_object
+    data = serializer().dumps(obj)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/signing.py", line 127, in dumps
+    return json.dumps(obj, separators=(",", ":")).encode("latin-1")
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.10/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Decimal is not JSON serializable
+"POST /purchase/finish_purchase HTTP/1.1" 500 118348
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6793
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET / HTTP/1.1" 200 7456
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+Watching for file changes with StatReloader
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET / HTTP/1.1" 200 7456
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /main_menu_user HTTP/1.1" 200 7369
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /update_user/6 HTTP/1.1" 200 5475
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /main_menu_user HTTP/1.1" 200 7369
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 12179
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"POST /product/erase_product/4 HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 9789
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"POST /product/erase_product/5 HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 9742
+"POST /product/erase_product/5 HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 9789
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /product/update_product/4 HTTP/1.1" 200 5440
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"POST /product/erase_product/4 HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 12179
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /collaborator/update_collaborator/50 HTTP/1.1" 200 5832
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 12179
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /main_menu_user HTTP/1.1" 200 7369
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /update_user/6 HTTP/1.1" 200 5475
+"GET /main_menu_user HTTP/1.1" 200 7369
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /save_user HTTP/1.1" 200 6744
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /main_menu_user HTTP/1.1" 200 7369
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /update_user/76 HTTP/1.1" 200 5486
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET / HTTP/1.1" 200 7456
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /page_initial_reports HTTP/1.1" 200 5751
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /page_initial_reports HTTP/1.1" 200 5758
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6647
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2939
+Not Found: /{% static 'vendor/fontawesome-free/css/all.min.css'}
+"GET /%7B%%20static%20'vendor/fontawesome-free/css/all.min.css'%7D HTTP/1.1" 404 5048
+"GET /static/imgs/logo-sci.png HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6287
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6287
+"GET / HTTP/1.1" 200 2939
+Not Found: /{% static 'vendor/fontawesome-free/css/all.min.css'}
+"GET /%7B%%20static%20'vendor/fontawesome-free/css/all.min.css'%7D HTTP/1.1" 404 5048
+"POST / HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 7456
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6287
+"GET /product/update_product/4 HTTP/1.1" 200 5440
+"POST /product/update_product/4 HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 9910
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6552
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6450
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6304
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6569
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6794
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6648
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6648
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 7456
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6648
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6648
+Watching for file changes with StatReloader
+"GET /main_menu_user HTTP/1.1" 200 7369
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET / HTTP/1.1" 200 2939
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+Not Found: /{% static 'vendor/fontawesome-free/css/all.min.css'}
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /%7B%%20static%20'vendor/fontawesome-free/css/all.min.css'%7D HTTP/1.1" 404 5048
+"GET /static/imgs/logo-sci.png HTTP/1.1" 200 5407
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+Not Found: /puchase/initial_purchase
+"GET /puchase/initial_purchase HTTP/1.1" 404 4924
+Not Found: /purchase/initial_purchase
+"GET /purchase/initial_purchase HTTP/1.1" 404 5854
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6622
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6622
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6622
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6622
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6622
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6622
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6622
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6622
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6622
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6622
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6622
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6622
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6622
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 7456
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6638
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6303
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6303
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6303
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6303
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6303
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6303
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6303
+Internal Server Error: /purchase/initial_page_purchase
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/smartif.py", line 179, in translate_token
+    op = OPERATORS[token]
+KeyError: 'request.session.total_spends_last_referred!='
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Purchase/views.py", line 34, in initial_page_purchase
+    return render(request, 'purchase/initial_purchase.html',
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/defaulttags.py", line 952, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/defaulttags.py", line 885, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/smartif.py", line 170, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/smartif.py", line 181, in translate_token
+    return self.create_var(token)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/defaulttags.py", line 888, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '!=' from 'request.session.total_spends_last_referred!='
+"GET /purchase/initial_page_purchase HTTP/1.1" 500 208300
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6666
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6643
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6643
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6643
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6643
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6643
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6643
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6643
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6643
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6643
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6643
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6643
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6643
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6627
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6627
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6627
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6627
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6627
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6627
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6627
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6627
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6627
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6627
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6627
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6627
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6627
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6627
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6287
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6287
+"GET /product/main_menu_product HTTP/1.1" 302 0
+"GET /page_not_found?next=/product/main_menu_product HTTP/1.1" 200 928
+"GET /static/vendor/jquery-easing/jquery.easing.min.js HTTP/1.1" 304 0
+"GET /static/vendor/jquery/jquery.min.js HTTP/1.1" 200 89501
+Not Found: /{% static 'vendor/fontawesome-free/css/all.min.css'}
+"GET /%7B%%20static%20'vendor/fontawesome-free/css/all.min.css'%7D HTTP/1.1" 404 5048
+"GET /logout_system HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 2939
+Not Found: /{% static 'vendor/fontawesome-free/css/all.min.css'}
+"GET /%7B%%20static%20'vendor/fontawesome-free/css/all.min.css'%7D HTTP/1.1" 404 5048
+"POST / HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 7456
+"GET /product/main_menu_product HTTP/1.1" 200 9835
+Forbidden (CSRF token from POST incorrect.): /purchase/find_product
+"POST /purchase/find_product HTTP/1.1" 403 2519
+"GET /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6287
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6552
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6445
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6299
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6299
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6299
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6564
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6445
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6299
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6299
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6564
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6445
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6299
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6311
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6576
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6457
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6927
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6301
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6566
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6808
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6301
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6301
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6301
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6301
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6266
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6266
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6531
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6751
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6266

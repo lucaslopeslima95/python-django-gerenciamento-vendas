@@ -37,6 +37,7 @@ def calculates_and_returns_current_referral_spending(employee_who_made_the_purch
             )
         # total_spended = listPurchases.aggregate(total=Sum('purchaseitem__price'))['total']
         return listPurchases
+    
 def calculates_and_returns_last_reference_spend(employee_who_made_the_purchase:Collaborator):
    """Calcula o preço total das compras de um determinado 
     colaborador em um período específico.
@@ -80,3 +81,5 @@ def get_data_to_generate_reports(collaborator:Collaborator,start_date,end_date):
         print(f"Exceção ao buscar as compras para gerar o relatorio - {e}")
    
    return generate_reports_individual(listPurchases,collaborator=collaborator)
+
+

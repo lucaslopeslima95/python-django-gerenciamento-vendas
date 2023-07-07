@@ -12,6 +12,7 @@ from Collaborator.models import Collaborator
 from Purchase.models import Purchase,PurchaseItem
 from django.db.models.signals import post_save
 from User.emails.emails import confirm_purchase
+from django.db.models import Sum
 
 
 
@@ -19,6 +20,7 @@ def initial_page_purchase(request):
     cart = PurchaseItemDTO()
     form_code_bar = searchProductToPurchaseForm()
     puchase_list_total_value = None
+    
     if request.method == "GET":
         try:
             puchase_list_total_value = 0
@@ -50,11 +52,10 @@ def finish_purchase(request):
                         collaborator = Collaborator.objects.get(user=user.id)
                         if collaborator.active:
                             if save_purchase(collaborator):
-                                cart.total_spends_current = calculates_and_returns_current_referral_spending(collaborator)
-                                cart.total_spends_last_referred = calculates_and_returns_last_reference_spend(collaborator)
-                                cart.products.clear()
+                                cart.products.clear()                                 
                                 messages.success(request, "Salvo com Sucesso.")
-                                cart.show_spends = True
+                                request.session['total_spends_current'] = float(calculates_and_returns_current_referral_spending(collaborator).aggregate(total=Sum('purchaseitem__price'))['total'])
+                                request.session['total_spends_last_referred'] = float(calculates_and_returns_last_reference_spend(collaborator).aggregate(total=Sum('purchaseitem__price'))['total'])
                                 return redirect('purchase:initial_page_purchase')
                         else:
                             cart.products.clear()
@@ -62,7 +63,6 @@ def finish_purchase(request):
                             return redirect('purchase:initial_purchase')
                             
                     else:
-                        cart.login_failed = True
                         messages.warning(request, "Usuario ou Senha Errados.")
                         return redirect('purchase:initial_page_purchase')
                 else:
@@ -104,6 +104,9 @@ def remove_product_purchase(request,id):
 def clean_all_products_purchase(request):
     in_cart = PurchaseItemDTO()
     in_cart.products.clear()
+    request.session['total_spends_current'] = 0.0
+    request.session['total_spends_last_referred'] = 0.0
+    
     return redirect('purchase:initial_page_purchase')
 
 

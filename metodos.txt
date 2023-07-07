@@ -1,2 +1,16 @@
+crair uma tela de pos login , estoque 
+lista de produtos
+somente ativos com quantidade
+--dashboard
+litagem de produtos com baixa quantidade 
+criar categoria 
+quando for ingresso mandar email ao comprador e ao rh para avisar a compra tbm
+validar a quantidade  antes de efetuar a compra
 
 
+melhorar o relatorio e o comprovante o pdf deles ta feio demais
+
+@SejaBemVindo3
+
+
+passo o botao de atualizar status para dentro da tela de editar
