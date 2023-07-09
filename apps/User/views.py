@@ -27,6 +27,7 @@ from .models import User
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,
                   login_url='user:page_not_found')
 def initial_page(request):
+    dias = None
     """Exibe a página inicial e constrói os dados do dashboard.
 
     Args:

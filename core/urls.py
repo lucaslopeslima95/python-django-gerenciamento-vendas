@@ -4,6 +4,8 @@ from User import urls as User_urls
 from Collaborator import urls as collaborator_urls
 from Product import urls as product_urls
 from Purchase import urls as purchase_urls
+from Category import urls as category_urls
+
 
 
 urlpatterns = [
@@ -12,4 +14,5 @@ urlpatterns = [
     path("collaborator/",include(collaborator_urls,namespace="collaborator"),name="collaborator"),
     path("product/",include(product_urls,namespace="product"),name="product"),
     path("purchase/",include(purchase_urls,namespace="purchase"),name="purchase"),
+    path("category/",include(category_urls,namespace="category"),name="category"),
 ]
