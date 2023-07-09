@@ -11,12 +11,22 @@
         {{ message }}
         </div>
         {% endfor %}
+        <div class="card-header rounded mb-3">
+            <a href="{% url 'category:main_menu_category'%}">
+                <i class="fa-sharp fa-solid fa-arrow-left fa-2xl"></i>
+            </a>
+            Voltar ao menu principal
+        </div>
         <div class="card-body d-flex justify-content-center align-items-center">  
             <form action="" method="post" class="vw-100">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <div class="d-flex justify-content-center p-5">
                     <button type="submit" class="btn btn-primary btn-lg">Salvar</button>
+                    <a href="{% url 'category:main_menu_category'%}" class="btn btn-danger ms-5">
+                        Cancelar
+                    <i class="fa-solid fa-rectangle-xmark"></i>
+                    </a>
                 </div>
             </form>
         </div>

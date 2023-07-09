@@ -5,24 +5,25 @@ from django.contrib.admin.views.decorators import user_passes_test
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 
-from .forms import findByNameForm, registerCategoryForm
+from .forms import registerCategoryForm
 from .models import Category
 
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')     
 @login_required(login_url="login_system")
-def main_menu_category(request,name=None):
+def main_menu_category(request):
     try:
-        form = findByNameForm()
-        if not name:
-            categorys = Category.objects.all().order_by('name')
+        categorys = None
+        filter = request.session['filter']
+        if filter:
+         categorys = Category.objects.filter(name__startswith=filter).order_by('name')
+         request.session['filter'] = ""
         else:
-            form = findByNameForm(request.POST)
-            categorys = Category.objects.filter(name__startswith=name).order_by('name')
+         categorys = Category.objects.all().order_by('name')
     except (Category.DoesNotExist,Exception) as e:
         print(f"Exceção listar as categorias no menu principal - {e}")
         
-    return render(request,'category/main_menu_category.html',{'categorys':categorys,'form':form})
+    return render(request,'category/main_menu_category.html',{'categorys':categorys})
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
@@ -38,7 +39,7 @@ def save_category(request):
             else:
                 messages.warning(request, "Dados Inválidos")
                 
-            return redirect ('product:main_menu_product')
+            return redirect ('category:main_menu_category')
         else:
          form = registerCategoryForm()
     except (Exception,IntegrityError) as e:
@@ -51,22 +52,23 @@ def save_category(request):
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')      
 @login_required(login_url="login_system")
 def update_category(request,id):
-    form = registerCategoryForm()
+    category_selected = Category.objects.get(id=id)
+    form = registerCategoryForm(request.POST or None, instance=category_selected)
     if request.method == "POST":
         if form.is_valid():
             form.save()
             messages.success(request, "Atualizado com sucesso")
         else:
             messages.warning(request, "Dados Invalido")
-            
         return redirect('category:main_menu_category')
-    else:
-        category_selected = Category.objects.get(id=id)
-        form = registerCategoryForm(request.POST or None, instance=category_selected)
-        
-    return render(request,'product/update_product.html',{'form':form})
+    return render(request,'category/update_category.html',{'form':form})
 
 
+@user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')     
+@login_required(login_url="login_system")
+def main_menu_category_filtered(request):
+    request.session['filter'] = request.GET.get('parametro')
+    return redirect('category:main_menu_category')
      
      
      

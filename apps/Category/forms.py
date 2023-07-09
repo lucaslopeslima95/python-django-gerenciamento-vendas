@@ -8,7 +8,5 @@ class registerCategoryForm(ModelForm):
     class Meta:
         model = Category
         fields = ['name','description']
-      
-class findByNameForm(forms.Form):
-   name = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome Categoria","class": "form-control"}),label="Nome Categoria")
+
    

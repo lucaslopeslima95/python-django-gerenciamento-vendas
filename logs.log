@@ -4521,3 +4521,972 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'erase_category' not found. '
 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
 "GET /category/main_menu_category HTTP/1.1" 200 5845
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2939
+Not Found: /{% static 'vendor/fontawesome-free/css/all.min.css'}
+"GET /%7B%%20static%20'vendor/fontawesome-free/css/all.min.css'%7D HTTP/1.1" 404 5157
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+"POST / HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 7641
+"GET /main_menu_user HTTP/1.1" 200 7573
+"POST /main_menu_user_with_filter HTTP/1.1" 200 6671
+"GET /main_menu_user HTTP/1.1" 200 7573
+"GET /main_menu_user HTTP/1.1" 200 7582
+Internal Server Error: /category/main_menu_category
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Category/views.py", line 25, in main_menu_category
+    return render(request,'category/main_menu_category.html',{'categorys':categorys,'form':form})
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'erase_category' not found. 'erase_category' is not a valid view function or pattern name.
+"GET /category/main_menu_category HTTP/1.1" 500 194814
+"GET /category/main_menu_category HTTP/1.1" 200 6386
+"GET /category/main_menu_category HTTP/1.1" 200 6386
+"GET /category/main_menu_category HTTP/1.1" 200 6388
+"GET /category/main_menu_category HTTP/1.1" 200 6390
+"GET /category/main_menu_category HTTP/1.1" 200 6390
+"GET /category/update_category/1 HTTP/1.1" 200 5192
+"GET /category/update_category/1 HTTP/1.1" 200 5192
+"GET /category/update_category/1 HTTP/1.1" 200 5192
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/validatePassword.js HTTP/1.1" 200 789
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/update_category/1 HTTP/1.1" 200 5195
+"POST /category/update_category/1 HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 6457
+"GET /category/update_category/1 HTTP/1.1" 200 5195
+"POST /category/update_category/1 HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 6457
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/update_category/1 HTTP/1.1" 200 5172
+"GET /category/main_menu_category HTTP/1.1" 200 6390
+"GET /category/update_category/1 HTTP/1.1" 200 5172
+"POST /category/update_category/1 HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 6467
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/main_menu_category HTTP/1.1" 200 6392
+"GET /category/update_category/1 HTTP/1.1" 200 5197
+"POST /category/update_category/1 HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 6467
+"GET /category/main_menu_category HTTP/1.1" 200 6394
+"GET /category/main_menu_category HTTP/1.1" 200 6367
+"GET /category/main_menu_category HTTP/1.1" 200 6371
+"GET /category/save_category HTTP/1.1" 200 5425
+"GET /category/save_category HTTP/1.1" 200 5425
+"GET /category/main_menu_category HTTP/1.1" 200 6321
+"GET /category/main_menu_category HTTP/1.1" 200 6323
+"GET /category/main_menu_category HTTP/1.1" 200 6325
+"GET /category/main_menu_category HTTP/1.1" 200 6325
+"GET /product/main_menu_product HTTP/1.1" 200 10024
+"GET /category/main_menu_category HTTP/1.1" 200 6325
+"GET /category/update_category/2 HTTP/1.1" 200 5203
+"GET /category/update_category/2 HTTP/1.1" 200 5200
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 13656
+"GET /collaborator/update_collaborator/43 HTTP/1.1" 200 6017
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 13656
+"GET /category/main_menu_category HTTP/1.1" 200 6325
+"GET /category/update_category/1 HTTP/1.1" 200 5545
+"GET /category/main_menu_category HTTP/1.1" 200 6325
+"GET /category/update_category/1 HTTP/1.1" 200 5545
+"GET /category/update_category/1 HTTP/1.1" 200 5550
+"GET /category/main_menu_category HTTP/1.1" 200 6325
+"GET /category/update_category/1 HTTP/1.1" 200 5550
+"GET /category/main_menu_category HTTP/1.1" 200 6325
+"GET /category/update_category/2 HTTP/1.1" 200 5556
+"GET /category/main_menu_category HTTP/1.1" 200 6325
+"GET /category/save_category HTTP/1.1" 200 5425
+"GET /category/save_category HTTP/1.1" 200 5874
+"GET /category/main_menu_category HTTP/1.1" 200 6325
+"GET /category/save_category HTTP/1.1" 200 5874
+"GET /category/main_menu_category HTTP/1.1" 200 6325
+"GET /category/main_menu_category HTTP/1.1" 200 6325
+"GET /product/main_menu_product HTTP/1.1" 200 10024
+"GET /product/save_product HTTP/1.1" 200 5796
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/main_menu_category HTTP/1.1" 200 6325
+"GET /category/save_category HTTP/1.1" 200 5874
+"POST /category/save_category HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 10094
+"GET /product/main_menu_product HTTP/1.1" 200 10024
+"GET /category/main_menu_category HTTP/1.1" 200 6586
+"GET /category/save_category HTTP/1.1" 200 5874
+"GET /category/main_menu_category HTTP/1.1" 200 6586
+"GET /category/update_category/3 HTTP/1.1" 200 5577
+"GET /category/main_menu_category HTTP/1.1" 200 6586
+"GET /category/save_category HTTP/1.1" 200 5874
+"POST /category/save_category HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 10094
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/main_menu_product HTTP/1.1" 200 10024
+"GET /category/main_menu_category HTTP/1.1" 200 6843
+"GET /category/main_menu_category HTTP/1.1" 200 6843
+"GET /product/main_menu_product HTTP/1.1" 200 10024
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8884
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8884
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8884
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8962
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8962
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+"GET /product/update_product/4 HTTP/1.1" 200 5628
+"GET /product/save_product HTTP/1.1" 200 5796
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /product/save_product HTTP/1.1" 200 6155
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/forms.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/forms.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/forms.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/forms.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/save_product HTTP/1.1" 200 6186
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/forms.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/save_product HTTP/1.1" 200 6185
+"POST /product/save_product HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 11048
+"GET /product/update_product/8 HTTP/1.1" 200 5994
+"GET / HTTP/1.1" 200 7739
+"GET /admin/ HTTP/1.1" 200 12379
+"GET /admin/Product/product/ HTTP/1.1" 200 12177
+"GET /admin/jsi18n/ HTTP/1.1" 200 8876
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+"GET /admin/Product/product/8/change/ HTTP/1.1" 200 15667
+"GET /admin/jsi18n/ HTTP/1.1" 200 8876
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+"GET /category/main_menu_category HTTP/1.1" 200 6843
+"GET /category/save_category HTTP/1.1" 200 5874
+"GET /category/main_menu_category HTTP/1.1" 200 6843
+"GET /category/save_category HTTP/1.1" 200 5874
+"GET /category/main_menu_category HTTP/1.1" 200 6843
+"GET /category/main_menu_category HTTP/1.1" 200 6843
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/validatePassword.js HTTP/1.1" 200 789
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+"GET /product/main_menu_product HTTP/1.1" 200 10978
+"GET /product/update_product/8 HTTP/1.1" 200 5994
+"POST /product/update_product/8 HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 11053
+"GET /category/main_menu_category HTTP/1.1" 200 6843
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/main_menu_category HTTP/1.1" 200 6879
+Internal Server Error: /category/main_menu_category_filtered
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Category/views.py", line 71, in main_menu_category_filtered
+    return render(request,'category/main_menu_category.html',{'categorys':categorys,'form':form})
+UnboundLocalError: local variable 'categorys' referenced before assignment
+"GET /category/main_menu_category_filtered?csrfmiddlewaretoken=S3hgJeNmFpBKAZQHsDkTUjCuvW0tGYgyDmn6wkgHwY3neAFwqff3NqqB6e0yzrKQ&name=c HTTP/1.1" 500 81093
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/main_menu_category_filtered?csrfmiddlewaretoken=S3hgJeNmFpBKAZQHsDkTUjCuvW0tGYgyDmn6wkgHwY3neAFwqff3NqqB6e0yzrKQ&name=c HTTP/1.1" 200 5867
+"GET /category/main_menu_category_filtered?csrfmiddlewaretoken=S3hgJeNmFpBKAZQHsDkTUjCuvW0tGYgyDmn6wkgHwY3neAFwqff3NqqB6e0yzrKQ&name=c HTTP/1.1" 200 5867
+"GET /category/main_menu_category_filtered?csrfmiddlewaretoken=N4CwW4Duu3bfXjm5WNi9ga8AQsEGA15iynImJa6PlCDSBUbUUpdj9hWHrKELtuzA&name=BEBIDAS+ALCOLICAS HTTP/1.1" 200 5883
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /category/main_menu_category_filtered
+"GET /category/main_menu_category_filtered?csrfmiddlewaretoken=N4CwW4Duu3bfXjm5WNi9ga8AQsEGA15iynImJa6PlCDSBUbUUpdj9hWHrKELtuzA&name=BEBIDAS+ALCOLICAS HTTP/1.1" 404 5912
+"GET / HTTP/1.1" 200 7739
+Internal Server Error: /category/main_menu_category
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Category/views.py", line 21, in main_menu_category
+    return render(request,'category/main_menu_category.html',{'categorys':categorys,'form':form})
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'main_menu_category_filtered' with no arguments not found. 1 pattern(s) tried: ['category/main_menu_category_filtered/(?P<filter>[^/]+)\\Z']
+"GET /category/main_menu_category HTTP/1.1" 500 186962
+Internal Server Error: /category/main_menu_category
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Category/views.py", line 21, in main_menu_category
+    return render(request,'category/main_menu_category.html',{'categorys':categorys,'form':form})
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'main_menu_category_filtered' with no arguments not found. 1 pattern(s) tried: ['category/main_menu_category_filtered/(?P<filter>[^/]+)\\Z']
+"GET /category/main_menu_category HTTP/1.1" 500 186962
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/main_menu_category HTTP/1.1" 200 6880
+Internal Server Error: /category/main_menu_category_filtered
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+TypeError: main_menu_category_filtered() missing 1 required positional argument: 'filter'
+"POST /category/main_menu_category_filtered HTTP/1.1" 500 76782
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /category/main_menu_category_filtered HTTP/1.1" 200 5921
+"POST /category/main_menu_category_filtered HTTP/1.1" 200 5921
+"GET /category/main_menu_category HTTP/1.1" 200 6880
+"GET /category/main_menu_category HTTP/1.1" 200 6804
+"GET /category/main_menu_category HTTP/1.1" 200 6848
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/main_menu_category HTTP/1.1" 200 6848
+Forbidden (CSRF token missing.): /category/main_menu_category_filtered
+"POST /category/main_menu_category_filtered HTTP/1.1" 403 2507
+Forbidden (CSRF token missing.): /category/main_menu_category_filtered
+"POST /category/main_menu_category_filtered HTTP/1.1" 403 2507
+Forbidden (CSRF token missing.): /category/main_menu_category_filtered
+"POST /category/main_menu_category_filtered HTTP/1.1" 403 2507
+"GET /category/main_menu_category_filtered HTTP/1.1" 200 5746
+Not Found: /category:main_menu_category_filtered
+"GET /category:main_menu_category_filtered?parametro=b HTTP/1.1" 404 5081
+Not Found: /category:main_menu_category_filtered
+"GET /category:main_menu_category_filtered?parametro=b HTTP/1.1" 404 5081
+Not Found: /category:main_menu_category_filtered
+"GET /category:main_menu_category_filtered?parametro=b HTTP/1.1" 404 5081
+Not Found: /category:main_menu_category_filtered
+"GET /category:main_menu_category_filtered?parametro=b HTTP/1.1" 404 5081
+Not Found: /category:main_menu_category_filtered
+"GET /category:main_menu_category_filtered?parametro=b HTTP/1.1" 404 5081
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+Not Found: /category:main_menu_category_filtered
+"GET /category:main_menu_category_filtered?parametro=b HTTP/1.1" 404 5081
+"GET /category/main_menu_category_filtered HTTP/1.1" 200 5746
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/validatePassword.js HTTP/1.1" 200 789
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 200 6007
+"GET /category/main_menu_category_filtered?parametro= HTTP/1.1" 200 6768
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 200 6007
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 200 6007
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 200 5981
+"GET /category/main_menu_category HTTP/1.1" 200 6742
+"GET /category/main_menu_category_filtered?parametro=c HTTP/1.1" 200 5975
+"GET /category/main_menu_category HTTP/1.1" 200 6742
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 200 5981
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 200 5981
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /category/main_menu_category_filtered
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 404 5574
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+Not Found: /category/main_menu_category_filtered
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 404 5574
+Not Found: /category/main_menu_category_filtered
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 404 5574
+"GET /category/main_menu_category HTTP/1.1" 200 6732
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/validatePassword.js HTTP/1.1" 200 789
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+"GET /category/main_menu_category?parametro=b HTTP/1.1" 200 5971
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/main_menu_category?parametro=b HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /category/main_menu_category
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Category/views.py", line 26, in main_menu_category
+    return render(request,'category/main_menu_category.html',{'categorys':categorys,'form':form})
+UnboundLocalError: local variable 'categorys' referenced before assignment
+"GET /category/main_menu_category HTTP/1.1" 500 79821
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /category/main_menu_category
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Category/views.py", line 27, in main_menu_category
+    return render(request,'category/main_menu_category.html',{'categorys':categorys,'form':form})
+UnboundLocalError: local variable 'form' referenced before assignment
+"GET /category/main_menu_category HTTP/1.1" 500 79962
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/main_menu_category HTTP/1.1" 200 5719
+"GET /category/main_menu_category HTTP/1.1" 200 5719
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET / HTTP/1.1" 200 7739
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category_filtered?parametro= HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/main_menu_category HTTP/1.1" 200 5739
+"GET /category/main_menu_category HTTP/1.1" 200 5739
+"GET /category/main_menu_category HTTP/1.1" 200 5739
+"GET /category/main_menu_category HTTP/1.1" 200 5739
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/validatePassword.js HTTP/1.1" 200 789
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+"GET /category/main_menu_category HTTP/1.1" 200 5739
+"GET /category/main_menu_category HTTP/1.1" 200 5739
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/main_menu_category HTTP/1.1" 200 5739
+"GET /category/main_menu_category HTTP/1.1" 200 5739
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/main_menu_category HTTP/1.1" 200 5739
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/forms.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/validatePassword.js HTTP/1.1" 200 789
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/validatePassword.js HTTP/1.1" 200 789
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 5980
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET /category/main_menu_category HTTP/1.1" 200 6741
+"GET /product/main_menu_product HTTP/1.1" 200 10978
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/main_menu_product HTTP/1.1" 200 10978
+"GET /category/main_menu_category HTTP/1.1" 200 6769
+"GET /category/main_menu_category HTTP/1.1" 200 6745
+"GET /category/main_menu_category HTTP/1.1" 200 6758
+"GET /category/main_menu_category HTTP/1.1" 200 6758
+"GET /category/main_menu_category HTTP/1.1" 200 6745
+"GET /product/main_menu_product HTTP/1.1" 200 10978
+"GET /product/save_product HTTP/1.1" 200 6185
+"GET /product/main_menu_product HTTP/1.1" 200 10978
+"GET /product/main_menu_product HTTP/1.1" 200 10978
+"GET /category/main_menu_category HTTP/1.1" 200 6745
+"GET /category/main_menu_category HTTP/1.1" 200 8696
+"GET /category/update_category/3 HTTP/1.1" 200 5577
+"GET /category/main_menu_category HTTP/1.1" 200 8696
+"GET /category/main_menu_category HTTP/1.1" 200 8688
+"GET /category/main_menu_category HTTP/1.1" 200 8696
+"GET /category/main_menu_category HTTP/1.1" 200 8688
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/validatePassword.js HTTP/1.1" 200 789
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+"GET /category/main_menu_category HTTP/1.1" 200 8680
+"GET /category/main_menu_category_filtered?parametro=b HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 6358
+"GET /category/main_menu_category HTTP/1.1" 200 8680
+"GET /category/main_menu_category HTTP/1.1" 200 8648
+"GET /category/main_menu_category HTTP/1.1" 200 8616
+"GET /category/main_menu_category HTTP/1.1" 200 8648
+"GET /category/main_menu_category HTTP/1.1" 200 8664
+"GET /category/main_menu_category HTTP/1.1" 200 8664
+"GET /category/main_menu_category HTTP/1.1" 200 8664
+"GET /category/main_menu_category HTTP/1.1" 200 8684
+"GET /category/main_menu_category HTTP/1.1" 200 8684
+"GET /category/main_menu_category HTTP/1.1" 200 8716
+"GET /product/main_menu_product HTTP/1.1" 200 10978
+"POST /product/main_menu_product_with_filter HTTP/1.1" 200 7083
+"GET /product/main_menu_product HTTP/1.1" 200 10978
+"GET / HTTP/1.1" 200 7739

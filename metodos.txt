@@ -1,4 +1,4 @@
-Criar o crud para categoria de produto
+
 criar uma tela de pos login , estoque 
 lista de produtos
 somente ativos com quantidade acima de zero
