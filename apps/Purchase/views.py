@@ -71,7 +71,6 @@ def finish_purchase(request):
     return redirect('purchase:initial_page_purchase')
 
     
-
 def find_product(request):
     in_cart = PurchaseItemDTO()
     if request.method == "POST":
@@ -81,11 +80,14 @@ def find_product(request):
             if form.is_valid():
                 code_bar = form.cleaned_data['code_bar']
                 if code_bar != None:
-                    product = Product.objects.get(code_bar=code_bar)    
-                    purchaseItem = PurchaseItem()  
-                    purchaseItem.product = product
-                    purchaseItem.price = product.price
-                    in_cart.products.append(purchaseItem)
+                    product = Product.objects.get(code_bar=code_bar)
+                    if product.stock_quantity < 1:
+                        messages.warning(request, f"O {product.name} não possui unidades disponiveis no momento")
+                    else:    
+                        purchaseItem = PurchaseItem()  
+                        purchaseItem.product = product
+                        purchaseItem.price = product.price
+                        in_cart.products.append(purchaseItem)
         except (Product.DoesNotExist,Exception) as e:
             print(f"Exceção ao procurar produto {e}")
             messages.warning(request, "Produto não encontrado")

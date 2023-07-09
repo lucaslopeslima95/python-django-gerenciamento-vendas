@@ -4211,3 +4211,128 @@ Not Found: /favicon.ico
 "GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
 "GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
 "GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"GET / HTTP/1.1" 200 7461
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"GET /product/update_product/4 HTTP/1.1" 200 5440
+"POST /product/update_product/4 HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 9910
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8806
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8806
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8806
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8806
+"GET /product/main_menu_product HTTP/1.1" 200 9835
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8806
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8806
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8797
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8830
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8962
