@@ -1,19 +1,18 @@
-from django.dispatch import receiver
-from django.shortcuts import render,redirect
-from Purchase.PurchaseService.calculateExpends import calculates_and_returns_current_referral_spending, calculates_and_returns_last_reference_spend
-from User.models import User
-from .forms import searchProductToPurchaseForm
-from django.contrib import messages
-from Product.models import Product
-from User.forms import authForm
-from django.contrib.auth import authenticate
-from .DTO.PurchaseItemDTO import PurchaseItemDTO
 from Collaborator.models import Collaborator
-from Purchase.models import Purchase,PurchaseItem
-from django.db.models.signals import post_save
-from User.emails.emails import confirm_purchase
+from django.contrib import messages
+from django.contrib.auth import authenticate
 from django.db.models import Sum
+from django.shortcuts import redirect, render
+from Product.models import Product
+from Purchase.models import Purchase, PurchaseItem
+from Purchase.PurchaseService.calculateExpends import (
+    calculates_and_returns_current_referral_spending,
+    calculates_and_returns_last_reference_spend)
+from User.emails.emails import confirm_purchase
+from User.forms import authForm
 
+from .DTO.PurchaseItemDTO import PurchaseItemDTO
+from .forms import searchProductToPurchaseForm
 
 
 def initial_page_purchase(request):

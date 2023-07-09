@@ -1,30 +1,30 @@
-from django.shortcuts import render
-from django.shortcuts import render,redirect
-from .forms import searchProductForm, registerProductForm
-from .models import Product
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.admin.views.decorators import user_passes_test
-from django.db.models import Q
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect, render
+
+from .forms import registerCategoryForm,findByNameForm
+from .models import Category
+
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')     
 @login_required(login_url="login_system")
-def main_menu_product(request,name=None):
-    form = searchProductForm()
+def main_menu_category(request,name=None):
+    form = findByNameForm()
     if not name:
-        products = Product.objects.all().order_by('is_deleted')
+        categorys = Category.objects.all().order_by('name')
     else:
-        form = searchProductForm(request.POST)
-        products = Product.objects.filter(name__startswith=name).order_by('is_deleted')
+        form = findByNameForm(request.POST)
+        categorys = Category.objects.filter(name__startswith=name).order_by('name')
     
-    return render(request,'product/main_menu_product.html',{'products':products,'form':form})
+    return render(request,'category/main_menu_category.html',{'categorys':categorys,'form':form})
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
-def save_product(request):
+def save_category(request):
     try:
         if request.method == "POST":
-            form = registerProductForm(request.POST)
+            form = registerCategoryForm(request.POST)
             if form.is_valid():
                 code_bar_with_mask = form.cleaned_data['code_bar']
                 code_bar = code_bar_with_mask.replace("-","").replace("-","").replace("-","")
@@ -33,7 +33,7 @@ def save_product(request):
                 messages.success(request, "Salvo com sucesso")
                 return redirect ('product:main_menu_product')
         else:
-         form = registerProductForm()
+         form = registerCategoryForm()
     except Exception as e:
         print(f"Codigo de Barras ja existe {e}")
         messages.warning(request, "Codigo de Barras ja existe")

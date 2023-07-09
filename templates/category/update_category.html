@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block title %} Cadastro de Categoria {% endblock %}
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
+
+<div class="card p-5 vh-100">
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+        </div>
+     {% endfor %}
+  <h1 class="mb-3">Atualizar Categoria</h1>
+  <form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <br/>
+    <div class="d-flex justify-content-center">
+      <input type="submit" value="Atualizar" class="btn btn-primary btn-lg"/>
+    </div>
+  </form>
+</div>
+
+{% endblock content %} {% block javascripts %}{% endblock javascripts %}
