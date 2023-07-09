@@ -2914,3 +2914,1300 @@ Not Found: /favicon.ico
 "GET /purchase/initial_page_purchase HTTP/1.1" 200 6751
 "GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
 "GET /purchase/initial_page_purchase HTTP/1.1" 200 6266
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 12399
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+"GET /admin/Category/category/ HTTP/1.1" 200 10101
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 8876
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /admin/Category/category/add/ HTTP/1.1" 200 11533
+"GET /admin/jsi18n/ HTTP/1.1" 200 8876
+Internal Server Error: /admin/Category/category/add/
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1804, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 926, in log_addition
+    object_repr=str(obj),
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Category/models.py", line 8, in __str__
+    return self.nome
+AttributeError: 'Category' object has no attribute 'nome'
+"POST /admin/Category/category/add/ HTTP/1.1" 500 118841
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/models.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /admin/Category/category/add/
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: table Category_category has no column named created_at
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1798, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1227, in save_model
+    obj.save()
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: table Category_category has no column named created_at
+"POST /admin/Category/category/add/ HTTP/1.1" 500 197390
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Category/models.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /admin/Category/category/add/
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: table Category_category has no column named created_at
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1798, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1227, in save_model
+    obj.save()
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: table Category_category has no column named created_at
+"POST /admin/Category/category/add/ HTTP/1.1" 500 196829
+"GET /admin/Category/category/add/ HTTP/1.1" 200 11533
+Internal Server Error: /admin/Category/category/add/
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: table Category_category has no column named created_at
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1798, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1227, in save_model
+    obj.save()
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: table Category_category has no column named created_at
+"POST /admin/Category/category/add/ HTTP/1.1" 500 196829
+Watching for file changes with StatReloader
+"POST /admin/Category/category/add/ HTTP/1.1" 302 0
+"GET /admin/Category/category/ HTTP/1.1" 200 11480
+"GET /admin/jsi18n/ HTTP/1.1" 200 8876
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+"GET /admin/Category/category/1/change/ HTTP/1.1" 200 11742
+"GET /admin/jsi18n/ HTTP/1.1" 200 8876
+Watching for file changes with StatReloader
+"GET /admin/Collaborator/collaborator/ HTTP/1.1" 200 12251
+"GET /admin/jsi18n/ HTTP/1.1" 200 8876
+"GET /admin/Product/product/ HTTP/1.1" 200 11969
+"GET /admin/jsi18n/ HTTP/1.1" 200 8876
+"GET /admin/Product/product/7/change/ HTTP/1.1" 200 15670
+"GET /admin/jsi18n/ HTTP/1.1" 200 8876
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 7456
+"GET /static/js/validatePassword.js HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET / HTTP/1.1" 200 7474
+"GET / HTTP/1.1" 200 7464
+"GET / HTTP/1.1" 200 7461
+"GET /product/main_menu_product HTTP/1.1" 200 9835
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6272
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6271
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6271
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6286
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6287
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6272
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6290
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6289
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6289
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6289
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6289
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6289
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6289
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6311
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6326
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6326
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6326
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6325
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6325
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6323
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6322
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6321
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6324
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6323
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6322
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6323
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6323
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6334
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6334
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6333
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6333
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6333
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6332
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6332
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6332
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6332
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6332
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6332
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6332
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6332
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6334
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6327
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6307
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6304
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6307
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6307
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 12179
+"GET /collaborator/save_collaborator HTTP/1.1" 200 6381
+"POST /collaborator/save_collaborator HTTP/1.1" 302 0
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 13537
+"GET /collaborator/update_collaborator/51 HTTP/1.1" 200 5848
+"GET /product/main_menu_product HTTP/1.1" 200 9835
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6572
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6834
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 13467
+"GET /collaborator/update_collaborator/51 HTTP/1.1" 200 5848
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6453
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6312
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6331
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6330
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6324
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6324
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6326
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6321
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6332
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6334
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6334
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6341
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6323
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6330
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6322
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6326
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6326
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6330
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6335
+"GET / HTTP/1.1" 200 7461
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6600
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6335
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6342
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6342
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 6350
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8582
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9145
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8582
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8582
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9145
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8582
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8582
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8582
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8582
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8582
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 316181
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8580
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9143
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8580
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8576
+"POST /purchase/check_balance HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8910
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8576
+"GET / HTTP/1.1" 200 7461
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8841
+"POST /purchase/check_balance HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9175
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8576
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8543
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8543
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"POST /purchase/initial_page_purchase HTTP/1.1" 200 8546
+"POST /purchase/initial_page_purchase HTTP/1.1" 200 8579
+"POST /purchase/initial_page_purchase HTTP/1.1" 200 8571
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"POST /purchase/initial_page_purchase HTTP/1.1" 200 8581
+"POST /purchase/initial_page_purchase HTTP/1.1" 200 8589
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"POST /purchase/initial_page_purchase HTTP/1.1" 200 8571
+"POST /purchase/check_balance HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8902
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8568
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8833
+"POST /purchase/check_balance HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9167
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8568
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8568
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8568
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8833
+"POST /purchase/check_balance HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9095
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9059
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8830
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8830
+"GET / HTTP/1.1" 200 7461
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8830
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9095
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8797
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8568
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8569
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8834
+"POST /purchase/check_balance HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9484
+"GET /purchase/clean_consult HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9168
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8569
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8570
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8835
+"POST /purchase/check_balance HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9485
+"GET /purchase/clean_consult HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8835
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8570
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8563
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8563
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8563
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8563
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8563
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"GET /main_menu_user HTTP/1.1" 200 7393
+"GET /page_initial_reports HTTP/1.1" 200 5807
+"GET /page_initial_reports HTTP/1.1" 200 5807
+"GET /page_initial_reports HTTP/1.1" 200 5807
+"GET /page_initial_reports HTTP/1.1" 200 5807
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/validatePassword.js HTTP/1.1" 200 789
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /page_initial_reports HTTP/1.1" 200 5807
+"GET /page_initial_reports HTTP/1.1" 200 5807
+"GET /page_initial_reports HTTP/1.1" 200 5807
+"GET /page_initial_reports HTTP/1.1" 200 5807
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/validatePassword.js HTTP/1.1" 200 789
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /page_initial_reports HTTP/1.1" 200 5807
+"GET /main_menu_user HTTP/1.1" 200 7393
+"GET /page_initial_reports HTTP/1.1" 200 5807
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 13467
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/update_product/4 HTTP/1.1" 200 5440
+"POST /product/update_product/4 HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 9910
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8828
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9764
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8563
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/main_menu_product HTTP/1.1" 200 9835
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8828
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9391
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8563
+"GET /product/main_menu_product HTTP/1.1" 200 9835
+"GET /product/main_menu_product HTTP/1.1" 200 9835
+"GET /product/main_menu_product HTTP/1.1" 200 9835
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8828
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9391
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8563
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/main_menu_product HTTP/1.1" 200 9835
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8828
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9391
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8563
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8828
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9391
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8563
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8823
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9386
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8563
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8563
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8823
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9126
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8563
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8823
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9126
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8563
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+Watching for file changes with StatReloader
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8823
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9125
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputMask.js HTTP/1.1" 200 172
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-pie-demo.js HTTP/1.1" 200 1057
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4885
+"GET /product/main_menu_product HTTP/1.1" 200 9836
+"POST /purchase/find_product HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8823
+"POST /purchase/finish_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 9125
+"GET /purchase/clean_all_products_purchase HTTP/1.1" 302 0
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562
+"GET /purchase/initial_page_purchase HTTP/1.1" 200 8562

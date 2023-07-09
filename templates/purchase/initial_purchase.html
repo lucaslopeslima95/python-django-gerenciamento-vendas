@@ -26,7 +26,10 @@
     </div>
   </form>
   <div>
-    <th><a href="{% url 'purchase:clean_all_products_purchase' %}" class="btn btn-primary btn-sm">Limpar Todos Produtos Adicionados</a>
+    <th><a href="{% url 'purchase:clean_all_products_purchase' %}" class="btn btn-secondary btn-sm p-1">Remover Todos Produtos</a></th>
+    <th>
+      <a class="btn btn-secondary btn-sm p-1 mt-1" type="button" style="height: 100%; width: 60%;" data-bs-toggle="modal"
+      data-bs-target="#check_balance">Consultar Saldo</a>
     </th>
   </div>
 </div>
@@ -36,7 +39,7 @@
   {{ message }}
 </div>
 {% endfor %}
-<div class="table-responsive table-lg" style="height: 700px; overflow-x: auto;" >
+<div class="table-responsive table-lg" style="height: 80vh; overflow-x: auto;" >
   <table class="table table-hover">
     <thead>
       <tr>
@@ -61,16 +64,15 @@
 </div>
 <div class="input-group-sm">
   <div class="input-group mb-3">
-    <div class="d-flex flex-row align-items-center">
+    <div class="d-flex flex-row align-items-center ">
       Total:
       <input readonly placeholder="Total:" type="text" class="form-control" value="{{ total }}">
-      <a class="btn btn-primary btn-sm" type="button" class="btn btn-primary" data-bs-toggle="modal"
+      <a class="btn btn-primary btn-sm ms-1" type="button" class="btn btn-primary" style="height: 100%; width: 60%;" data-bs-toggle="modal"
       data-bs-target="#finish_purchase">Finalizar Compra</a>
-      <a class="btn btn-primary btn-sm" type="button" class="btn btn-primary" data-bs-toggle="modal"
-      data-bs-target="#finish_purchase">Consultar Saldo</a>
     </div>
   </div>
 </div>
+<!--------------------Model de consulta de autenticação para finalizar compra------------------------------------------------------------------------------------------------------->
 <div class="modal fade"
 id="finish_purchase" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -100,6 +102,37 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
     </div>
   </div>
 </div>
+<!--------------------Model de consulta de autenticação para consulta de saldo------------------------------------------------------------------------------------------------------->
+<div class="modal fade"
+id="check_balance" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="staticBackdropLabel">Consulta de Saldo</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+      {{ message }}
+      </div>
+      {% endfor %}
+      <div class="modal-body ">
+        <form action="{% url 'purchase:check_balance' %}" method="post">
+          {% csrf_token %}
+          {{ authForm }}
+          <div class="d-flex flex-row mx-auto justify-content-between align-items-center me-3 mt-3">
+            <button type="submit" class="btn btn-primary">Consultar Saldo</button>
+            <th><a class="btn btn-danger">Fechar</a></th>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+<!----------------------Model de apresentação de gastos----------------------------------------------------------------------------------------------------------------->
 <div class="modal fade"
 id="show_spends" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -125,7 +158,6 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
   document.addEventListener('DOMContentLoaded', function() {
     const myModal = new bootstrap.Modal(document.getElementById('show_spends'));
     myModal.show();
-    
     setTimeout(function() {
         myModal.hide();
         window.location.href = "{% url 'purchase:clean_all_products_purchase' %}";
@@ -133,6 +165,27 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
     });
 </script>
 {% endif %}
+
+{% if request.session.only_consult  %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const myModal = new bootstrap.Modal(document.getElementById('show_spends'));
+    myModal.show();
+    setTimeout(function() {
+        myModal.hide();
+        window.location.href = "{% url 'purchase:clean_consult' %}";
+      }, 3500);
+    });
+</script>
+{% endif %}
+
+
+
+
+
+
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
 <script src="https://kit.fontawesome.com/9958a2dab0.js" crossorigin="anonymous"></script>

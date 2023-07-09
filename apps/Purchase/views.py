@@ -50,13 +50,11 @@ def finish_purchase(request):
                     user = authenticate(request, username=username, password=password)
                     if user is not None:
                         collaborator = Collaborator.objects.get(user=user.id)
-                        if collaborator.active:
-                            if save_purchase(collaborator):
-                                cart.products.clear()                                 
-                                messages.success(request, "Salvo com Sucesso.")
-                                request.session['total_spends_current'] = float(calculates_and_returns_current_referral_spending(collaborator).aggregate(total=Sum('purchaseitem__price'))['total'])
-                                request.session['total_spends_last_referred'] = float(calculates_and_returns_last_reference_spend(collaborator).aggregate(total=Sum('purchaseitem__price'))['total'])
-                                return redirect('purchase:initial_page_purchase')
+                        if collaborator.active and save_purchase(collaborator):
+                            cart.products.clear()                                 
+                            messages.success(request, "Salvo com Sucesso.")
+                            request.session['total_spends_current'] = float(calculates_and_returns_current_referral_spending(collaborator).aggregate(total=Sum('purchaseitem__price'))['total'])
+                            request.session['total_spends_last_referred'] = float(calculates_and_returns_last_reference_spend(collaborator).aggregate(total=Sum('purchaseitem__price'))['total'])
                         else:
                             cart.products.clear()
                             messages.warning(request, "Colaborador Inativo, por favor entre em contato com o RH")
@@ -125,7 +123,7 @@ def save_purchase(collaborator:Collaborator) -> bool:
             for product in cart.products:
                 if item.id == product.product.pk:
                     count += 1  
-            update_quantity(item.id,count)
+            update_quantity(item,count)
             purchaseItem = PurchaseItem.objects.create(
                                         product=item,
                                         price=item.price,
@@ -141,14 +139,35 @@ def save_purchase(collaborator:Collaborator) -> bool:
     return True  
    
     
-def update_quantity(id_product,quantity):
+def update_quantity(product,quantity) -> None:
     try:
-        Product.objects.filter(id = id_product ).update(\
-            stock_quantity=(Product.objects.get(id = id_product)\
-                                            .stock_quantity-quantity))
+        Product.objects.filter(id = product.id ).update(\
+            stock_quantity=(product.stock_quantity-quantity))
     except Exception as e:
         print(f" Exceção ao atualizar a quantidade do produto - {e}")
         
         
+def check_balance(request):
+    if request.method == "POST":
+        form = authForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                collaborator = Collaborator.objects.get(user=user.id)
+                if collaborator.active:          
+                    request.session['total_spends_current'] = float(calculates_and_returns_current_referral_spending(collaborator).aggregate(total=Sum('purchaseitem__price'))['total'])
+                    request.session['total_spends_last_referred'] = float(calculates_and_returns_last_reference_spend(collaborator).aggregate(total=Sum('purchaseitem__price'))['total'])
+                    request.session['only_consult'] = True
+                else:
+                    messages.warning(request,"Perfil de Colaborador Inativo, entre em contato com o RH")
+            else:
+                messages.warning(request,"Credenciais Inválidas")
+    return redirect('purchase:initial_page_purchase')
 
-       
+def clean_consult(request):
+    request.session['total_spends_current'] = 0.0
+    request.session['total_spends_last_referred'] = 0.0
+    request.session['only_consult'] = False
+    return redirect('purchase:initial_page_purchase')

@@ -1,31 +1,31 @@
+from datetime import datetime
 from sqlite3 import IntegrityError
-from django.shortcuts import (render,
-                              redirect)
-from Purchase.PurchaseService.calculateExpends import get_data_to_generate_reports
+
+from Collaborator.models import Collaborator
+from django.contrib import messages
+from django.contrib.admin.views.decorators import user_passes_test
+from django.contrib.auth.decorators import login_required
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.shortcuts import redirect, render
+from django.views.decorators.csrf import csrf_protect
+from Purchase.models import DeadLine
+from Purchase.PurchaseService.calculateExpends import \
+    get_data_to_generate_reports
 from Purchase.PurchaseService.current_billing import current_billing
-from Purchase.PurchaseService.months_range import current_month_range, next_month_range
+from Purchase.PurchaseService.months_range import (current_month_range,
+                                                   next_month_range)
 from Purchase.PurchaseService.products_low_stock import products_low_stock
 from User.emails.emails import confirm_register
-from .forms import (registerUserForm,
-                    updateWithoutPasswordForm,
-                    updateUserPasswordForm,
-                    findByUsernameForm,
-                    reportsForm
-                    )
-from django.contrib.admin.views.decorators import user_passes_test
-from django.views.decorators.csrf import csrf_protect
-from django.contrib.auth.decorators import login_required
-from django.contrib import messages
-from django.db.models import Q
-from Collaborator.models import Collaborator
-from Purchase.models import DeadLine
-from datetime import datetime
+
+from .forms import (findByUsernameForm, registerUserForm, reportsForm,
+                    updateUserPasswordForm, updateWithoutPasswordForm)
 from .models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver 
+
 
 @csrf_protect
-@user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')   
+@user_passes_test(lambda user: user.is_superuser or user.is_staff,
+                  login_url='user:page_not_found')
 def initial_page(request):
     """Exibe a página inicial e constrói os dados do dashboard.
 
@@ -45,7 +45,7 @@ def initial_page(request):
         else:
             dias = current_month_range()-today
             
-    return render(request,'dashboard.html',{'dias':dias,'current_billing':current_billing(),'products_low_stock':products_low_stock()})
+    return render(request, 'dashboard.html', {'dias':dias, 'current_billing':current_billing(),'products_low_stock':products_low_stock()})
 
 
 @receiver(post_save,sender=Collaborator)

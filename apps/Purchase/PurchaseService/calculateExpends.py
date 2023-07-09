@@ -28,14 +28,11 @@ def calculates_and_returns_current_referral_spending(employee_who_made_the_purch
                 end_date = date(datetime.now().year,
                                 (datetime.now().month+1), today)
         else:
-            start_date = date(datetime.now().year, (datetime.now().month-1),
-                              (deadLine+1))
+            start_date = date(datetime.now().year, (datetime.now().month-1),(deadLine+1))
             end_date = date(datetime.now().year, datetime.now().month, today)
-        listPurchases = Purchase.objects.filter(date_purchase__range=(
-            start_date, end_date),
-            collaborator__cpf=employee_who_made_the_purchase.cpf,
-            )
-        # total_spended = listPurchases.aggregate(total=Sum('purchaseitem__price'))['total']
+        listPurchases = Purchase.objects.filter(date_purchase__range=(start_date, end_date),
+            collaborator__cpf=employee_who_made_the_purchase.cpf)
+       
         return listPurchases
     
 def calculates_and_returns_last_reference_spend(employee_who_made_the_purchase:Collaborator):
@@ -64,8 +61,7 @@ def calculates_and_returns_last_reference_spend(employee_who_made_the_purchase:C
    try:
        listPurchases = Purchase.objects.filter(date_purchase__range=(
             start_date, end_date),
-            collaborator__cpf=employee_who_made_the_purchase.cpf,
-            )
+            collaborator__cpf=employee_who_made_the_purchase.cpf)
    except Exception as e:
         print(f"Exceção ao buscar valores na referencia passada - {e}")
    return listPurchases

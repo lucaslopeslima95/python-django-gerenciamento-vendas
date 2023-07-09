@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'Collaborator',
     'Product',
     'Purchase',
+    'Category',
 ]
 
 MIDDLEWARE = [
