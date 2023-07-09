@@ -66,8 +66,8 @@ class PurchaseService():
                     purchaseItem.price = productPurchase.price
                     purchaseItem.purchase = purchase
                     purchaseItem.save()
-                    Product.objects.filter(id = productPurchase.pk ).update(\
-                    stock_quantity=(Product.objects.get(id = productPurchase.pk).stock_quantity-1))
+                    # Product.objects.filter(id = productPurchase.pk ).update(\
+                    # stock_quantity=(Product.objects.get(id = productPurchase.pk).stock_quantity-1))
                 purchase.save()
                 self.checkout(collaborator=collaborator)
             else:

@@ -7,12 +7,22 @@
         {{ message }}
         </div>
      {% endfor %}
-  <h1 class="mb-3">Atualizar Produto</h1>
+     <div class="card-header rounded mb-3">
+      <a href="{% url 'product:main_menu_product'%}">
+          <i class="fa-sharp fa-solid fa-arrow-left fa-2xl"></i>
+      </a>
+      Voltar ao menu principal
+  </div>
+  <h5 class="mb-3">Atualizar Produto</h5>
   <form method="post">
     {% csrf_token %} {{ form.as_p }}
     <br/>
     <div class="d-flex justify-content-center">
       <input type="submit" value="Atualizar" class="btn btn-primary btn-lg"/>
+      <a href="{% url 'product:main_menu_product'%}" class="btn btn-danger ms-5">
+        Cancelar
+    <i class="fa-solid fa-rectangle-xmark"></i>
+    </a>
     </div>
   </form>
 </div>

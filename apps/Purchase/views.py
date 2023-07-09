@@ -80,13 +80,13 @@ def find_product(request):
                 code_bar = form.cleaned_data['code_bar']
                 if code_bar != None:
                     product = Product.objects.get(code_bar=code_bar)
-                    if product.stock_quantity < 1:
-                        messages.warning(request, f"O {product.name} não possui unidades disponiveis no momento")
-                    else:    
-                        purchaseItem = PurchaseItem()  
-                        purchaseItem.product = product
-                        purchaseItem.price = product.price
-                        in_cart.products.append(purchaseItem)
+                    # if product.stock_quantity < 1:
+                    #     messages.warning(request, f"O {product.name} não possui unidades disponiveis no momento")
+                    # else:    
+                    purchaseItem = PurchaseItem()  
+                    purchaseItem.product = product
+                    purchaseItem.price = product.price
+                    in_cart.products.append(purchaseItem)
         except (Product.DoesNotExist,Exception) as e:
             print(f"Exceção ao procurar produto {e}")
             messages.warning(request, "Produto não encontrado")
@@ -142,8 +142,9 @@ def save_purchase(collaborator:Collaborator) -> bool:
     
 def update_quantity(product,quantity) -> None:
     try:
-        Product.objects.filter(id = product.id ).update(\
-            stock_quantity=(product.stock_quantity-quantity))
+        pass
+        # Product.objects.filter(id = product.id ).update(\
+        #     stock_quantity=(product.stock_quantity-quantity))
     except Exception as e:
         print(f" Exceção ao atualizar a quantidade do produto - {e}")
         

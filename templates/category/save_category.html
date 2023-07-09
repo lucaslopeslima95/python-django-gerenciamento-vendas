@@ -22,7 +22,10 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 <div class="d-flex justify-content-center p-5">
-                    <button type="submit" class="btn btn-primary btn-lg">Salvar</button>
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fa-regular fa-floppy-disk"></i>
+                        Salvar
+                    </button>
                     <a href="{% url 'category:main_menu_category'%}" class="btn btn-danger ms-5">
                         Cancelar
                     <i class="fa-solid fa-rectangle-xmark"></i>
