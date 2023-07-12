@@ -36,7 +36,7 @@ def confirm_purchase(email, nameUser,purchaseItems):
         is_ticket = False
         for item in purchaseItems:
             total =+ (item.price*item.quantity)
-            if str(item.product.category) == 'Ingresso':
+            if str(item.product.category) == 'Ingressos':
                 is_ticket = True
         
         email_to = []

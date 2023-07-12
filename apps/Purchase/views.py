@@ -125,7 +125,9 @@ def save_purchase(collaborator:Collaborator) -> bool:
             for product in cart.products:
                 if item.id == product.product.pk:
                     count += 1
-            if not str(item.product.category) == 'Ingresso':  
+                    #product_category == 'Ingressos' or product_category == 'Camisetas'
+            if not str(item.product.category) == 'Ingressos'\
+                or str(item.product.category) == 'Camisetas':  
                 update_quantity(item,count)
             purchaseItem = PurchaseItem.objects.create(
                                                         product=item,

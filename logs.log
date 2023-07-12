@@ -4769,3 +4769,790 @@ Watching for file changes with StatReloader
 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
 "GET /admin/Product/logstorestock/4/change/ HTTP/1.1" 200 17187
 "GET /admin/jsi18n/ HTTP/1.1" 200 8876
+Watching for file changes with StatReloader
+"GET /category/main_menu_category HTTP/1.1" 200 7321
+"GET /category/save_category HTTP/1.1" 200 6161
+"POST /category/save_category HTTP/1.1" 302 0
+"GET /category/main_menu_category HTTP/1.1" 200 8159
+"GET /product/main_menu_product HTTP/1.1" 200 8159
+"GET /product/update_product/2 HTTP/1.1" 200 6235
+"POST /product/update_product/2 HTTP/1.1" 302 0
+"GET /product/stock_management/ HTTP/1.1" 200 6528
+"GET /product/main_menu_product HTTP/1.1" 200 8171
+"GET /product/save_product HTTP/1.1" 200 6621
+"POST /product/save_product HTTP/1.1" 302 0
+"GET /product/main_menu_product HTTP/1.1" 200 9253
+"GET /product/stock_management/ HTTP/1.1" 200 6777
+"GET /product/product_movement/3/ HTTP/1.1" 200 10121
+"GET /product/product_movement/3/ HTTP/1.1" 200 10108
+"GET /product/product_movement/3/ HTTP/1.1" 200 10103
+"GET /product/product_movement/3/ HTTP/1.1" 200 10108
+"GET /product/stock_management/ HTTP/1.1" 200 6777
+"GET /product/product_movement/3/ HTTP/1.1" 200 10108
+"GET /product/product_movement/2/ HTTP/1.1" 200 9875
+"GET /product/stock_management/ HTTP/1.1" 200 6777
+"GET /product/product_movement/3/ HTTP/1.1" 200 10108
+"GET /product/stock_management/ HTTP/1.1" 200 6777
+"GET /product/stock_management/ HTTP/1.1" 200 6777
+"GET /product/product_movement/3/ HTTP/1.1" 200 10100
+"POST /product/entry_stock/ HTTP/1.1" 302 0
+"GET /product/product_movement/3/ HTTP/1.1" 200 10101
+"GET /product/stock_management/ HTTP/1.1" 200 6777
+"GET /product/stock_management/ HTTP/1.1" 200 6777
+"GET /product/product_movement/3/ HTTP/1.1" 200 10101
+"POST /product/transfer_to_store/ HTTP/1.1" 302 0
+"GET /product/product_movement/3/ HTTP/1.1" 200 10101
+"GET /product/stock_management/ HTTP/1.1" 200 6778
+"GET /admin/Product/logstorestock/4/change/ HTTP/1.1" 200 17260
+"GET /admin/jsi18n/ HTTP/1.1" 200 8876
+"GET /admin/Product/logstorestock/ HTTP/1.1" 200 13435
+"GET /admin/Product/logwarehouse/ HTTP/1.1" 200 14669
+"GET /admin/jsi18n/ HTTP/1.1" 200 8876
+"GET /admin/Product/logwarehouse/11/change/ HTTP/1.1" 200 17252
+"GET /admin/jsi18n/ HTTP/1.1" 200 8876
+"GET /admin/Product/logwarehouse/ HTTP/1.1" 200 14669
+"GET /product/stock_management/ HTTP/1.1" 200 6778
+"GET /product/product_movement/1/ HTTP/1.1" 200 9933
+"GET /product/stock_management/ HTTP/1.1" 200 6778
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 9700
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+"GET /product/stock_management/ HTTP/1.1" 200 6778
+"GET /product/product_movement/1/ HTTP/1.1" 200 9933
+"GET /product/product_movement/1/ HTTP/1.1" 200 9938
+"GET /product/stock_management/ HTTP/1.1" 200 6778
+"GET /product/product_movement/3/ HTTP/1.1" 200 10106
+"GET /product/stock_management/ HTTP/1.1" 200 6778
+"GET /product/main_menu_product HTTP/1.1" 200 9183
+"GET /category/main_menu_category HTTP/1.1" 200 8089
+"GET /product/main_menu_product HTTP/1.1" 200 9183
+"GET /product/stock_management/ HTTP/1.1" 200 6778
+"GET /category/main_menu_category HTTP/1.1" 200 8089
+"GET /page_initial_reports HTTP/1.1" 200 5938
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 7444
+"GET /product/main_menu_product HTTP/1.1" 200 9183
+"GET /category/main_menu_category HTTP/1.1" 200 8089
+"GET /product/stock_management/ HTTP/1.1" 200 6778
+"GET /product/stock_management/ HTTP/1.1" 200 6894
+"GET /product/stock_management/ HTTP/1.1" 200 6888
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /product/stock_management/
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Product/views.py", line 147, in stock_management
+    return render(request,'product/stock_management.html',{'storeStock':storeStock,'warehouse':warehouse})
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'show_logs' not found. 'show_logs' is not a valid view function or pattern name.
+"GET /product/stock_management/ HTTP/1.1" 500 183747
+Internal Server Error: /product/stock_management/
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Product/views.py", line 147, in stock_management
+    return render(request,'product/stock_management.html',{'storeStock':storeStock,'warehouse':warehouse})
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'show_logs' not found. 'show_logs' is not a valid view function or pattern name.
+"GET /product/stock_management/ HTTP/1.1" 500 183747
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /product/stock_management/
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Product/views.py", line 147, in stock_management
+    return render(request,'product/stock_management.html',{'storeStock':storeStock,'warehouse':warehouse})
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'show_logs' not found. 'show_logs' is not a valid view function or pattern name.
+"GET /product/stock_management/ HTTP/1.1" 500 183747
+Internal Server Error: /product/stock_management/
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Product/views.py", line 147, in stock_management
+    return render(request,'product/stock_management.html',{'storeStock':storeStock,'warehouse':warehouse})
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'show_logs' not found. 'show_logs' is not a valid view function or pattern name.
+"GET /product/stock_management/ HTTP/1.1" 500 183875
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+Internal Server Error: /product/stock_management/
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Product/views.py", line 147, in stock_management
+    return render(request,'product/stock_management.html',{'storeStock':storeStock,'warehouse':warehouse})
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'show_logs' not found. 'show_logs' is not a valid view function or pattern name.
+"GET /product/stock_management/ HTTP/1.1" 500 183747
+Internal Server Error: /product/stock_management/
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Product/views.py", line 147, in stock_management
+    return render(request,'product/stock_management.html',{'storeStock':storeStock,'warehouse':warehouse})
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'show_logs' not found. 'show_logs' is not a valid view function or pattern name.
+"GET /product/stock_management/ HTTP/1.1" 500 183747
+Internal Server Error: /product/stock_management/
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Product/views.py", line 147, in stock_management
+    return render(request,'product/stock_management.html',{'storeStock':storeStock,'warehouse':warehouse})
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'show_logs' not found. 'show_logs' is not a valid view function or pattern name.
+"GET /product/stock_management/ HTTP/1.1" 500 183875
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/stock_management/ HTTP/1.1" 200 6881
+"GET /product/show_logs/ HTTP/1.1" 200 5940
+"GET /product/stock_management/ HTTP/1.1" 200 6946
+"GET /product/stock_management/ HTTP/1.1" 200 6952
+"GET /product/stock_management/ HTTP/1.1" 200 6881
+"GET /product/show_logs/ HTTP/1.1" 200 6005
+"GET /product/show_logs/ HTTP/1.1" 200 6005
+"GET /product/show_logs/ HTTP/1.1" 200 6151
+"GET /product/stock_management/ HTTP/1.1" 200 6905
+"GET /product/show_logs/ HTTP/1.1" 200 6151
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/stock_management/ HTTP/1.1" 200 6915
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6151
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6517
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6514
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6514
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6514
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/inputMask.js HTTP/1.1" 200 333
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/validatePassword.js HTTP/1.1" 200 789
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6514
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6514
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6514
+"GET /product/stock_management/ HTTP/1.1" 200 6915
+"GET /category/main_menu_category HTTP/1.1" 200 8089
+"GET /product/main_menu_product HTTP/1.1" 200 9183
+"GET /product/main_menu_product HTTP/1.1" 200 9183
+"GET /collaborator/main_menu_collaborator HTTP/1.1" 200 7444
+"GET /page_initial_reports HTTP/1.1" 200 5938
+"GET /main_menu_user HTTP/1.1" 200 6879
+"GET /product/stock_management/ HTTP/1.1" 200 6915
+"GET /product/stock_management/ HTTP/1.1" 200 6915
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6514
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6540
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6540
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6540
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6540
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/inputMask.js HTTP/1.1" 200 333
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/validatePassword.js HTTP/1.1" 200 789
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+"GET / HTTP/1.1" 200 9700
+"GET /product/main_menu_product HTTP/1.1" 200 9183
+"GET /category/main_menu_category HTTP/1.1" 200 8089
+"GET /product/stock_management/ HTTP/1.1" 200 6915
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6540
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6540
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 6540
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /product/show_logs_warehouse/
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Product/views.py", line 279, in show_logs_warehouse
+    print(i.user)
+AttributeError: 'StoreStock' object has no attribute 'user'
+"GET /product/show_logs_warehouse/ HTTP/1.1" 500 79536
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 7089
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 7130
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8492
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8502
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8502
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8506
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/inputMask.js HTTP/1.1" 200 333
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/validatePassword.js HTTP/1.1" 200 789
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8638
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8643
+"GET /product/show_logs_store_stock/ HTTP/1.1" 200 6156
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8643
+"GET /product/show_logs_store_stock/ HTTP/1.1" 200 6156
+"GET /product/show_logs_store_stock/ HTTP/1.1" 200 6156
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 195
+"GET /static/css/validations_colors.css HTTP/1.1" 200 163
+"GET /static/css/shake.css HTTP/1.1" 200 266
+"GET /static/css/sb-admin-2.min.css HTTP/1.1" 200 170737
+"GET /static/vendor/chart.js/Chart.min.js HTTP/1.1" 200 173077
+"GET /static/js/generateUsername.js HTTP/1.1" 200 299
+"GET /static/js/confirmChoiceOnSwitch.js HTTP/1.1" 200 488
+"GET /static/js/sb-admin-2.min.js HTTP/1.1" 200 1265
+"GET /static/js/inputStandardPassword.js HTTP/1.1" 200 177
+"GET /static/js/demo/chart-area-demo.js HTTP/1.1" 200 3521
+"GET /static/js/inputMask.js HTTP/1.1" 200 333
+"GET /static/js/cpfValidation.js HTTP/1.1" 200 1075
+"GET /static/js/validatePassword.js HTTP/1.1" 200 789
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4994
+"GET /product/stock_management/ HTTP/1.1" 200 6915
+"GET /product/stock_management/ HTTP/1.1" 200 6915
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8643
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8643
+"GET /product/show_logs_store_stock/ HTTP/1.1" 200 6156
+"GET /product/show_logs_store_stock/ HTTP/1.1" 200 6156
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Product/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/show_logs_store_stock/ HTTP/1.1" 200 7283
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8643
+"GET /product/show_logs_store_stock/ HTTP/1.1" 200 7283
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8643
+"GET /product/show_logs_warehouse/ HTTP/1.1" 200 8643

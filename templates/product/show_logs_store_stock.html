@@ -25,31 +25,33 @@
   </div>
   {% endfor %}
   <div class="card-header">
-    <h4 class="card-title">Gestão de Estoque</h4>
-    <td class="px-1"><a href="{% url 'product:stock_management' %}" class="btn btn-secondary btn-sm">Limpar Filtro</a></td>
-    <td class="px-1"><a href="{% url 'product:show_logs_warehouse' %}" class="btn btn-secondary btn-sm">Vizualizar Historico de Movimentações</a></td>
+    <h4 class="card-title">Historico de Movimentações</h4>
+    <td class="px-1"><a href="{% url 'product:show_logs_store_stock' %}" class="btn btn-secondary btn-sm">Limpar Filtro</a></td>
+    <td class="px-1"><a href="{% url 'product:show_logs_warehouse' %}" class="btn btn-secondary btn-sm">Vizualizar Historico da Deposito</a></td>
+    <td class="px-1"><a href="{% url 'product:show_logs_store_stock' %}" class="btn btn-secondary btn-sm">Vizualizar Historico da Loja</a></td>
   </div>
   <div class="card-body">
     <div class="table-responsive" >
       <table class="table" id="" >
         <thead class="text-primary">
           <tr>
-            <th>Nome</th>
-            <th>Quantidade na Loja</th>
-            <th>Ações</th>
+            <th>Produto</th>
+            <th>Usuario</th>
+            <th>Quantidade</th>
+            <th>Tipo de Movimentação</th>
+            <th>Data</th>
           </tr>
         </thead>
         <tbody>
-          {% for item in storeStock %}
+          {% for log in logsStoreStock %}
           <tr>
-            <th>{{ item.product.name }}</th>
-            <th >{{ item.stock_quantity }}</th>
-            <th><a type="submit" class="btn btn-primary" href="{% url 'product:product_movement' item.product.id %}">
-              Registrar Movimentação
-              <i class="fa-solid fa-conveyor-belt-arm"></i>
-            </a></th>
-            {% endfor %}
+            <th>{{ log.product }}</th>
+            <th>{{ log.user }}</th>
+            <th>{{ log.quantity }}</th>
+            <th>{{ log.get_type_movement_display }}</th>
+            <th>{{ log.date }}</th>
           </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>

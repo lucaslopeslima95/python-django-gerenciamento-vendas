@@ -15,7 +15,7 @@
   {% endfor %}
   <form method="post">
     {% csrf_token %}
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-row mt-3">
       <p>Produto:</p>
       <p class="ms-2">{{product.name}}</p>
     </div>
@@ -28,18 +28,16 @@
       <input id="storeStock_quantity" type="text" value="{{ storeStock_quatity }}" class="form-control" disabled="True">
     </label>
     <br />
-    <div class="d-flex justify-content-center space-around">
-
+    <div class="d-flex justify-content-center">
       <input type="button" value="Transferir para a Loja" class="btn btn-primary me-2"
       data-bs-toggle="modal"  data-bs-target="#transfer_to_store" />
-      
       <input type="button" value="Registrar Entrada" class="btn btn-primary"
       data-bs-toggle="modal"  data-bs-target="#entry_stock" />
-      {% if product_category == 'Ingresso' %}
+      {% if product_category == 'Ingressos' or product_category == 'Camisetas' %}
       <input type="button" value="Baixa Manual" class="btn btn-primary btn-sm ms-1" 
       data-bs-toggle="modal"  data-bs-target="#manual_destocking" />
       {% endif %}
-      <a href="{% url 'product:stock_management'%}" class="btn btn-danger ms-5">
+      <a href="{% url 'product:stock_management'%}" class="btn btn-danger ms-1">
         Cancelar
         <i class="fa-solid fa-rectangle-xmark"></i>
       </a>
