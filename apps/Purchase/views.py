@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.db.models import Sum
 from django.shortcuts import redirect, render
-from Product.models import Product
+from Product.models import Product, StoreStock
 from Purchase.models import Purchase, PurchaseItem
 from Purchase.PurchaseService.calculateExpends import (
     calculates_and_returns_current_referral_spending,
@@ -79,14 +79,16 @@ def find_product(request):
             if form.is_valid():
                 code_bar = form.cleaned_data['code_bar']
                 if code_bar != None:
-                    product = Product.objects.get(code_bar=code_bar)
-                    # if product.stock_quantity < 1:
-                    #     messages.warning(request, f"O {product.name} não possui unidades disponiveis no momento")
-                    # else:    
-                    purchaseItem = PurchaseItem()  
-                    purchaseItem.product = product
-                    purchaseItem.price = product.price
-                    in_cart.products.append(purchaseItem)
+                    code_bar_cleaned = code_bar.replace("-","").replace("-","").replace("-","")
+                    product = Product.objects.get(code_bar=code_bar_cleaned)
+                    stock = StoreStock.objects.get(product__id=product.id)
+                    if stock.stock_quantity < 1:
+                         messages.warning(request, f"O {product.name} não possui unidades disponiveis no momento")
+                    else:    
+                        purchaseItem = PurchaseItem()  
+                        purchaseItem.product = product
+                        purchaseItem.price = product.price
+                        in_cart.products.append(purchaseItem)
         except (Product.DoesNotExist,Exception) as e:
             print(f"Exceção ao procurar produto {e}")
             messages.warning(request, "Produto não encontrado")
@@ -105,7 +107,6 @@ def clean_all_products_purchase(request):
     in_cart.products.clear()
     request.session['total_spends_current'] = 0.0
     request.session['total_spends_last_referred'] = 0.0
-    
     return redirect('purchase:initial_page_purchase')
 
 
@@ -123,17 +124,17 @@ def save_purchase(collaborator:Collaborator) -> bool:
             count =  0
             for product in cart.products:
                 if item.id == product.product.pk:
-                    count += 1  
-            update_quantity(item,count)
+                    count += 1
+            if not str(item.product.category) == 'Ingresso':  
+                update_quantity(item,count)
             purchaseItem = PurchaseItem.objects.create(
-                                        product=item,
-                                        price=item.price,
-                                        purchase=purchase,
-                                        quantity=count
-                                        )
+                                                        product=item,
+                                                        price=item.price,
+                                                        purchase=purchase,
+                                                        quantity=count
+                                                        )
             listPuchaseItems.append(purchaseItem)
             purchaseItem.save()
-            
         confirm_purchase(email=collaborator.user.email,nameUser=collaborator.name,purchaseItems=listPuchaseItems)
     except Exception as e:
         print(f" Exceção ao salvar a compra - {e}")
@@ -142,9 +143,8 @@ def save_purchase(collaborator:Collaborator) -> bool:
     
 def update_quantity(product,quantity) -> None:
     try:
-        pass
-        # Product.objects.filter(id = product.id ).update(\
-        #     stock_quantity=(product.stock_quantity-quantity))
+        StoreStock.objects.filter(product__id = product.id ).update(\
+        stock_quantity=(StoreStock.objects.get(product__id = product.id).stock_quantity-quantity))
     except Exception as e:
         print(f" Exceção ao atualizar a quantidade do produto - {e}")
         

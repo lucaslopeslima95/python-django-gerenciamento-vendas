@@ -9,13 +9,14 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.shortcuts import redirect, render
 from django.views.decorators.csrf import csrf_protect
+from Product.ProductService.product_low_stock import (
+    products_low_stock_StoreStock, products_low_stock_Warehouse)
 from Purchase.models import DeadLine
 from Purchase.PurchaseService.calculateExpends import \
     get_data_to_generate_reports
 from Purchase.PurchaseService.current_billing import current_billing
 from Purchase.PurchaseService.months_range import (current_month_range,
                                                    next_month_range)
-from Purchase.PurchaseService.products_low_stock import products_low_stock
 from User.emails.emails import confirm_register
 
 from .forms import (findByUsernameForm, registerUserForm, reportsForm,
@@ -44,9 +45,14 @@ def initial_page(request):
             days_left_current_month = (current_month_range()-today)
             dias = days_left_next_month + days_left_current_month
         else:
-            dias = current_month_range()-today
+            dias = deadLine-today
             
-    return render(request, 'dashboard.html', {'dias':dias, 'current_billing':current_billing(),'products_low_stock':products_low_stock()})
+    return render(request, 'dashboard.html', {
+                                              'dias':dias,
+                                              'current_billing':current_billing(),
+                                              'products_low_stock_StoreStock':products_low_stock_StoreStock(),
+                                              'products_low_stock_Warehouse':products_low_stock_Warehouse()
+                                              })
 
 
 @receiver(post_save,sender=Collaborator)

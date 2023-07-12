@@ -3,7 +3,6 @@ from django.http import FileResponse
 from io import BytesIO
 from django.db.models import Sum
 from fpdf import FPDF
-from django.http import FileResponse
 from io import BytesIO
 from Purchase.PurchaseService.current_billing import current_billing
 from Purchase.models import DeadLine
@@ -13,7 +12,6 @@ from Purchase.models import Purchase
 
 
 def generate_reports_individual(listPurchases,collaborator):
-    print(listPurchases)
     try:
         pdf = FPDF()
         pdf.add_page()
@@ -25,8 +23,7 @@ def generate_reports_individual(listPurchases,collaborator):
             purchase_date = purchase.date_purchase.strftime('%d/%m/%Y')
             products = purchase.product.all()
             for product in products:
-                pdf.cell(0, 10, f"Colaborador: {purchase.collaborator}, Data: {purchase_date},\
-                         Produto: {product.name}, Preço: {product.price}", 1, 1, 'L', 1)
+                pdf.cell(0, 10, f"Colaborador: {purchase.collaborator}, Data: {purchase_date}, Produto: {product.name}, Preço: {product.price}", 1, 1, 'L', 1)
        
         try:
             total = listPurchases.aggregate(total=Sum('purchaseitem__price'))['total']
@@ -65,7 +62,8 @@ def generate_reports(request):
             
     else:
         start_date = date(datetime.now().year,(datetime.now().month-1) ,(deadLine+1))
-        end_date = date(datetime.now().year,datetime.now().month,today)
+        end_date = date(datetime.now().year,datetime.now().month,(today+1))
+        
         
     listPurchases = Purchase.objects.filter(date_purchase__range=(start_date, end_date))
 

@@ -14,6 +14,10 @@ from .models import Category
 def main_menu_category(request):
     try:
         categorys = None
+        if 'filter' in request.session:
+            filter = request.session['filter']
+        else:
+            filter = None
         filter = request.session['filter']
         if filter:
          categorys = Category.objects.filter(name__startswith=filter).order_by('name')
@@ -67,7 +71,10 @@ def update_category(request,id):
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')     
 @login_required(login_url="login_system")
 def main_menu_category_filtered(request):
-    request.session['filter'] = request.GET.get('parametro')
+    try:
+        request.session['filter'] = request.GET.get('parametro')
+    except Exception as e:
+        print(f"Exceção no views de categoria ao requisitar o valor de parametro para filtrar{e}")
     return redirect('category:main_menu_category')
      
      

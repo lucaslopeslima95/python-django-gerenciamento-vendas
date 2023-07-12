@@ -53,6 +53,12 @@
       <span>Categorias</span>
     </a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'product:stock_management' %}">
+      <i class="fa-solid fa-boxes-stacked"></i>
+      <span>Estoque</span>
+    </a>
+  </li>
   {% endif %}
   <li class="nav-item">
     <a class="nav-link" href="{% url 'user:logout_system' %}">

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Product
+from .models import Product, StoreStock,Warehouse
 from django.forms import ModelForm
 
 class registerProductForm(ModelForm):
@@ -13,8 +13,8 @@ class registerProductForm(ModelForm):
                   'price':'Preço',
                   'category':'Categoria'
                   }
-        widgets = {'name': forms.TextInput(attrs={"placeholder": "Nome do Produto","class": "form-control","maxlength": "30"}),
+        widgets = {
+                   'name': forms.TextInput(attrs={"placeholder": "Nome do Produto","class": "form-control","maxlength": "30"}),
                    'price': forms.TextInput(attrs={"placeholder": "Preço","class": "form-control"}),
                    'category':forms.Select(attrs={'class': 'form-control ','readonly':True})
                    }
-        

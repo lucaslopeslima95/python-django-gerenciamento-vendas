@@ -118,14 +118,14 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
       </div>
       {% endfor %}
       <div class="modal-body ">
-        <form action="{% url 'purchase:check_balance' %}" method="post">
+        <for..m action="{% url 'purchase:check_balance' %}" method="post">
           {% csrf_token %}
           {{ authForm }}
           <div class="d-flex flex-row mx-auto justify-content-between align-items-center me-3 mt-3">
             <button type="submit" class="btn btn-primary">Consultar Saldo</button>
             <th><a class="btn btn-danger">Fechar</a></th>
           </div>
-        </form>
+        </for..m>
       </div>
       <div class="modal-footer">
       </div>

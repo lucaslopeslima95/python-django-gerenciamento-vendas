@@ -26,10 +26,10 @@
   {% endfor %}
   <div class="card-header">
     <h4 class="card-title">Produtos</h4>
+    <td class="px-1"><a href="{% url 'product:main_menu_product' %}" class="btn btn-secondary btn-sm">Limpar Filtro</a></td>
     <td class="px-1"><a href="{% url 'product:save_product' %}" class="btn btn-primary btn-sm">Registrar Novo Produto
       <i class="fa-regular fa-plus"></i>
     </a></td>
-    <td class="px-1"><a href="{% url 'product:main_menu_product' %}" class="btn btn-secondary btn-sm">Limpar Filtro</a></td>
   </div>
   <div class="card-body">
     <div class="table-responsive" >
@@ -37,35 +37,36 @@
         <thead class="text-primary">
           <tr>
             <th>Nome</th>
-            <th style="text-align: center;" >Codigo de Barras</th>
-            <th style="text-align: center;" >Preço</th>
-            <th >Situação</th>
-            <th >Ações</th>
+            <th style="text-align: center;">Codigo de Barras</th>
+            <th style="text-align: center;">Categoria</th>
+            <th style="text-align: center;">Preço</th>
+            <th>Situação</th>
+            <th>Açoẽs</th>
           </tr>
         </thead>
         <tbody>
           {% for product in products %}
           <tr>
             <th>{{ product.name }}</th>
-            <th style="text-align:center;">{{ product.code_bar }}</th>
+            <th style="text-align:center;" class="code_bar">{{ product.code_bar }}</th>
+            <th style="text-align:center;">{{ product.category.name }}</th>
             <th style="text-align:center;">{{ product.price }}</th>
             <th>
               <form action="{% url 'product:deactivate_product' product.id %}" method="post">
                 {% csrf_token %}
                   <input type="submit" 
-                    {% if product.active %}
-                    value="Inativo" class="btn btn-danger" onclick="return confirm('Deseja realmente Ativar?')"
+                    {% if not product.active %}
+                    value="Inativo" class="btn btn-danger btn-sm" onclick="return confirm('Deseja realmente Ativar?')"
                     {% else %}
-                    value="Ativo" class="btn btn-success" onclick="return confirm('Deseja realmente Desativar?')"                                             
+                    value="Ativo" class="btn btn-success btn-sm" onclick="return confirm('Deseja realmente Desativar?')"                                             
                     {% endif %}
                     >
               </form>
             </th>
-            <th><a type="submit" class="btn btn-secondary" href="{% url 'product:update_product' product.id %}">
+            <th><a type="submit" class="btn btn-secondary btn-sm" href="{% url 'product:update_product' product.id %}">
               Editar
               <i class="fa-solid fa-pen-to-square"></i>
             </a></th>
-            
             {% endfor %}
           </tr>
         </tbody>
