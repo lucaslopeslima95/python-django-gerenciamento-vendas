@@ -10,13 +10,16 @@ from sqlite3 import IntegrityError
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')         
 @login_required(login_url="login_system")
-def main_menu_collaborator(request,name_to_filter=None):
+def main_menu_collaborator(request):
     try:
+        name_to_filter = request.session['filter']
         collaborators = None
         if not name_to_filter:
-            collaborators = Collaborator.objects.all()
+            collaborators = Collaborator.objects.filter(user__is_deleted=True)
+            request.session['filter'] = None
         else:
-            collaborators =  Collaborator.objects.filter(name__startswith=name_to_filter)
+            collaborators =  Collaborator.objects.filter(name__startswith=name_to_filter,user__is_deleted=True)
+            request.session['filter'] = None
     except (Exception,IntegrityError) as e:
         print(f"Exceção ao listar usuarios - {e}")
     return render(request,'collaborator/main_menu_collaborator.html',{'collaborators':collaborators,'findByNameForm': findByNameForm})
@@ -103,7 +106,7 @@ def update_collaborator(request,id):
         else:
             print(f"Exceção no update do colaborador - {e}")
             messages.success(request, "Erro ao atualizar o colaborador")
-    return render(request,'collaborator/update_collaborator.html',{'form':form})
+    return render(request,'collaborator/update_collaborator.html',{'form':form,'collaborator':collaborator_selected})
 
 
 
@@ -138,20 +141,21 @@ def update_active_collaborator(request,id):
         Collaborator.objects.filter(id=id).update(active = not Collaborator.objects.get(id=id).active)
     except Exception as e:
         print(f"Exceção ao atualizar a situação do colaborador{e}")
-    return redirect('collaborator:main_menu_collaborator')
+    return redirect('collaborator:update_collaborator')
+
 
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
 def main_menu_collaborator_with_filter(request):
     try:
-        name = None
         if request.method == "POST":
             form = findByNameForm(request.POST)
             if form.is_valid():
-                name = form.cleaned_data['name']
+                request.session['filter'] = form.cleaned_data['name']
     except Exception as e:
         print(f"Exceção ao pegar o valor para filtrar o Colaborador pelo Nome - {e}")
-    return main_menu_collaborator(request,name)
+        
+    return redirect('collaborator:main_menu_collaborator')
     
      
      

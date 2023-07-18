@@ -40,8 +40,7 @@
             <th style="text-align: center;">Codigo de Barras</th>
             <th style="text-align: center;">Categoria</th>
             <th style="text-align: center;">Preço</th>
-            <th>Situação</th>
-            <th>Açoẽs</th>
+            <th>Ação</th>
           </tr>
         </thead>
         <tbody>
@@ -51,18 +50,7 @@
             <th style="text-align:center;" class="code_bar">{{ product.code_bar }}</th>
             <th style="text-align:center;">{{ product.category.name }}</th>
             <th style="text-align:center;">{{ product.price }}</th>
-            <th>
-              <form action="{% url 'product:deactivate_product' product.id %}" method="post">
-                {% csrf_token %}
-                  <input type="submit" 
-                    {% if not product.active %}
-                    value="Inativo" class="btn btn-danger btn-sm" onclick="return confirm('Deseja realmente Ativar?')"
-                    {% else %}
-                    value="Ativo" class="btn btn-success btn-sm" onclick="return confirm('Deseja realmente Desativar?')"                                             
-                    {% endif %}
-                    >
-              </form>
-            </th>
+            
             <th><a type="submit" class="btn btn-secondary btn-sm" href="{% url 'product:update_product' product.id %}">
               Editar
               <i class="fa-solid fa-pen-to-square"></i>

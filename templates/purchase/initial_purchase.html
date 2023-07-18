@@ -57,7 +57,6 @@
         <th scope="row">{{ item.price }}</th>
         <th><a href="{% url 'purchase:remove_product_purchase' forloop.counter %}" class="btn btn-primary">Remover</a>
         </th>
-        {% %}
       </tr>
       {% endfor %}
     </tbody>

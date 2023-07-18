@@ -1,6 +1,7 @@
 from django import forms
-from .models import Collaborator
+from .models import Collaborator, status_collaborator
 from django.forms import ModelForm
+
 
 class registerCollaboratorForm(ModelForm):
     name = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome","class": "form-control","onchange":"generateUsername(this)"}),label="Nome")
@@ -19,9 +20,10 @@ class updateWithoutPasswordForm(ModelForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={"placeholder": "Email","class": "form-control"}),label="E-mail")
     cpf = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "CPF","class": "form-control","onchange":"validateCPF(this)"}),label="CPF")
     username = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Nome de Usuario","class": "form-control"}),label="Nome de Usuario")
+    active = forms.ChoiceField(choices=status_collaborator.choices,widget=forms.Select(attrs={'class': 'form-control '}),label= 'Situação')
     class Meta:
         model = Collaborator
-        fields = ['name','email','cpf','username']
+        fields = ['name','email','cpf','username','active']
     
 
 class updateUserPasswordForm(ModelForm):

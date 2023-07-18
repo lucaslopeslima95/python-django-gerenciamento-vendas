@@ -1,4 +1,5 @@
 Senha padrão: @SejaBemVindo3
+
 arrumar a logica para compras da referencia passada
 criar app de estoque e colocar a logica la 
 criar relatorio de historico de movimentações de estoque 
@@ -6,3 +7,5 @@ implementar filtros no historico
 ajustar ui/ux
 passo o botao de atualizar status para dentro da tela de editar
 implementar testes
+criar botão categoria na tela de cadastro de produto
+Mascara valor produto

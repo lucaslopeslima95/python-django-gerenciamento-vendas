@@ -100,7 +100,7 @@ def update_product(request,id):
             if form.is_valid():
                 form.save()
                 messages.success(request, "Atualizado com sucesso")
-                return redirect('product:stock_management')
+                return redirect('product:main_menu_product')
             else:
                 messages.warning(request, "Dados Invalido")
     except Exception as e:
@@ -146,14 +146,16 @@ def stock_management(request):
         
     return render(request,'product/stock_management.html',{'storeStock':storeStock,'warehouse':warehouse})
 
+
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
 def stock_management_filter(request):
     try:
         request.session['filter'] = request.GET.get('parametro')
     except Exception as e:
-        print(f"Exceção no filtar produco por codigo de barras - {e}")
+        print(f"Exceção no filtar produto por codigo de barras - {e}")
     return redirect('product:stock_management')
+ 
  
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')    
 @login_required(login_url="login_system")  

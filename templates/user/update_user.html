@@ -21,12 +21,14 @@
     {% csrf_token %} {{ form.as_p }}
     <br/>
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-primary btn-sm">
+      <a type="submit" class="btn btn-primary me-1">
         Atualizar
         <i class="fa-solid fa-rotate"></i>
-      </button>
-
-      <a href="{% url 'user:main_menu_user'%}" class="btn btn-danger ms-5">
+      </a>
+      <a type="button" class="btn btn-danger me-1" onclick="return confirm('Deseja realmente Excluir?')" href="{% url 'user:erase_user' id %}">Excluir
+        <i class="fa-sharp fa-solid fa-trash"></i>
+      </a>
+      <a type="button" href="{% url 'user:main_menu_user'%}" class="btn btn-secondary ">
         Cancelar
         <i class="fa-solid fa-rectangle-xmark"></i>
       </a>

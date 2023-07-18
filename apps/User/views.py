@@ -18,7 +18,7 @@ from Purchase.PurchaseService.months_range import (current_month_range,
                                                    next_month_range)
 from User.tasks import confirm_register
 
-from .forms import (findByUsernameForm, registerUserForm, reportsForm,
+from .forms import (registerUserForm, reportsForm,
                     updateUserPasswordForm, updateWithoutPasswordForm)
 from .models import User
 
@@ -137,11 +137,14 @@ def erase_user(request, id):
 
     """
     try:
-        user = User.objects.get(id=id)
-        user.delete()
+       
+        User.objects.filter(id=id).update(is_deleted = not User.objects.get(id=id).is_deleted)
+        
+        
     except (Exception,User.DoesNotExist) as e:
         print(f"Exceção ao excluir Usuario - {e}")
-        messages.error(request,"Erro ao excluir o usuario, por favor contate o suporte")
+        messages.warning(request,"Erro ao excluir o usuario, por favor contate o suporte")
+        return redirect('user:main_menu_user')
     messages.success(request, "Deletado com sucesso")
     return redirect('user:main_menu_user')
 
@@ -183,9 +186,7 @@ def update_user(request,id):
     except User.DoesNotExist and Exception as e:
        print(f"Exceção no update de user  - {e}")
        messages.warning(request,"Erro ao atualizar o usuario, por favor contate o suporte")
-       
-    
-    return render(request,'user/update_user.html',{'form':form})
+    return render(request,'user/update_user.html',{'form':form,'id':id})
 
 
 
@@ -221,24 +222,20 @@ def update_user_password(request,id):
                 
     return render(request,'user/update_user.html',{'form':form})
 
+
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
 def main_menu_user_with_filter(request):
     try:
-        username = None
-        if request.method == "POST":
-            form = findByUsernameForm(request.POST)
-            if form.is_valid():
-                username = form.cleaned_data['username']
+        request.session['filter'] = request.GET.get('parametro')
     except Exception as e:
         print(f"Exceção ao pegar o valor para filtrar o usuario pelo username")
-    return main_menu_user(request,username)
+    return redirect('user:main_menu_user')
     
     
- 
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
-def main_menu_user(request,username_to_filter = None):
+def main_menu_user(request):
     """_summary_
 
     Args:
@@ -247,12 +244,18 @@ def main_menu_user(request,username_to_filter = None):
     Returns:
         HttpResponseRedirect: Redireciona para a página principal de usuários após a atualização.
     """
-    users = None
-    if not username_to_filter:
-        users = User.objects.all()
+    if 'filter' in request.session:
+        filter = request.session['filter']
     else:
-       users =  User.objects.filter(username__startswith=username_to_filter)
-    return render(request,'user/main_menu_users.html',{'users':users,'findByUsernameForm':findByUsernameForm})
+        filter = None
+    
+    if filter:
+       users = User.objects.filter(username__startswith=filter,is_deleted=True)
+       request.session['filter'] = None
+    else:
+       users = User.objects.filter(is_deleted=True)
+       
+    return render(request,'user/main_menu_users.html',{'users':users})
  
  
 def page_not_found(request):
