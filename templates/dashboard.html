@@ -52,7 +52,7 @@
                                 <table class="col-auto overflow-x-auto" >
                                     {% for product in products_low_stock_StoreStock %}
                                     <p class="
-                                    {% if product.stock_quantity <= 3 %}
+                                    {% if product.stock_quantity == 0 %}
                                     bg-danger
                                     {% else %}
                                     bg-warning

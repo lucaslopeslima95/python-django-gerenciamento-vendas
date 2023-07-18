@@ -137,6 +137,10 @@ LOGGING = {
             "style": "{",
         },
     },
-
-    
 }
+
+CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672//'
+CELERY_RESULT_BACKEND = 'rpc://'
+BROKER_URL = CELERY_BROKER_URL
+BROKER_CONNECTION_RETRY_ON_STARTUP =  True
+

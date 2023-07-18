@@ -8,7 +8,7 @@ from Purchase.models import Purchase, PurchaseItem
 from Purchase.PurchaseService.calculateExpends import (
     calculates_and_returns_current_referral_spending,
     calculates_and_returns_last_reference_spend)
-from User.emails.emails import confirm_purchase
+from Purchase.tasks import confirm_purchase
 from User.forms import authForm
 
 from .DTO.PurchaseItemDTO import PurchaseItemDTO
@@ -48,12 +48,25 @@ def finish_purchase(request):
                     password = form.cleaned_data['password']
                     user = authenticate(request, username=username, password=password)
                     if user is not None:
+                        if len(cart.products)==0:
+                            messages.warning(request,"Nenhum Produto Adicionado")
+                            return redirect('purchase:initial_page_purchase')
                         collaborator = Collaborator.objects.get(user=user.id)
                         if collaborator.active and save_purchase(collaborator):
                             cart.products.clear()                                 
                             messages.success(request, "Salvo com Sucesso.")
-                            request.session['total_spends_current'] = float(calculates_and_returns_current_referral_spending(collaborator).aggregate(total=Sum('purchaseitem__price'))['total'])
-                            request.session['total_spends_last_referred'] = float(calculates_and_returns_last_reference_spend(collaborator).aggregate(total=Sum('purchaseitem__price'))['total'])
+                            
+                            current_spends = calculates_and_returns_current_referral_spending(collaborator).aggregate(total=Sum('purchaseitem__price'))['total']
+                            last_spends = calculates_and_returns_last_reference_spend(collaborator).aggregate(total=Sum('purchaseitem__price'))['total']
+                            
+                            if current_spends and last_spends:
+                                request.session['total_spends_current'] = float(current_spends)
+                                request.session['total_spends_last_referred'] = float(last_spends)
+                                request.session['show_expends'] = True
+                            else:
+                                 request.session['total_spends_current'] = 0.0
+                                 request.session['total_spends_last_referred'] = 0.0
+                                 request.session['show_expends'] = True
                         else:
                             cart.products.clear()
                             messages.warning(request, "Colaborador Inativo, por favor entre em contato com o RH")
@@ -96,6 +109,7 @@ def find_product(request):
 
     return redirect('purchase:initial_page_purchase')
      
+     
 def remove_product_purchase(request,id):
     in_cart = PurchaseItemDTO()
     in_cart.products.pop((id-1))
@@ -107,48 +121,70 @@ def clean_all_products_purchase(request):
     in_cart.products.clear()
     request.session['total_spends_current'] = 0.0
     request.session['total_spends_last_referred'] = 0.0
+    request.session['show_expends'] = False
     return redirect('purchase:initial_page_purchase')
 
 
 def save_purchase(collaborator:Collaborator) -> bool:
     try:
-        listPuchaseItems = []   
+        purchase_itens = {}
         cart = PurchaseItemDTO()
-        set_products = set()
-        for item in cart.products:
-            set_products.add(item.product)
         purchase = Purchase()
+        
         purchase.collaborator = collaborator
+    
         purchase.save()
-        for item in set_products:
-            count =  0
-            for product in cart.products:
-                if item.id == product.product.pk:
-                    count += 1
-                    #product_category == 'Ingressos' or product_category == 'Camisetas'
-            if not str(item.product.category) == 'Ingressos'\
-                or str(item.product.category) == 'Camisetas':  
-                update_quantity(item,count)
+      
+        for item in cart.products:
+         
+           if not item.product.name in purchase_itens:
+                
+                purchase_itens[item.product.name] = {
+                    'id':int(item.product.pk),
+                    'price':float(item.product.price),
+                    'category':str(item.product.category),
+                    'quantity':1
+                }
+            
+           else:
+                  
+               purchase_itens[item.product.name]['quantity'] += 1 
+        
+        for product in purchase_itens.items():  
+           
+           
+            if not product[1]['category'] == 'Ingressos'\
+                or product[1]['category'] == 'Camisetas':
+                     update_quantity(product[1]) 
+                
             purchaseItem = PurchaseItem.objects.create(
-                                                        product=item,
-                                                        price=item.price,
-                                                        purchase=purchase,
-                                                        quantity=count
-                                                        )
-            listPuchaseItems.append(purchaseItem)
+                product=Product.objects.get(id=product[1]['id']),  
+                price=product[1]['price'],
+                purchase=purchase,
+                quantity=product[1]['quantity']
+            )
             purchaseItem.save()
-        confirm_purchase(email=collaborator.user.email,nameUser=collaborator.name,purchaseItems=listPuchaseItems)
+       
+        confirm_purchase.delay(email=collaborator.user.email, nameUser=collaborator.name,purchase_itens=purchase_itens)
+        
     except Exception as e:
         print(f" Exceção ao salvar a compra - {e}")
     return True  
    
     
-def update_quantity(product,quantity) -> None:
+def update_quantity(product: dict) -> None:
     try:
-        StoreStock.objects.filter(product__id = product.id ).update(\
-        stock_quantity=(StoreStock.objects.get(product__id = product.id).stock_quantity-quantity))
+        stock = StoreStock.objects.get(product__id=product['id'])
+        
+        new_quantity = stock.stock_quantity - product['quantity']
+        
+        stock.stock_quantity = new_quantity
+        
+        stock.save()
+    except StoreStock.DoesNotExist:
+        print(f"StoreStock não encontrado para o produto com ID {product}")
     except Exception as e:
-        print(f" Exceção ao atualizar a quantidade do produto - {e}")
+        print(f"Exceção ao atualizar a quantidade do produto - {e}")
         
         
 def check_balance(request):
@@ -169,6 +205,7 @@ def check_balance(request):
             else:
                 messages.warning(request,"Credenciais Inválidas")
     return redirect('purchase:initial_page_purchase')
+
 
 def clean_consult(request):
     request.session['total_spends_current'] = 0.0

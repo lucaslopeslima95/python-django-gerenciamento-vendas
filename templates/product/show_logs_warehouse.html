@@ -2,7 +2,7 @@
 {% block title %} Produtos {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
-<div class="d-flex flex-row vh-100" >
+<div class="d-flex flex-row vh-100 " >
   <div class="card">
     <div class="card-header p-2">
       Filtro
@@ -29,10 +29,11 @@
     <td class="px-1"><a href="{% url 'product:show_logs_warehouse' %}" class="btn btn-secondary btn-sm">Limpar Filtro</a></td>
     <td class="px-1"><a href="{% url 'product:show_logs_warehouse' %}" class="btn btn-secondary btn-sm">Vizualizar Historico da Deposito</a></td>
     <td class="px-1"><a href="{% url 'product:show_logs_store_stock' %}" class="btn btn-secondary btn-sm">Vizualizar Historico da Loja</a></td>
+    <td class="px-1"><a href="{% url 'product:stock_management' %}" class="btn btn-secondary btn-sm">Voltar Para o Estoque</a></td>
   </div>
-  <div class="card-body">
+  <div class="card-body overflow-x-auto"  style="max-height: 100vh;">
     <div class="table-responsive" >
-      <table class="table" id="" >
+      <table class="table " id="">
         <thead class="text-primary">
           <tr>
             <th>Produto</th>

@@ -271,6 +271,7 @@ def manual_destocking_log(request,storeStock,quantity):
         type_movement=movement_type.Saida_Manual,
     )
     
+    
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,login_url='user:page_not_found')    
 @login_required(login_url="login_system")      
 def show_logs_warehouse(request):
@@ -283,3 +284,5 @@ def show_logs_warehouse(request):
 def show_logs_store_stock(request):
     logsStoreStock = LogStoreStock.objects.all()
     return render(request, 'product/show_logs_store_stock.html',{'logsStoreStock':logsStoreStock})
+
+

@@ -1,7 +1,9 @@
 from django.urls import path
+
+from User.tasks import confirm_register
 from . import views
 from Purchase.PurchaseService.generateReports import generate_reports
-from .emails.emails import confirm_register
+
 from User.login_logout.login_logout import (
     login_system,
     logout_system

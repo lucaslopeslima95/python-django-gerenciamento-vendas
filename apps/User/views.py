@@ -11,13 +11,12 @@ from django.shortcuts import redirect, render
 from django.views.decorators.csrf import csrf_protect
 from Product.ProductService.product_low_stock import (
     products_low_stock_StoreStock, products_low_stock_Warehouse)
+from Purchase.PurchaseService.generateReports import generate_reports_individual
 from Purchase.models import DeadLine
-from Purchase.PurchaseService.calculateExpends import \
-    get_data_to_generate_reports
 from Purchase.PurchaseService.current_billing import current_billing
 from Purchase.PurchaseService.months_range import (current_month_range,
                                                    next_month_range)
-from User.emails.emails import confirm_register
+from User.tasks import confirm_register
 
 from .forms import (findByUsernameForm, registerUserForm, reportsForm,
                     updateUserPasswordForm, updateWithoutPasswordForm)
@@ -59,7 +58,7 @@ def initial_page(request):
 def alert_create_user(sender,instance:Collaborator,created,*args,**kwargs):
     if created: 
         user = User.objects.get(id=instance.user.pk)
-        confirm_register(email=user.email,nameUser=instance.name,username=user.username,password=user.password)
+        confirm_register(email=user.email,nameUser=instance.name,username=user.username,password=user.password).delay()
     
 @csrf_protect
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')   
@@ -270,7 +269,7 @@ def page_not_found(request):
     return render(request,'page_not_found.html')
      
 def page_initial_reports(request):
-    return render(request,'reports/individual_report.html',{'form':reportsForm()})
+    return render(request,'reports/page_initial_reports.html',{'form':reportsForm()})
 
 @user_passes_test(lambda user: user.is_superuser,login_url='user:page_not_found')    
 @login_required(login_url="login_system")
@@ -294,5 +293,5 @@ def make_reports(request):
     except Exception as e:
         if e is not None:
             print(f"Exceção ao gerar relatório no make reports - {e}")
-    return get_data_to_generate_reports(collaborator=collaborator,start_date=start_date,end_date=end_date)
+    return generate_reports_individual(collaborator=collaborator,start_date=start_date,end_date=end_date)
         

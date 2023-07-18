@@ -52,8 +52,7 @@
 
     table {
       width: 100%;
-      border: 1px solid black;
-      
+      border-collapse: collapse;
     }
 
     th, td {
@@ -82,7 +81,6 @@
   </style>
 </head>
 <body>
-    
     <div class="spacer"></div>
   <div class="table-container">
   <h2>Comprovante de compra na Conveniência SCI</h2> 
@@ -93,30 +91,30 @@
       <thead>
         <tr>
           <th>Produto</th>
-          <th>Quantidade</th>
           <th>Preço Unitário</th>
+          <th>Quantidade</th>
           <th>Preço Total</th>
         </tr>
       </thead>
       <tbody>
-        {% for item in purchaseItems %}
-          <tr>
-            <td>{{ item.product }}</td>
-            <td>{{ item.quantity }}</td>
-            <td>R$ {{ item.price }}</td>
-            <td>R$ {% calculate_value item.quantity item.price 2 %}</td>
-          </tr>
-          {% endfor %}
+      {% for product_name, product in purchase_itens.items %}
+        <tr>
+          <td>{{ product_name }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>R$ {% calculate_value product.quantity product.price 2 %}</td>
+        </tr>
+      {% endfor %}
           <tr>
           <td>Total: </td>
           <td></td>
           <td></td>
           <td>R$ {{ total }}</td>
           </tr>
-          
       </tbody>
     </table>
   </div>
   <div class="spacer"></div>
+  
 </body>
 </html>

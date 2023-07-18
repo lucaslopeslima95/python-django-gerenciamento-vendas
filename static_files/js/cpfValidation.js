@@ -5,6 +5,7 @@ function validateCPF(input_cpf) {
     var Soma;
     var Resto;
     Soma = 0;
+    if(strCPF == '___.___.___-__')input_cpf.classList.add('green-border');
     if(strCPF == '')input_cpf.classList.add('green-border');
     
     if (strCPF == "00000000000")

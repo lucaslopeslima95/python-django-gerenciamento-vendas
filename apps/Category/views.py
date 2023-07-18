@@ -23,7 +23,9 @@ def main_menu_category(request):
          categorys = Category.objects.filter(name__startswith=filter).order_by('name')
          request.session['filter'] = ""
         else:
+            
          categorys = Category.objects.all().order_by('name')
+         
     except (Category.DoesNotExist,Exception) as e:
         print(f"Exceção listar as categorias no menu principal - {e}")
         

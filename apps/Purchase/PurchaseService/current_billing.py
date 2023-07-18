@@ -4,6 +4,7 @@ from datetime import datetime
 from datetime import date
 from Purchase.models import Purchase
 
+
 def current_billing():
     """Calcula o total gasto no período de faturamento atual.
 

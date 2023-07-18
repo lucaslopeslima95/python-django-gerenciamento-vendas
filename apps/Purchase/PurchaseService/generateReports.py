@@ -1,54 +1,46 @@
-from fpdf import FPDF
-from django.http import FileResponse
+from datetime import date, datetime
 from io import BytesIO
-from django.db.models import Sum
+
+from django.http import FileResponse, HttpResponse
+from django.template.loader import get_template
 from fpdf import FPDF
-from io import BytesIO
+from Collaborator.models import Collaborator
+from Purchase.models import DeadLine, Purchase
 from Purchase.PurchaseService.current_billing import current_billing
-from Purchase.models import DeadLine
-from datetime import datetime
-from datetime import date
-from Purchase.models import Purchase
+from weasyprint import HTML
 
 
-def generate_reports_individual(listPurchases,collaborator):
-    try:
-        pdf = FPDF()
-        pdf.add_page()
-        pdf.set_font('Arial', 'B', 10)
-        pdf.set_fill_color(255, 255, 255)
-        pdf.cell(0, 10, f'Relatorio de compras {collaborator.name} ', 1, 1, 'C', 1)
-      
-        for purchase in listPurchases:
-            purchase_date = purchase.date_purchase.strftime('%d/%m/%Y')
-            products = purchase.product.all()
-            for product in products:
-                pdf.cell(0, 10, f"Colaborador: {purchase.collaborator}, Data: {purchase_date}, Produto: {product.name}, Preço: {product.price}", 1, 1, 'L', 1)
-       
-        try:
-            total = listPurchases.aggregate(total=Sum('purchaseitem__price'))['total']
-        except Exception as e:
-            total = 0.0
-            print(f"Exceção ao buscar as compras no periodo definido - {e}")
-       
-        if total is not None:
-            formatted_total = "{:.2f}".format(total)
-        else:
-            formatted_total = 0.00
-      
-        pdf.cell(0, 10, f'Total: {formatted_total}', 1, 0, 'C', 1)
-  
-        pdf_content = pdf.output(dest='S').encode('latin1')
-      
-        pdf_bytes = BytesIO(pdf_content)
+
+def generate_reports_individual(collaborator:Collaborator,start_date,end_date):
     
-    except Exception as e:
-        print(f" Exceção ao gerar o relatorio individual {e}")
-    
-    return FileResponse(pdf_bytes,filename="Relatorio.pdf", as_attachment=True)
+        listPurchases = Purchase.objects.filter(date_purchase__range=
+                                               (start_date, end_date),collaborator__cpf=collaborator.cpf)
+        generate_at = datetime.now()
+        
+        context = {
+                    'collaborator': collaborator,
+                    'listPurchases':listPurchases,
+                    'generate_at':generate_at,
+                    'end_date':end_date,
+                    'start_date':start_date
+                }
+      
+        template = get_template('reports/individual_report.html')
+        
+        html = template.render(context)
+       
+        
+        response = HttpResponse(content_type='application/pdf')
+      
+        response['Content-Disposition'] = 'attachment; filename="relatorio.pdf"'
+        
+        HTML(string=html).write_pdf(target=response)
+
+        return response
 
 
 def generate_reports(request):
+
     deadLine = DeadLine.objects.get(id=1).DAY
     today = datetime.now().day
     
@@ -67,20 +59,24 @@ def generate_reports(request):
         
     listPurchases = Purchase.objects.filter(date_purchase__range=(start_date, end_date))
 
-    pdf = FPDF()
-    pdf.add_page()
-    pdf.set_font('Arial', 'B', 10)
-    pdf.set_fill_color(255, 255, 255)
-    pdf.cell(0, 10, 'Vendas Referência Atual', 1, 1, 'C', 1)
-    for purchase in listPurchases:
-        purchase_date = purchase.date_purchase.strftime('%d/%m/%Y')
-        products = purchase.product.all()
-        for product in products:
-            pdf.cell(0, 9, f"Colaborador: {purchase.collaborator}, Data: {purchase_date},Prod: {product.name}, Preço: {product.price}", 1, 1, 'L', 1)
-    total = current_billing()
-    formatted_total = "{:.2f}".format(total)
-    pdf.cell(0, 10, f'Total: {formatted_total}', 1, 0, 'C', 1)
+    generate_at = datetime.now()
+        
+    context = {
+                'listPurchases':listPurchases,
+                'generate_at':generate_at,
+                'end_date':end_date,
+                'start_date':start_date
+            }
+    
+    template = get_template('reports/current_reffered.html')
+    
+    html = template.render(context)
+    
+    
+    response = HttpResponse(content_type='application/pdf')
+    
+    response['Content-Disposition'] = 'attachment; filename="relatorio.pdf"'
+    
+    HTML(string=html).write_pdf(target=response)
 
-    pdf_content = pdf.output(dest='S').encode('latin1')
-    pdf_bytes = BytesIO(pdf_content)
-    return FileResponse(pdf_bytes,filename="Relatorio.pdf",as_attachment=True)
+    return response

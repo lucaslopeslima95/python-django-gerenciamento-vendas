@@ -57,6 +57,7 @@
         <th scope="row">{{ item.price }}</th>
         <th><a href="{% url 'purchase:remove_product_purchase' forloop.counter %}" class="btn btn-primary">Remover</a>
         </th>
+        {% %}
       </tr>
       {% endfor %}
     </tbody>
@@ -153,7 +154,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
   </div>
 </div>
 
-{% if request.session.total_spends_last_referred != 0  %}
+{% if request.session.show_expends %}
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const myModal = new bootstrap.Modal(document.getElementById('show_spends'));
