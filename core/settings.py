@@ -3,6 +3,8 @@ from decouple import config
 import os
 import sys
 
+from django.conf import settings
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,6 +28,9 @@ INSTALLED_APPS = [
     'Product',
     'Purchase',
     'Category',
+    'Reports',
+    'Dashboard',
+    'Stock',
 ]
 
 MIDDLEWARE = [
@@ -40,12 +45,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.urls'
 
-TEMPLATES_DIRS = os.path.join(BASE_DIR,'templates')
+TEMPLATES_DIRS = os.path.join(BASE_DIR, 'templates')
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'static_files'),TEMPLATES_DIRS],
+        'DIRS': [os.path.join(BASE_DIR, 'static_files'), TEMPLATES_DIRS],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -92,7 +97,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'static_files')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_files')]
 
 STATIC_URL = 'static/'
 
@@ -118,7 +123,7 @@ LOGGING = {
         "file": {
             "level": "INFO",
             "class": "logging.FileHandler",
-            "filename": os.path.join(BASE_DIR,'logs.log'),
+            "filename": os.path.join(BASE_DIR, 'logs.log'),
         },
     },
     "loggers": {
@@ -142,5 +147,7 @@ LOGGING = {
 CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672//'
 CELERY_RESULT_BACKEND = 'rpc://'
 BROKER_URL = CELERY_BROKER_URL
-BROKER_CONNECTION_RETRY_ON_STARTUP =  True
+BROKER_CONNECTION_RETRY_ON_STARTUP = True
 
+USE_L10N = True
+settings.DECIMAL_SEPARATOR = ','

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %} Produtos {% endblock %}
+{% block stylesheets %}{% endblock stylesheets %}
+{% block content %}
+<div class="card mt-3 vh-100">
+  <div class="card-header">
+    <h4 class="card-title">Gestão de Estoque</h4>
+    <td class="px-1"><a href="{% url 'stock:show_logs_warehouse' %}" class="btn btn-primary btn-sm">Visualizar histórico de movimentações</a></td>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive" >
+      <table class="table">
+        <thead class="text-primary">
+          <tr>
+            <th>Nome</th>
+            <th style="text-align: center;">Quantidade na Loja</th>
+            <th style="text-align: center;">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in storeStock %}
+          <tr>
+            <th>{{ item.product.name }}</th>
+            <th style="text-align: center;">{{ item.stock_quantity }}</th>
+            <th style="text-align: center;"><a type="submit" class="btn btn-primary" href="{% url 'stock:product_movement' item.product.id %}">
+                  Registrar Movimentação <i class="fa-solid fa-conveyor-belt-arm"></i></a></th>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+<script>
+  function enviar() {
+    var valorCampo = document.getElementById("myInput").value;
+    window.location.href = "http://127.0.0.1:8000/stock/stock_management_filter?parametro=" + valorCampo;
+  }
+  $('table').DataTable({
+    language: {
+      info: 'Mostrando página _PAGE_ de _PAGES_',
+      infoEmpty: 'Nada Disponível',
+      infoFiltered: '',
+      lengthMenu: 'Mostrando _MENU_ registrod por pagina',
+      zeroRecords: 'Nada encontrado, desculpe',
+      "paginate": {
+        "first": "Primeira",
+        "last": "Última",
+        "next": "Próxima",
+        "previous": "Anterior"
+      },
+      "search": "Filtro por palavra-chave: ",
+    }
+  });
+  $('table').DataTable();
+</script>
+{% endblock content %}
+{% block javascripts %}{% endblock javascripts %}

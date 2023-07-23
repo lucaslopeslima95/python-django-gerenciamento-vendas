@@ -4,8 +4,9 @@ from . import views
 app_name = 'category'
 
 urlpatterns = [
-    path('save_category',views.save_category,name="save_category"),
-    path('update_category/<int:id>',views.update_category, name='update_category'),
-    path("main_menu_category",views.main_menu_category,name="main_menu_category"),
-    path("main_menu_category_filtered",views.main_menu_category_filtered,name="main_menu_category_filtered"),
+    path('salvar_categoria', views.save_category, name="save_category"),
+    path('atualizar_categoria/<int:id>', views.update_category,
+         name='update_category'),
+    path("menu_categorias", views.main_menu_category,
+         name="main_menu_category"),
 ]

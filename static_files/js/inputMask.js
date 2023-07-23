@@ -11,6 +11,7 @@ $(document).ready(function() {
   });
 
 
-  $(document).ready(function () {
+$(document).ready(function () {
     $('#id_code_bar').inputmask('9-999-999999-999');
 });
+

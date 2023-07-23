@@ -1,50 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% load static %}
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Conveniência Sci - {% block title %}{% endblock %} 
-    </title>
-    <link rel="stylesheet" href="{% static 'css/css_reset.css'%}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"rel="stylesheet"/>
-    <link rel="stylesheet" href="{% static 'css/shake.css'%}">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="{% static 'css/sb-admin-2.min.css'%}" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/validations_colors.css'%}">
-    {% block stylesheets %}{% endblock stylesheets %}
-    <meta charset="UTF-8"/>
-    <title>Log In</title>
-  </head>
-  <body onload="remove_messages()" >
-      <div class="d-flex flex-row">
-        <div>
-        {% include 'side-bar.html'%}
-        </div>
-        <div class="col-10">
-        {% block content %}{% endblock content %} 
-      </div>
-      </div>
-      
-      <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-      <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-      <script src="https://kit.fontawesome.com/9958a2dab0.js" crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="{% static 'js/messages_remove_on_page.js'%}"></script>
-      <script src="{% static 'vendor/chart.js/Chart.min.js'%}"></script>
-      <script src="{% static 'js/confirmChoiceOnSwitch.js'%}"></script>
-      <script src="{% static 'js/inputStandardPassword.js'%}"></script>
-      <script src="{% static 'js/demo/chart-area-demo.js'%}"></script>
-      <script src="{% static 'js/generateUsername.js'%}"></script>
-      <script src="{% static 'js/sb-admin-2.min.js'%}"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
-      <script src="{% static 'js/inputMask.js'%}"></script>
-      <script src="{% static 'js/inputPriceMask.js'%}"></script>
-      <script src="{% static 'js/cpfValidation.js'%}"></script>
-      <script src="{% static 'js/validatePassword.js'%}"></script>
-      {% block javascripts %}{% endblock javascripts %}
-    </body>
+{% load static %}
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Conveniência Sci - {% block title %}{% endblock %}
+  </title>
+  <link href="{% static 'css/css_reset.css'%}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="{% static 'css/sb-admin-2.css'%}" rel="stylesheet">
+  {% block stylesheets %}{% endblock stylesheets %}
+  <meta charset="UTF-8" />
+  <title>Log In</title>
+</head>
+<body onload="remove_messages()">
+  {% for message in messages %}
+  <div style="position: absolute; z-index: 2; width: 100%;" class="alert alert-{{ message.tags }}">
+    {{ message }}
+  </div>
+  {% endfor %}
+  <div class="d-flex flex-row">
+    <div style="height: 100vh;">
+      {% include 'side-bar.html'%}
+    </div>
+    <div class="mx-auto col-md-10">
+      {% block content %}{% endblock content %}
+    </div>
+  </div>
+  <script src="{% static 'js/active.js'%}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/9958a2dab0.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{% static 'js/messages_remove_on_page.js'%}"></script>
+  <script src="{% static 'js/inputStandardPassword.js'%}"></script>
+  <script src="{% static 'js/demo/chart-area-demo.js'%}"></script>
+  <script src="{% static 'js/generateUsername.js'%}"></script>
+  <script src="{% static 'js/sb-admin-2.js'%}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+  <script src="{% static 'js/inputMask.js'%}"></script>
+  <script src="{% static 'js/inputPriceMask.js'%}"></script>
+  <script src="{% static 'js/cpfValidation.js'%}"></script>
+  <script src="{% static 'js/validatePassword.js'%}"></script>
+
+  {% block javascripts %}
+  {% endblock javascripts %}
+</body>
+
 </html>

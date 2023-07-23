@@ -1,5 +1,6 @@
+{% load static %}
 {% if user.is_authenticated %}
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar">
   <div class="text-center d-none d-md-inline">
     <button class="rounded-circle border-0" id="sidebarToggle">
     </button>
@@ -8,30 +9,39 @@
     <div class="sidebar-brand-icon rotate-n-15">
       <i class="fas fa-laugh-wink"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">Conveniência <sup></sup></div>
+    <div class="sidebar-brand-text mx-3">Conveniência <sup>SCI</sup></div>
   </a>
   <div class="sidebar-heading">
-    Menus
+    Menu
   </div>
-  <li class="nav-item active">
+  <li class="nav-item">
     <a class="nav-link" href="{% url 'user:initial_page' %}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Inicio</span></a>
   </li>
-
-
   {% if user.is_superuser %}
   <li class="nav-item">
     <a href="{% url 'user:main_menu_user' %}" class="nav-link">
       <i class="fa-solid fa-user"></i>
-      <span>Usuarios</span>
+      <span>Usuários</span>
     </a>
   </li>
   <li class="nav-item">
-    <a href="{% url 'user:page_initial_reports' %}" class="nav-link">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
       <i class="fa-solid fa-file"></i>
-      <span>Relátorios</span>
+      <span>Relatórios</span>
     </a>
+    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Relatórios</h6>
+        <a href="{% url 'reports:page_initial_reports' %}" class="nav-link">
+          <span class="collapse-item">Consumo individual</span>
+        </a>
+        <a href="{% url 'reports:generate_reports' %}" class="nav-link">
+            <span class="collapse-item">Geral da rf.atual</span>
+        </a>
+      </div>
+    </div>
   </li>
   {% endif %}
   {% if user.is_staff or user.is_superuser %}
@@ -54,7 +64,7 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{% url 'product:stock_management' %}">
+    <a class="nav-link" href="{% url 'stock:stock_management' %}">
       <i class="fa-solid fa-boxes-stacked"></i>
       <span>Estoque</span>
     </a>
@@ -66,7 +76,9 @@
       <span>Sair</span>
     </a>
   </li>
-  
   <hr>
 </ul>
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
 {% endif %}

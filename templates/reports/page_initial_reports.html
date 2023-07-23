@@ -1,25 +1,21 @@
 {% extends 'base.html' %}
-{% block title %} Colaboradores {% endblock %}
+{% block title %} Relatorio de Consumo {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
-{% for message in messages %}
-<div class="alert alert-{{ message.tags }}">
-  {{ message }}
-</div>
-{% endfor %}
-<div class="container mt-5">
-  <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 mt-2 text-gray-800">Relatórios de Consumo</h1>
-    <a href="{% url 'user:generate_reports' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-        class="fas mt-2 fa-download fa-sm text-white-50"></i>Relatorio Rf.Atual</a>
+
+<div class=" card  mt-3 vh-100">
+  <div class="card-header justify-content-between">
+    <h1 class="h3 mb-3 mt-2">Relatório de consumo individual</h1>
   </div>
-  <form action="{% url 'user:make_reports' %}" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-primary" id="btn-save-collaborator">Gerar</button>
-    </div>
-  </form>
+  <div class="card-body">
+    <form action="{% url 'reports:make_reports' %}" method="post" class="col-md-10 mx-auto p-2">
+      {% csrf_token %}
+      {{form.as_p}}
+      <div class="d-flex justify-content-center mt-5">
+        <button type="submit" class="btn btn-primary" id="btn-save-collaborator">Gerar</button>
+      </div>
+    </form>
+  </div>
 </div>
 {% endblock content %}
 {% block javascripts %}{% endblock javascripts %}

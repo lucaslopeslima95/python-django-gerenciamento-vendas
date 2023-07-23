@@ -553,7 +553,7 @@ pre code {
 .container-xl {
   width: 100%;
   padding-right: 0.75rem;
-  padding-left: 0.75rem;
+
   margin-right: auto;
   margin-left: auto;
 }
@@ -606,10 +606,10 @@ pre code {
 .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
 .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
 .col-xl-auto {
-  position: relative;
+ 
   width: 100%;
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+  padding-right: 0rem;
+  padding-left: 0rem;
 }
 
 .col {
@@ -2357,20 +2357,20 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #4e73df;
-  border-color: #4e73df;
+  background-color: #2d3560;
+  border-color: #2d3560;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #2e59d9;
+  background-color: #394275;
   border-color: #2653d4;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #2e59d9;
-  border-color: #2653d4;
+  background-color: #394275;
+  border-color: #394275;
   box-shadow: 0 0 0 0.2rem rgba(105, 136, 228, 0.5);
 }
 
@@ -4526,6 +4526,8 @@ input[type="button"].btn-block {
   flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
+  max-height: 500rem;
+  overflow-y: auto;
 }
 
 .card-title {
@@ -6411,7 +6413,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #4e73df !important;
+  background-color: #2d3560 !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -7642,7 +7644,7 @@ button.bg-dark:focus {
 }
 
 .vh-100 {
-  height: 100vh !important;
+  height: 96vh !important;
 }
 
 .m-0 {
@@ -9900,8 +9902,7 @@ a:focus {
 }
 
 .bg-gradient-primary {
-  background-color: #4e73df;
-  background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+  background-color: #3b4787;
   background-size: cover;
 }
 
@@ -10397,6 +10398,7 @@ a:focus {
 .sidebar .nav-item .collapse .collapse-inner .collapse-item:hover,
 .sidebar .nav-item .collapsing .collapse-inner .collapse-item:hover {
   background-color: #eaecf4;
+  width: fit-content;
 }
 
 .sidebar .nav-item .collapse .collapse-inner .collapse-item:active,

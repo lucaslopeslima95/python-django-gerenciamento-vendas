@@ -1,13 +1,12 @@
-from Collaborator.models import Collaborator
-from Purchase.PurchaseService.generateReports import generate_reports_individual
 from Purchase.models import Purchase
 from Purchase.models import DeadLine
 from datetime import date, datetime
 from django.utils import timezone
 
 
-def calculates_and_returns_current_referral_spending(employee_who_made_the_purchase):
+def current_referral_spending(employee_who_made_the_purchase):
     try:
+        list_purchases = []
         deadline = DeadLine.objects.get(id=1).DAY
         today = timezone.now().date()
         current_year = timezone.now().year
@@ -15,26 +14,33 @@ def calculates_and_returns_current_referral_spending(employee_who_made_the_purch
 
         if today.day > deadline:
             if current_month == 12:
-                start_date = timezone.datetime(current_year, current_month, deadline + 1).date()
-                end_date = timezone.datetime(current_year + 1, 1, today.day).date()
+                start_date = timezone.datetime(current_year,
+                                               current_month,
+                                               deadline + 1).date()
+                end_date = timezone.datetime(current_year + 1, 1,
+                                             today.day).date()
             else:
-                start_date = timezone.datetime(current_year, current_month, deadline + 1).date()
-                end_date = timezone.datetime(current_year, current_month, today.day).date()
+                start_date = timezone.datetime(current_year, current_month,
+                                               deadline + 1).date()
+                end_date = timezone.datetime(current_year, current_month,
+                                             today.day).date()
         else:
-            start_date = timezone.datetime(current_year, current_month - 1, deadline + 1).date()
-            end_date = timezone.datetime(current_year, current_month, today.day).date()
+            start_date = timezone.datetime(current_year, current_month - 1,
+                                           deadline + 1).date()
+            end_date = timezone.datetime(current_year, current_month,
+                                         today.day+1).date()
 
-            list_purchases = Purchase.objects.filter(date_purchase__range=(start_date, end_date),
-                                                    collaborator__cpf=employee_who_made_the_purchase.cpf)
+            list_purchases = Purchase.objects.filter(
+                date_purchase__range=(start_date, end_date),
+                collaborator__cpf=employee_who_made_the_purchase.cpf)
     except Exception as e:
         print(f"Exceção ao buscar valores na referência Atual - {e}")
-        list_purchases = []
-
     return list_purchases
 
-    
-def calculates_and_returns_last_reference_spend(employee_who_made_the_purchase):
+
+def last_reference_spend(employee_who_made_the_purchase):
     try:
+        listPurchases = []
         deadLine = DeadLine.objects.get(id=1).DAY
         today = timezone.now().date().day
         current_year = datetime.now().year
@@ -48,20 +54,16 @@ def calculates_and_returns_last_reference_spend(employee_who_made_the_purchase):
                 start_date = date(current_year, 12, deadLine + 1)
                 end_date = date(current_year, current_month - 1, deadLine)
             else:
-                start_date = date(current_year, current_month - 1, deadLine + 1)
+                start_date = date(current_year, current_month - 1,
+                                  deadLine + 1)
                 end_date = date(current_year, current_month, deadLine)
         else:
             start_date = date(current_year, current_month - 2, deadLine + 1)
             end_date = date(current_year, current_month-1, deadLine)
 
-            listPurchases = Purchase.objects.filter(date_purchase__range=(start_date, end_date),
-                                                collaborator__cpf=employee_who_made_the_purchase.cpf)
+            listPurchases = Purchase.objects.filter(
+                date_purchase__range=(start_date, end_date),
+                collaborator__cpf=employee_who_made_the_purchase.cpf)
     except Exception as e:
         print(f"Exceção ao buscar valores na referência passada - {e}")
-        listPurchases = []
-   
     return listPurchases
-
-
-
-

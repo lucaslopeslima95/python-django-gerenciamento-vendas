@@ -61,7 +61,7 @@
 
         @page {
             size: A4;
-            margin: 10px;
+            margin: 18px;
             margin-top: 20px;
             margin-bottom: 20px;
             @top-left {
@@ -81,6 +81,7 @@
                 font-size: 12px;
                 color: #666;
                 text-align: center;
+                margin-bottom: 10rem;
                 content: "Gerado em: {{ generate_at }}";
             }
 
@@ -89,10 +90,10 @@
 </head>
 
 <body>
-    <table>
+    <table class="mt-2">
         <thead>
             <tr>
-                <th colspan="6" style="text-align: center;">Relatorio de Consumo Individual</th>
+                <th colspan="6" style="text-align: center; ">Relatorio de Compras Referencia Atual</th>
             </tr>
             <tr>
                 <th class="column-name">Colaborador</th>
@@ -109,7 +110,7 @@
             <tr>
                 <td class="column-name">{{  purchase.collaborator }}</td>
                 <td class="column-name">{{ purchase_item.product }}</td>
-                <td class="column-price">{{ purchase_item.price }}</td>
+                <td class="column-price">R$ {{ purchase_item.price }}</td>
                 <td class="column-quantity">{{ purchase_item.quantity }}</td>
                 <td>R$ {% calculate_value purchase_item.quantity purchase_item.price 2 %}</td>
                 <td class="column-total">{{ purchase.date_purchase }}</td>

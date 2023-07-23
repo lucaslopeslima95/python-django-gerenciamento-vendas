@@ -2,69 +2,70 @@
 {% block title %} Categorias {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
-<div class="d-flex flex-row vh-100" >
-  
-<div class="card">
-  <div class="card-header p-2">
-    Filtro
-  </div>
-  <div class="card-body">
-  <input type="text" id="myInput" placeholder="Nome da Categoria" class="form-control"/>
-  <div class="d-flex justify-content-center mt-3">
-    <button type="submit" onclick="enviar()" class="btn btn-fill btn-secondary btn-sm">
-    Buscar
-    <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-  </button>
-  </div>
-</div>
-</div>
-
-<div class="card col-10" style="width:100%;">
-  {% for message in messages %}
-  <div class="alert alert-{{ message.tags }}">
-    {{ message }}
-  </div>
-  {% endfor %}
+<div  class="card mt-3 vh-100">
   <div class="card-header">
     <h4 class="card-title">Categorias</h4>
     <td class="px-1"><a href="{% url 'category:save_category' %}" class="btn btn-primary btn-sm">Registrar Nova Categoria
       <i class="fa-regular fa-plus"></i>
     </a></td>
-    <td class="px-1"><a href="{% url 'category:main_menu_category' %}" class="btn btn-secondary btn-sm">Limpar Filtro</a></td>
-  </div>
+    </div>
   <div class="card-body">
     <div class="table-responsive" >
-
-      <div class="accordion accordion-flush" id="accordionFlushExample">
-        {% for category in categorys %}
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{forloop.counter}}" aria-expanded="false" aria-controls="flush-collapseOne">
-              {{ category.name }}
-            </button>
-          </h2>
-          <div id="flush-collapse{{forloop.counter}}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-              {{ category.description }}
-            </div>
-            <th><a type="submit" class="btn btn-secondary ms-4 mb-1" href="{% url 'category:update_category' category.id %}">
+      <table class="table">
+        <thead class="text-primary">
+          <tr>
+            <th>Nome Categoria</th>
+            <th>Descrição</th>
+            <th style="text-align: center;">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for category in categorys %}
+          <tr>
+            <th>{{ category.name }}</th>
+            {% if category.description|length > 35 %}
+            <td>{{ category.description|slice:":35"}}...</td>
+              {%else%}
+                <th>{{ category.description }}</th>
+              {%endif%}
+            <th style="text-align: center;"><a type="submit" class="btn btn-primary ms-4 mb-1" href="{% url 'category:update_category' category.id %}">
               Editar
               <i class="fa-solid fa-pen-to-square"></i>
             </a></th>
-          </div>
-        </div>
-         {% endfor %}
-      </div>
+          </tr>
+
+            {% endfor %}
+        </tbody>
+      </table>
+      
     </div>
   </div>
 </div>
-</div>
 
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
 <script>
   function enviar() {
     var valorCampo = document.getElementById("myInput").value;
     window.location.href = "http://127.0.0.1:8000/category/main_menu_category_filtered?parametro=" + valorCampo;
   }
+  $('table').DataTable({
+    language: {
+      info: 'Mostrando Pagina _PAGE_ de _PAGES_',
+      infoEmpty: 'Nada Disponivel',
+      infoFiltered: '',
+      lengthMenu: 'Mostrando _MENU_ Registro por pagina',
+      zeroRecords: 'Nada Encontrado, Desculpe',
+      "paginate": {
+        "first": "Primeira",
+        "last": "Última",
+        "next": "Próxima",
+        "previous": "Anterior"
+      },
+      "search": "Filtro por palavra-chave: ",
+    }
+  });
+  $('table').DataTable();
 </script>
 {% endblock content %}
 {% block javascripts %}{% endblock javascripts %}

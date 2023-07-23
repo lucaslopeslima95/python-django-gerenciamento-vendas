@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %} Produtos {% endblock %}
+{% block stylesheets %}
+{% endblock stylesheets %}
+{% block content %}
+<div class="card mt-3 vh-100">
+  <div class="card-header rounded">
+    <a href="{% url 'stock:stock_management'%}">
+        <i class="fa-sharp fa-solid fa-arrow-left fa-2xl"></i>
+    </a>
+    Voltar para gestão de estoque
+</div>
+  <div class="card-header">
+    <h4 class="card-title">Historico de Movimentações</h4>
+    <div class="d-flex flex-row">
+      <div><a href="{% url 'stock:show_logs_warehouse' %}" class="btn btn-primary me-2">Vizualizar
+          Historico
+          da Deposito</a></div>
+      <div><a href="{% url 'stock:show_logs_store_stock' %}" class="btn btn-primary me-2">Vizualizar
+          Historico da Loja</a></div>
+    </div>
+  </div>
+  <div class="card-body">
+    <table class="table" >
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Usuario</th>
+          <th>Quantidade</th>
+          <th>Tipo de Movimentação</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for log in logsWerehouse %}
+        <tr>
+          <th>{{ log.product }}</th>
+          <th>{{ log.user }}</th>
+          <th>{{ log.quantity }}</th>
+          <th>{{ log.get_type_movement_display }}</th>
+          <th>{{ log.date }}</th>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+<script>
+  function enviar() {
+    var valorCampo = document.getElementById("myInput").value;
+    window.location.href = "http://127.0.0.1:8000/product/stock_management_filter?parametro=" + valorCampo;
+  }
+  $('table').DataTable({
+    language: {
+      info: 'Mostrando Pagina _PAGE_ de _PAGES_',
+      infoEmpty: 'Nada Disponivel',
+      infoFiltered: '(filtered from _MAX_ total records)',
+      lengthMenu: 'Mostrando _MENU_ Registro por pagina',
+      zeroRecords: 'Nada Encontrado, Desculpe',
+      "paginate": {
+        "first": "First",
+        "last": "Last",
+        "next": "Proxima",
+        "previous": "Anterior"
+      },
+      "search": "Filtrar:",
+    }
+  });
+  $('table').DataTable();
+</script>
+{% endblock content %}
+{% block javascripts %}{% endblock javascripts %}

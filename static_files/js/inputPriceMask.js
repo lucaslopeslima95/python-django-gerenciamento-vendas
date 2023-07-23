@@ -1,4 +1,4 @@
-function priceMask(input) {
+function inputPriceMask(input) {
     var valor = input.value;
 
     valor = valor.replace(/\D/g, '');
@@ -12,3 +12,12 @@ function priceMask(input) {
 
     input.value = valorFormatado;
 }
+
+
+  
+  
+  
+  
+
+
+  

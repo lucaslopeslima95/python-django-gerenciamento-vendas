@@ -1,31 +1,26 @@
 {% extends 'base.html' %} {% block title %} Atualizar Usuarios {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %} {% block content %}
-<div>
-
-<div class="card p-5">
-    {% for message in messages %}
-        <div class="alert alert-{{ message.tags }} timeout fade-out">
-        {{ message }}
-        </div>
-     {% endfor %}
-  <div class="card-header">
-      <div class="card-header rounded">
-          <a href="{% url 'user:main_menu_user'%}">
-              <i class="fa-sharp fa-solid fa-arrow-left fa-2xl"></i>
-          </a>
-          Voltar ao menu principal
-      </div>
+<div class="card vh-100 mt-3">
+  <div class="card-header rounded">
+    <a href="{% url 'user:main_menu_user'%}">
+      <i class="fa-sharp fa-solid fa-arrow-left fa-2xl"></i>
+    </a>
+    Voltar ao menu principal
   </div>
-  <h3 class="mb-3 mt-3">Atualização de Cadastral</h3>
-  <form method="post">
+  <div class="card-header">
+    Atualização do usuário
+  </div>
+  <form method="post" class="mt-3 mx-auto mb-3" style="width: 75%;">
+    <h4>Atualização de dados</h4>
     {% csrf_token %} {{ form.as_p }}
-    <br/>
+    <br />
     <div class="d-flex justify-content-center">
-      <a type="submit" class="btn btn-primary me-1">
-        Atualizar
+      <button type="submit" class="btn btn-primary me-1">
+        Salvar
         <i class="fa-solid fa-rotate"></i>
-      </a>
-      <a type="button" class="btn btn-danger me-1" onclick="return confirm('Deseja realmente Excluir?')" href="{% url 'user:erase_user' id %}">Excluir
+      </button>
+      <a type="button" class="btn btn-danger me-1" onclick="return confirm('Deseja realmente Excluir?')"
+        href="{% url 'user:erase_user' id %}">Excluir
         <i class="fa-sharp fa-solid fa-trash"></i>
       </a>
       <a type="button" href="{% url 'user:main_menu_user'%}" class="btn btn-secondary ">
@@ -35,6 +30,6 @@
     </div>
   </form>
 </div>
-</div>
-{% endblock content %} 
+
+{% endblock content %}
 {% block javascripts %}{% endblock javascripts %}
