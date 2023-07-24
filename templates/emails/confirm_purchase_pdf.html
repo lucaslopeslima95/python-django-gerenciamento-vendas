@@ -100,7 +100,7 @@
       {% for product_name, product in purchase_itens.items %}
         <tr>
           <td>{{ product_name }}</td>
-          <td>{{ product.price }}</td>
+          <td>R$ {{ product.price }}</td>
           <td>{{ product.quantity }}</td>
           <td>R$ {% calculate_value product.quantity product.price 2 %}</td>
         </tr>

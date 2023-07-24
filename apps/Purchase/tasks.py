@@ -23,17 +23,23 @@ def generate_pdf(nameUser, purchase_itens, total, date, hour):
 def confirm_purchase(email, nameUser,
                      purchase_itens):
     try:
-        total = None
+        total = 0
         is_ticket = False
+        is_shirt = False
         for product in purchase_itens.items():
-            total = + (product[1]['price']*product[1]['quantity'])
-            if not product[1]['category'] == 'Ingressos'\
-                    or product[1]['category'] == 'Camisetas':
-                is_ticket = True
+            if (product[1]['price'] and product[1]['quantity']):
+                total += (product[1]['price']*product[1]['quantity'])
+                if  product[1]['category'] == 'Ingressos':
+                    is_ticket = True
+                if product[1]['category'] == 'Camisetas':
+                    is_shirt = True
 
         email_to = []
         email_to.append(email)
         if is_ticket:
+            email_to.append('lucaslopesllima@gmail.com')
+            
+        if is_shirt:
             email_to.append('lucaslopesllima@gmail.com')
 
         now = datetime.now()
@@ -65,6 +71,6 @@ def confirm_purchase(email, nameUser,
 def delete_pdf(path_to_pdf):
     if os.path.exists(path_to_pdf):
         os.remove(path_to_pdf)
-        print(f"Arquivo {path_to_pdf} foi excluído com sucesso.")
+        print(f"Email enviado Com sucesso e Arquivo {path_to_pdf} foi excluído com sucesso.")
     else:
         print(f"O arquivo {path_to_pdf} não existe.")

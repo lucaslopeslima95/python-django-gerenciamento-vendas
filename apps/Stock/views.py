@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 from .models import (LogStoreStock, LogWarehouse, StoreStock,
                      Warehouse, movement_type)
+from django.contrib import messages
 
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,
@@ -85,7 +86,7 @@ def entry_stock(request):
     warehouse.stock_quantity = new_quantity
     warehouse.save()
 
-    url = f'/stock/product_movement/{id_product}/'
+    url = f'/estoque/movimentacao_produto/{id_product}'
 
     return redirect(url)
 
@@ -97,18 +98,22 @@ def transfer_to_store(request):
     id_product = request.POST.get('id_product')
     quantity = request.POST.get('quantity')
     warehouse = Warehouse.objects.get(product__id=id_product)
-    new_warehouse_stock_quantity = warehouse.stock_quantity - int(quantity)
-    warehouse.stock_quantity = new_warehouse_stock_quantity
-    warehouse.save()
+    if int(warehouse.stock_quantity) > int(quantity):
+        new_warehouse_stock_quantity = warehouse.stock_quantity - int(quantity)
+        warehouse.stock_quantity = new_warehouse_stock_quantity
+        warehouse.save()
 
-    store_stock = StoreStock.objects.get(product__id=id_product)
-    new_store_stock_quantity = store_stock.stock_quantity + int(quantity)
-    store_stock.stock_quantity = new_store_stock_quantity
-    store_stock.save()
+        store_stock = StoreStock.objects.get(product__id=id_product)
+        new_store_stock_quantity = store_stock.stock_quantity + int(quantity)
+        store_stock.stock_quantity = new_store_stock_quantity
+        store_stock.save()
 
-    transfer_to_store_log(request, warehouse, store_stock, quantity)
+        transfer_to_store_log(request, warehouse, store_stock, quantity)
+    else:
+        messages.warning(request, "Quantidade transferida superior ao disponível")
+        
 
-    url = f'/stock/product_movement/{id_product}/'
+    url = f'/estoque/movimentacao_produto/{id_product}'
     return redirect(url)
 
 
@@ -118,18 +123,20 @@ def transfer_to_store(request):
 def manual_destocking(request):
     id_product = request.POST.get('id_product')
     quantity = request.POST.get('quantity')
-
     store_stock = StoreStock.objects.get(product__id=id_product)
-    new_stock_quantity = store_stock.stock_quantity - int(quantity)
+    if int(store_stock.stock_quantity) > int(quantity):
+        new_stock_quantity = store_stock.stock_quantity - int(quantity)
 
-    store_stock.stock_quantity = new_stock_quantity
-    store_stock.save()
+        store_stock.stock_quantity = new_stock_quantity
+        store_stock.save()
 
-    manual_destocking_log(request,
-                          store_stock,
-                          quantity)
+        manual_destocking_log(request,
+                            store_stock,
+                            quantity)
+    else:
+        messages.warning(request, "Quantidade acima do disponível")
 
-    url = f'/stock/product_movement/{id_product}/'
+    url = f'/estoque/movimentacao_produto/{id_product}'
     return redirect(url)
 
 

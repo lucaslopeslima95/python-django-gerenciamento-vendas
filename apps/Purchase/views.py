@@ -1,7 +1,7 @@
 from Collaborator.models import Collaborator
 from django.contrib import messages
 from django.contrib.auth import authenticate
-from django.db.models import Sum
+from django.db.models import Sum,F
 from django.shortcuts import redirect, render
 from Product.models import Product
 from Stock.models import StoreStock
@@ -13,6 +13,7 @@ from User.forms import authForm
 
 from .DTO.PurchaseItemDTO import PurchaseItemDTO
 from .forms import searchProductToPurchaseForm
+from django.db.models.query import QuerySet
 
 
 def initial_page_purchase(request):
@@ -30,7 +31,7 @@ def initial_page_purchase(request):
     return render(request, 'purchase/initial_purchase.html', {
                 'form_code_bar': form_code_bar,
                 'cart': cart,
-                'total': puchase_list_total_value,
+                'total': f"R$ {puchase_list_total_value}",
                 'authForm': authForm
                 })
 
@@ -56,18 +57,19 @@ def finish_purchase(request):
                         current_spend = current_referral_spending(collaborator)
                         last_spends = last_reference_spend(collaborator)
                         if current_spend:
-                            request.session['total_spends_current'] = float(
-                                current_spend.aggregate(
-                                    total=Sum('purchaseitem__price'))['total'])
+                             request.session['total_spends_current'] = float(
+                             current_spend.aggregate(
+                                total=Sum(F('purchaseitem__price') * F('purchaseitem__quantity')))['total'])
+
                         else:
                             request.session['total_spends_current'] = 0.0
                         if last_spends:
-                            request.session['spend_last_referred'] = float(
+                            request.session['spends_last_referred'] = float(
                                 last_spends.aggregate(
-                                    total=Sum('purchaseitem__price'))['total'])
+                                    total=Sum(F('purchaseitem__price') * F('purchaseitem__quantity')))['total'])
                         else:
                             request.session['spends_last_referred'] = 0.0
-                        request.session['show_expends'] = True
+                            request.session['show_expends'] = True
                     else:
                         cart.products.clear()
                         messages.warning(request, "Colaborador Inativo")
@@ -158,18 +160,20 @@ def save_purchase(collaborator: Collaborator) -> bool:
                     'quantity': 1}
             else:
                 purchase_itens[item.product.name]['quantity'] += 1
-                for product in purchase_itens.items():
-                    if not product[1]['category'] == 'Ingressos'\
-                          or product[1]['category'] == 'Camisetas':
-                        update_quantity(product[1])
-                        purchaseItem = PurchaseItem.objects.create(
-                                product=Product.objects
-                                .get(id=product[1]['id']),
-                                price=product[1]['price'],
-                                purchase=purchase,
-                                quantity=product[1]['quantity']
-                            )
-            purchaseItem.save()
+                
+        for product in purchase_itens.items():
+            PurchaseItem.objects.create(
+                product=Product.objects
+                .get(id=product[1]['id']),
+                price=product[1]['price'],
+                purchase=purchase,
+                quantity=product[1]['quantity']
+            ).save()
+            
+            if not product[1]['category'] == 'Ingressos'\
+                    and not  product[1]['category'] == 'Camisetas':
+                    update_quantity(product[1])
+
         confirm_purchase.delay(email=collaborator.user.email,
                                nameUser=collaborator.name,
                                purchase_itens=purchase_itens)
@@ -202,16 +206,18 @@ def check_balance(request):
                 if collaborator.active:
                     current_spends = current_referral_spending(collaborator)
                     last_spends = last_reference_spend(collaborator)
+                    
                     if current_spends:
                         request.session['total_spends_current'] = float(
                             current_spends.aggregate(
-                                total=Sum('purchaseitem__price'))['total'])
+                                total=Sum(F('purchaseitem__price') * F('purchaseitem__quantity')))['total'])
+
                     else:
                         request.session['total_spends_current'] = 0.0
                     if last_spends:
                         request.session['spends_last_referred'] = float(
                             last_spends.aggregate(
-                                total=Sum('purchaseitem__price'))['total'])
+                                total=Sum(F('purchaseitem__price') * F('purchaseitem__quantity')))['total'])
                     else:
                         request.session['spends_last_referred'] = 0.0
                     request.session['only_consult'] = True

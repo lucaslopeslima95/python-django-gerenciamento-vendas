@@ -94,13 +94,28 @@ def update_product(request, id):
                                    instance=product_chosen)
         if request.method == "POST":
             if form.is_valid():
-                form.save()
+                code_bar_masked = form.cleaned_data['code_bar']
+                code_bar = code_bar_masked.\
+                    replace("-", "").replace("-", "").replace("-", "")
+                name = form.cleaned_data['name']
+                price = form.cleaned_data['price']
+                category = form.cleaned_data['category']
+                active = form.cleaned_data['active']
+                Product.objects.filter(code_bar=code_bar).update(
+                                       name=name,
+                                       price=price,
+                                       category=category,
+                                       code_bar=code_bar,
+                                       active=active
+                                    )
                 messages.success(request, "Atualizado com sucesso")
                 return redirect('product:main_menu_product')
             else:
                 messages.warning(request, "Dados Invalido")
     except Exception as e:
         print(f"Exceção lançada ao salvar a atualização do produto  -  {e}")
+        messages.warning(request, "Codigo de Barras ja existe")
+        
     return render(request, 'product/update_product.html', {'form': form})
 
 

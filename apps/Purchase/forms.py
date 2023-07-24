@@ -3,7 +3,7 @@ from django import forms
 
 class searchProductToPurchaseForm(forms.Form):
     code_bar = forms.CharField(
-              label="Cod.Barras",
+              label="Código de barras",
               widget=forms.TextInput(
-                     attrs={"placeholder": "Cod.Barras",
+                     attrs={"placeholder": "Código de barras",
                             "class": "form-control"}))

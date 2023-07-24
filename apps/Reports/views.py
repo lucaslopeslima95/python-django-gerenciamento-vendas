@@ -1,13 +1,16 @@
 from datetime import date, datetime, timedelta
+
+from django.contrib import messages
+from django.contrib.admin.views.decorators import user_passes_test
 from django.contrib.auth.decorators import login_required
+from django.db.models import F, Sum
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
 from django.template.loader import get_template
+from django.utils import timezone
 from Purchase.models import DeadLine, Purchase
 from Reports.forms import reportsForm
 from weasyprint import HTML
-from django.contrib import messages
-from django.contrib.admin.views.decorators import user_passes_test
 
 
 @login_required(login_url="login_system")
@@ -24,6 +27,10 @@ def generate_reports_individual(collaborator, start_date, end_date):
     listPurchases = Purchase.objects.filter(
                 date_purchase__range=(start_date, end_date),
                 collaborator__cpf=collaborator.cpf)
+    total = None
+    total = listPurchases.aggregate(
+        total=Sum(
+            F('purchaseitem__price') * F('purchaseitem__quantity')))['total']
     end_date -= timedelta(days=1)
     generate_at = datetime.now()
 
@@ -32,7 +39,8 @@ def generate_reports_individual(collaborator, start_date, end_date):
                 'listPurchases': listPurchases,
                 'generate_at': generate_at,
                 'end_date': end_date,
-                'start_date': start_date
+                'start_date': start_date,
+                'total':float(total)
               }
 
     template = get_template('reports/template_individual_report.html')
@@ -54,39 +62,46 @@ def generate_reports_individual(collaborator, start_date, end_date):
 def generate_reports(request):
 
     deadLine = DeadLine.objects.get(id=1).DAY
-    today = datetime.now().day
+    today = timezone.datetime.now().day
+    current_year = timezone.now().year
+    current_month = timezone.now().month
 
     if today > deadLine:
-        start_date = date(datetime.now().year,
-                          datetime.now().month,
+        start_date = date(current_year,
+                          current_month,
                           (deadLine+1))
 
-        if datetime.now().month+1 == 13:
-            end_date = date((datetime.now().year+1), 1, today)
+        if current_month+1 == 13:
+            end_date = timezone.datetime((current_year+1), 1, today)
         else:
-            end_date = date(datetime.now().year,
-                            (datetime.now().month+1), today)
+            end_date = timezone.datetime(current_year,
+                            (current_month+1), today)
 
     else:
-        start_date = date(datetime.now().year,
-                          (datetime.now().month-1),
+        start_date = timezone.datetime(current_year,
+                          (current_month-1),
                           (deadLine+1))
-        end_date = date(datetime.now().year,
-                        datetime.now().month,
+        end_date = timezone.datetime(current_year,
+                        current_month,
                         (today+1))
 
+    start_date = timezone.make_aware(start_date)
+    end_date = timezone.make_aware(end_date)
     listPurchases = Purchase.objects.filter(date_purchase__range=(
             start_date, end_date))
 
-    end_date -= timedelta(days=1)
-
+    total = None
+    total = listPurchases.aggregate(
+        total=Sum(
+            F('purchaseitem__price') * F('purchaseitem__quantity')))['total']
     generate_at = datetime.now()
 
     context = {
                 'listPurchases': listPurchases,
                 'generate_at': generate_at,
                 'end_date': end_date,
-                'start_date': start_date
+                'start_date': start_date,
+                'total':float(total)
             }
 
     template = get_template('reports/current_reffered.html')
@@ -113,13 +128,13 @@ def make_reports(request):
                     messages.warning(request,
                                      "A data de inicio\
                                      deve ser maior que a data de fim")
-                    return redirect('user:page_initial_reports')
+                    return redirect('reports:page_initial_reports')
                 collaborator = form.cleaned_data["collaborator"]
                 end_date += timedelta(days=1)
 
             else:
                 messages.error(request, "Formulario Inválido")
-                return redirect('user:page_initial_reports')
+                return redirect('reports:page_initial_reports')
 
     except Exception as e:
         if e is not None:

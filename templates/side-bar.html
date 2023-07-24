@@ -21,12 +21,6 @@
   </li>
   {% if user.is_superuser %}
   <li class="nav-item">
-    <a href="{% url 'user:main_menu_user' %}" class="nav-link">
-      <i class="fa-solid fa-user"></i>
-      <span>Usuários</span>
-    </a>
-  </li>
-  <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
       <i class="fa-solid fa-file"></i>
       <span>Relatórios</span>
@@ -42,6 +36,12 @@
         </a>
       </div>
     </div>
+  </li>
+  <li class="nav-item">
+    <a href="{% url 'user:main_menu_user' %}" class="nav-link">
+      <i class="fa-solid fa-user"></i>
+      <span>Usuários</span>
+    </a>
   </li>
   {% endif %}
   {% if user.is_staff or user.is_superuser %}

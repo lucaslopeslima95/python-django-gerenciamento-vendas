@@ -132,7 +132,7 @@ LOGGING = {
             "level": "DEBUG",
             "propagate": True,
         },
-    },"formatters": {
+    }, "formatters": {
         "verbose": {
             "format": "{levelname} {asctime} {module} {message}",
             "style": "{",

@@ -52,9 +52,9 @@ def save_category(request):
             form = registerCategoryForm()
     except (Exception, IntegrityError) as e:
         if 'name' in e:
-            messages.warning(request, "Esse nome de categoria ja existe")
-        else:
             messages.warning(request, "Erro ao Salvar categoria")
+        else:
+            messages.warning(request, "Esse nome de categoria ja existe")
     return render(request, 'category/save_category.html', {'form': form})
 
 
@@ -67,9 +67,11 @@ def update_category(request, id):
                                 instance=category_selected)
     if request.method == "POST":
         if form.is_valid():
-            form.save()
+            name = form.cleaned_data['name'].capitalize()
+            description = form.cleaned_data['description']
+            Category.objects.filter(id=id).update(name=name,description=description)
             messages.success(request, "Atualizado com sucesso")
         else:
             messages.warning(request, "Dados Invalido")
-        return redirect('category:main_menu_category')
+            return redirect('category:main_menu_category')
     return render(request, 'category/update_category.html', {'form': form})

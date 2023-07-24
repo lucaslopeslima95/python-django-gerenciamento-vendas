@@ -22,7 +22,7 @@
         </thead>
         <tbody>
           {% for user in users %}
-          {% if user.is_staff %}
+          {% if user.is_staff and not user.is_superuser %}
           <tr>
             <th>{{ user.username }}</th>
             <th style="text-align: center;">{{ user.email }}</th>

@@ -1,10 +1,11 @@
 import calendar
-from datetime import date, datetime
+from datetime import  datetime, timedelta
 
 from django.contrib.admin.views.decorators import user_passes_test
 from django.contrib.auth.decorators import login_required
 from django.db.models import F, Sum
 from django.shortcuts import render
+from django.utils import timezone
 from django.views.decorators.csrf import csrf_protect
 from Purchase.models import DeadLine, Purchase
 from Stock.models import StoreStock, Warehouse
@@ -36,33 +37,37 @@ def dashboard(request):
 
 def products_low_stock_StoreStock():
     return StoreStock.objects.filter(
-        stock_quantity__lte=5, product__active=True)
+        stock_quantity__lte=3, product__active=True)
 
 
 def products_low_stock_Warehouse():
-    return Warehouse.objects.filter(stock_quantity__lte=5,
+    return Warehouse.objects.filter(stock_quantity__lte=3,
                                     product__active=True)
 
 
 def current_billing():
     deadLine = DeadLine.objects.get(id=1).DAY
-    today = datetime.now().day
-
+    today = timezone.datetime.now().day
+    current_year = timezone.now().year
+    current_month = timezone.now().month
     if today > deadLine:
-        start_date = date(datetime.now().year,
-                          datetime.now().month, (deadLine+1))
+        start_date = timezone.datetime(current_year,
+                          current_month, (deadLine+1))
 
-        if datetime.now().month+1 == 13:
-            end_date = date((datetime.now().year+1), 1, today)
+        if current_month+1 == 13:
+            end_date = timezone.datetime((current_year+1), 1, today)
         else:
-            end_date = date(datetime.now().year,
-                            (datetime.now().month+1), today)
+            end_date = timezone.datetime(current_year,
+                            (current_month+1), today)
 
     else:
-        start_date = date(datetime.now().year,
-                          (datetime.now().month-1), (deadLine+1))
-        end_date = date(datetime.now().year, datetime.now().month, today)
+        start_date = timezone.datetime(current_year,
+                          (current_month-1), (deadLine+1))
+        end_date = timezone.datetime(current_year, current_month, today)
 
+    end_date += timedelta(days=1)
+    start_date = timezone.make_aware(start_date)
+    end_date = timezone.make_aware(end_date)
     listPurchases = Purchase.objects.filter(
         date_purchase__range=(start_date, end_date))
     total_spended = listPurchases.aggregate(
