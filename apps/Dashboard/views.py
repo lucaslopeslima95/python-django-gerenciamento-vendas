@@ -20,7 +20,7 @@ def dashboard(request):
     if request.method == "GET":
         deadLine = DeadLine.objects.get(id=1).DAY
         today = datetime.now().day
-        if today > deadLine:
+        if today >= deadLine:
             days_left_next_month = (
                 next_month_range()-(next_month_range()-deadLine))
             days_left_current_month = (current_month_range()-today)
@@ -50,7 +50,7 @@ def current_billing():
     today = timezone.datetime.now().day
     current_year = timezone.now().year
     current_month = timezone.now().month
-    if today > deadLine:
+    if today >= deadLine:
         start_date = timezone.datetime(current_year,
                           current_month, (deadLine+1))
 
@@ -73,7 +73,9 @@ def current_billing():
     total_spended = listPurchases.aggregate(
         total=Sum(
             F('purchaseitem__price') * F('purchaseitem__quantity')))['total']
-
+    if total_spended is None:
+        total_spended = 0
+        
     return total_spended
 
 

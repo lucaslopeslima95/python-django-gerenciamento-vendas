@@ -36,43 +36,10 @@
     </div>
   </div>
 </div>
-<script>
-  function modal_info(nome, id, category, quantity) {
-
-    // Entrada de produtos para o estoque de deposito
-    document.getElementById('product_name').innerHTML = nome
-    document.getElementById('product_id_stock').value = id
-    //Transferencia para loja
-    document.getElementById('store_product_name').innerHTML = nome
-    document.getElementById('store_product_id').value = id
-    //Baixa Manual
-    document.getElementById('manual_destocking_name').innerHTML = nome
-    document.getElementById('manual_destocking_id').value = id
-    //model de inicio
-    document.getElementById('initial_quantity').value = quantity
-    document.getElementById('mainly_modal').innerHTML = nome
-    let quantidade;
-    const nome_json = "{{ warehouse|escapejs }}";
-    array = JSON.parse(nome_json);
-    let arr = []
-    for (let prod of array) {
-      arr.push(prod);
-    }
-    
-    arr.forEach(r => {
-      if (r.id === Number(id)) {
-        document.getElementById('initial_quantity').value = Number(r.quantity)
-        if(category === "Ingresso"){
-          document.getElementById('manual_destoking_btn').style.display = none;
-        }
-      }
-    })
-  }
-</script>
 <!---------------------------------Movimentação de Produtos-------------------------------------------------------------------------------->
 <div class="modal fade" id="product_movimentation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Quantidade no Depósito</h1>
@@ -89,14 +56,11 @@
             <div class="d-flex justify-content-center">
               <div class="d-flex flex-row">
                 <input type="button" value="Transferir para a Loja" class="btn btn-primary me-2 mt-5"
-                  data-bs-toggle="modal" data-bs-target="#transfer_to_store" />
+                data-bs-toggle="modal" data-bs-target="#transfer_to_store" />
                 <input type="button" value="Registrar Entrada" class="btn btn-primary mt-5 me-2" data-bs-toggle="modal"
-                  data-bs-target="#entry_stock" />
-
-                {% if product_category == 'Ingressos' or product_category == 'Camisetas' %}
-                {% endif %}
+                data-bs-target="#entry_stock" />
                 <input type="button" value="Baixa Manual" id="manual_destoking_btn" class="btn btn-primary mt-5 me-2" data-bs-toggle="modal"
-                  data-bs-target="#manual_destocking" />
+                data-bs-target="#manual_destocking" />
                 <a href="{% url 'stock:stock_management'%}" class="btn btn-danger ms-1 mt-5">
                   Cancelar
                   <i class="fa-solid fa-rectangle-xmark"></i>
@@ -139,8 +103,8 @@
 </div>
 <!---------------------Modal de Baixa manual no estoque -------------------------------------------->
 <div class="modal fade" id="manual_destocking" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Baixa Manual de Produtos</h1>
@@ -166,9 +130,9 @@
 
 <!---------------------Modal de Adição de produtos ao estoque-------------------------------------------->
 <div class="modal fade" id="entry_stock" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Entrada de produto no deposito</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -212,6 +176,45 @@
     dom: '<"clear"p><"top"fl>rt<"bottom"ip><"clear">',
   });
   $('table').DataTable();
+</script>
+<script>
+  function modal_info(nome, id, category, quantity) {
+
+    // Entrada de produtos para o estoque de deposito
+    document.getElementById('product_name').innerHTML = nome
+    document.getElementById('product_id_stock').value = id
+    //Transferencia para loja
+    document.getElementById('store_product_name').innerHTML = nome
+    document.getElementById('store_product_id').value = id
+    //Baixa Manual
+    document.getElementById('manual_destocking_name').innerHTML = nome
+    document.getElementById('manual_destocking_id').value = id
+    //model de inicio
+    document.getElementById('initial_quantity').value = quantity
+    document.getElementById('mainly_modal').innerHTML = nome
+    let quantidade;
+    const nome_json = "{{ warehouse|escapejs }}";
+    array = JSON.parse(nome_json);
+    let arr = []
+    for (let prod of array) {
+      arr.push(prod);
+    }
+    
+    arr.forEach(r => {
+      if (r.id === Number(id)) {
+        document.getElementById('initial_quantity').value = Number(r.quantity)
+        if(String(category) === "Ingressos" || String(category) === "Camisetas" ){
+          btn = document.getElementById('manual_destoking_btn');
+          btn.style.display = "block"; 
+         
+        }else{
+          btn = document.getElementById('manual_destoking_btn');
+          btn.style.display = "none"; 
+          
+        }
+      }
+    })
+  }
 </script>
 {% endblock content %}
 {% block javascripts %}{% endblock javascripts %}

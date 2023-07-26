@@ -43,7 +43,7 @@ def initial_page_purchase(request):
                 'form_code_bar': form_code_bar,
                 'cart': cart,
                 'lista_produtos':lista_produtos,
-                'total': f"R$ {puchase_list_total_value}",
+                'total': "R$ {:.2f}".format(puchase_list_total_value),
                 'authForm': authForm
                 })
 
@@ -65,8 +65,8 @@ def finish_purchase(request):
                         return redirect('purchase:initial_page_purchase')
                     collaborator = Collaborator.objects.get(user=user.id)
                     if collaborator.active and save_purchase(request,collaborator):
-                        #cart.products.clear()
                         messages.success(request, "Salvo com Sucesso.")
+                        request.session['show_expends'] = True
                         current_spend = current_referral_spending(collaborator)
                         last_spends = last_reference_spend(collaborator)
                         if current_spend:
@@ -82,7 +82,6 @@ def finish_purchase(request):
                                     total=Sum(F('purchaseitem__price') * F('purchaseitem__quantity')))['total'])
                         else:
                             request.session['spends_last_referred'] = 0.0
-                            request.session['show_expends'] = True
                     else:
                         cart.products.clear()
                         messages.warning(request, "Colaborador Inativo")
@@ -138,10 +137,6 @@ def find_product(request):
                         lista_produtos.append(product_dict)
                         request.session['lista_produtos'] = lista_produtos
                         
-                        # purchaseItem = PurchaseItem()
-                        # purchaseItem.product = product
-                        # purchaseItem.price = product.price
-                        # in_cart.products.append(purchaseItem)
         except (Product.DoesNotExist, Exception) as e:
             print(f"Exceção ao procurar produto - {e}")
             messages.warning(request, "Produto não encontrado")
@@ -152,24 +147,16 @@ def find_product(request):
 def remove_product_purchase(request, id):
     
     lista_produtos = request.session.get('lista_produtos', [])
-    
-    if 0 <= id < len(lista_produtos):
-        lista_produtos.pop((int(id)-1))
-   
+    lista_produtos.pop(int(id)-1)
     request.session['sem_produto'] = False
     request.session['lista_produtos'] = lista_produtos
     request.session.save()
-        
-    # in_cart = PurchaseItemDTO()
-    # in_cart.products.pop((id-1))
     return redirect('purchase:initial_page_purchase')
 
 
 def clean_all_products_purchase(request):
     request.session['lista_produtos'] = []
     request.session.save()
-    # in_cart = PurchaseItemDTO()
-    # in_cart.products.clear()
     request.session['total_spends_current'] = 0.0
     request.session['spends_last_referred'] = 0.0
     request.session['show_expends'] = False
@@ -180,7 +167,6 @@ def save_purchase(request,collaborator: Collaborator) -> bool:
     try:
         lista_produtos = request.session.get('lista_produtos', [])
         purchase_itens = {}
-        cart = PurchaseItemDTO()
         purchase = Purchase()
         purchase.collaborator = collaborator
         purchase.save()

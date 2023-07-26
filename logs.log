@@ -15172,3 +15172,504 @@ Not Found: /favicon.ico
 "GET /menu_usuarios HTTP/1.1" 200 15614
 "GET /salvar_usuario HTTP/1.1" 200 8189
 "GET /static/js/cpfValidation.js HTTP/1.1" 304 0
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 15529
+"GET /static/css/sb-admin-2.css HTTP/1.1" 304 0
+"GET /static/js/active.js HTTP/1.1" 304 0
+"GET /static/js/validatePassword.js HTTP/1.1" 200 4237
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4578
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 15529
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 15529
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/active.js HTTP/1.1" 200 860
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 380
+"GET /static/css/sb-admin-2.css HTTP/1.1" 200 211291
+"GET /static/vendor/jquery/jquery.min.js HTTP/1.1" 200 89501
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/generateUsername.js HTTP/1.1" 200 408
+"GET /static/js/inputMask.js HTTP/1.1" 200 333
+"GET /static/js/sb-admin-2.js HTTP/1.1" 200 1780
+"GET /static/js/inputPriceMask.js HTTP/1.1" 200 385
+"GET /static/js/validatePassword.js HTTP/1.1" 200 4237
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4578
+"GET / HTTP/1.1" 302 0
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 15529
+"GET /menu_usuarios HTTP/1.1" 200 15614
+"GET /colaborador/menu_colaborador HTTP/1.1" 200 23550
+"GET / HTTP/1.1" 302 0
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 15529
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 22919
+"POST /estoque/transferencia_loja/ HTTP/1.1" 302 0
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 22920
+"GET / HTTP/1.1" 302 0
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 15016
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 15016
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 22921
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 22969
+"GET /produtos/menu_produtos HTTP/1.1" 200 14228
+"GET /produtos/menu_produtos HTTP/1.1" 200 14228
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 22971
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23090
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23090
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/css/sb-admin-2.css HTTP/1.1" 200 211291
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/active.js HTTP/1.1" 200 860
+"GET /static/vendor/jquery/jquery.min.js HTTP/1.1" 200 89501
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 380
+"GET /static/js/inputMask.js HTTP/1.1" 200 333
+"GET /static/js/sb-admin-2.js HTTP/1.1" 200 1780
+"GET /static/js/generateUsername.js HTTP/1.1" 200 408
+"GET /static/js/inputPriceMask.js HTTP/1.1" 200 385
+"GET /static/js/validatePassword.js HTTP/1.1" 200 4237
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4578
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23090
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/vendor/jquery/jquery.min.js HTTP/1.1" 200 89501
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 380
+"GET /static/js/active.js HTTP/1.1" 200 860
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/css/sb-admin-2.css HTTP/1.1" 200 211291
+"GET /static/js/generateUsername.js HTTP/1.1" 200 408
+"GET /static/js/inputMask.js HTTP/1.1" 200 333
+"GET /static/js/inputPriceMask.js HTTP/1.1" 200 385
+"GET /static/js/validatePassword.js HTTP/1.1" 200 4237
+"GET /static/js/sb-admin-2.js HTTP/1.1" 200 1780
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4578
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23090
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23090
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23090
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23090
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23111
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 380
+"GET /static/js/active.js HTTP/1.1" 200 860
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/vendor/jquery/jquery.min.js HTTP/1.1" 200 89501
+"GET /static/css/sb-admin-2.css HTTP/1.1" 200 211291
+"GET /static/js/generateUsername.js HTTP/1.1" 200 408
+"GET /static/js/sb-admin-2.js HTTP/1.1" 200 1780
+"GET /static/js/inputMask.js HTTP/1.1" 200 333
+"GET /static/js/inputPriceMask.js HTTP/1.1" 200 385
+"GET /static/js/validatePassword.js HTTP/1.1" 200 4237
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4578
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23120
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 316181
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23136
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/vendor/jquery/jquery.min.js HTTP/1.1" 200 89501
+"GET /static/css/sb-admin-2.css HTTP/1.1" 200 211291
+"GET /static/js/active.js HTTP/1.1" 200 860
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 380
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/generateUsername.js HTTP/1.1" 200 408
+"GET /static/js/inputPriceMask.js HTTP/1.1" 200 385
+"GET /static/js/sb-admin-2.js HTTP/1.1" 200 1780
+"GET /static/js/inputMask.js HTTP/1.1" 200 333
+"GET /static/js/validatePassword.js HTTP/1.1" 200 4237
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4578
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23136
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 380
+"GET /static/js/active.js HTTP/1.1" 200 860
+"GET /static/vendor/jquery/jquery.min.js HTTP/1.1" 200 89501
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/css/sb-admin-2.css HTTP/1.1" 200 211291
+"GET /static/js/sb-admin-2.js HTTP/1.1" 200 1780
+"GET /static/js/generateUsername.js HTTP/1.1" 200 408
+"GET /static/js/inputPriceMask.js HTTP/1.1" 200 385
+"GET /static/js/inputMask.js HTTP/1.1" 200 333
+"GET /static/js/validatePassword.js HTTP/1.1" 200 4237
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4578
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23104
+"POST /estoque/entrada_estoque/ HTTP/1.1" 302 0
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23105
+"POST /estoque/entrada_estoque/ HTTP/1.1" 302 0
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23105
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23105
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23105
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 380
+"GET /static/js/active.js HTTP/1.1" 200 860
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/vendor/jquery/jquery.min.js HTTP/1.1" 200 89501
+"GET /static/css/sb-admin-2.css HTTP/1.1" 200 211291
+"GET /static/js/generateUsername.js HTTP/1.1" 200 408
+"GET /static/js/sb-admin-2.js HTTP/1.1" 200 1780
+"GET /static/js/inputMask.js HTTP/1.1" 200 333
+"GET /static/js/inputPriceMask.js HTTP/1.1" 200 385
+"GET /static/js/validatePassword.js HTTP/1.1" 200 4237
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4578
+"POST /estoque/transferencia_loja/ HTTP/1.1" 302 0
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23105
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23125
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23098
+"GET /estoque/gestao_estoque/ HTTP/1.1" 200 23098
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 380
+"GET /static/js/active.js HTTP/1.1" 200 860
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/vendor/jquery/jquery.min.js HTTP/1.1" 200 89501
+"GET /static/css/sb-admin-2.css HTTP/1.1" 200 211291
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/js/inputMask.js HTTP/1.1" 200 333
+"GET /static/js/sb-admin-2.js HTTP/1.1" 200 1780
+"GET /static/js/generateUsername.js HTTP/1.1" 200 408
+"GET /static/js/validatePassword.js HTTP/1.1" 200 4237
+"GET /static/js/inputPriceMask.js HTTP/1.1" 200 385
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4578
+"GET / HTTP/1.1" 302 0
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 14607
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 14607
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 14607
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 14607
+"GET /static/css/css_reset.css HTTP/1.1" 200 994
+"GET /static/js/active.js HTTP/1.1" 200 860
+"GET /static/js/messages_remove_on_page.js HTTP/1.1" 200 380
+"GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 84378
+"GET /static/vendor/jquery/jquery.min.js HTTP/1.1" 200 89501
+"GET /static/css/sb-admin-2.css HTTP/1.1" 200 211291
+"GET /static/js/inputMask.js HTTP/1.1" 200 333
+"GET /static/js/generateUsername.js HTTP/1.1" 200 408
+"GET /static/js/sb-admin-2.js HTTP/1.1" 200 1780
+"GET /static/js/inputPriceMask.js HTTP/1.1" 200 385
+"GET /static/js/validatePassword.js HTTP/1.1" 200 4237
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4578
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 14607
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 14607
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 14607
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 14607
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Dashboard/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 14611
+"GET /compras/ HTTP/1.1" 200 8063
+"GET /produtos/menu_produtos HTTP/1.1" 200 14228
+"GET /static/js/validatePassword.js HTTP/1.1" 304 0
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8344
+"GET /compras/excluir_produto/1 HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8344
+"POST /compras/finalizar_compra HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8179
+"GET /compras/ HTTP/1.1" 200 8065
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8346
+"POST /compras/finalizar_compra HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8180
+"GET / HTTP/1.1" 302 0
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 14612
+"GET /produtos/menu_produtos HTTP/1.1" 200 14228
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8323
+"POST /compras/finalizar_compra HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8180
+"GET / HTTP/1.1" 302 0
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 14612
+Watching for file changes with StatReloader
+"GET /produtos/menu_produtos HTTP/1.1" 200 14228
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8347
+"POST /compras/finalizar_compra HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8180
+"GET / HTTP/1.1" 302 0
+"GET /painel/pagina_inicial/ HTTP/1.1" 200 14612
+"POST /compras/consultar_saldo HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8383
+"GET /compras/limpar_consulta HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8063
+"GET /compras/ HTTP/1.1" 200 8077
+"GET /produtos/menu_produtos HTTP/1.1" 200 14228
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8358
+"POST /compras/finalizar_compra HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8194
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8347
+"POST /compras/finalizar_compra HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8497
+"GET /compras/limpar_carrinho HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8063
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8344
+"POST /compras/finalizar_compra HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8497
+"GET /compras/limpar_carrinho HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8063
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/PurchaseService/calculateExpends.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /compras/ HTTP/1.1" 200 8063
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8344
+"POST /compras/finalizar_compra HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8498
+"GET /compras/limpar_carrinho HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8063
+"POST /compras/consultar_saldo HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8384
+"GET /compras/limpar_consulta HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8063
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8344
+"GET /compras/excluir_produto/1 HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8063
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /compras/ HTTP/1.1" 200 8063
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8344
+Internal Server Error: /compras/excluir_produto/1
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Purchase/views.py", line 156, in remove_product_purchase
+    lista_produtos.remove((int(id)-1))
+ValueError: list.remove(x): x not in list
+"GET /compras/excluir_produto/1 HTTP/1.1" 500 70162
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /compras/excluir_produto/1
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Purchase/views.py", line 156, in remove_product_purchase
+    lista_produtos.remove(int(id))
+ValueError: list.remove(x): x not in list
+"GET /compras/excluir_produto/1 HTTP/1.1" 500 70291
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /compras/ HTTP/1.1" 200 8065
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8344
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /produtos/menu_produtos HTTP/1.1" 200 14228
+"GET /static/js/validatePassword.js HTTP/1.1" 304 0
+Internal Server Error: /compras/
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Purchase/views.py", line 42, in initial_page_purchase
+    return render(request, 'purchase/initial_purchase.html', {
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 153: 'endif'. Did you forget to register or load this tag?
+"GET /compras/ HTTP/1.1" 500 168120
+"GET /compras/ HTTP/1.1" 200 8063
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8342
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8622
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /compras/ HTTP/1.1" 200 8065
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8344
+Internal Server Error: /compras/excluir_produto/1
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Purchase/views.py", line 155, in remove_product_purchase
+    lista_produtos.pop(int(id))
+IndexError: pop index out of range
+"GET /compras/excluir_produto/1 HTTP/1.1" 500 70194
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /compras/excluir_produto/1
+Traceback (most recent call last):
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/virtual_enviroment/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lucas/Documentos/python-django-tcc-academia-sci-2023/core/../apps/Purchase/views.py", line 151, in remove_product_purchase
+    lista_produtos.pop(int(id))
+IndexError: pop index out of range
+"GET /compras/excluir_produto/1 HTTP/1.1" 500 70207
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/lucas/Documentos/python-django-tcc-academia-sci-2023/apps/Purchase/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /compras/excluir_produto/1 HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8066
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8320
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8574
+"GET /compras/excluir_produto/2 HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8320
+"GET /compras/excluir_produto/1 HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8066
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8320
+"POST /compras/adicionar_produto HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8574
+"GET /compras/excluir_produto/2 HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8320
+"GET /compras/excluir_produto/1 HTTP/1.1" 302 0
+"GET /compras/ HTTP/1.1" 200 8066

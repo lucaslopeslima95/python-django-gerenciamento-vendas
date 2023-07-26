@@ -9,8 +9,8 @@ def current_referral_spending(employee_who_made_the_purchase):
         today = timezone.now().date()
         current_year = timezone.now().year
         current_month = timezone.now().month
-
-        if today.day > deadline:
+      
+        if today.day >= deadline:
             if current_month == 12:
                 start_date = timezone.datetime(current_year, current_month, deadline + 1)
                 end_date = timezone.datetime(current_year + 1, 1, today.day)
@@ -23,10 +23,14 @@ def current_referral_spending(employee_who_made_the_purchase):
 
         start_date = timezone.make_aware(start_date)
         end_date = timezone.make_aware(end_date)
-      
+
+        end_date += timedelta(days=1)
+        start_date -= timedelta(days=1)
         list_purchases = Purchase.objects.filter(
             date_purchase__range=(start_date, end_date),
             collaborator__cpf=employee_who_made_the_purchase.cpf)
+        end_date -= timedelta(days=1)
+        start_date += timedelta(days=1)
 
     except Exception as e:
         print(f"Exceção ao buscar valores na referência Atual - {e}")
@@ -41,7 +45,7 @@ def last_reference_spend(employee_who_made_the_purchase):
         current_year = timezone.now().year
         current_month = timezone.now().month
 
-        if today > deadline:
+        if today >= deadline:
             if current_month == 1:
                 start_date = timezone.datetime(current_year - 1, 11, deadline + 1)
                 end_date = timezone.datetime(current_year, 12, deadline)
@@ -59,13 +63,13 @@ def last_reference_spend(employee_who_made_the_purchase):
         end_date = timezone.make_aware(end_date)
 
         end_date += timedelta(days=1)
-        start_date += timedelta(days=1)
+        start_date -= timedelta(days=1)
    
         list_purchases = Purchase.objects.filter(
             date_purchase__range=(start_date, end_date),
             collaborator__cpf=employee_who_made_the_purchase.cpf)
         end_date -= timedelta(days=1)
-        start_date -= timedelta(days=1)
+        start_date += timedelta(days=1)
     except Exception as e:
         print(f"Exceção ao buscar valores na referência passada - {e}")
     return list_purchases
