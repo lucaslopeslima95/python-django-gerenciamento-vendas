@@ -4,12 +4,12 @@
 {% block content %}
 <div  class="card mt-3 vh-100">
   <div class="card-header">
-    <h4 class="card-title">Categorias</h4>
-    <td class="px-1"><a href="{% url 'category:save_category' %}" class="btn btn-primary btn-sm">Registrar Nova Categoria
+    <h3 class="card-title">Categorias</h3>
+  </div>
+  <div class="card-body">
+    <td class="px-1"><a href="{% url 'category:save_category' %}" class="btn btn-primary btn-sm mb-3">Registrar Nova Categoria
       <i class="fa-regular fa-plus"></i>
     </a></td>
-    </div>
-  <div class="card-body">
     <div class="table-responsive" >
       <table class="table">
         <thead class="text-primary">
@@ -41,21 +41,16 @@
     </div>
   </div>
 </div>
-
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
 <script>
-  function enviar() {
-    var valorCampo = document.getElementById("myInput").value;
-    window.location.href = "http://127.0.0.1:8000/category/main_menu_category_filtered?parametro=" + valorCampo;
-  }
-  $('table').DataTable({
+   $('table').DataTable({
     language: {
-      info: 'Mostrando Pagina _PAGE_ de _PAGES_',
-      infoEmpty: 'Nada Disponivel',
+      info: 'Mostrando página _PAGE_ de _PAGES_',
+      infoEmpty: 'Nada Disponível',
       infoFiltered: '',
-      lengthMenu: 'Mostrando _MENU_ Registro por pagina',
-      zeroRecords: 'Nada Encontrado, Desculpe',
+      lengthMenu: 'Mostrando _MENU_ registros por página',
+      zeroRecords: 'Nada encontrado, desculpe',
       "paginate": {
         "first": "Primeira",
         "last": "Última",
@@ -63,7 +58,8 @@
         "previous": "Anterior"
       },
       "search": "Filtro por palavra-chave: ",
-    }
+    },
+    dom: '<"clear"p><"top"fl>rt<"bottom"ip><"clear">',
   });
   $('table').DataTable();
 </script>

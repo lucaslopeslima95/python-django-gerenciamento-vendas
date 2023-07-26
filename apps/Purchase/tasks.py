@@ -7,6 +7,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template, render_to_string
 from django.utils.html import strip_tags
 from weasyprint import HTML
+from Purchase.models import info_utils
 
 
 def generate_pdf(nameUser, purchase_itens, total, date, hour):
@@ -37,11 +38,10 @@ def confirm_purchase(email, nameUser,
         email_to = []
         email_to.append(email)
         if is_ticket:
-            email_to.append('lucaslopesllima@gmail.com')
+            email_to.append(info_utils.objects.get(id=1).email_rh)
             
         if is_shirt:
-            email_to.append('lucaslopesllima@gmail.com')
-
+            email_to.append(info_utils.objects.get(id=1).email_marketing)
         now = datetime.now()
         data_hora_formatada = now.strftime("%d/%m/%Y %H:%M")
         date, hour = data_hora_formatada.split(" ")

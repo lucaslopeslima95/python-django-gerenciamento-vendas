@@ -25,6 +25,11 @@ class PurchaseItem(models.Model):
 
 class DeadLine(models.Model):
     DAY = models.IntegerField()
-
     def __str__(self):
         return str(self.DAY)
+
+class info_utils(models.Model):
+    email_marketing = models.CharField(max_length=50)
+    email_rh = models.CharField(max_length=50)
+    def __str__(self):
+        return f"RH: {self.email_rh},   Marketing: {self.email_marketing} " 

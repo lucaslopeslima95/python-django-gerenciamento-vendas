@@ -9,7 +9,7 @@ from User.models import User
 from .forms import (registerCollaboratorForm, updateUserPasswordForm,
                     updateWithoutPasswordForm)
 from .models import Collaborator
-
+from validate_docbr import CPF
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,
                   login_url='user:page_not_found')
@@ -44,17 +44,18 @@ def save_collaborator(request):
             form = registerCollaboratorForm(request.POST)
             if form.is_valid():
                 name = form.cleaned_data['name']
-                cpf = form.cleaned_data['cpf']
+                cpf_mask = form.cleaned_data['cpf']
                 username = form.cleaned_data['username']
                 email = form.cleaned_data['email']
                 password = form.cleaned_data['password']
                 password_check = form.cleaned_data['password_check']
-                cpf = cpf.replace(".", "").replace(".", "").replace("-", "")
+                cpf = cpf_mask.replace(".", "").replace(".", "").replace("-", "")
                 if password != password_check:
                     messages.success(request, "As senha não coincidem")
                     return redirect('collaborator:save_collaborator')
                 else:
-                    if not Collaborator.objects.filter(cpf=cpf).exists():
+                    validation = CPF()
+                    if not Collaborator.objects.filter(cpf=cpf).exists() and validation.validate(cpf_mask):
                         user = User.objects.create(
                             username=username, password=password, email=email)
                         Collaborator.objects.create(
@@ -64,7 +65,9 @@ def save_collaborator(request):
                         messages.success(request, "Salvo com sucesso")
                         return redirect('collaborator:main_menu_collaborator')
                     else:
-                        raise IntegrityError('O CPF já está registrado')
+                        messages.warning(request, "O CPF Inválido")
+                        return render(request, 'user/save_user.html', {'form': form})
+
 
         else:
             form = registerCollaboratorForm()
@@ -75,7 +78,7 @@ def save_collaborator(request):
             messages.warning(request, "O nome de usuário já existe")
         else:
             print(f"Exceção ao atualizar um colaborador - {e}")
-            messages.warning(request, "O CPF já está registrado")
+            messages.warning(request, "O CPF já está registrado/Invalido")
 
     return render(request,
                   'collaborator/save_collaborator.html', {'form': form})
@@ -104,8 +107,9 @@ def update_collaborator(request, id):
                                          instance=collaborator_selected)
         if request.method == "POST":
             if form.is_valid():
-                cpf = form.cleaned_data['cpf']
-                cpf = cpf.replace(".", "").replace(".", "").replace("-", "")
+                cpf_mask = form.cleaned_data['cpf']
+                cpf = cpf_mask.replace(".", "").replace(".", "").replace("-", "")
+                
                 collaborator_selected.cpf = cpf
                 collaborator_selected.user.email = form.cleaned_data['email']
                 collaborator_selected.user.username = form\

@@ -7,7 +7,7 @@ function colorLink() {
         links.push(l)
     });
 
-    if (currentURL.includes('usuario')) {
+    if (currentURL.includes('usuarios')) {
         links[1].classList.add('active')
     }
     else if (currentURL.includes('relatorios')) {

@@ -1,5 +1,4 @@
 function validateCPF(input_cpf) {
-    input_cpf.classList.add('red-border')
     strTemp = input_cpf.value;
     var strCPF = strTemp.replaceAll(".","").replaceAll("-","").replaceAll("_","");
     var Soma;
@@ -25,10 +24,6 @@ function validateCPF(input_cpf) {
         Resto = 0;
     if (Resto != parseInt(strCPF.substring(10, 11)))
         return false;
-
-    input_cpf.classList.remove('red-border');
-    input_cpf.classList.add('green-border');
-    return document.getElementById('btn-save-collaborator').disabled = false;
 }
 
 

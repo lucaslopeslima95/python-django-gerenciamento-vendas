@@ -2,14 +2,14 @@
 {% block stylesheets %}{% endblock stylesheets %} {% block content %}
 
 <div class="card mt-3 vh-100">
-     <div class="card-header rounded">
+     <div class="card-header rounded-top">
       <a href="{% url 'product:main_menu_product'%}">
           <i class="fa-sharp fa-solid fa-arrow-left fa-2xl"></i>
       </a>
       Voltar ao menu principal
   </div>
-  <div class="card-header">
-    Atualização de Produto
+  <div class="card-header-second">
+    Atualização de produto
   </div>
   <form method="post" class="mt-3 mx-auto mb-3" style="width: 75%;">
     {% csrf_token %} {{ form.as_p }}

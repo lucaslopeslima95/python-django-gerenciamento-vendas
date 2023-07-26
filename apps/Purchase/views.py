@@ -1,36 +1,48 @@
 from Collaborator.models import Collaborator
 from django.contrib import messages
 from django.contrib.auth import authenticate
-from django.db.models import Sum,F
+from django.db.models import F, Sum
 from django.shortcuts import redirect, render
 from Product.models import Product
-from Stock.models import StoreStock
 from Purchase.models import Purchase, PurchaseItem
 from Purchase.PurchaseService.calculateExpends import (
     current_referral_spending, last_reference_spend)
 from Purchase.tasks import confirm_purchase
+from Stock.models import StoreStock
 from User.forms import authForm
 
 from .DTO.PurchaseItemDTO import PurchaseItemDTO
 from .forms import searchProductToPurchaseForm
-from django.db.models.query import QuerySet
+from django.contrib.sessions.models import Session
 
 
 def initial_page_purchase(request):
     cart = PurchaseItemDTO()
     form_code_bar = searchProductToPurchaseForm()
     puchase_list_total_value = None
+    
+    if 'sem_produto' not in request.session:
+        request.session['sem_produto'] = True
+    
+    if request.session['sem_produto']:
+        request.session['lista_produtos'] = []
+        request.session.save()
+        
+    lista_produtos = request.session.get('lista_produtos', [])
     if request.method == "GET":
         try:
             puchase_list_total_value = 0
-            for i in cart.products:
-                puchase_list_total_value += i.product.price
+            for i in  lista_produtos:
+                puchase_list_total_value += float(i['price'])
         except Exception as e:
             print(f"Exceção ao salvar um colaborador {e}")
             messages.warning(request, "Ocorreu um erro ao adicionar o Produto")
+            
+    request.session['sem_produto'] = True
     return render(request, 'purchase/initial_purchase.html', {
                 'form_code_bar': form_code_bar,
                 'cart': cart,
+                'lista_produtos':lista_produtos,
                 'total': f"R$ {puchase_list_total_value}",
                 'authForm': authForm
                 })
@@ -38,6 +50,7 @@ def initial_page_purchase(request):
 
 def finish_purchase(request):
     cart = PurchaseItemDTO()
+    lista_produtos = request.session.get('lista_produtos', [])
     try:
         if request.method == "POST":
             form = authForm(request.POST)
@@ -47,12 +60,12 @@ def finish_purchase(request):
                 user = authenticate(request, username=username,
                                     password=password)
                 if user is not None:
-                    if len(cart.products) == 0:
+                    if len(lista_produtos) == 0:
                         messages.warning(request, "Nenhum Produto Adicionado")
                         return redirect('purchase:initial_page_purchase')
                     collaborator = Collaborator.objects.get(user=user.id)
-                    if collaborator.active and save_purchase(collaborator):
-                        cart.products.clear()
+                    if collaborator.active and save_purchase(request,collaborator):
+                        #cart.products.clear()
                         messages.success(request, "Salvo com Sucesso.")
                         current_spend = current_referral_spending(collaborator)
                         last_spends = last_reference_spend(collaborator)
@@ -118,10 +131,17 @@ def find_product(request):
                                          não possui unidades disponiveis \
                                          no momento")
                     else:
-                        purchaseItem = PurchaseItem()
-                        purchaseItem.product = product
-                        purchaseItem.price = product.price
-                        in_cart.products.append(purchaseItem)
+                        
+                        request.session['sem_produto'] = False
+                        product_dict = {'id':product.pk,'name':product.name,'price':str(product.price),'category':str(product.category)}
+                        lista_produtos = request.session.get('lista_produtos', [])
+                        lista_produtos.append(product_dict)
+                        request.session['lista_produtos'] = lista_produtos
+                        
+                        # purchaseItem = PurchaseItem()
+                        # purchaseItem.product = product
+                        # purchaseItem.price = product.price
+                        # in_cart.products.append(purchaseItem)
         except (Product.DoesNotExist, Exception) as e:
             print(f"Exceção ao procurar produto - {e}")
             messages.warning(request, "Produto não encontrado")
@@ -130,36 +150,49 @@ def find_product(request):
 
 
 def remove_product_purchase(request, id):
-    in_cart = PurchaseItemDTO()
-    in_cart.products.pop((id-1))
+    
+    lista_produtos = request.session.get('lista_produtos', [])
+    
+    if 0 <= id < len(lista_produtos):
+        lista_produtos.pop((int(id)-1))
+   
+    request.session['sem_produto'] = False
+    request.session['lista_produtos'] = lista_produtos
+    request.session.save()
+        
+    # in_cart = PurchaseItemDTO()
+    # in_cart.products.pop((id-1))
     return redirect('purchase:initial_page_purchase')
 
 
 def clean_all_products_purchase(request):
-    in_cart = PurchaseItemDTO()
-    in_cart.products.clear()
+    request.session['lista_produtos'] = []
+    request.session.save()
+    # in_cart = PurchaseItemDTO()
+    # in_cart.products.clear()
     request.session['total_spends_current'] = 0.0
     request.session['spends_last_referred'] = 0.0
     request.session['show_expends'] = False
     return redirect('purchase:initial_page_purchase')
 
 
-def save_purchase(collaborator: Collaborator) -> bool:
+def save_purchase(request,collaborator: Collaborator) -> bool:
     try:
+        lista_produtos = request.session.get('lista_produtos', [])
         purchase_itens = {}
         cart = PurchaseItemDTO()
         purchase = Purchase()
         purchase.collaborator = collaborator
         purchase.save()
-        for item in cart.products:
-            if item.product.name not in purchase_itens:
-                purchase_itens[item.product.name] = {
-                    'id': int(item.product.pk),
-                    'price': float(item.product.price),
-                    'category': str(item.product.category),
+        for item in lista_produtos:
+            if item['name'] not in purchase_itens:
+                purchase_itens[item['name']] = {
+                    'id': int(item['id']),
+                    'price': float(item['price']),
+                    'category': str(item['category']),
                     'quantity': 1}
             else:
-                purchase_itens[item.product.name]['quantity'] += 1
+                purchase_itens[item['name']]['quantity'] += 1
                 
         for product in purchase_itens.items():
             PurchaseItem.objects.create(

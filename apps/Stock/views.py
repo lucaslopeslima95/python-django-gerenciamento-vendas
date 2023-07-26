@@ -5,7 +5,7 @@ from django.shortcuts import redirect, render
 from .models import (LogStoreStock, LogWarehouse, StoreStock,
                      Warehouse, movement_type)
 from django.contrib import messages
-
+import json
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,
                   login_url='user:page_not_found')
@@ -26,11 +26,17 @@ def stock_management(request):
             storeStock = StoreStock.objects.all().order_by('product')
     except Exception as e:
         print(f"Exceção ao listar produtos - {e}")
-
+    can_manual_destoking = False
+    warehouse_dict = []    
+    warehouse = Warehouse.objects.all()
+    for i in warehouse:
+        warehouse_dict.append({'name':str(i.product.name),'id':i.product.pk,'quantity':i.stock_quantity})
+    werehouse_json = json.dumps(warehouse_dict)  
     return render(request,
                   'stock/stock_management.html',
                   {'storeStock': storeStock,
-                   'warehouse': warehouse})
+                   'warehouse': werehouse_json,
+                   'can_manual_destoking':can_manual_destoking})
 
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,
@@ -75,20 +81,19 @@ def product_movement(request, id):
                   login_url='user:page_not_found')
 @login_required(login_url="login_system")
 def entry_stock(request):
+    
     id_product = request.POST.get('id_product')
     product_quantity = request.POST.get('quantity')
-
     warehouse = Warehouse.objects.get(product__id=id_product)
+    
     new_quantity = warehouse.stock_quantity + int(product_quantity)
 
     save_entry_stock_log(request, warehouse)
 
     warehouse.stock_quantity = new_quantity
-    warehouse.save()
+    Warehouse.objects.filter(product__id=id_product).update(stock_quantity=new_quantity)
 
-    url = f'/estoque/movimentacao_produto/{id_product}'
-
-    return redirect(url)
+    return redirect('stock:stock_management')
 
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,
@@ -112,9 +117,7 @@ def transfer_to_store(request):
     else:
         messages.warning(request, "Quantidade transferida superior ao disponível")
         
-
-    url = f'/estoque/movimentacao_produto/{id_product}'
-    return redirect(url)
+    return redirect('stock:stock_management')
 
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,
@@ -136,8 +139,7 @@ def manual_destocking(request):
     else:
         messages.warning(request, "Quantidade acima do disponível")
 
-    url = f'/estoque/movimentacao_produto/{id_product}'
-    return redirect(url)
+    return redirect('stock:stock_management')
 
 
 def save_entry_stock_log(request, warehouse):

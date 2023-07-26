@@ -14,6 +14,7 @@ from User.tasks import confirm_register
 from .forms import (registerUserForm, updateUserPasswordForm,
                     updateWithoutPasswordForm)
 from .models import User
+from validate_docbr import CPF
 
 
 @receiver(post_save, sender=Collaborator)
@@ -39,7 +40,7 @@ def save_user(request):
                 if password != password_check:
                     messages.warning(request, "A senhas devem ser iguais")
                 else:
-
+                    validation = CPF()
                     is_staff = form.cleaned_data['is_staff']
                     email = form.cleaned_data['email']
                     cpf_mask = form.cleaned_data['cpf']
@@ -47,21 +48,25 @@ def save_user(request):
                         ".", "").replace(".", "").replace("-", "")
                     name = form.cleaned_data['name']
 
-                    if not Collaborator.objects.filter(cpf=cpf).exists():
-                        user = User.objects.create(username=username,
-                                                   password=password,
-                                                   email=email,
-                                                   is_staff=is_staff)
-                        Collaborator.objects.create(name=name,
-                                                    cpf=cpf,
-                                                    user=user)
-                        user.set_password(password)
-                        user.save()
-                        messages.success(request, "Salvo com sucesso")
+                    if validation.validate(cpf_mask):
+                        if not Collaborator.objects.filter(cpf=cpf).exists():
+                            user = User.objects.create(username=username,
+                                                    password=password,
+                                                    email=email,
+                                                    is_staff=is_staff)
+                            Collaborator.objects.create(name=name,
+                                                        cpf=cpf,
+                                                        user=user)
+                            user.set_password(password)
+                            user.save()
+                            messages.success(request, "Salvo com sucesso")
 
-                        return redirect('user:main_menu_user')
+                            return redirect('user:main_menu_user')
+                        else:
+                            raise IntegrityError('O CPF já está registrado')
                     else:
-                        raise IntegrityError('O CPF já está registrado')
+                        messages.warning(request, "O CPF Inválido")
+                        return render(request, 'user/save_user.html', {'form': form})
 
         else:
             form = registerUserForm()

@@ -4,13 +4,13 @@
 {% block content %}
 <div class="card vh-100 mt-3">
   <div class="card-header">
-    <h4 class="">Colaboradores</h4>
-    <td class="px-1"><a href="{% url 'collaborator:save_collaborator' %}" class="btn btn-primary btn-sm">
+    <h3 class="card-title">Colaboradores</h3>
+  </div>
+  <div class="card-body">
+    <td class="px-1"><a href="{% url 'collaborator:save_collaborator' %}" class="btn btn-primary btn-sm mb-3">
         Registrar novo colaborador
         <i class="fa-regular fa-plus"></i>
       </a></td>
-  </div>
-  <div class="card-body">
     <div class="table-responsive">
       <table class="table" id="">
         <thead class="text-primary">
@@ -67,7 +67,8 @@
         "previous": "Anterior"
       },
       "search": "Filtro por palavra-chave: ",
-    }
+    },
+    dom: '<"clear"p><"top"fl>rt<"bottom"ip><"clear">',
   });
   $('table').DataTable();
 </script>

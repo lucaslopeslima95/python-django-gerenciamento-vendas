@@ -1,13 +1,14 @@
 {% extends 'base.html' %} {% block title %} Atualizar Usuarios {% endblock %}
 {% block stylesheets %}{% endblock stylesheets %} {% block content %}
+{% load static %}
 <div class="card vh-100 mt-3">
-  <div class="card-header rounded">
+  <div class="card-header rounded-top">
     <a href="{% url 'user:main_menu_user'%}">
       <i class="fa-sharp fa-solid fa-arrow-left fa-2xl"></i>
     </a>
     Voltar ao menu principal
   </div>
-  <div class="card-header">
+  <div class="card-header-second">
     Atualização do usuário
   </div>
   <form method="post" class="mt-3 mx-auto mb-3" style="width: 75%;">
@@ -30,6 +31,7 @@
     </div>
   </form>
 </div>
-
 {% endblock content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+<script src="{% static 'js/cpfValidation.js'%}"></script>
 {% block javascripts %}{% endblock javascripts %}

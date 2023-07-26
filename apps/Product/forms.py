@@ -26,7 +26,7 @@ class registerProductForm(ModelForm):
         widget=forms.TextInput(
             attrs={"placeholder": "Codigo de Barras",
                    "class": "form-control"}),
-        max_length=18)
+        max_length=18,label="Código de Barras")
     active = forms.ChoiceField(
         choices=status_type.choices,
         widget=forms.Select(attrs={'class': 'form-control '}),
@@ -35,7 +35,7 @@ class registerProductForm(ModelForm):
         widget=forms.TextInput(
             attrs={"placeholder": "Preço",
                    "class": "form-control",
-                   "oninput": "inputPriceMask(this)"}))
+                   "oninput": "inputPriceMask(this)"}),label="Preço")
 
     class Meta:
         model = Product

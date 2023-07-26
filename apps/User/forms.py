@@ -49,7 +49,9 @@ class registerUserForm(forms.Form):
             attrs={"placeholder": "Senha",
                    "class": "form-control",
                    "title": "A Senha deve conter caracteries\
-                   especiais numeros letra maiuscula e numeros"}),
+                   especiais numeros letra maiuscula e numeros",
+                   "onclick":"addPasswordRequirements()"
+                   }),
         label="Senha sugerida - @SejaBemVindo3:",
         initial="@SejaBemVindo3")
     password_check = forms.CharField(
@@ -107,7 +109,7 @@ class updateUserPasswordForm(ModelForm):
             attrs={"placeholder": "Confirme a senha",
                    "class": "form-control",
                    "title": "As Senhas Devem ser iguais",
-                   "onchange": "validatePassword()"}),
+                   }),
         label="Confirme a Senha")
 
     class Meta:

@@ -3,25 +3,24 @@
 {% block stylesheets %}
 {% endblock stylesheets %}
 {% block content %}
-<div class="card mt-3 vh-100">
-  <div class="card-header rounded">
+<div class="card vh-100 mt-3">
+  <div class="card-header rounded-top">
     <a href="{% url 'stock:stock_management'%}">
         <i class="fa-sharp fa-solid fa-arrow-left fa-2xl"></i>
     </a>
     Voltar para gestão de estoque
 </div>
-  <div class="card-header">
-    <h4 class="card-title">Historico de Movimentações</h4>
-    <div class="d-flex flex-row">
+  <div class="card-header-second">
+    <p>Historico de Movimentações</p>
+  </div>
+  <div class="card-body">
+    <div class="d-flex flex-row mb-4">
       <div><a href="{% url 'stock:show_logs_warehouse' %}" class="btn btn-primary me-2">Vizualizar
-          Historico
-          da Deposito</a></div>
+          Historico da Deposito</a></div>
       <div><a href="{% url 'stock:show_logs_store_stock' %}" class="btn btn-primary me-2">Vizualizar
           Historico da Loja</a></div>
     </div>
-  </div>
-  <div class="card-body">
-    <table class="table" >
+    <table class="table">
       <thead>
         <tr>
           <th>Produto</th>
@@ -48,25 +47,22 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
 <script>
-  function enviar() {
-    var valorCampo = document.getElementById("myInput").value;
-    window.location.href = "http://127.0.0.1:8000/product/stock_management_filter?parametro=" + valorCampo;
-  }
   $('table').DataTable({
     language: {
-      info: 'Mostrando Pagina _PAGE_ de _PAGES_',
-      infoEmpty: 'Nada Disponivel',
-      infoFiltered: '(filtered from _MAX_ total records)',
-      lengthMenu: 'Mostrando _MENU_ Registro por pagina',
-      zeroRecords: 'Nada Encontrado, Desculpe',
+      info: 'Mostrando página _PAGE_ de _PAGES_',
+      infoEmpty: 'Nada Disponível',
+      infoFiltered: '',
+      lengthMenu: 'Mostrando _MENU_ registros por página',
+      zeroRecords: 'Nada encontrado, desculpe',
       "paginate": {
-        "first": "First",
-        "last": "Last",
-        "next": "Proxima",
+        "first": "Primeira",
+        "last": "Última",
+        "next": "Próxima",
         "previous": "Anterior"
       },
-      "search": "Filtrar:",
-    }
+      "search": "Filtro por palavra-chave: ",
+    },
+    dom: '<"clear"p><"top"fl>rt<"bottom"ip><"clear">',
   });
   $('table').DataTable();
 </script>

@@ -47,10 +47,10 @@
       </tr>
     </thead>
     <tbody>
-      {% for item in cart.products %}
+      {% for item in lista_produtos %}
       <tr>
         <th scope="row">{{ forloop.counter }}</th>
-        <th scope="row">{{ item.product.name }}</th>
+        <th scope="row">{{ item.name }}</th>
         <th scope="row">R$ {{ item.price }}</th>
         <th><a href="{% url 'purchase:remove_product_purchase' forloop.counter %}" class="btn btn-primary">Remover</a>
         </th>
