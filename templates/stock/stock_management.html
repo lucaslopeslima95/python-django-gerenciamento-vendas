@@ -4,18 +4,23 @@
 {% block content %}
 <div class="card mt-3 vh-100">
   <div class="card-header">
-    <h3 class="card-title">Gestão de Estoque</h3>
+    <h3 class="card-title">
+      <i class="fa-solid fa-boxes-stacked"></i>
+      GESTÃO DE ESTOQUE
+    </h3>
   </div>
   <div class="card-body">
-    <td class="px-1"><a href="{% url 'stock:show_logs_warehouse' %}" class="btn btn-primary btn-sm mb-3">Visualizar
-        histórico de movimentações</a></td>
+    <td class="px-1">
+      <a href="{% url 'stock:show_logs_warehouse' %}" class="btn btn-primary btn-sm mb-3">
+      Visualizar histórico de movimentações
+      </a></td>
     <div class="table-responsive">
       <table class="table">
         <thead class="text-primary">
           <tr>
-            <th>Nome</th>
-            <th style="text-align: center;">Quantidade na Loja</th>
-            <th style="text-align: center;">Ações</th>
+            <th style="font-weight: bold;">NOME</th>
+            <th style="text-align: center; font-weight: bold;">QUANTIDADE NA LOJA</th>
+            <th style="text-align: center; font-weight: bold;">AÇÕES</th>
           </tr>
         </thead>
         <tbody>

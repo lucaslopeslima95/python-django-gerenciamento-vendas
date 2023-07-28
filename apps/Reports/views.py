@@ -67,7 +67,7 @@ def generate_reports(request):
     current_month = timezone.now().month
 
     if today > deadLine:
-        start_date = date(current_year,
+        start_date = datetime(current_year,
                           current_month,
                           (deadLine+1))
 

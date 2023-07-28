@@ -7,10 +7,13 @@ function colorLink() {
         links.push(l)
     });
 
-    if (currentURL.includes('usuarios')) {
-        links[1].classList.add('active')
+    if (currentURL.includes('painel')) {
+        links[0].classList.add('active')
     }
     else if (currentURL.includes('relatorios')) {
+        links[1].classList.add('active')
+    }
+    else if (currentURL.includes('usuarios')) {
         links[2].classList.add('active')
     }
     else if (currentURL.includes('colaborador')) {
@@ -21,12 +24,11 @@ function colorLink() {
     }
     else if (currentURL.includes('categorias')) {
         links[5].classList.add('active')
-    }
-    else if (currentURL.includes('estoque')) {
+    }else if (currentURL.includes('estoque')) {
         links[6].classList.add('active')
     }
     else {
-        links[0].classList.add('active')
+        links[7].classList.add('active')
     }
 }
 

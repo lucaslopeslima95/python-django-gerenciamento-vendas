@@ -9,6 +9,7 @@ from django.utils import timezone
 from django.views.decorators.csrf import csrf_protect
 from Purchase.models import DeadLine, Purchase
 from Stock.models import StoreStock, Warehouse
+from Purchase.models import PurchaseItem
 
 
 @csrf_protect
@@ -46,6 +47,7 @@ def products_low_stock_Warehouse():
 
 
 def current_billing():
+    
     deadLine = DeadLine.objects.get(id=1).DAY
     today = timezone.datetime.now().day
     current_year = timezone.now().year

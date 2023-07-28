@@ -47,23 +47,31 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
 <script>
-  $('table').DataTable({
+   $('table').DataTable({
     language: {
-      info: 'Mostrando Pagina _PAGE_ de _PAGES_',
-      infoEmpty: 'Nada Disponivel',
+      info: 'Mostrando página _PAGE_ de _PAGES_',
+      infoEmpty: 'Nada Disponível',
       infoFiltered: '',
-      lengthMenu: 'Mostrando _MENU_ Registro por pagina',
-      zeroRecords: 'Nada Encontrado, Desculpe',
+      lengthMenu: 'Mostrando _MENU_ registros por página',
+      zeroRecords: 'Nada encontrado, desculpe',
       "paginate": {
-        "first": "First",
-        "last": "Last",
-        "next": "Proxima",
+        "first": "Primeira",
+        "last": "Última",
+        "next": "Próxima",
         "previous": "Anterior"
       },
-      "search": "Filtrar:",
-    }
+      "search": "Filtro por Data/hora: ",
+    },
+    dom: '<"clear"p><"top"fl>rt<"bottom"ip><"clear">',
+    
   });
+ 
   $('table').DataTable();
+
 </script>
 {% endblock content %}
 {% block javascripts %}{% endblock javascripts %}
+
+search: {
+  return: true
+}

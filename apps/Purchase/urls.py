@@ -22,4 +22,5 @@ urlpatterns = [
          views.check_balance, name="check_balance"),
     path('limpar_consulta',
          views.clean_consult, name="clean_consult"),
+    path('confirmar_credencial', views.confirm_indentity, name="confirm_indentity"),
 ]

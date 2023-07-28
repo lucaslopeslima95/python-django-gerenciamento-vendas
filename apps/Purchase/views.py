@@ -13,39 +13,98 @@ from User.forms import authForm
 
 from .DTO.PurchaseItemDTO import PurchaseItemDTO
 from .forms import searchProductToPurchaseForm
-from django.contrib.sessions.models import Session
+import cv2
+from pyzbar.pyzbar import decode
 
 
 def initial_page_purchase(request):
     cart = PurchaseItemDTO()
     form_code_bar = searchProductToPurchaseForm()
     puchase_list_total_value = None
-    
+
     if 'sem_produto' not in request.session:
         request.session['sem_produto'] = True
-    
+
     if request.session['sem_produto']:
         request.session['lista_produtos'] = []
         request.session.save()
-        
+
     lista_produtos = request.session.get('lista_produtos', [])
     if request.method == "GET":
         try:
             puchase_list_total_value = 0
-            for i in  lista_produtos:
+            for i in lista_produtos:
                 puchase_list_total_value += float(i['price'])
         except Exception as e:
             print(f"Exceção ao salvar um colaborador {e}")
             messages.warning(request, "Ocorreu um erro ao adicionar o Produto")
-            
+
     request.session['sem_produto'] = True
     return render(request, 'purchase/initial_purchase.html', {
                 'form_code_bar': form_code_bar,
                 'cart': cart,
-                'lista_produtos':lista_produtos,
+                'lista_produtos': lista_produtos,
                 'total': "R$ {:.2f}".format(puchase_list_total_value),
                 'authForm': authForm
                 })
+
+
+def confirm_indentity(request):
+    cap = cv2.VideoCapture(0)
+    cap.set(3, 640)
+    cap.set(4, 480)
+    camera = True
+    while camera:
+        success, frame = cap.read()
+        for code in decode(frame):
+            if success:
+                cod_auth = code.data.decode('utf-8')
+                try:
+                    collaborator = Collaborator.objects.get(cod_auth=cod_auth)
+                except Exception as e:
+                    print(f"Exceção ao buscar o colaborador - {e}")
+                camera = False
+                cv2.waitKey(1)
+                break
+
+        cv2.imshow('Testing-code-scan', frame)
+        cv2.waitKey(1)
+    cap.release()
+    cv2.destroyAllWindows()
+    cv2.waitKey(0)
+
+    lista_produtos = request.session.get('lista_produtos', [])
+    if collaborator is not None:
+        if len(lista_produtos) == 0:
+            messages.warning(request, "Nenhum Produto Adicionado")
+            return redirect('purchase:initial_page_purchase')
+        else:
+            if collaborator.active == 1 and save_purchase(
+                  request, collaborator):
+                messages.success(request, "Salvo com Sucesso.")
+                request.session['show_expends'] = True
+                current_spend = current_referral_spending(collaborator)
+                last_spends = last_reference_spend(collaborator)
+                if current_spend:
+                    request.session['total_spends_current'] = float(
+                       current_spend.aggregate(
+                         total=Sum(F('purchaseitem__price') * F(
+                             'purchaseitem__quantity')))['total'])
+                else:
+                    request.session['total_spends_current'] = 0.0
+                if last_spends:
+                    request.session['spends_last_referred'] = float(
+                        last_spends.aggregate(
+                            total=Sum(F('purchaseitem__price') * F(
+                                'purchaseitem__quantity')))['total'])
+                else:
+                    request.session['spends_last_referred'] = 0.0
+            else:
+                messages.warning(request, "Colaborador Inativo")
+    else:
+        messages.warning(request, "Codigo de barras nao cadastrado")
+
+    return redirect('purchase:initial_page_purchase')
 
 
 def finish_purchase(request):
@@ -64,22 +123,25 @@ def finish_purchase(request):
                         messages.warning(request, "Nenhum Produto Adicionado")
                         return redirect('purchase:initial_page_purchase')
                     collaborator = Collaborator.objects.get(user=user.id)
-                    if collaborator.active and save_purchase(request,collaborator):
+                    if collaborator.active == 1 and save_purchase(
+                          request, collaborator):
                         messages.success(request, "Salvo com Sucesso.")
                         request.session['show_expends'] = True
                         current_spend = current_referral_spending(collaborator)
                         last_spends = last_reference_spend(collaborator)
                         if current_spend:
-                             request.session['total_spends_current'] = float(
+                            request.session['total_spends_current'] = float(
                              current_spend.aggregate(
-                                total=Sum(F('purchaseitem__price') * F('purchaseitem__quantity')))['total'])
+                                total=Sum(F('purchaseitem__price') * F(
+                                    'purchaseitem__quantity')))['total'])
 
                         else:
                             request.session['total_spends_current'] = 0.0
                         if last_spends:
                             request.session['spends_last_referred'] = float(
                                 last_spends.aggregate(
-                                    total=Sum(F('purchaseitem__price') * F('purchaseitem__quantity')))['total'])
+                                    total=Sum(F('purchaseitem__price') * F(
+                                        'purchaseitem__quantity')))['total'])
                         else:
                             request.session['spends_last_referred'] = 0.0
                     else:
@@ -112,6 +174,7 @@ def confirm_that_there_is_enough(carrinho: list, id):
 
 
 def find_product(request):
+
     in_cart = PurchaseItemDTO()
     if request.method == "POST":
         product = None
@@ -130,13 +193,16 @@ def find_product(request):
                                          não possui unidades disponiveis \
                                          no momento")
                     else:
-                        
+
                         request.session['sem_produto'] = False
-                        product_dict = {'id':product.pk,'name':product.name,'price':str(product.price),'category':str(product.category)}
-                        lista_produtos = request.session.get('lista_produtos', [])
+                        product_dict = {'id': product.pk, 'name': product.name,
+                                        'price': str(product.price),
+                                        'category': str(product.category)}
+                        lista_produtos = request.session.get(
+                            'lista_produtos', [])
                         lista_produtos.append(product_dict)
                         request.session['lista_produtos'] = lista_produtos
-                        
+
         except (Product.DoesNotExist, Exception) as e:
             print(f"Exceção ao procurar produto - {e}")
             messages.warning(request, "Produto não encontrado")
@@ -145,7 +211,7 @@ def find_product(request):
 
 
 def remove_product_purchase(request, id):
-    
+
     lista_produtos = request.session.get('lista_produtos', [])
     lista_produtos.pop(int(id)-1)
     request.session['sem_produto'] = False
@@ -163,7 +229,7 @@ def clean_all_products_purchase(request):
     return redirect('purchase:initial_page_purchase')
 
 
-def save_purchase(request,collaborator: Collaborator) -> bool:
+def save_purchase(request, collaborator: Collaborator) -> bool:
     try:
         lista_produtos = request.session.get('lista_produtos', [])
         purchase_itens = {}
@@ -179,7 +245,7 @@ def save_purchase(request,collaborator: Collaborator) -> bool:
                     'quantity': 1}
             else:
                 purchase_itens[item['name']]['quantity'] += 1
-                
+
         for product in purchase_itens.items():
             PurchaseItem.objects.create(
                 product=Product.objects
@@ -188,10 +254,10 @@ def save_purchase(request,collaborator: Collaborator) -> bool:
                 purchase=purchase,
                 quantity=product[1]['quantity']
             ).save()
-            
+
             if not product[1]['category'] == 'Ingressos'\
-                    and not  product[1]['category'] == 'Camisetas':
-                    update_quantity(product[1])
+                    and not product[1]['category'] == 'Camisetas':
+                update_quantity(product[1])
 
         confirm_purchase.delay(email=collaborator.user.email,
                                nameUser=collaborator.name,
@@ -225,18 +291,20 @@ def check_balance(request):
                 if collaborator.active:
                     current_spends = current_referral_spending(collaborator)
                     last_spends = last_reference_spend(collaborator)
-                    
+
                     if current_spends:
                         request.session['total_spends_current'] = float(
                             current_spends.aggregate(
-                                total=Sum(F('purchaseitem__price') * F('purchaseitem__quantity')))['total'])
+                                total=Sum(F('purchaseitem__price') * F(
+                                    'purchaseitem__quantity')))['total'])
 
                     else:
                         request.session['total_spends_current'] = 0.0
                     if last_spends:
                         request.session['spends_last_referred'] = float(
                             last_spends.aggregate(
-                                total=Sum(F('purchaseitem__price') * F('purchaseitem__quantity')))['total'])
+                                total=Sum(F('purchaseitem__price') * F(
+                                    'purchaseitem__quantity')))['total'])
                     else:
                         request.session['spends_last_referred'] = 0.0
                     request.session['only_consult'] = True

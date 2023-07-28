@@ -30,7 +30,7 @@ def confirm_purchase(email, nameUser,
         for product in purchase_itens.items():
             if (product[1]['price'] and product[1]['quantity']):
                 total += (product[1]['price']*product[1]['quantity'])
-                if  product[1]['category'] == 'Ingressos':
+                if product[1]['category'] == 'Ingressos':
                     is_ticket = True
                 if product[1]['category'] == 'Camisetas':
                     is_shirt = True
@@ -39,7 +39,7 @@ def confirm_purchase(email, nameUser,
         email_to.append(email)
         if is_ticket:
             email_to.append(info_utils.objects.get(id=1).email_rh)
-            
+
         if is_shirt:
             email_to.append(info_utils.objects.get(id=1).email_marketing)
         now = datetime.now()
@@ -71,6 +71,7 @@ def confirm_purchase(email, nameUser,
 def delete_pdf(path_to_pdf):
     if os.path.exists(path_to_pdf):
         os.remove(path_to_pdf)
-        print(f"Email enviado Com sucesso e Arquivo {path_to_pdf} foi excluído com sucesso.")
+        print(f"Email enviado Com sucesso\
+              e Arquivo {path_to_pdf} foi excluído com sucesso.")
     else:
         print(f"O arquivo {path_to_pdf} não existe.")

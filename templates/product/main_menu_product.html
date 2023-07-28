@@ -5,7 +5,10 @@
 
 <div class="card vh-100 mt-3" style="width:100%;">
   <div class="card-header">
-    <h3 class="card-title">Produtos</h3>
+    <h3 class="card-title" >
+      <i class="fa-solid fa-store"></i>
+      PRODUTOS
+    </h3>
   </div>
   <div class="card-body">
     <td class="px-1"><a href="{% url 'product:save_product' %}" class="btn btn-primary mb-3 btn-sm">Salvar novo produto
@@ -15,11 +18,11 @@
       <table class="table" id="">
         <thead class="text-primary">
           <tr>
-            <th>Nome</th>
-            <th style="text-align: center;">Codigo de Barras</th>
-            <th style="text-align: center;">Categoria</th>
-            <th style="text-align: center;">Preço</th>
-            <th style="text-align: center;">Situação</th>
+            <th style="font-weight: bold;">NOME</th>
+            <th style="text-align: center; font-weight: bold;">CÓDIGO DE BARRAS</th>
+            <th style="text-align: center; font-weight: bold;">CATEGORIA</th>
+            <th style="text-align: center; font-weight: bold;">PREÇO</th>
+            <th style="text-align: center; font-weight: bold;">SITUAÇÃO</th>
             <th>Ação</th>
           </tr>
         </thead>
@@ -64,7 +67,7 @@
         "next": "Próxima",
         "previous": "Anterior"
       },
-      "search": "Filtro por palavra-chave: ",
+      "search": "Filtro por Nome/E-mail: ",
     },
     dom: '<"clear"p><"top"fl>rt<"bottom"ip><"clear">',
   });

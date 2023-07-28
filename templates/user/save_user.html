@@ -25,20 +25,19 @@
                     </div>
                 </div>
                 <div id="passwordMatch" class="mt-2"></div>
+                <div class="d-flex justify-content-center p-5">
+                    <button type="submit" class="btn btn-primary me-3" id="btn-save-user">
+                        Salvar
+                        <i class="fa-solid fa-floppy-disk"></i>
+                    </button>
+                    <a type="button" href="{% url 'user:main_menu_user'%}" class="btn btn-secondary ">
+                        Cancelar
+                        <i class="fa-solid fa-rectangle-xmark"></i>
+                    </a>
+                </div>
+            </form>
         </div>
-        <div class="d-flex justify-content-center p-5">
-            <button type="submit" class="btn btn-primary me-3" id="btn-save-user">
-                Salvar
-                <i class="fa-solid fa-floppy-disk"></i>
-            </button>
-            <a type="button" href="{% url 'user:main_menu_user'%}" class="btn btn-secondary ">
-                Cancelar
-                <i class="fa-solid fa-rectangle-xmark"></i>
-            </a>
-        </div>
-        </form>
     </div>
-</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
 <script src="{% static 'js/cpfValidation.js'%}"></script>

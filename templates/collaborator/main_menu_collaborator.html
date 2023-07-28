@@ -4,7 +4,10 @@
 {% block content %}
 <div class="card vh-100 mt-3">
   <div class="card-header">
-    <h3 class="card-title">Colaboradores</h3>
+    <h3 class="card-title" style="font-weight: bold;">
+      <i class="fa-solid fa-user-tie"></i>
+      COLABORADORES
+    </h3>
   </div>
   <div class="card-body">
     <td class="px-1"><a href="{% url 'collaborator:save_collaborator' %}" class="btn btn-primary btn-sm mb-3">
@@ -12,26 +15,26 @@
         <i class="fa-regular fa-plus"></i>
       </a></td>
     <div class="table-responsive">
-      <table class="table" id="">
+      <table class="table mt-1" id="">
         <thead class="text-primary">
           <tr>
-            <th>Nome do colaborador</th>
-            <th>E-mail</th>
-            <th>Situação</th>
-            <th style="text-align: center;">Ações</th>
+            <th style="font-weight: bold;">NOME DO COLABORADOR</th>
+            <th style="font-weight: bold;">E-MAIL</th>
+            <th style="font-weight: bold;">SITUAÇÃO</th>
+            <th style="text-align: center;">AÇÕES</th>
           </tr>
         </thead>
         <tbody>
           {% for collaborator in collaborators %}
           {% if not user.username == collaborator.user.username %}
-          <tr>
+          <tr class="collaborator-row {{ collaborator.get_active_display }}">
             <th>{{ collaborator.name }}</th>
             {% if collaborator.user.email|length > 35 %}
             <th>{{ collaborator.user.email|slice:":35" }}...</th>
             {%else%}
             <th>{{ collaborator.user.email }}</th>
             {%endif%}
-            <th>{{ collaborator.get_active_display }}</th>
+            <th >{{ collaborator.get_active_display }}</th>
             <th class="d-flex justify-content-center">
               <a type="submit" class="btn btn-primary me-3"
                 href="{% url 'collaborator:update_collaborator' collaborator.id %}">Editar Dados
@@ -50,10 +53,11 @@
     </div>
   </div>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
 <script>
-  $('table').DataTable({
+   $('table').DataTable({
     language: {
       info: 'Mostrando página _PAGE_ de _PAGES_',
       infoEmpty: 'Nada Disponível',
@@ -66,11 +70,12 @@
         "next": "Próxima",
         "previous": "Anterior"
       },
-      "search": "Filtro por palavra-chave: ",
+      "search": "Filtro por Nome/E-mail: ",
     },
     dom: '<"clear"p><"top"fl>rt<"bottom"ip><"clear">',
   });
   $('table').DataTable();
+  
 </script>
 {% endblock content %}
 {% block javascripts %}{% endblock javascripts %}

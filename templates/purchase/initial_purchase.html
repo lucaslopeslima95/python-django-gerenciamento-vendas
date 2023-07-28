@@ -1,179 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/css_reset.css'%}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="{% static 'css/sb-admin-2.css'%}" rel="stylesheet">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/css_reset.css'%}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+  <link href="{% static 'css/sb-admin-2.css'%}" rel="stylesheet">
   <title>Compras</title>
 </head>
+
 <body onload="remove_messages()">
-{% for message in messages %}
-<div style="position: absolute; z-index: 2; width: 100%;" class="alert alert-{{ message.tags }}">
-{{ message }}
-</div>
-{% endfor %}
-<div class="container-fluid mt-3">
-<div class="d-flex flex-row justify-content-between align-items-center">
-  <form action="{% url 'purchase:find_product'%}" method="POST">
-    <div class="d-flex flex-row align-items-center">
-      {% csrf_token %}
-      {{ form_code_bar.as_p }}
-      <button type="submit" class="btn btn-primary mt-3">
-        <i class="fa-solid fa-plus fa-lg"></i>
-      </button>
-    </div>
-  </form>
-  <div>
-    <th><a href="{% url 'purchase:clean_all_products_purchase' %}" style="height: 100%; width: 60%;" class="btn btn-secondary btn-sm p-1 mt-1">Limpar Carrinho</a></th>
-    <th>
-      <a class="btn btn-secondary btn-sm p-1 mt-1" type="button" style="height: 100%; width: 60%;" data-bs-toggle="modal"
-      data-bs-target="#check_balance">Consultar Saldo</a>
-    </th>
+  {% for message in messages %}
+  <div style="position: absolute; z-index: 2; width: 100%;" class="alert alert-{{ message.tags }}">
+    {{ message }}
   </div>
-</div>
-<div class="table-responsive table-lg" style="height: 80vh; overflow-x: auto;" >
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nome do produto</th>
-        <th scope="col">Valor Unitário</th>
-        <th scope="col">Ação</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for item in lista_produtos %}
-      <tr>
-        <th scope="row">{{ forloop.counter }}</th>
-        <th scope="row">{{ item.name }}</th>
-        <th scope="row">R$ {{ item.price }}</th>
-        <th><a href="{% url 'purchase:remove_product_purchase' forloop.counter %}" class="btn btn-primary">Remover</a>
+  {% endfor %}
+  <div class="container-fluid mt-3">
+    <div class="d-flex flex-row justify-content-between align-items-center">
+      <form action="{% url 'purchase:find_product'%}" method="POST">
+        <div class="d-flex flex-row align-items-center">
+          {% csrf_token %}
+          {{ form_code_bar.as_p }}
+          <button type="submit" class="btn btn-primary mt-3">
+            <i class="fa-solid fa-cart-plus"></i>
+          </button>
+        </div>
+      </form>
+      <div>
+        <th><a href="{% url 'purchase:clean_all_products_purchase' %}" style="height: 100%; width: 60%;"
+            class="btn btn-secondary btn-sm p-1 mt-1">Limpar Carrinho</a></th>
+        <th>
+          <a class="btn btn-secondary btn-sm p-1 mt-1" type="button" style="height: 100%; width: 60%;"
+            data-bs-toggle="modal" data-bs-target="#check_balance">Consultar Saldo</a>
         </th>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
-<div class="input-group-sm">
-  <div class="input-group mb-3">
-    <div class="d-flex flex-row align-items-center ">
-      Total:
-      <input readonly placeholder="Total:" type="text" class="form-control" value="{{ total }}">
-      <a class="btn btn-primary btn-sm ms-1" type="button" class="btn btn-primary" style="height: 100%; width: 60%;" data-bs-toggle="modal"
-      data-bs-target="#finish_purchase">Finalizar Compra</a>
+      </div>
     </div>
-  </div>
-</div>
-<!--------------------Model de consulta de autenticação para finalizar compra------------------------------------------------------------------------------------------------------->
-<div class="modal fade"
-id="finish_purchase" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-aria-labelledby="staticBackdropLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirme Suas Credenciais</h1>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="table-responsive table-lg" style="height: 80vh; overflow-x: auto;">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome do produto</th>
+            <th scope="col">Valor Unitário</th>
+            <th scope="col">Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in lista_produtos %}
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <th scope="row">{{ item.name }}</th>
+            <th scope="row">R$ {{ item.price }}</th>
+            <th><a href="{% url 'purchase:remove_product_purchase' forloop.counter %}"
+                class="btn btn-primary">Remover</a>
+            </th>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
-      <div class="modal-body ">
-        <form action="{% url 'purchase:finish_purchase' %}" method="post">
-          {% csrf_token %}
-          {{ authForm }}
-          <div class="d-flex flex-row mx-auto justify-content-between align-items-center me-3 mt-3">
-            <button type="submit" class="btn btn-primary">Registrar Compra</button>
-            <th><a href="{% url 'purchase:clean_all_products_purchase' %}" class="btn btn-danger">Fechar</a></th>
+    <div class="input-group-sm">
+      <div class="input-group mb-3">
+        <div class="d-flex flex-row align-items-center ">
+          Total:
+          <input readonly placeholder="Total:" type="text" class="form-control" value="{{ total }}">
+          <a class="btn btn-primary btn-sm ms-1" type="button" class="btn btn-primary" style="height: 100%; width: 60%;"
+            href="{% url 'purchase:confirm_indentity'%}">Finalizar Compra</a>
+          <a class="btn btn-primary btn-sm ms-1" type="button" class="btn btn-primary" disable=true style="height: 100%; width: 90%;"
+          data-bs-toggle="modal" data-bs-target="#finish_purchase">Finalizar com login (F8)</a>
+        </div>
+      </div>
+    </div>
+    <!--------------------Model de consulta de autenticação para finalizar compra------------------------------------------------------------------------------------------------------->
+    <div class="modal fade" id="finish_purchase" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirme Suas Credenciais</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>
-<!--------------------Model de consulta de autenticação para consulta de saldo------------------------------------------------------------------------------------------------------->
-<div class="modal fade"
-id="check_balance" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-aria-labelledby="staticBackdropLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h1 class="modal-title fs-5" id="staticBackdropLabel">Consulta de Saldo</h1>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-      <div class="modal-body ">
-        <form action="{% url 'purchase:check_balance' %}" method="post">
-          {% csrf_token %}
-          {{ authForm }}
-          <div class="d-flex flex-row mx-auto justify-content-between align-items-center me-3 mt-3">
-            <button type="submit" class="btn btn-primary">Consultar Saldo</button>
-            <th><a class="btn btn-danger">Fechar</a></th>
+          <div class="modal-body ">
+            <form action="{% url 'purchase:finish_purchase' %}" method="post">
+              {% csrf_token %}
+              {{ authForm }}
+              <div class="d-flex flex-row mx-auto justify-content-between align-items-center me-3 mt-3">
+                <button type="submit" class="btn btn-primary">Registrar Compra</button>
+                <th><a href="{% url 'purchase:clean_all_products_purchase' %}" class="btn btn-danger">Fechar</a></th>
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>
-<!----------------------Model de apresentação de gastos----------------------------------------------------------------------------------------------------------------->
-<div class="modal fade"
-id="show_spends" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-aria-labelledby="staticBackdropLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered">
-  <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Extrato</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="mx-auto">
-        <p>Gastos da Referencia Passada: {{ request.session.spends_last_referred |floatformat:2 }}</p>
-        <br>
-        <p>Gastos da Referencia Atual: {{ request.session.total_spends_current |floatformat:2 }}</p>
-      </div>
-      <div class="modal-footer">
+          <div class="modal-footer">
+          </div>
+        </div>
       </div>
     </div>
+    <!--------------------Model de consulta de autenticação para consulta de saldo------------------------------------------------------------------------------------------------------->
+    <div class="modal fade" id="check_balance" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Consulta de Saldo</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body ">
+            <form action="{% url 'purchase:check_balance' %}" method="post">
+              {% csrf_token %}
+              {{ authForm }}
+              <div class="d-flex flex-row mx-auto justify-content-between align-items-center me-3 mt-3">
+                <button type="submit" class="btn btn-primary">Consultar Saldo</button>
+                <th><a class="btn btn-danger">Fechar</a></th>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!----------------------Model de apresentação de gastos----------------------------------------------------------------------------------------------------------------->
+    <div class="modal fade" id="show_spends" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Extrato</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="mx-auto">
+            <p>Gastos da Referencia Passada: {{ request.session.spends_last_referred |floatformat:2 }}</p>
+            <br>
+            <p>Gastos da Referencia Atual: {{ request.session.total_spends_current |floatformat:2 }}</p>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% if request.session.show_expends %}
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const myModal = new bootstrap.Modal(document.getElementById('show_spends'));
+        myModal.show();
+        setTimeout(function () {
+          myModal.hide();
+          window.location.href = "{% url 'purchase:clean_all_products_purchase' %}";
+        }, 6500);
+      });
+    </script>
+    {% endif %}
+
+    {% if request.session.only_consult %}
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const myModal = new bootstrap.Modal(document.getElementById('show_spends'));
+        myModal.show();
+        setTimeout(function () {
+          myModal.hide();
+          window.location.href = "{% url 'purchase:clean_consult' %}";
+        }, 6500);
+      });
+    </script>
+    {% endif %}
+
+    <script>
+      function openModal(modal) {
+        modal.show();
+      }
+
+      function closeModal(modal) {
+        modal.hide();
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var modal = new bootstrap.Modal(document.getElementById('finish_purchase'));
+        isModalOpen = false
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "F8") {
+            if (isModalOpen) {
+              closeModal(modal);
+              isModalOpen = false;
+            } else {
+              openModal(modal);
+              isModalOpen = true;
+            }
+          }
+        });
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    <script src="https://kit.fontawesome.com/9958a2dab0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"></script>
+    <script src="{% static 'js/messages_remove_on_page.js'%}"></script>
+    <script src="{% static 'js/inputMask.js'%}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'js/sb-admin-2.js'%}"></script>
+    <script src="{% static 'js/inputPriceMask.js'%}"></script>
   </div>
-</div>
-
-{% if request.session.show_expends %}
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const myModal = new bootstrap.Modal(document.getElementById('show_spends'));
-    myModal.show();
-    setTimeout(function() {
-        myModal.hide();
-        window.location.href = "{% url 'purchase:clean_all_products_purchase' %}";
-      }, 6500);
-    });
-</script>
-{% endif %}
-
-{% if request.session.only_consult  %}
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const myModal = new bootstrap.Modal(document.getElementById('show_spends'));
-    myModal.show();
-    setTimeout(function() {
-        myModal.hide();
-        window.location.href = "{% url 'purchase:clean_consult' %}";
-      }, 6500);
-    });
-</script>
-{% endif %}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
-<script src="https://kit.fontawesome.com/9958a2dab0.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-<script src="{% static 'js/messages_remove_on_page.js'%}"></script>
-<script src="{% static 'js/inputMask.js'%}"></script>
-<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
-<script src="{% static 'js/sb-admin-2.js'%}"></script>
-<script src="{% static 'js/inputPriceMask.js'%}"></script>
-</div>
 </body>
+
 </html>

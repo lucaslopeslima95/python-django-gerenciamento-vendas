@@ -68,7 +68,6 @@ class registerUserForm(forms.Form):
             attrs={"title": "Esse Usuario faz parte da \
                    equipe administradora do sistemas, deixe marcado se Sim"}),
         initial=True, label="Faz parte da Equipe Administradora")
-
     class Meta:
         model = User
         fields = ['username',

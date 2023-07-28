@@ -1,3 +1,4 @@
+import hashlib
 from sqlite3 import IntegrityError
 
 from Collaborator.models import Collaborator
@@ -7,14 +8,12 @@ from django.contrib.auth.decorators import login_required
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.shortcuts import redirect, render
-
-
 from User.tasks import confirm_register
+from validate_docbr import CPF
 
 from .forms import (registerUserForm, updateUserPasswordForm,
                     updateWithoutPasswordForm)
 from .models import User
-from validate_docbr import CPF
 
 
 @receiver(post_save, sender=Collaborator)
@@ -25,15 +24,25 @@ def alert_create_user(sender, instance, created, *args, **kwargs):
                                username=user.username, password=user.password)
 
 
+def generate_md5(text):
+    md5_hash = hashlib.md5()
+    md5_hash.update(text.encode('utf-8'))
+    md5_hex = md5_hash.hexdigest()
+
+    return md5_hex
+
+
 @user_passes_test(lambda user: user.is_superuser,
                   login_url='user:page_not_found')
 @login_required(login_url="login_system")
 def save_user(request):
+
     try:
         form = None
         if request.method == "POST":
             form = registerUserForm(request.POST)
             if form.is_valid():
+
                 username = form.cleaned_data['username']
                 password = form.cleaned_data['password']
                 password_check = form.cleaned_data['password_check']
@@ -47,27 +56,27 @@ def save_user(request):
                     cpf = cpf_mask.replace(
                         ".", "").replace(".", "").replace("-", "")
                     name = form.cleaned_data['name']
-
+                    md5 = generate_md5(cpf_mask)
                     if validation.validate(cpf_mask):
                         if not Collaborator.objects.filter(cpf=cpf).exists():
                             user = User.objects.create(username=username,
-                                                    password=password,
-                                                    email=email,
-                                                    is_staff=is_staff)
+                                                       password=password,
+                                                       email=email,
+                                                       is_staff=is_staff)
                             Collaborator.objects.create(name=name,
                                                         cpf=cpf,
-                                                        user=user)
+                                                        user=user,
+                                                        cod_auth=md5)
                             user.set_password(password)
                             user.save()
                             messages.success(request, "Salvo com sucesso")
-
                             return redirect('user:main_menu_user')
                         else:
                             raise IntegrityError('O CPF já está registrado')
                     else:
                         messages.warning(request, "O CPF Inválido")
-                        return render(request, 'user/save_user.html', {'form': form})
-
+            else:
+                messages.warning(request, "Formulario Invalido")
         else:
             form = registerUserForm()
     except (Exception, IntegrityError) as e:

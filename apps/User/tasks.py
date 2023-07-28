@@ -12,11 +12,11 @@ def confirm_register(email, nameUser, username, password):
         {'nome': nameUser, 'username': username,
          'password': password})
     text_cotent = strip_tags(html_content)
-    email = EmailMultiAlternatives(
-        'Assunto',
-        text_cotent,
-        settings.EMAIL_HOST_USER,
-        [email],
-        )
+    # email = EmailMultiAlternatives(
+    #     'Assunto',
+    #     text_cotent,
+    #     settings.EMAIL_HOST_USER,
+    #     [email],
+    #     )
     email.attach_alternative(html_content, "text/html")
     email.send()

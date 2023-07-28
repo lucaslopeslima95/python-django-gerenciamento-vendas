@@ -4,7 +4,10 @@
 {% block content %}
 <div class="card vh-100 mt-3">
   <div class="card-header ">
-    <h3 class="card-title">Usuários</h3>
+    <h3 class="card-title">
+      <i class="fa-solid fa-user"></i>
+      USUÁRIOS
+    </h3>
   </div>
   <div class="card-body">
     <td class="px-1"><a href="{% url 'user:save_user' %}" class="btn btn-primary btn-sm mb-3 ">Registrar novo usuário
@@ -15,9 +18,9 @@
       <table class="table" id="">
         <thead class="text-primary">
           <tr>
-            <th>Nome de Usuário</th>
-            <th style="text-align: center;">E-mail</th>
-            <th style="text-align: center;">Ações</th>
+            <th style="font-weight: bold;">NOME DE USUÁRIO</th>
+            <th style="text-align: center; font-weight: bold;">E-MAIL</th>
+            <th style="text-align: center; font-weight: bold;">AÇÕES</th>
           </tr>
         </thead>
         <tbody>
@@ -60,7 +63,7 @@
         "next": "Próxima",
         "previous": "Anterior"
       },
-      "search": "Filtro por palavra-chave: ",
+      "search": "Filtro por Nome/E-mail: ",
     },
     dom: '<"clear"p><"top"fl>rt<"bottom"ip><"clear">',
   });

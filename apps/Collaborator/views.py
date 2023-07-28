@@ -1,3 +1,4 @@
+import hashlib
 from sqlite3 import IntegrityError
 
 from django.contrib import messages
@@ -5,11 +6,12 @@ from django.contrib.admin.views.decorators import user_passes_test
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 from User.models import User
+from validate_docbr import CPF
 
 from .forms import (registerCollaboratorForm, updateUserPasswordForm,
                     updateWithoutPasswordForm)
 from .models import Collaborator
-from validate_docbr import CPF
+
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,
                   login_url='user:page_not_found')
@@ -34,6 +36,11 @@ def main_menu_collaborator(request):
     return render(request, 'collaborator/main_menu_collaborator.html',
                   {'collaborators': collaborators})
 
+def generate_md5(text):
+    md5_hash = hashlib.md5()
+    md5_hash.update(text.encode('utf-8'))
+    md5_hex = md5_hash.hexdigest()
+    return md5_hex
 
 @user_passes_test(lambda user: user.is_superuser or user.is_staff,
                   login_url='user:page_not_found')
@@ -50,6 +57,7 @@ def save_collaborator(request):
                 password = form.cleaned_data['password']
                 password_check = form.cleaned_data['password_check']
                 cpf = cpf_mask.replace(".", "").replace(".", "").replace("-", "")
+                md5 = generate_md5(cpf_mask)
                 if password != password_check:
                     messages.success(request, "As senha não coincidem")
                     return redirect('collaborator:save_collaborator')
@@ -59,7 +67,7 @@ def save_collaborator(request):
                         user = User.objects.create(
                             username=username, password=password, email=email)
                         Collaborator.objects.create(
-                            name=name, cpf=cpf, user=user)
+                            name=name, cpf=cpf, user=user,cod_auth=md5)
                         user.set_password(password)
                         user.save()
                         messages.success(request, "Salvo com sucesso")
@@ -67,8 +75,6 @@ def save_collaborator(request):
                     else:
                         messages.warning(request, "O CPF Inválido")
                         return render(request, 'user/save_user.html', {'form': form})
-
-
         else:
             form = registerCollaboratorForm()
     except (Exception, IntegrityError) as e:
@@ -77,8 +83,8 @@ def save_collaborator(request):
         elif 'username' in str(e):
             messages.warning(request, "O nome de usuário já existe")
         else:
-            print(f"Exceção ao atualizar um colaborador - {e}")
-            messages.warning(request, "O CPF já está registrado/Invalido")
+            print(f"Exceção ao salvar um colaborador - {e}")
+            messages.warning(request, "O CPF já está registrado")
 
     return render(request,
                   'collaborator/save_collaborator.html', {'form': form})

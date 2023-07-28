@@ -4,7 +4,10 @@
 {% block content %}
 <div  class="card mt-3 vh-100">
   <div class="card-header">
-    <h3 class="card-title">Categorias</h3>
+    <h3 class="card-title">
+      <i class="fa-sharp fa-solid fa-vector-square"></i>
+      CATEGORIAS
+    </h3>
   </div>
   <div class="card-body">
     <td class="px-1"><a href="{% url 'category:save_category' %}" class="btn btn-primary btn-sm mb-3">Registrar Nova Categoria
@@ -14,9 +17,9 @@
       <table class="table">
         <thead class="text-primary">
           <tr>
-            <th>Nome Categoria</th>
-            <th>Descrição</th>
-            <th style="text-align: center;">Ações</th>
+            <th style="font-weight: bold;">NOME CATEGORIA</th>
+            <th style="font-weight: bold;">DESCRIÇÃO</th>
+            <th style="text-align: center; font-weight: bold;">AÇÕES</th>
           </tr>
         </thead>
         <tbody>
@@ -33,7 +36,6 @@
               <i class="fa-solid fa-pen-to-square"></i>
             </a></th>
           </tr>
-
             {% endfor %}
         </tbody>
       </table>
@@ -57,7 +59,7 @@
         "next": "Próxima",
         "previous": "Anterior"
       },
-      "search": "Filtro por palavra-chave: ",
+      "search": "Filtro por nome: ",
     },
     dom: '<"clear"p><"top"fl>rt<"bottom"ip><"clear">',
   });

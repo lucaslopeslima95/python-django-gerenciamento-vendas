@@ -4,35 +4,34 @@ from django.forms import ModelForm
 
 
 class registerCollaboratorForm(ModelForm):
-    name = forms.CharField(widget=forms.TextInput(
+     name = forms.CharField(widget=forms.TextInput(
         attrs={"placeholder": "Nome",
                "class": "form-control",
                "onchange": "generateUsername(this)"}),
                            label="Nome completo")
-    cpf = forms.CharField(widget=forms.TextInput(attrs={
+     cpf = forms.CharField(widget=forms.TextInput(attrs={
         "placeholder": "CPF",
         "class": "form-control"}),
                           label="CPF")
-    email = forms.EmailField(widget=forms.EmailInput(attrs={
+     email = forms.EmailField(widget=forms.EmailInput(attrs={
         "placeholder": "Email",
         "class": "form-control"}),
                              label="E-mail")
-    username = forms.CharField(widget=forms.TextInput(attrs={
-        "placeholder": "Nome Usuario",
+     username = forms.CharField(widget=forms.TextInput(attrs={
+         "placeholder": "Nome Usuario",
         "class": "form-control"}),
         label="Nome de usuário")
-    password = forms.CharField(widget=forms.PasswordInput(
+     password = forms.CharField(widget=forms.PasswordInput(
         attrs={
             "placeholder": "Senha",
             "class": "form-control"}),
                                label="Senha sugerida - @SejaBemVindo3")
-    password_check = forms.CharField(widget=forms.PasswordInput(
+     password_check = forms.CharField(widget=forms.PasswordInput(
         attrs={"placeholder": "Confirme a Senha",
                "class": "form-control",
                "onchange": "validatePassword()"}),
                                      label="Confirme a senha")
-
-    class Meta:
+     class Meta:
         model = Collaborator
         fields = ['name', 'cpf', 'username',
                   'email', 'password', 'password_check']
